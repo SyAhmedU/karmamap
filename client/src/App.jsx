@@ -31,9 +31,9 @@ export default function App() {
       {/* Header */}
       <header className="flex items-center justify-between px-5 py-3 border-b border-slate-800 shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-rose-600 flex items-center justify-center text-white font-black text-sm">K</div>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-rose-600 flex items-center justify-center text-white font-black text-sm">S</div>
           <div>
-            <h1 className="text-white font-bold text-lg leading-none tracking-tight">KarmaMap</h1>
+            <h1 className="text-white font-bold text-lg leading-none tracking-tight">Syed's India Jobs AI Impact</h1>
             <p className="text-slate-400 text-[11px] mt-0.5">India Job Market · {(data.meta.totalWorkforce / 1e6).toFixed(0)}M workers · {data.meta.primarySource.split(',')[0]}</p>
           </div>
         </div>
