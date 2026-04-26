@@ -60,13 +60,39 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
 
       {/* Stats grid */}
       <div className="p-4 grid grid-cols-2 gap-2 border-b border-slate-800">
-        <Badge label="Workforce" value={fmt(occY.workers)} color="blue" />
-        <Badge label="Growth/yr" value={occY.growthPct > 0 ? `+${occY.growthPct}%` : `${occY.growthPct}%`} color={growthColor} />
+        <Badge label="Workforce"  value={fmt(occY.workers)} color="blue" />
+        <Badge label="Growth/yr"  value={occY.growthPct > 0 ? `+${occY.growthPct}%` : `${occY.growthPct}%`} color={growthColor} />
         <Badge label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} value={fmtSal(occY, currency)} color="violet" />
         <Badge label="AI Exposure" value={`${occY.aiExposure} / 100`} color={aiColor} />
-        <Badge label="Education" value={`${occY.educationYears} years`} color="slate" />
+        <Badge label="Education"  value={`${occY.educationYears} years`} color="slate" />
         <Badge label="% Workforce" value={`${((occY.workers/(region === 'world' ? 3320000000 : 582000000))*100).toFixed(2)}%`} color="slate" />
+        {occY.informalityPct != null && (
+          <Badge label="Informal Work" value={`${occY.informalityPct}%`}
+            color={occY.informalityPct > 70 ? 'red' : occY.informalityPct > 40 ? 'amber' : 'green'} />
+        )}
+        {occY.femalePct != null && (
+          <Badge label="Female Workers" value={`${occY.femalePct}%`} color="violet" />
+        )}
+        {occY.wageDecile != null && (
+          <Badge label="Wage Decile" value={`D${occY.wageDecile} / 10`}
+            color={occY.wageDecile >= 8 ? 'green' : occY.wageDecile <= 3 ? 'red' : 'amber'} />
+        )}
+        {occY.iscoCode && (
+          <Badge label="ISCO-08" value={occY.iscoCode} color="slate" />
+        )}
       </div>
+
+      {/* Top Skills */}
+      {occY.topSkills?.length > 0 && (
+        <div className="p-4 border-b border-slate-800">
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-2">Top Skills Required</p>
+          <div className="flex flex-wrap gap-1.5">
+            {occY.topSkills.map((sk, i) => (
+              <span key={i} className="bg-slate-800 text-slate-300 text-[10px] font-semibold px-2 py-1 rounded-lg border border-slate-700">{sk}</span>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* AI interpretation */}
       <div className="p-4 border-b border-slate-800">
@@ -98,7 +124,7 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
       <div className="p-4">
         <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-2">Data Sources</p>
         <div className="space-y-1.5">
-          {occY.sources.map((s, i) => (
+          {(occY.sources || []).map((s, i) => (
             <p key={i} className="text-slate-400 text-[10px] leading-relaxed flex gap-1.5">
               <span className="text-slate-600 shrink-0">·</span>
               {s}
@@ -110,7 +136,10 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
       {/* Sector source */}
       <div className="px-4 pb-4">
         <p className="text-slate-600 text-[10px]">
-          Sector classification: {sector.plfsCode} · Sources: {sector.sources.slice(0,1).join('')}
+          {sector.plfsCode || sector.iloCode
+            ? `Sector: ${sector.plfsCode || sector.iloCode} · `
+            : ''}
+          {sector.sources?.slice(0,1).join('')}
         </p>
       </div>
     </div>

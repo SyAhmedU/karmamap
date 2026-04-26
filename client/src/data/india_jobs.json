@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "India Job Market 2023-24",
-    "totalWorkforce": 582000000,
+    "totalWorkforce": 587910000,
     "wpRate": 58.2,
     "exchangeRate": 84.5,
     "exchangeRateSource": "RBI Reference Rate, April 2026",
@@ -14,11 +14,14 @@
       "id": "agriculture",
       "name": "Agriculture & Allied",
       "plfsCode": "NIC A01–A03",
-      "workers": 268000000,
+      "workers": 269200000,
       "pctWorkforce": 46.1,
       "sectorGrowth": 1.2,
       "color": "#16a34a",
-      "sources": ["PLFS Annual Report 2023-24, Table A-1, MoSPI", "Economic Survey 2023-24, Chapter 8, Ministry of Finance"],
+      "sources": [
+        "PLFS Annual Report 2023-24, Table A-1, MoSPI",
+        "Economic Survey 2023-24, Chapter 8, Ministry of Finance"
+      ],
       "occupations": [
         {
           "id": "crop_farming",
@@ -33,7 +36,17 @@
             "PLFS 2023-24, Table 23 — usual-status workers in crop production",
             "ICAR Annual Report 2023-24, Indian Council of Agricultural Research",
             "Agricultural Census 2021-22, Department of Agriculture & Farmers' Welfare (DAFQ)"
-          ]
+          ],
+          "informalityPct": 97,
+          "femalePct": 40,
+          "urbanPct": 3,
+          "topSkills": [
+            "Crop Management",
+            "Irrigation Systems",
+            "Seasonal Planning"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "6111"
         },
         {
           "id": "animal_husbandry",
@@ -47,7 +60,17 @@
           "sources": [
             "DAHD Annual Report 2023-24, Dept. of Animal Husbandry & Dairying, MoFAHD",
             "NDDB Annual Report 2023-24, National Dairy Development Board"
-          ]
+          ],
+          "informalityPct": 96,
+          "femalePct": 42,
+          "urbanPct": 8,
+          "topSkills": [
+            "Livestock Care",
+            "Disease Management",
+            "Dairy Processing"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "6121"
         },
         {
           "id": "fisheries",
@@ -61,7 +84,17 @@
           "sources": [
             "DAHD Annual Report 2023-24, Fisheries Division",
             "Pradhan Mantri Matsya Sampada Yojana Progress Report 2024, DoF"
-          ]
+          ],
+          "informalityPct": 90,
+          "femalePct": 18,
+          "urbanPct": 25,
+          "topSkills": [
+            "Net Fishing",
+            "Boat Operation",
+            "Cold Chain Handling"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "6141"
         },
         {
           "id": "agri_labour",
@@ -75,7 +108,17 @@
           "sources": [
             "PLFS 2023-24, Table A-12 — casual labour in agriculture",
             "Agricultural Wages in India 2022-23, DAFQ"
-          ]
+          ],
+          "informalityPct": 99,
+          "femalePct": 38,
+          "urbanPct": 2,
+          "topSkills": [
+            "Manual Harvesting",
+            "Transplanting",
+            "Farm Equipment"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "9211"
         },
         {
           "id": "horticulture",
@@ -89,6 +132,40 @@
           "sources": [
             "NHB Annual Report 2023-24, National Horticulture Board",
             "Second Advance Estimates of Horticulture 2023-24, NHB"
+          ],
+          "informalityPct": 90,
+          "femalePct": 35,
+          "urbanPct": 15,
+          "topSkills": [
+            "Grafting & Budding",
+            "Pest Management",
+            "Export Compliance"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "6113"
+        },
+        {
+          "id": "agri_engineers_ext",
+          "name": "Agri-Tech & Extension Workers",
+          "workers": 1200000,
+          "medianSalaryINR": 18000,
+          "growthPct": 15,
+          "educationYears": 14,
+          "aiExposure": 28,
+          "informalityPct": 40,
+          "femalePct": 22,
+          "urbanPct": 30,
+          "topSkills": [
+            "Precision Agriculture (GPS/Drones)",
+            "Soil Testing",
+            "Crop Advisory Apps"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "2213",
+          "description": "Agriculture extension officers, agri-drone pilots, soil scientists driving precision farming under PM Krishi Vikas Yojana.",
+          "sources": [
+            "ICAR Annual Report 2023-24",
+            "MoA&FW Digital Agriculture Mission 2024 — 3Cr farmers enrolled on AGRI STACK"
           ]
         }
       ]
@@ -97,18 +174,21 @@
       "id": "construction",
       "name": "Construction",
       "plfsCode": "NIC F",
-      "workers": 69800000,
-      "pctWorkforce": 12.0,
+      "workers": 70180000,
+      "pctWorkforce": 12,
       "sectorGrowth": 5.8,
       "color": "#ea580c",
-      "sources": ["PLFS Annual Report 2023-24", "NSO GDP Estimates 2023-24, MoSPI (Construction GDP growth 9.9% in FY24)"],
+      "sources": [
+        "PLFS Annual Report 2023-24",
+        "NSO GDP Estimates 2023-24, MoSPI (Construction GDP growth 9.9% in FY24)"
+      ],
       "occupations": [
         {
           "id": "construction_workers",
           "name": "General Construction Workers",
           "workers": 42000000,
           "medianSalaryINR": 12500,
-          "growthPct": 5.0,
+          "growthPct": 5,
           "educationYears": 7,
           "aiExposure": 15,
           "description": "Masons, carpenters, painters, site labourers. Demand driven by PM Awas Yojana, infra push.",
@@ -116,7 +196,17 @@
             "PLFS 2023-24, NIC F casual workers",
             "Building & Other Construction Workers Act data, Ministry of Labour 2024",
             "CMIE Unemployment Survey Q4 FY24"
-          ]
+          ],
+          "informalityPct": 96,
+          "femalePct": 8,
+          "urbanPct": 55,
+          "topSkills": [
+            "Masonry",
+            "Carpentry",
+            "Scaffolding Safety"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "7112"
         },
         {
           "id": "electricians_plumbers",
@@ -130,7 +220,17 @@
           "sources": [
             "NSDC (National Skill Development Corporation) Skill Gap Study 2024",
             "ITI (Industrial Training Institute) Enrolment Data, DGT 2023-24"
-          ]
+          ],
+          "informalityPct": 70,
+          "femalePct": 2,
+          "urbanPct": 70,
+          "topSkills": [
+            "Electrical Wiring",
+            "Solar PV Installation",
+            "Plumbing"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "7411"
         },
         {
           "id": "construction_supervisors",
@@ -141,7 +241,20 @@
           "educationYears": 12,
           "aiExposure": 32,
           "description": "Site supervisors, project coordinators overseeing residential and commercial builds.",
-          "sources": ["PLFS 2023-24 regular salaried in construction", "CREDAI (Confederation of Real Estate Developers) India Report 2024"]
+          "sources": [
+            "PLFS 2023-24 regular salaried in construction",
+            "CREDAI (Confederation of Real Estate Developers) India Report 2024"
+          ],
+          "informalityPct": 55,
+          "femalePct": 5,
+          "urbanPct": 65,
+          "topSkills": [
+            "Project Supervision",
+            "AutoCAD",
+            "Safety Management"
+          ],
+          "wageDecile": 5,
+          "iscoCode": "3123"
         },
         {
           "id": "civil_engineers",
@@ -155,7 +268,17 @@
           "sources": [
             "AICTE All India Survey on Higher Education 2023-24",
             "MoRTH Annual Report 2023-24 (17,840 km of highways built in FY24)"
-          ]
+          ],
+          "informalityPct": 15,
+          "femalePct": 12,
+          "urbanPct": 85,
+          "topSkills": [
+            "Structural Design",
+            "BIM/AutoCAD",
+            "Project Management"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "2142"
         },
         {
           "id": "real_estate_agents",
@@ -169,7 +292,17 @@
           "sources": [
             "RERA (Real Estate Regulatory Authority) Registration Data 2024",
             "Knight Frank India Real Estate Market Review H2 2024"
-          ]
+          ],
+          "informalityPct": 65,
+          "femalePct": 18,
+          "urbanPct": 92,
+          "topSkills": [
+            "Property Valuation",
+            "RERA Compliance",
+            "Negotiation"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "3334"
         },
         {
           "id": "equipment_operators",
@@ -183,6 +316,40 @@
           "sources": [
             "PLFS 2023-24, plant and machine operators in construction",
             "NIP Progress Report FY24, DEA, Ministry of Finance"
+          ],
+          "informalityPct": 85,
+          "femalePct": 2,
+          "urbanPct": 45,
+          "topSkills": [
+            "Heavy Machinery",
+            "GPS-Guided Equipment",
+            "Hydraulics"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "8342"
+        },
+        {
+          "id": "architects_india",
+          "name": "Architects & Urban Planners",
+          "workers": 380000,
+          "medianSalaryINR": 48000,
+          "growthPct": 10,
+          "educationYears": 17,
+          "aiExposure": 48,
+          "informalityPct": 20,
+          "femalePct": 35,
+          "urbanPct": 95,
+          "topSkills": [
+            "BIM (Revit/AutoCAD)",
+            "Sustainable Design (GRIHA/LEED)",
+            "Urban Master Planning"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "2161",
+          "description": "Registered Council of Architecture (CoA) members. India has 1.35L+ registered architects. Smart Cities Mission driving demand for urban planners.",
+          "sources": [
+            "Council of Architecture Annual Report 2023-24 — 1.35L registered architects",
+            "Smart Cities Mission Progress Report FY24, MoHUA"
           ]
         }
       ]
@@ -195,7 +362,11 @@
       "pctWorkforce": 12.2,
       "sectorGrowth": 5.5,
       "color": "#2563eb",
-      "sources": ["PLFS Annual Report 2023-24", "DPIIT FDI Statistics 2024", "NITI Aayog India's Booming Gig & Platform Economy 2022"],
+      "sources": [
+        "PLFS Annual Report 2023-24",
+        "DPIIT FDI Statistics 2024",
+        "NITI Aayog India's Booming Gig & Platform Economy 2022"
+      ],
       "occupations": [
         {
           "id": "retail_workers",
@@ -210,7 +381,17 @@
             "PLFS 2023-24 trade sector workers",
             "Retailers Association of India (RAI) Annual Report 2024",
             "BCG Future of Retail India 2024"
-          ]
+          ],
+          "informalityPct": 88,
+          "femalePct": 25,
+          "urbanPct": 65,
+          "topSkills": [
+            "Customer Service",
+            "POS Systems",
+            "Inventory Management"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "5223"
         },
         {
           "id": "restaurant_hotel",
@@ -225,7 +406,17 @@
             "PLFS 2023-24 accommodation & food services",
             "FHRAI (Federation of Hotels & Restaurants Assoc. India) Annual Survey 2024",
             "Ministry of Tourism Annual Report 2023-24"
-          ]
+          ],
+          "informalityPct": 82,
+          "femalePct": 28,
+          "urbanPct": 80,
+          "topSkills": [
+            "Food Preparation",
+            "FSSAI Hygiene",
+            "Customer Relations"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "5120"
         },
         {
           "id": "wholesale_trade",
@@ -236,14 +427,27 @@
           "educationYears": 12,
           "aiExposure": 40,
           "description": "Wholesale merchants, distributors, FMCG channel partners.",
-          "sources": ["PLFS 2023-24", "IBEF Trade Sector Report 2024"]
+          "sources": [
+            "PLFS 2023-24",
+            "IBEF Trade Sector Report 2024"
+          ],
+          "informalityPct": 72,
+          "femalePct": 12,
+          "urbanPct": 75,
+          "topSkills": [
+            "Supply Chain",
+            "ERP Systems",
+            "Trade Finance"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "4311"
         },
         {
           "id": "ecommerce",
           "name": "E-commerce & Online Retail",
           "workers": 3500000,
           "medianSalaryINR": 20000,
-          "growthPct": 22.0,
+          "growthPct": 22,
           "educationYears": 12,
           "aiExposure": 55,
           "description": "Warehouse pickers, online seller support, marketplace operations. India e-commerce $70Bn FY24.",
@@ -251,35 +455,65 @@
             "IBEF E-Commerce Report 2024",
             "NASSCOM e-commerce sector note 2024",
             "Redseer India E-Commerce Report FY2024"
-          ]
+          ],
+          "informalityPct": 40,
+          "femalePct": 30,
+          "urbanPct": 85,
+          "topSkills": [
+            "Warehouse Management System",
+            "Order Fulfillment",
+            "Returns Processing"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "4321"
         },
         {
           "id": "gig_delivery",
           "name": "Food & Package Delivery (Gig)",
           "workers": 5000000,
           "medianSalaryINR": 13000,
-          "growthPct": 28.0,
+          "growthPct": 28,
           "educationYears": 8,
           "aiExposure": 38,
           "description": "Swiggy, Zomato, Zepto, Blinkit, Dunzo delivery partners. Fastest-growing informal employment.",
           "sources": [
             "NITI Aayog: India's Booming Gig & Platform Economy, 2022 (est. 7.7M gig workers by 2024-25)",
             "Swiggy, Zomato partner count disclosures in DRHP/annual reports 2024"
-          ]
+          ],
+          "informalityPct": 95,
+          "femalePct": 5,
+          "urbanPct": 90,
+          "topSkills": [
+            "Route Optimization",
+            "App Navigation",
+            "Physical Endurance"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "9333"
         },
         {
           "id": "tourism_travel",
           "name": "Tourism & Travel Agents",
           "workers": 5000000,
           "medianSalaryINR": 18000,
-          "growthPct": 12.0,
+          "growthPct": 12,
           "educationYears": 13,
           "aiExposure": 48,
           "description": "Travel agents, tour operators, guides. Domestic tourism crossed 2.5Bn trips FY24.",
           "sources": [
             "Ministry of Tourism Annual Report 2023-24",
             "WTTC India Travel & Tourism 2024"
-          ]
+          ],
+          "informalityPct": 45,
+          "femalePct": 38,
+          "urbanPct": 88,
+          "topSkills": [
+            "Destination Knowledge",
+            "CRM Software",
+            "Foreign Language"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "4221"
         },
         {
           "id": "street_vendors",
@@ -293,7 +527,17 @@
           "sources": [
             "PM SVANidhi Dashboard, Ministry of Housing & Urban Affairs, April 2024",
             "NASVI (National Assoc. of Street Vendors of India) census data 2023"
-          ]
+          ],
+          "informalityPct": 99,
+          "femalePct": 30,
+          "urbanPct": 85,
+          "topSkills": [
+            "Negotiation",
+            "Street Food Prep",
+            "Local Market Knowledge"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "5244"
         }
       ]
     },
@@ -301,11 +545,15 @@
       "id": "manufacturing",
       "name": "Manufacturing",
       "plfsCode": "NIC C",
-      "workers": 66300000,
+      "workers": 66900000,
       "pctWorkforce": 11.4,
       "sectorGrowth": 5.2,
       "color": "#7c3aed",
-      "sources": ["PLFS Annual Report 2023-24", "Annual Survey of Industries 2022-23, MoSPI", "Make in India dashboard 2024"],
+      "sources": [
+        "PLFS Annual Report 2023-24",
+        "Annual Survey of Industries 2022-23, MoSPI",
+        "Make in India dashboard 2024"
+      ],
       "occupations": [
         {
           "id": "garment_textile",
@@ -320,7 +568,17 @@
             "Ministry of Textiles Annual Report 2023-24",
             "Confederation of Indian Textile Industry (CITI) Annual Survey 2024",
             "ASI 2022-23, MoSPI"
-          ]
+          ],
+          "informalityPct": 78,
+          "femalePct": 65,
+          "urbanPct": 55,
+          "topSkills": [
+            "Garment Stitching",
+            "Pattern Cutting",
+            "Quality Inspection"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "7531"
         },
         {
           "id": "food_processing",
@@ -334,7 +592,17 @@
           "sources": [
             "Ministry of Food Processing Industries Annual Report 2023-24",
             "ASI 2022-23 food manufacturing segment"
-          ]
+          ],
+          "informalityPct": 72,
+          "femalePct": 42,
+          "urbanPct": 55,
+          "topSkills": [
+            "FSSAI Food Safety",
+            "Machine Operation",
+            "HACCP Quality Control"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "7512"
         },
         {
           "id": "automobile",
@@ -348,7 +616,17 @@
           "sources": [
             "SIAM (Society of Indian Automobile Manufacturers) Annual Report 2023-24",
             "ACMA (Auto Component Manufacturers Assoc.) Industry Survey 2024"
-          ]
+          ],
+          "informalityPct": 35,
+          "femalePct": 8,
+          "urbanPct": 75,
+          "topSkills": [
+            "Vehicle Assembly",
+            "Welding",
+            "EV Component Systems"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "7231"
         },
         {
           "id": "electronics",
@@ -362,7 +640,17 @@
           "sources": [
             "ICEA (India Cellular & Electronics Association) Annual Report 2024",
             "MeitY PLI for Large Scale Electronics progress report 2024"
-          ]
+          ],
+          "informalityPct": 45,
+          "femalePct": 38,
+          "urbanPct": 80,
+          "topSkills": [
+            "PCB Assembly",
+            "SMT Operation",
+            "Quality Inspection IPC-A-610"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "7421"
         },
         {
           "id": "chemical_pharma",
@@ -376,7 +664,17 @@
           "sources": [
             "Pharmexcil Annual Report 2023-24, Pharmaceuticals Export Promotion Council",
             "Indian Chemical Council Report 2024"
-          ]
+          ],
+          "informalityPct": 30,
+          "femalePct": 22,
+          "urbanPct": 75,
+          "topSkills": [
+            "GMP/GLP Compliance",
+            "Analytical Chemistry",
+            "Regulatory Affairs"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "3131"
         },
         {
           "id": "msme_workers",
@@ -390,7 +688,17 @@
           "sources": [
             "MSME Annual Report 2023-24, Ministry of MSME",
             "Udyam Registration Portal data, April 2024 (6.3Cr MSMEs registered)"
-          ]
+          ],
+          "informalityPct": 85,
+          "femalePct": 28,
+          "urbanPct": 48,
+          "topSkills": [
+            "Multi-skill Trade",
+            "CNC Operation",
+            "Quality Control"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "7223"
         },
         {
           "id": "craft_artisans",
@@ -404,6 +712,65 @@
           "sources": [
             "Development Commissioner for Handicrafts Annual Report 2023-24, Ministry of Textiles",
             "Office of DC Handlooms, Ministry of Textiles, 2023-24"
+          ],
+          "informalityPct": 92,
+          "femalePct": 45,
+          "urbanPct": 35,
+          "topSkills": [
+            "Traditional Craft Techniques",
+            "GI Certification",
+            "Export Packaging"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "7319"
+        },
+        {
+          "id": "ev_battery_workers",
+          "name": "EV & Battery Manufacturing Workers",
+          "workers": 250000,
+          "medianSalaryINR": 22000,
+          "growthPct": 42,
+          "educationYears": 12,
+          "aiExposure": 35,
+          "informalityPct": 25,
+          "femalePct": 20,
+          "urbanPct": 78,
+          "topSkills": [
+            "Battery Cell Assembly",
+            "EV Powertrain Assembly",
+            "BMS Testing"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "7231",
+          "description": "Workers in EV assembly and Li-ion cell gigafactories (Ola Electric, Tata Motors EV, Rajesh Exports). India targets 30% EV penetration by 2030.",
+          "sources": [
+            "SMEV (Society of Manufacturers of EV) Report 2024",
+            "NITI Aayog India EV Policy Roadmap 2024",
+            "PLI ACEMA Scheme Progress Report FY24, MHI"
+          ]
+        },
+        {
+          "id": "defence_manufacturing",
+          "name": "Defence & Aerospace Manufacturing",
+          "workers": 350000,
+          "medianSalaryINR": 55000,
+          "growthPct": 18,
+          "educationYears": 15,
+          "aiExposure": 30,
+          "informalityPct": 2,
+          "femalePct": 10,
+          "urbanPct": 85,
+          "topSkills": [
+            "Aerospace Engineering",
+            "Defence Procurement (DPP)",
+            "Precision Machining"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "7233",
+          "description": "HAL, BEL, DRDO, Mazagon Dock, private Tier-1 defence vendors. India defence budget ₹6.21L cr FY25; exports target $5Bn by 2025.",
+          "sources": [
+            "MoD Annual Report 2023-24",
+            "SIDM (Society of Indian Defence Manufacturers) Defence Export Report 2024"
           ]
         }
       ]
@@ -427,7 +794,7 @@
           "name": "Software Developers & Engineers",
           "workers": 2200000,
           "medianSalaryINR": 65000,
-          "growthPct": 11.0,
+          "growthPct": 11,
           "educationYears": 16,
           "aiExposure": 72,
           "description": "India's 5.8M IT workforce exports $194Bn (FY24). Software engineers are the core — Java, Python, cloud-native stacks.",
@@ -435,7 +802,17 @@
             "NASSCOM Strategic Review 2025 — IT-BPM direct employment 5.8M",
             "NASSCOM IT-BPM Sector Revenue $194Bn FY24",
             "QS/Times Higher Education India STEM Graduate Output 2024"
-          ]
+          ],
+          "informalityPct": 5,
+          "femalePct": 34,
+          "urbanPct": 98,
+          "topSkills": [
+            "Python / Java / Go",
+            "Cloud Architecture",
+            "System Design"
+          ],
+          "wageDecile": 9,
+          "iscoCode": "2512"
         },
         {
           "id": "it_support_bpo",
@@ -449,14 +826,24 @@
           "sources": [
             "NASSCOM Strategic Review 2025, BPO/ITeS segment",
             "IBEF BPO/ITeS Sector Report 2024"
-          ]
+          ],
+          "informalityPct": 10,
+          "femalePct": 42,
+          "urbanPct": 97,
+          "topSkills": [
+            "CRM / Ticketing Tools",
+            "Communication",
+            "Process Excellence"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "4222"
         },
         {
           "id": "data_scientists",
           "name": "Data Scientists & Analysts",
           "workers": 400000,
           "medianSalaryINR": 90000,
-          "growthPct": 30.0,
+          "growthPct": 30,
           "educationYears": 17,
           "aiExposure": 42,
           "description": "ML modellers, analytics leads, BI developers. India has the world's 3rd largest analytics talent pool.",
@@ -464,28 +851,48 @@
             "NASSCOM Analytics India Market Study 2025",
             "Analytics India Magazine Salary Report 2024",
             "LinkedIn Jobs on the Rise India 2024"
-          ]
+          ],
+          "informalityPct": 5,
+          "femalePct": 28,
+          "urbanPct": 99,
+          "topSkills": [
+            "Python/R",
+            "Machine Learning",
+            "SQL / Spark"
+          ],
+          "wageDecile": 9,
+          "iscoCode": "2120"
         },
         {
           "id": "cybersecurity",
           "name": "Cybersecurity Professionals",
           "workers": 150000,
           "medianSalaryINR": 95000,
-          "growthPct": 38.0,
+          "growthPct": 38,
           "educationYears": 16,
           "aiExposure": 38,
           "description": "Severe global shortage: 4M unfilled positions. India needs 1M cybersecurity pros by 2025 (DSCI).",
           "sources": [
             "DSCI (Data Security Council of India) India Cybersecurity Report 2024",
             "ISC2 Cybersecurity Workforce Study 2024"
-          ]
+          ],
+          "informalityPct": 5,
+          "femalePct": 18,
+          "urbanPct": 99,
+          "topSkills": [
+            "Penetration Testing",
+            "SIEM / SOC",
+            "Cloud Security"
+          ],
+          "wageDecile": 9,
+          "iscoCode": "2512"
         },
         {
           "id": "cloud_devops",
           "name": "Cloud & DevOps Engineers",
           "workers": 300000,
           "medianSalaryINR": 95000,
-          "growthPct": 32.0,
+          "growthPct": 32,
           "educationYears": 16,
           "aiExposure": 55,
           "description": "AWS/Azure/GCP certified engineers managing cloud infra. India hosts largest AWS skill certification base outside US.",
@@ -493,14 +900,24 @@
             "AWS India Partner Network data 2024",
             "NASSCOM Cloud Adoption in India 2025",
             "LinkedIn India Emerging Jobs 2024"
-          ]
+          ],
+          "informalityPct": 5,
+          "femalePct": 22,
+          "urbanPct": 99,
+          "topSkills": [
+            "AWS / Azure / GCP",
+            "Kubernetes & Docker",
+            "CI/CD Pipelines"
+          ],
+          "wageDecile": 9,
+          "iscoCode": "2514"
         },
         {
           "id": "ai_ml_engineers",
           "name": "AI / ML Engineers",
           "workers": 200000,
           "medianSalaryINR": 135000,
-          "growthPct": 48.0,
+          "growthPct": 48,
           "educationYears": 17,
           "aiExposure": 35,
           "description": "Highest-paid and fastest-growing role. LLM fine-tuning, GenAI product development, MLOps.",
@@ -508,34 +925,88 @@
             "NASSCOM GenAI Readiness Study 2025",
             "IIT/IISc placement data 2024",
             "LinkedIn Jobs on the Rise India 2024"
-          ]
+          ],
+          "informalityPct": 3,
+          "femalePct": 20,
+          "urbanPct": 99,
+          "topSkills": [
+            "LLM Fine-tuning",
+            "PyTorch / JAX",
+            "MLOps & Model Serving"
+          ],
+          "wageDecile": 10,
+          "iscoCode": "2120"
         },
         {
           "id": "product_managers",
           "name": "Product Managers (Tech)",
           "workers": 250000,
           "medianSalaryINR": 125000,
-          "growthPct": 22.0,
+          "growthPct": 22,
           "educationYears": 16,
           "aiExposure": 50,
           "description": "Tech PMs at India's 112 unicorns and global tech centres. Top-paying non-engineering role.",
           "sources": [
             "Naukri.com PM Salary Insights 2024",
             "NASSCOM Startup Report 2025 (112 unicorns, 3,000+ active startups)"
-          ]
+          ],
+          "informalityPct": 4,
+          "femalePct": 28,
+          "urbanPct": 99,
+          "topSkills": [
+            "Product Roadmapping",
+            "SQL & Analytics",
+            "Stakeholder Management"
+          ],
+          "wageDecile": 9,
+          "iscoCode": "1221"
         },
         {
           "id": "ui_ux_designers",
           "name": "UI/UX Designers",
           "workers": 200000,
           "medianSalaryINR": 55000,
-          "growthPct": 20.0,
+          "growthPct": 20,
           "educationYears": 15,
           "aiExposure": 62,
           "description": "Product designers for apps, web, enterprise software. Growing with India's SaaS and consumer internet boom.",
           "sources": [
             "LinkedIn Design Jobs Growth India 2024",
             "Naukri.com UX Salary Report Q4 2024"
+          ],
+          "informalityPct": 8,
+          "femalePct": 38,
+          "urbanPct": 99,
+          "topSkills": [
+            "Figma / Sketch",
+            "User Research",
+            "Interaction Design"
+          ],
+          "wageDecile": 8,
+          "iscoCode": "2166"
+        },
+        {
+          "id": "hardware_network_eng",
+          "name": "Hardware & Network Engineers",
+          "workers": 1800000,
+          "medianSalaryINR": 42000,
+          "growthPct": 8.5,
+          "educationYears": 15,
+          "aiExposure": 45,
+          "informalityPct": 8,
+          "femalePct": 12,
+          "urbanPct": 90,
+          "topSkills": [
+            "Cisco Networking (CCNA/CCNP)",
+            "Hardware Troubleshooting",
+            "Data Centre Operations"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "7422",
+          "description": "Network administrators, hardware engineers, data-centre technicians supporting India's 3,900+ data centres and telecom backbones.",
+          "sources": [
+            "NASSCOM Strategic Review 2025 — hardware/networking segment",
+            "DoT Telecom Sector Report 2024 — 2.6M telecom workforce"
           ]
         }
       ]
@@ -544,9 +1015,9 @@
       "id": "education",
       "name": "Education",
       "plfsCode": "NIC P (subset of Other Services, PLFS 2023-24)",
-      "workers": 12000000,
+      "workers": 20500000,
       "pctWorkforce": 2.1,
-      "sectorGrowth": 4.0,
+      "sectorGrowth": 4,
       "color": "#0d9488",
       "sources": [
         "UDISE+ 2024-25, Department of School Education & Literacy (DSEL), MoE — 10.12M school teachers",
@@ -565,7 +1036,17 @@
           "sources": [
             "UDISE+ Flash Statistics 2024-25, DSEL, MoE — 1.47M schools, 10.12M teachers",
             "6th Economic Census / PLFS 2023-24 education workers"
-          ]
+          ],
+          "informalityPct": 35,
+          "femalePct": 52,
+          "urbanPct": 45,
+          "topSkills": [
+            "Pedagogy",
+            "NEP 2020 Curriculum",
+            "Digital Classroom (DIKSHA)"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "2330"
         },
         {
           "id": "college_faculty",
@@ -579,20 +1060,64 @@
           "sources": [
             "AISHE 2023-24 Report, Dept. of Higher Education, MoE",
             "UGC 7th Pay Commission faculty scales"
-          ]
+          ],
+          "informalityPct": 18,
+          "femalePct": 43,
+          "urbanPct": 82,
+          "topSkills": [
+            "Academic Research",
+            "Publication (Scopus/WoS)",
+            "MOOC Teaching"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "2310"
         },
         {
           "id": "edtech_professionals",
           "name": "EdTech Professionals",
           "workers": 300000,
           "medianSalaryINR": 38000,
-          "growthPct": 28.0,
+          "growthPct": 28,
           "educationYears": 15,
           "aiExposure": 55,
           "description": "Content creators, instructors, LMS developers at BYJU'S, Unacademy, PhysicsWallah and 4,500+ EdTech startups.",
           "sources": [
             "IAMAI EdTech India Report 2024",
             "Tracxn India EdTech Sector Report 2024"
+          ],
+          "informalityPct": 12,
+          "femalePct": 38,
+          "urbanPct": 95,
+          "topSkills": [
+            "Video Content Creation",
+            "LMS Administration",
+            "Data-Driven Curriculum"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "2359"
+        },
+        {
+          "id": "private_tutors",
+          "name": "Private Tutors & Coaching Professionals",
+          "workers": 8500000,
+          "medianSalaryINR": 18000,
+          "growthPct": 6,
+          "educationYears": 15,
+          "aiExposure": 40,
+          "informalityPct": 90,
+          "femalePct": 45,
+          "urbanPct": 60,
+          "topSkills": [
+            "Subject Expertise",
+            "IIT-JEE/NEET Preparation",
+            "Online Teaching (Zoom/YT Live)"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "2359",
+          "description": "India's ₹7.1L cr coaching industry: 1.5L+ coaching institutes (Kota, Delhi hubs) + 8M+ private tutors. Biggest unrecognised education employer.",
+          "sources": [
+            "ASSOCHAM India Coaching Sector Report 2024 (₹7.1L cr market)",
+            "NSSO 75th Round Education Survey (private tutoring prevalence)"
           ]
         }
       ]
@@ -601,7 +1126,7 @@
       "id": "healthcare",
       "name": "Healthcare",
       "plfsCode": "NIC Q (subset of Other Services, PLFS 2023-24)",
-      "workers": 6500000,
+      "workers": 7420000,
       "pctWorkforce": 1.1,
       "sectorGrowth": 9.5,
       "color": "#dc2626",
@@ -617,83 +1142,191 @@
           "name": "Doctors (Allopathic, MBBS+)",
           "workers": 1300000,
           "medianSalaryINR": 80000,
-          "growthPct": 8.0,
+          "growthPct": 8,
           "educationYears": 19,
           "aiExposure": 40,
           "description": "MBBS, MD, specialist doctors across public and private hospitals. 1 doctor per 834 population (NMC 2024).",
           "sources": [
             "National Medical Commission (NMC) Annual Report 2023-24 — 1.3M registered allopathic doctors",
             "IMA Membership Data 2024"
-          ]
+          ],
+          "informalityPct": 25,
+          "femalePct": 28,
+          "urbanPct": 85,
+          "topSkills": [
+            "Clinical Diagnosis",
+            "Telemedicine (eSanjeevani)",
+            "EMR Systems"
+          ],
+          "wageDecile": 9,
+          "iscoCode": "2211"
         },
         {
           "id": "nurses",
           "name": "Nurses & Midwives",
           "workers": 2100000,
           "medianSalaryINR": 22000,
-          "growthPct": 11.0,
+          "growthPct": 11,
           "educationYears": 13,
           "aiExposure": 32,
           "description": "India's largest regulated healthcare workforce. Global demand opens overseas migration pathways.",
           "sources": [
             "Indian Nursing Council Annual Report 2023-24 — 2.1M registered nurses",
             "MoHFW Human Resources for Health Report 2024"
-          ]
+          ],
+          "informalityPct": 30,
+          "femalePct": 80,
+          "urbanPct": 65,
+          "topSkills": [
+            "Patient Care",
+            "IV Therapy",
+            "Medical Documentation"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "2221"
         },
         {
           "id": "pharmacists",
           "name": "Pharmacists",
           "workers": 800000,
           "medianSalaryINR": 28000,
-          "growthPct": 8.0,
+          "growthPct": 8,
           "educationYears": 15,
           "aiExposure": 48,
           "description": "Retail pharmacy, hospital dispensing, drug quality testing. India has 6.5L+ registered pharmacists.",
           "sources": [
             "Pharmacy Council of India (PCI) Annual Report 2023-24",
             "IBEF Pharmaceuticals Report 2024"
-          ]
+          ],
+          "informalityPct": 40,
+          "femalePct": 40,
+          "urbanPct": 75,
+          "topSkills": [
+            "Drug Dispensing",
+            "Pharmacovigilance",
+            "GST Billing"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "2262"
         },
         {
           "id": "paramedics",
           "name": "Paramedics & Lab Technicians",
           "workers": 900000,
           "medianSalaryINR": 20000,
-          "growthPct": 10.0,
+          "growthPct": 10,
           "educationYears": 13,
           "aiExposure": 40,
           "description": "Pathology lab techs, radiology techs, EMTs, physiotherapists. Diagnostics market growing 15% p.a.",
           "sources": [
             "IBEF Healthcare Report 2024",
             "CII Indian Healthcare Sector Report 2024"
-          ]
+          ],
+          "informalityPct": 45,
+          "femalePct": 35,
+          "urbanPct": 72,
+          "topSkills": [
+            "ECG Interpretation",
+            "Lab Diagnostics",
+            "Emergency Response"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "3212"
         },
         {
           "id": "asha_workers",
           "name": "ASHA & Community Health Workers",
           "workers": 1100000,
           "medianSalaryINR": 5000,
-          "growthPct": 4.0,
+          "growthPct": 4,
           "educationYears": 10,
           "aiExposure": 15,
           "description": "Front-line community health workers under NHM. 10.5L ASHA workers; India's primary rural healthcare backbone.",
           "sources": [
             "MoHFW National Health Mission Annual Report 2023-24",
             "NHSRC ASHA Programme Update April 2024"
-          ]
+          ],
+          "informalityPct": 90,
+          "femalePct": 99,
+          "urbanPct": 5,
+          "topSkills": [
+            "Community Health Counselling",
+            "ASHA Records (HMIS)",
+            "Maternal Care"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "3253"
         },
         {
           "id": "hospital_admin",
           "name": "Hospital Administrators & Managers",
           "workers": 300000,
           "medianSalaryINR": 52000,
-          "growthPct": 9.0,
+          "growthPct": 9,
           "educationYears": 16,
           "aiExposure": 50,
           "description": "Hospital operations, health informatics, revenue cycle management. Growing with private hospital chains.",
           "sources": [
             "CII–Deloitte Indian Healthcare Sector Report 2024",
             "AHPI (Assoc. of Healthcare Providers India) data 2024"
+          ],
+          "informalityPct": 10,
+          "femalePct": 45,
+          "urbanPct": 92,
+          "topSkills": [
+            "Hospital MIS",
+            "Revenue Cycle Management",
+            "Healthcare Compliance"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "1342"
+        },
+        {
+          "id": "ayush_practitioners",
+          "name": "AYUSH Practitioners",
+          "workers": 800000,
+          "medianSalaryINR": 28000,
+          "growthPct": 9,
+          "educationYears": 17,
+          "aiExposure": 20,
+          "informalityPct": 45,
+          "femalePct": 35,
+          "urbanPct": 55,
+          "topSkills": [
+            "Ayurvedic Diagnostics",
+            "Yoga Therapy",
+            "Homeopathic Prescribing"
+          ],
+          "wageDecile": 5,
+          "iscoCode": "2230",
+          "description": "Registered Ayurveda, Yoga, Unani, Siddha and Homeopathy practitioners. AYUSH Ministry has 9.42L registered practitioners (2024).",
+          "sources": [
+            "AYUSH Ministry Annual Report 2023-24 — 9.42L registered practitioners",
+            "PLFS 2023-24 healthcare other"
+          ]
+        },
+        {
+          "id": "mental_health_workers",
+          "name": "Psychologists & Mental Health Workers",
+          "workers": 120000,
+          "medianSalaryINR": 45000,
+          "growthPct": 22,
+          "educationYears": 17,
+          "aiExposure": 32,
+          "informalityPct": 25,
+          "femalePct": 65,
+          "urbanPct": 92,
+          "topSkills": [
+            "Clinical Psychology",
+            "CBT / DBT Therapy",
+            "Teletherapy Platforms"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "2634",
+          "description": "Clinical psychologists, counsellors, psychiatry support staff. India has 0.07 psychiatrists per 100,000 (WHO); severe shortage driving growth.",
+          "sources": [
+            "WHO Mental Health Atlas 2023 — India data",
+            "NIMHANS Mental Health Report 2024"
           ]
         }
       ]
@@ -702,11 +1335,15 @@
       "id": "transport",
       "name": "Transport & Logistics",
       "plfsCode": "NIC H",
-      "workers": 29100000,
-      "pctWorkforce": 5.0,
+      "workers": 29380000,
+      "pctWorkforce": 5,
       "sectorGrowth": 7.8,
       "color": "#d97706",
-      "sources": ["PLFS Annual Report 2023-24, NIC H", "MoRTH Annual Report 2023-24", "CRISIL India Logistics Report 2024"],
+      "sources": [
+        "PLFS Annual Report 2023-24, NIC H",
+        "MoRTH Annual Report 2023-24",
+        "CRISIL India Logistics Report 2024"
+      ],
       "occupations": [
         {
           "id": "truck_drivers",
@@ -720,7 +1357,17 @@
           "sources": [
             "AIMTC (All India Motor Transport Congress) Manpower Survey 2024",
             "MoRTH Road Transport Yearbook 2022-23 (55M registered vehicles)"
-          ]
+          ],
+          "informalityPct": 85,
+          "femalePct": 1,
+          "urbanPct": 30,
+          "topSkills": [
+            "Commercial Vehicle Licence (HMV)",
+            "GPS Navigation",
+            "Vehicle Maintenance"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "8332"
         },
         {
           "id": "auto_taxi_drivers",
@@ -735,7 +1382,17 @@
             "Niti Aayog Gig Economy Report 2022",
             "MoRTH Annual Report 2023-24 transport workers",
             "Ola/Uber India partner disclosures 2024"
-          ]
+          ],
+          "informalityPct": 92,
+          "femalePct": 2,
+          "urbanPct": 95,
+          "topSkills": [
+            "City Navigation",
+            "Platform Apps (Ola/Uber)",
+            "Customer Handling"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "8322"
         },
         {
           "id": "railway_staff",
@@ -749,48 +1406,112 @@
           "sources": [
             "Indian Railways Annual Report 2023-24, Ministry of Railways (₹2.62L cr capex)",
             "RRB (Railway Recruitment Board) Vacancy Data 2024"
-          ]
+          ],
+          "informalityPct": 0,
+          "femalePct": 10,
+          "urbanPct": 55,
+          "topSkills": [
+            "Train Operations",
+            "Railway Safety Protocols",
+            "Ticketing Systems"
+          ],
+          "wageDecile": 5,
+          "iscoCode": "8311"
         },
         {
           "id": "logistics_warehouse",
           "name": "Logistics & Warehouse Workers",
           "workers": 4000000,
           "medianSalaryINR": 14500,
-          "growthPct": 18.0,
+          "growthPct": 18,
           "educationYears": 10,
           "aiExposure": 45,
           "description": "Fastest growing segment. PM Gati Shakti + warehousing parks push. India logistics market $250Bn by 2026.",
           "sources": [
             "CRISIL India Logistics Sector Report 2024",
             "PM Gati Shakti Progress Report FY24, DPIIT"
-          ]
+          ],
+          "informalityPct": 60,
+          "femalePct": 18,
+          "urbanPct": 80,
+          "topSkills": [
+            "WMS (SAP/Manhattan)",
+            "Forklift Operation",
+            "Inventory Control"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "4321"
         },
         {
           "id": "aviation",
           "name": "Aviation (Pilots, Crew & Ground)",
           "workers": 350000,
           "medianSalaryINR": 85000,
-          "growthPct": 14.0,
+          "growthPct": 14,
           "educationYears": 15,
           "aiExposure": 30,
           "description": "India to become 3rd largest aviation market by 2025; 150M passengers FY24. Severe pilot shortage.",
           "sources": [
             "DGCA Annual Report 2023-24 (6,285 licensed pilots; 150M pax)",
             "MoCA (Ministry of Civil Aviation) UDAN scheme 2024"
-          ]
+          ],
+          "informalityPct": 2,
+          "femalePct": 28,
+          "urbanPct": 99,
+          "topSkills": [
+            "DGCA Licence",
+            "Aviation English",
+            "Instrument Navigation (IFR/VFR)"
+          ],
+          "wageDecile": 8,
+          "iscoCode": "3153"
         },
         {
           "id": "postal_courier",
           "name": "Postal & Courier Workers",
           "workers": 2350000,
           "medianSalaryINR": 20000,
-          "growthPct": 8.0,
+          "growthPct": 8,
           "educationYears": 10,
           "aiExposure": 42,
           "description": "India Post's 5.64L employees + private courier (Delhivery, Ecom Express, Blue Dart) 1M+ workers.",
           "sources": [
             "India Post Annual Report 2023-24 (1.59L post offices)",
             "DPIIT Logistics Division courier sector data 2024"
+          ],
+          "informalityPct": 40,
+          "femalePct": 12,
+          "urbanPct": 65,
+          "topSkills": [
+            "Route Management",
+            "Digital Tracking (APP)",
+            "Parcel Handling"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "4412"
+        },
+        {
+          "id": "metro_urban_transit",
+          "name": "Metro & Urban Transit Workers",
+          "workers": 280000,
+          "medianSalaryINR": 32000,
+          "growthPct": 25,
+          "educationYears": 12,
+          "aiExposure": 25,
+          "informalityPct": 5,
+          "femalePct": 15,
+          "urbanPct": 100,
+          "topSkills": [
+            "Metro Operations (DEMU/MEMU)",
+            "SCADA Control",
+            "Passenger Safety"
+          ],
+          "wageDecile": 5,
+          "iscoCode": "8311",
+          "description": "Employees of DMRC, MMRC, BMRCL and 18 other metro networks. India's metro network is 945 km and expanding to 1,700 km by 2027.",
+          "sources": [
+            "Ministry of Housing & Urban Affairs Metro Rail Report 2024",
+            "DMRC Annual Report 2023-24 — 14,500 employees"
           ]
         }
       ]
@@ -799,7 +1520,7 @@
       "id": "finance",
       "name": "Finance & Banking",
       "plfsCode": "NIC K–L",
-      "workers": 4650000,
+      "workers": 4830000,
       "pctWorkforce": 0.8,
       "sectorGrowth": 8.2,
       "color": "#059669",
@@ -822,7 +1543,17 @@
           "sources": [
             "IBA Workforce & HR Roundtable Report 2024",
             "SBI, HDFC Bank, PNB annual reports FY2024"
-          ]
+          ],
+          "informalityPct": 2,
+          "femalePct": 28,
+          "urbanPct": 90,
+          "topSkills": [
+            "Core Banking System (Finacle/CBS)",
+            "KYC / AML Compliance",
+            "Relationship Management"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "3312"
         },
         {
           "id": "insurance",
@@ -836,14 +1567,24 @@
           "sources": [
             "IRDAI Annual Report 2023-24 (56L licensed agents)",
             "Life Insurance Council Report 2024"
-          ]
+          ],
+          "informalityPct": 75,
+          "femalePct": 22,
+          "urbanPct": 55,
+          "topSkills": [
+            "Insurance Product Knowledge",
+            "IRDAI Regulations",
+            "Client Acquisition"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "3321"
         },
         {
           "id": "fintech_professionals",
           "name": "FinTech Professionals",
           "workers": 400000,
           "medianSalaryINR": 75000,
-          "growthPct": 32.0,
+          "growthPct": 32,
           "educationYears": 16,
           "aiExposure": 58,
           "description": "India's FinTech ecosystem: $31Bn cumulative funding, 10,000+ startups. UPI processed 13Bn transactions/month.",
@@ -851,48 +1592,112 @@
             "IAMAI India FinTech Report 2024",
             "NPCI UPI Transaction Data April 2024",
             "Inc42 Indian FinTech Startup Report 2024"
-          ]
+          ],
+          "informalityPct": 5,
+          "femalePct": 30,
+          "urbanPct": 98,
+          "topSkills": [
+            "Payment API Integration",
+            "Blockchain",
+            "Data Analytics & Risk"
+          ],
+          "wageDecile": 8,
+          "iscoCode": "2413"
         },
         {
           "id": "chartered_accountants",
           "name": "Chartered Accountants & Auditors",
           "workers": 400000,
           "medianSalaryINR": 80000,
-          "growthPct": 5.0,
+          "growthPct": 5,
           "educationYears": 17,
           "aiExposure": 65,
           "description": "4L ICAI members + student pool. Company audit, tax, GST compliance, M&A advisory.",
           "sources": [
             "ICAI (Institute of Chartered Accountants of India) Annual Report 2023-24",
             "NFRA (National Financial Reporting Authority) 2024"
-          ]
+          ],
+          "informalityPct": 30,
+          "femalePct": 25,
+          "urbanPct": 85,
+          "topSkills": [
+            "IndAS / IFRS Reporting",
+            "GST & Direct Tax",
+            "Statutory Auditing"
+          ],
+          "wageDecile": 8,
+          "iscoCode": "2411"
         },
         {
           "id": "stock_brokers",
           "name": "Stock Brokers & Investment Advisors",
           "workers": 350000,
           "medianSalaryINR": 65000,
-          "growthPct": 10.0,
+          "growthPct": 10,
           "educationYears": 16,
           "aiExposure": 52,
           "description": "SEBI-registered brokers, research analysts, mutual fund distributors. Demat accounts hit 15.8Cr in FY24.",
           "sources": [
             "SEBI Annual Report 2023-24 (9,000+ registered brokers)",
             "NSE Investor Survey 2024 — 15.8Cr demat accounts"
-          ]
+          ],
+          "informalityPct": 20,
+          "femalePct": 18,
+          "urbanPct": 95,
+          "topSkills": [
+            "SEBI Regulations",
+            "Technical & Fundamental Analysis",
+            "Bloomberg/Reuters"
+          ],
+          "wageDecile": 8,
+          "iscoCode": "3311"
         },
         {
           "id": "microfinance",
           "name": "Microfinance & Rural Banking",
           "workers": 600000,
           "medianSalaryINR": 20000,
-          "growthPct": 12.0,
+          "growthPct": 12,
           "educationYears": 12,
           "aiExposure": 38,
           "description": "MFI loan officers, BC (Business Correspondent) agents. GLP ₹3.5L cr; 7.3Cr active borrowers.",
           "sources": [
             "MFIN (Microfinance Institutions Network) Micrometer Report Q4 FY24",
             "PMJDY — Jan Dhan Yojana BC network data April 2024"
+          ],
+          "informalityPct": 25,
+          "femalePct": 55,
+          "urbanPct": 25,
+          "topSkills": [
+            "Credit Assessment (CIBIL)",
+            "MFI Collections",
+            "Rural Banking (PMJDY)"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "3312"
+        },
+        {
+          "id": "mutual_fund_agents",
+          "name": "Mutual Fund Distributors & Agents",
+          "workers": 180000,
+          "medianSalaryINR": 35000,
+          "growthPct": 20,
+          "educationYears": 14,
+          "aiExposure": 50,
+          "informalityPct": 35,
+          "femalePct": 20,
+          "urbanPct": 78,
+          "topSkills": [
+            "AMFI Certification (ARN)",
+            "Financial Planning",
+            "Client Advisory"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "3311",
+          "description": "AMFI-registered distributors. India MF AUM crossed ₹63L cr (Mar 2024); SIP inflows ₹20,000 cr/month.",
+          "sources": [
+            "AMFI India Annual Report 2023-24 — 1.57L ARN holders",
+            "SEBI Annual Report 2023-24 — AUM ₹63L cr"
           ]
         }
       ]
@@ -901,7 +1706,7 @@
       "id": "government",
       "name": "Government & Public Sector",
       "plfsCode": "NIC O (subset of Other Services, PLFS 2023-24)",
-      "workers": 9500000,
+      "workers": 10900000,
       "pctWorkforce": 1.6,
       "sectorGrowth": 1.2,
       "color": "#475569",
@@ -923,7 +1728,17 @@
           "sources": [
             "7th CPC Report, GoI — 32L central govt civilian employees",
             "DoP&T Annual Report 2023-24 (Dept. of Personnel & Training)"
-          ]
+          ],
+          "informalityPct": 0,
+          "femalePct": 18,
+          "urbanPct": 75,
+          "topSkills": [
+            "IAS/IPS/State Services Exam",
+            "Policy Drafting",
+            "e-Governance (NIC)"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "1111"
         },
         {
           "id": "police_paramilitary",
@@ -937,7 +1752,17 @@
           "sources": [
             "MHA Police Organisations in India 2022-23 — 21.42L sanctioned state police",
             "MHA Annual Report 2023-24 — CAPF strength"
-          ]
+          ],
+          "informalityPct": 0,
+          "femalePct": 8,
+          "urbanPct": 55,
+          "topSkills": [
+            "Law Enforcement",
+            "Investigation & IPC",
+            "Physical Fitness Training"
+          ],
+          "wageDecile": 5,
+          "iscoCode": "5411"
         },
         {
           "id": "municipal_workers",
@@ -951,7 +1776,17 @@
           "sources": [
             "MoHUA (Ministry of Housing & Urban Affairs) Annual Report 2023-24",
             "Census 2011 Urban Employment Data (latest official count)"
-          ]
+          ],
+          "informalityPct": 30,
+          "femalePct": 25,
+          "urbanPct": 100,
+          "topSkills": [
+            "Sanitation Management",
+            "Urban Civic Works",
+            "Swachh Bharat Protocols"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "9121"
         },
         {
           "id": "psu_employees",
@@ -965,6 +1800,40 @@
           "sources": [
             "DPE Annual Survey of Central Public Sector Enterprises 2023-24 — 9.36L employees",
             "Public Enterprises Survey 2022-23, DPE"
+          ],
+          "informalityPct": 0,
+          "femalePct": 15,
+          "urbanPct": 80,
+          "topSkills": [
+            "Domain Engineering (ONGC/SAIL)",
+            "SAP ERP",
+            "PSU Compliance & DPE"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "2141"
+        },
+        {
+          "id": "armed_forces",
+          "name": "Indian Armed Forces Personnel",
+          "workers": 1400000,
+          "medianSalaryINR": 48000,
+          "growthPct": 0.5,
+          "educationYears": 12,
+          "aiExposure": 18,
+          "informalityPct": 0,
+          "femalePct": 5,
+          "urbanPct": 60,
+          "topSkills": [
+            "Combat Operations",
+            "Weapon Systems",
+            "Leadership & Logistics"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "0110",
+          "description": "Indian Army (1.23M), Navy (67K), Air Force (140K). India has the world's 2nd largest active military. Agnipath recruitment scheme ongoing.",
+          "sources": [
+            "Ministry of Defence Annual Report 2023-24",
+            "IISS Military Balance 2024 — India active forces 1.45M"
           ]
         }
       ]
@@ -973,7 +1842,7 @@
       "id": "personal_services",
       "name": "Personal & Domestic Services",
       "plfsCode": "NIC T–U (subset of Other Services, PLFS 2023-24)",
-      "workers": 18750000,
+      "workers": 19950000,
       "pctWorkforce": 3.2,
       "sectorGrowth": 3.5,
       "color": "#9f1239",
@@ -995,21 +1864,41 @@
           "sources": [
             "ILO India Domestic Workers Sector Brief 2023 (4–7M estimate)",
             "PLFS 2023-24 Table 12, private household employers"
-          ]
+          ],
+          "informalityPct": 99,
+          "femalePct": 88,
+          "urbanPct": 90,
+          "topSkills": [
+            "Cooking & Housekeeping",
+            "Childcare",
+            "Elderly Assistance"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "9111"
         },
         {
           "id": "security_guards",
           "name": "Security Guards",
           "workers": 8000000,
           "medianSalaryINR": 12000,
-          "growthPct": 4.0,
+          "growthPct": 4,
           "educationYears": 8,
           "aiExposure": 18,
           "description": "India has the world's largest private security industry: 90L guards employed by 15,000+ agencies.",
           "sources": [
             "ASSOCHAM Private Security Industry Report 2024 — 90L guards, ₹75K cr market",
             "PSARA (Private Security Agencies Regulation Act) licensing data 2024"
-          ]
+          ],
+          "informalityPct": 45,
+          "femalePct": 8,
+          "urbanPct": 82,
+          "topSkills": [
+            "Surveillance Systems",
+            "Physical Security",
+            "Incident Reporting"
+          ],
+          "wageDecile": 2,
+          "iscoCode": "5414"
         },
         {
           "id": "beauty_wellness",
@@ -1023,20 +1912,64 @@
           "sources": [
             "CII–KPMG India Wellness Sector Report 2024",
             "IBEF Beauty & Wellness Sector Brief 2024"
-          ]
+          ],
+          "informalityPct": 75,
+          "femalePct": 65,
+          "urbanPct": 88,
+          "topSkills": [
+            "Beauty Treatments (CIDESCO)",
+            "Fitness Training",
+            "Client Management"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "5141"
         },
         {
           "id": "sanitation_waste",
           "name": "Sanitation & Waste Management",
           "workers": 4000000,
           "medianSalaryINR": 8000,
-          "growthPct": 2.0,
+          "growthPct": 2,
           "educationYears": 5,
           "aiExposure": 8,
           "description": "Municipal sweepers, garbage collectors, sewage workers. Swachh Bharat Mission expanded this workforce.",
           "sources": [
             "Swachh Bharat Mission Urban 2.0 Progress Report FY24, MoHUA",
             "PLFS 2023-24 sanitation and cleaning occupations"
+          ],
+          "informalityPct": 85,
+          "femalePct": 22,
+          "urbanPct": 95,
+          "topSkills": [
+            "Waste Segregation",
+            "Mechanical Sweepers",
+            "SWM Rules 2016"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "9121"
+        },
+        {
+          "id": "gig_home_services",
+          "name": "Gig Home Services (Urban Company model)",
+          "workers": 1200000,
+          "medianSalaryINR": 18000,
+          "growthPct": 35,
+          "educationYears": 9,
+          "aiExposure": 25,
+          "informalityPct": 88,
+          "femalePct": 30,
+          "urbanPct": 95,
+          "topSkills": [
+            "Plumbing / Electrical / AC Repair",
+            "App-Based Scheduling",
+            "Customer Ratings Management"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "7412",
+          "description": "On-demand home service providers on Urban Company, HouseJoy, Zimmber. Fastest-growing organised segment in personal services.",
+          "sources": [
+            "Urban Company DRHP 2024 — 50K+ partner professionals",
+            "NITI Aayog Gig Economy Report 2022 (home services sub-segment)"
           ]
         }
       ]
@@ -1045,7 +1978,7 @@
       "id": "creative_media",
       "name": "Creative & Media",
       "plfsCode": "NIC R–S (subset of Other Services, PLFS 2023-24)",
-      "workers": 1700000,
+      "workers": 1850000,
       "pctWorkforce": 0.3,
       "sectorGrowth": 10.5,
       "color": "#be185d",
@@ -1060,21 +1993,31 @@
           "name": "Film, TV & OTT Professionals",
           "workers": 500000,
           "medianSalaryINR": 35000,
-          "growthPct": 12.0,
+          "growthPct": 12,
           "educationYears": 14,
           "aiExposure": 50,
           "description": "India produces 1,500+ films/year. OTT platforms (Netflix, Prime, JioHotstar) adding original content demand.",
           "sources": [
             "FICCI-EY M&E Report 2024 — ₹2.32L cr M&E industry",
             "CBFC (Central Board of Film Certification) Annual Report 2023-24"
-          ]
+          ],
+          "informalityPct": 70,
+          "femalePct": 25,
+          "urbanPct": 95,
+          "topSkills": [
+            "Direction / Acting",
+            "Post-Production (DaVinci/Premiere)",
+            "OTT Platforms"
+          ],
+          "wageDecile": 5,
+          "iscoCode": "2654"
         },
         {
           "id": "digital_creators",
           "name": "Digital Content Creators & Influencers",
           "workers": 500000,
           "medianSalaryINR": 22000,
-          "growthPct": 45.0,
+          "growthPct": 45,
           "educationYears": 12,
           "aiExposure": 55,
           "description": "YouTube, Instagram, Moj, Josh, ShareChat content creators. India has 3rd largest creator economy globally.",
@@ -1082,7 +2025,17 @@
             "IAMAI Creator Economy India Report 2024",
             "YouTube India 100M+ monthly active channels data 2024",
             "Redseer Creator Economy India 2024 — 80M+ active creators"
-          ]
+          ],
+          "informalityPct": 88,
+          "femalePct": 35,
+          "urbanPct": 88,
+          "topSkills": [
+            "Short-form Video (Reels/Shorts)",
+            "SEO & Algorithm Optimization",
+            "Brand Partnerships"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "2166"
         },
         {
           "id": "journalists",
@@ -1097,20 +2050,64 @@
             "Press Council of India Annual Report 2023-24",
             "FICCI-EY M&E Report 2024 — print segment contraction",
             "RNI (Registrar of Newspapers) Annual Report 2023"
-          ]
+          ],
+          "informalityPct": 35,
+          "femalePct": 28,
+          "urbanPct": 90,
+          "topSkills": [
+            "Investigative Reporting",
+            "Digital Journalism (CMS)",
+            "Data Journalism"
+          ],
+          "wageDecile": 5,
+          "iscoCode": "2641"
         },
         {
           "id": "advertising_marketing",
           "name": "Advertising & Marketing Professionals",
           "workers": 400000,
           "medianSalaryINR": 50000,
-          "growthPct": 12.0,
+          "growthPct": 12,
           "educationYears": 15,
           "aiExposure": 60,
           "description": "Ad agencies, brand managers, performance marketers. India digital ad market ₹60,000 cr FY24 growing 25%.",
           "sources": [
             "IAMAI India Digital Advertising Report FY2024",
             "GroupM This Year Next Year India 2024 — ₹1.35L cr total ad market"
+          ],
+          "informalityPct": 12,
+          "femalePct": 42,
+          "urbanPct": 95,
+          "topSkills": [
+            "Performance Marketing (Meta/Google)",
+            "Brand Strategy",
+            "Marketing Analytics (GA4)"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "2431"
+        },
+        {
+          "id": "gaming_esports",
+          "name": "Gaming, Esports & Animation Professionals",
+          "workers": 150000,
+          "medianSalaryINR": 40000,
+          "growthPct": 38,
+          "educationYears": 14,
+          "aiExposure": 45,
+          "informalityPct": 30,
+          "femalePct": 18,
+          "urbanPct": 96,
+          "topSkills": [
+            "Unity / Unreal Engine",
+            "3D Animation (Maya/Blender)",
+            "Game Monetisation"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "2166",
+          "description": "India's gaming market ₹28,000 cr (FY24); 590M gamers. Animation & VFX exports $1.5Bn. AVGC Promotion Task Force targets $40Bn by 2032.",
+          "sources": [
+            "FICCI-EY M&E Report 2024 — ₹28K cr gaming",
+            "MIB AVGC Promotion Task Force Report 2024 (₹21K cr AVGC industry)"
           ]
         }
       ]
@@ -1119,11 +2116,15 @@
       "id": "mining",
       "name": "Mining & Quarrying",
       "plfsCode": "NIC B",
-      "workers": 2900000,
+      "workers": 3020000,
       "pctWorkforce": 0.5,
       "sectorGrowth": 4.5,
       "color": "#78350f",
-      "sources": ["PLFS Annual Report 2023-24, NIC B", "Ministry of Mines Annual Report 2023-24", "Coal India Limited Annual Report 2023-24"],
+      "sources": [
+        "PLFS Annual Report 2023-24, NIC B",
+        "Ministry of Mines Annual Report 2023-24",
+        "Coal India Limited Annual Report 2023-24"
+      ],
       "occupations": [
         {
           "id": "coal_miners",
@@ -1137,7 +2138,17 @@
           "sources": [
             "Coal India Limited Annual Report 2023-24 (2.87L employees, 773MT production)",
             "Ministry of Coal Annual Report 2023-24"
-          ]
+          ],
+          "informalityPct": 40,
+          "femalePct": 5,
+          "urbanPct": 25,
+          "topSkills": [
+            "Underground Mining",
+            "DGMS Safety Certification",
+            "Drilling & Blasting"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "8111"
         },
         {
           "id": "stone_quarry",
@@ -1148,21 +2159,44 @@
           "educationYears": 5,
           "aiExposure": 12,
           "description": "Granite, marble, sand and aggregate extraction; largely informal, hazardous work.",
-          "sources": ["Ministry of Mines Annual Report 2023-24", "PLFS 2023-24 mining casual workers"]
+          "sources": [
+            "Ministry of Mines Annual Report 2023-24",
+            "PLFS 2023-24 mining casual workers"
+          ],
+          "informalityPct": 92,
+          "femalePct": 15,
+          "urbanPct": 15,
+          "topSkills": [
+            "Quarry Blasting",
+            "Granite/Marble Cutting",
+            "Manual Labour"
+          ],
+          "wageDecile": 1,
+          "iscoCode": "8111"
         },
         {
           "id": "mining_engineers",
           "name": "Mining Engineers & Geologists",
           "workers": 200000,
           "medianSalaryINR": 65000,
-          "growthPct": 5.0,
+          "growthPct": 5,
           "educationYears": 16,
           "aiExposure": 45,
           "description": "Mine planners, geologists for critical minerals (lithium, cobalt, REEs) for EV and defence.",
           "sources": [
             "Ministry of Mines Critical Minerals Strategy 2024",
             "AICTE Mining Engineering Enrolment Data 2024"
-          ]
+          ],
+          "informalityPct": 10,
+          "femalePct": 8,
+          "urbanPct": 70,
+          "topSkills": [
+            "Mine Planning Software",
+            "Critical Minerals Geology",
+            "Remote Sensing"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "2151"
         },
         {
           "id": "oil_gas_workers",
@@ -1176,7 +2210,17 @@
           "sources": [
             "ONGC Annual Report 2023-24",
             "DGH (Directorate General of Hydrocarbons) India Petroleum Statistics 2024"
-          ]
+          ],
+          "informalityPct": 8,
+          "femalePct": 5,
+          "urbanPct": 65,
+          "topSkills": [
+            "Petroleum Engineering",
+            "HAZOP Analysis",
+            "Well Operations (IWCF)"
+          ],
+          "wageDecile": 7,
+          "iscoCode": "8111"
         },
         {
           "id": "mineral_processing",
@@ -1187,7 +2231,44 @@
           "educationYears": 10,
           "aiExposure": 25,
           "description": "Iron ore beneficiation, bauxite processing, smelting. Linked to steel, aluminium sectors.",
-          "sources": ["Ministry of Mines Annual Report 2023-24", "IBM (Indian Bureau of Mines) Statistics 2024"]
+          "sources": [
+            "Ministry of Mines Annual Report 2023-24",
+            "IBM (Indian Bureau of Mines) Statistics 2024"
+          ],
+          "informalityPct": 55,
+          "femalePct": 10,
+          "urbanPct": 40,
+          "topSkills": [
+            "Ore Beneficiation",
+            "Flotation Cells",
+            "Quality Assay"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "8121"
+        },
+        {
+          "id": "critical_minerals_workers",
+          "name": "Critical Minerals & Rare Earth Workers",
+          "workers": 120000,
+          "medianSalaryINR": 38000,
+          "growthPct": 28,
+          "educationYears": 14,
+          "aiExposure": 32,
+          "informalityPct": 20,
+          "femalePct": 8,
+          "urbanPct": 45,
+          "topSkills": [
+            "Lithium / Cobalt Extraction",
+            "Hydrometallurgy",
+            "Supply Chain Traceability"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "2151",
+          "description": "Workers in lithium, cobalt, REE, and graphite extraction critical for India's EV and defence sectors. Mines & Minerals Act 2023 opens new blocks.",
+          "sources": [
+            "Ministry of Mines Critical Minerals Strategy 2024",
+            "KABIL (Khanij Bidesh India Ltd) Annual Report 2023-24"
+          ]
         }
       ]
     },
@@ -1195,7 +2276,7 @@
       "id": "utilities",
       "name": "Electricity, Gas & Water",
       "plfsCode": "NIC D–E",
-      "workers": 2900000,
+      "workers": 2980000,
       "pctWorkforce": 0.5,
       "sectorGrowth": 9.5,
       "color": "#0284c7",
@@ -1218,14 +2299,24 @@
           "sources": [
             "CEA Annual Report 2023-24 (installed capacity 940GW FY24, target 950GW by 2030)",
             "NTPC Annual Report 2023-24"
-          ]
+          ],
+          "informalityPct": 12,
+          "femalePct": 5,
+          "urbanPct": 70,
+          "topSkills": [
+            "SCADA / EMS Systems",
+            "Grid Management",
+            "Transformer Maintenance"
+          ],
+          "wageDecile": 6,
+          "iscoCode": "3131"
         },
         {
           "id": "renewable_energy",
           "name": "Renewable Energy Workers (Solar & Wind)",
           "workers": 400000,
           "medianSalaryINR": 22000,
-          "growthPct": 35.0,
+          "growthPct": 35,
           "educationYears": 12,
           "aiExposure": 30,
           "description": "India's solar capacity 90GW (Mar 2024), targeting 500GW by 2030. Fastest-growing utility employment segment.",
@@ -1233,34 +2324,88 @@
             "MNRE Annual Report 2023-24 (90GW solar, 46GW wind installed)",
             "IRENA India Renewable Energy Employment 2024",
             "TERI Green Jobs in India 2024"
-          ]
+          ],
+          "informalityPct": 35,
+          "femalePct": 18,
+          "urbanPct": 55,
+          "topSkills": [
+            "Solar PV Installation (MNRE)",
+            "Wind Turbine O&M",
+            "Grid Integration"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "3131"
         },
         {
           "id": "water_sanitation_utility",
           "name": "Water Supply & Utility Workers",
           "workers": 800000,
           "medianSalaryINR": 20000,
-          "growthPct": 8.0,
+          "growthPct": 8,
           "educationYears": 10,
           "aiExposure": 22,
           "description": "Jal Jeevan Mission targets tap water to 19Cr rural households; creating large water utility workforce.",
           "sources": [
             "Jal Shakti Ministry Annual Report 2023-24",
             "JJM (Jal Jeevan Mission) Dashboard April 2024 — 14.2Cr connections made"
-          ]
+          ],
+          "informalityPct": 40,
+          "femalePct": 15,
+          "urbanPct": 55,
+          "topSkills": [
+            "Water Treatment (WTP)",
+            "Pipe Maintenance",
+            "Water Quality Testing (IS 10500)"
+          ],
+          "wageDecile": 3,
+          "iscoCode": "3131"
         },
         {
           "id": "gas_distribution",
           "name": "Gas Distribution & Pipeline Workers",
           "workers": 500000,
           "medianSalaryINR": 25000,
-          "growthPct": 12.0,
+          "growthPct": 12,
           "educationYears": 10,
           "aiExposure": 28,
           "description": "City Gas Distribution (CGD) networks expanding. 630+ districts covered under CGD policy.",
           "sources": [
             "PNGRB (Petroleum & Natural Gas Regulatory Board) Annual Report 2023-24",
             "MoPNG (Ministry of Petroleum & Natural Gas) Annual Report 2023-24"
+          ],
+          "informalityPct": 20,
+          "femalePct": 5,
+          "urbanPct": 80,
+          "topSkills": [
+            "CGD Pipeline Safety",
+            "Gas Meter Reading & Billing",
+            "GIS Mapping (PNGRB)"
+          ],
+          "wageDecile": 4,
+          "iscoCode": "3131"
+        },
+        {
+          "id": "nuclear_energy_workers",
+          "name": "Nuclear Energy Workers",
+          "workers": 80000,
+          "medianSalaryINR": 62000,
+          "growthPct": 10,
+          "educationYears": 17,
+          "aiExposure": 22,
+          "informalityPct": 0,
+          "femalePct": 8,
+          "urbanPct": 80,
+          "topSkills": [
+            "Nuclear Reactor Operations",
+            "Radiation Safety (AERB)",
+            "Instrumentation & Control"
+          ],
+          "wageDecile": 8,
+          "iscoCode": "3131",
+          "description": "NPCIL employees across 22 operational reactors (7,480 MW). India targets 20 GW nuclear capacity by 2031-32.",
+          "sources": [
+            "NPCIL Annual Report 2023-24 — 22 reactors, 7,480 MW operational",
+            "DAE Annual Report 2023-24"
           ]
         }
       ]

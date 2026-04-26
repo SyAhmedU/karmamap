@@ -11,10 +11,12 @@ import YearSlider from './components/YearSlider.jsx'
 import { totalWorkforceAtYear } from './utils/timeline.js'
 
 export const LAYERS = [
-  { id: 'growth',    label: 'Employment Growth',  unit: '%/yr',  desc: '5-year CAGR' },
-  { id: 'salary',    label: 'Median Salary',       unit: '₹/mo', desc: 'Monthly median earnings' },
-  { id: 'education', label: 'Education Required',  unit: 'years', desc: 'Formal education years' },
-  { id: 'ai',        label: 'AI Exposure',         unit: '/100',  desc: 'Automation risk score (higher = more exposed)' },
+  { id: 'growth',       label: 'Employment Growth',  unit: '%/yr',  desc: '5-year CAGR' },
+  { id: 'salary',       label: 'Median Salary',       unit: '₹/mo', desc: 'Monthly median earnings' },
+  { id: 'education',    label: 'Education Required',  unit: 'years', desc: 'Formal education years' },
+  { id: 'ai',           label: 'AI Exposure',         unit: '/100',  desc: 'Automation risk score (higher = more exposed)' },
+  { id: 'informality',  label: 'Informality',         unit: '%',     desc: '% workers in informal employment' },
+  { id: 'gender',       label: 'Female Participation', unit: '% ♀', desc: '% female workers in this occupation' },
 ]
 
 export const EXCHANGE_RATE = indiaData.meta.exchangeRate  // 84.5

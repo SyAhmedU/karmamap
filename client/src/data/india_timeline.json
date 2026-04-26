@@ -238,6 +238,50 @@
         "educationYears": 9
       }
     },
+    "agri_engineers_ext": {
+      "2000": {
+        "workers": 2088000,
+        "medianSalaryINR": 2880,
+        "growthPct": 16,
+        "aiExposure": 1,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 1740000,
+        "medianSalaryINR": 5760,
+        "growthPct": 15.5,
+        "aiExposure": 3,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 1296000,
+        "medianSalaryINR": 12060,
+        "growthPct": 15.2,
+        "aiExposure": 13,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 1200000,
+        "medianSalaryINR": 18000,
+        "growthPct": 15,
+        "aiExposure": 28,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 888000,
+        "medianSalaryINR": 32040,
+        "growthPct": 13.8,
+        "aiExposure": 49,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 516000,
+        "medianSalaryINR": 64800,
+        "growthPct": 13,
+        "aiExposure": 74,
+        "educationYears": 16
+      }
+    },
     "construction_workers": {
       "2000": {
         "workers": 21840000,
@@ -500,6 +544,50 @@
         "growthPct": 5.4,
         "aiExposure": 80,
         "educationYears": 10
+      }
+    },
+    "architects_india": {
+      "2000": {
+        "workers": 197600,
+        "medianSalaryINR": 7680,
+        "growthPct": 8.5,
+        "aiExposure": 1,
+        "educationYears": 16
+      },
+      "2010": {
+        "workers": 266000,
+        "medianSalaryINR": 15360,
+        "growthPct": 9.2,
+        "aiExposure": 4,
+        "educationYears": 17
+      },
+      "2020": {
+        "workers": 342000,
+        "medianSalaryINR": 32160,
+        "growthPct": 9.7,
+        "aiExposure": 22,
+        "educationYears": 17
+      },
+      "2025": {
+        "workers": 380000,
+        "medianSalaryINR": 48000,
+        "growthPct": 10,
+        "aiExposure": 48,
+        "educationYears": 17
+      },
+      "2035": {
+        "workers": 463600,
+        "medianSalaryINR": 85440,
+        "growthPct": 10.5,
+        "aiExposure": 84,
+        "educationYears": 18
+      },
+      "2050": {
+        "workers": 448400,
+        "medianSalaryINR": 172800,
+        "growthPct": 9.2,
+        "aiExposure": 97,
+        "educationYears": 19
       }
     },
     "retail_workers": {
@@ -1118,6 +1206,94 @@
         "educationYears": 9
       }
     },
+    "ev_battery_workers": {
+      "2000": {
+        "workers": 167500,
+        "medianSalaryINR": 3520,
+        "growthPct": 42.8,
+        "aiExposure": 1,
+        "educationYears": 11
+      },
+      "2010": {
+        "workers": 195000,
+        "medianSalaryINR": 7040,
+        "growthPct": 42.4,
+        "aiExposure": 3,
+        "educationYears": 12
+      },
+      "2020": {
+        "workers": 227500,
+        "medianSalaryINR": 14740,
+        "growthPct": 42.1,
+        "aiExposure": 16,
+        "educationYears": 12
+      },
+      "2025": {
+        "workers": 250000,
+        "medianSalaryINR": 22000,
+        "growthPct": 42,
+        "aiExposure": 35,
+        "educationYears": 12
+      },
+      "2035": {
+        "workers": 285000,
+        "medianSalaryINR": 39160,
+        "growthPct": 42.3,
+        "aiExposure": 61,
+        "educationYears": 13
+      },
+      "2050": {
+        "workers": 267500,
+        "medianSalaryINR": 79200,
+        "growthPct": 41,
+        "aiExposure": 93,
+        "educationYears": 14
+      }
+    },
+    "defence_manufacturing": {
+      "2000": {
+        "workers": 234500,
+        "medianSalaryINR": 8800,
+        "growthPct": 18.8,
+        "aiExposure": 1,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 273000,
+        "medianSalaryINR": 17600,
+        "growthPct": 18.4,
+        "aiExposure": 3,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 318500,
+        "medianSalaryINR": 36850,
+        "growthPct": 18.1,
+        "aiExposure": 14,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 350000,
+        "medianSalaryINR": 55000,
+        "growthPct": 18,
+        "aiExposure": 30,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 399000,
+        "medianSalaryINR": 97900,
+        "growthPct": 18.3,
+        "aiExposure": 53,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 374500,
+        "medianSalaryINR": 198000,
+        "growthPct": 17,
+        "aiExposure": 80,
+        "educationYears": 17
+      }
+    },
     "software_engineers": {
       "2000": {
         "workers": 20000,
@@ -1470,6 +1646,50 @@
         "educationYears": 17
       }
     },
+    "hardware_network_eng": {
+      "2000": {
+        "workers": 54000,
+        "medianSalaryINR": 6720,
+        "growthPct": 0.5,
+        "aiExposure": 1,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 252000,
+        "medianSalaryINR": 13440,
+        "growthPct": 4.5,
+        "aiExposure": 4,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 900000,
+        "medianSalaryINR": 28140,
+        "growthPct": 6.7,
+        "aiExposure": 21,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 1800000,
+        "medianSalaryINR": 42000,
+        "growthPct": 8.5,
+        "aiExposure": 45,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 4140000,
+        "medianSalaryINR": 74760,
+        "growthPct": 11.5,
+        "aiExposure": 79,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 6840000,
+        "medianSalaryINR": 151200,
+        "growthPct": 10,
+        "aiExposure": 97,
+        "educationYears": 17
+      }
+    },
     "school_teachers": {
       "2000": {
         "workers": 5262400,
@@ -1598,6 +1818,50 @@
         "workers": 2000000,
         "medianSalaryINR": 136800,
         "growthPct": 29,
+        "aiExposure": 97,
+        "educationYears": 17
+      }
+    },
+    "private_tutors": {
+      "2000": {
+        "workers": 4420000,
+        "medianSalaryINR": 2880,
+        "growthPct": 4.8,
+        "aiExposure": 1,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 5950000,
+        "medianSalaryINR": 5760,
+        "growthPct": 5.4,
+        "aiExposure": 4,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 7395000,
+        "medianSalaryINR": 12060,
+        "growthPct": 5.8,
+        "aiExposure": 18,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 8500000,
+        "medianSalaryINR": 18000,
+        "growthPct": 6,
+        "aiExposure": 40,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 10540000,
+        "medianSalaryINR": 32040,
+        "growthPct": 6.6,
+        "aiExposure": 70,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 12750000,
+        "medianSalaryINR": 64800,
+        "growthPct": 7,
         "aiExposure": 97,
         "educationYears": 17
       }
@@ -1866,6 +2130,94 @@
         "educationYears": 18
       }
     },
+    "ayush_practitioners": {
+      "2000": {
+        "workers": 304000,
+        "medianSalaryINR": 4480,
+        "growthPct": 6.5,
+        "aiExposure": 1,
+        "educationYears": 16
+      },
+      "2010": {
+        "workers": 448000,
+        "medianSalaryINR": 8960,
+        "growthPct": 7.2,
+        "aiExposure": 2,
+        "educationYears": 17
+      },
+      "2020": {
+        "workers": 640000,
+        "medianSalaryINR": 18760,
+        "growthPct": 8.2,
+        "aiExposure": 9,
+        "educationYears": 17
+      },
+      "2025": {
+        "workers": 800000,
+        "medianSalaryINR": 28000,
+        "growthPct": 9,
+        "aiExposure": 20,
+        "educationYears": 17
+      },
+      "2035": {
+        "workers": 1280000,
+        "medianSalaryINR": 49840,
+        "growthPct": 11.5,
+        "aiExposure": 35,
+        "educationYears": 18
+      },
+      "2050": {
+        "workers": 2000000,
+        "medianSalaryINR": 100800,
+        "growthPct": 12,
+        "aiExposure": 53,
+        "educationYears": 19
+      }
+    },
+    "mental_health_workers": {
+      "2000": {
+        "workers": 45600,
+        "medianSalaryINR": 7200,
+        "growthPct": 19.5,
+        "aiExposure": 1,
+        "educationYears": 16
+      },
+      "2010": {
+        "workers": 67200,
+        "medianSalaryINR": 14400,
+        "growthPct": 20.2,
+        "aiExposure": 3,
+        "educationYears": 17
+      },
+      "2020": {
+        "workers": 96000,
+        "medianSalaryINR": 30150,
+        "growthPct": 21.2,
+        "aiExposure": 15,
+        "educationYears": 17
+      },
+      "2025": {
+        "workers": 120000,
+        "medianSalaryINR": 45000,
+        "growthPct": 22,
+        "aiExposure": 32,
+        "educationYears": 17
+      },
+      "2035": {
+        "workers": 192000,
+        "medianSalaryINR": 80100,
+        "growthPct": 24.5,
+        "aiExposure": 56,
+        "educationYears": 18
+      },
+      "2050": {
+        "workers": 300000,
+        "medianSalaryINR": 162000,
+        "growthPct": 25,
+        "aiExposure": 85,
+        "educationYears": 19
+      }
+    },
     "truck_drivers": {
       "2000": {
         "workers": 5850000,
@@ -2128,6 +2480,50 @@
         "growthPct": 8.8,
         "aiExposure": 97,
         "educationYears": 12
+      }
+    },
+    "metro_urban_transit": {
+      "2000": {
+        "workers": 126000,
+        "medianSalaryINR": 5120,
+        "growthPct": 23,
+        "aiExposure": 1,
+        "educationYears": 11
+      },
+      "2010": {
+        "workers": 168000,
+        "medianSalaryINR": 10240,
+        "growthPct": 23.8,
+        "aiExposure": 2,
+        "educationYears": 12
+      },
+      "2020": {
+        "workers": 235200,
+        "medianSalaryINR": 21440,
+        "growthPct": 24.5,
+        "aiExposure": 12,
+        "educationYears": 12
+      },
+      "2025": {
+        "workers": 280000,
+        "medianSalaryINR": 32000,
+        "growthPct": 25,
+        "aiExposure": 25,
+        "educationYears": 12
+      },
+      "2035": {
+        "workers": 364000,
+        "medianSalaryINR": 56960,
+        "growthPct": 27.5,
+        "aiExposure": 44,
+        "educationYears": 13
+      },
+      "2050": {
+        "workers": 397600,
+        "medianSalaryINR": 115200,
+        "growthPct": 25.8,
+        "aiExposure": 66,
+        "educationYears": 14
       }
     },
     "bank_employees": {
@@ -2394,6 +2790,50 @@
         "educationYears": 14
       }
     },
+    "mutual_fund_agents": {
+      "2000": {
+        "workers": 54000,
+        "medianSalaryINR": 5600,
+        "growthPct": 17,
+        "aiExposure": 2,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 90000,
+        "medianSalaryINR": 11200,
+        "growthPct": 18,
+        "aiExposure": 5,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 144000,
+        "medianSalaryINR": 23450,
+        "growthPct": 19.2,
+        "aiExposure": 23,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 180000,
+        "medianSalaryINR": 35000,
+        "growthPct": 20,
+        "aiExposure": 50,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 241200,
+        "medianSalaryINR": 62300,
+        "growthPct": 22,
+        "aiExposure": 88,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 279000,
+        "medianSalaryINR": 126000,
+        "growthPct": 20.8,
+        "aiExposure": 97,
+        "educationYears": 16
+      }
+    },
     "civil_servants": {
       "2000": {
         "workers": 2240000,
@@ -2568,6 +3008,50 @@
         "growthPct": -0.3,
         "aiExposure": 97,
         "educationYears": 17
+      }
+    },
+    "armed_forces": {
+      "2000": {
+        "workers": 980000,
+        "medianSalaryINR": 7680,
+        "growthPct": 1,
+        "aiExposure": 1,
+        "educationYears": 11
+      },
+      "2010": {
+        "workers": 1120000,
+        "medianSalaryINR": 15360,
+        "growthPct": 0.7,
+        "aiExposure": 2,
+        "educationYears": 12
+      },
+      "2020": {
+        "workers": 1288000,
+        "medianSalaryINR": 32160,
+        "growthPct": 0.5,
+        "aiExposure": 8,
+        "educationYears": 12
+      },
+      "2025": {
+        "workers": 1400000,
+        "medianSalaryINR": 48000,
+        "growthPct": 0.5,
+        "aiExposure": 18,
+        "educationYears": 12
+      },
+      "2035": {
+        "workers": 1484000,
+        "medianSalaryINR": 85440,
+        "growthPct": 0.2,
+        "aiExposure": 32,
+        "educationYears": 13
+      },
+      "2050": {
+        "workers": 1512000,
+        "medianSalaryINR": 172800,
+        "growthPct": -0.3,
+        "aiExposure": 48,
+        "educationYears": 14
       }
     },
     "domestic_workers": {
@@ -2746,6 +3230,50 @@
         "educationYears": 7
       }
     },
+    "gig_home_services": {
+      "2000": {
+        "workers": 660000,
+        "medianSalaryINR": 2880,
+        "growthPct": 35.8,
+        "aiExposure": 1,
+        "educationYears": 8
+      },
+      "2010": {
+        "workers": 840000,
+        "medianSalaryINR": 5760,
+        "growthPct": 35.3,
+        "aiExposure": 2,
+        "educationYears": 9
+      },
+      "2020": {
+        "workers": 1044000,
+        "medianSalaryINR": 12060,
+        "growthPct": 35,
+        "aiExposure": 12,
+        "educationYears": 9
+      },
+      "2025": {
+        "workers": 1200000,
+        "medianSalaryINR": 18000,
+        "growthPct": 35,
+        "aiExposure": 25,
+        "educationYears": 9
+      },
+      "2035": {
+        "workers": 1368000,
+        "medianSalaryINR": 32040,
+        "growthPct": 35.3,
+        "aiExposure": 44,
+        "educationYears": 10
+      },
+      "2050": {
+        "workers": 1440000,
+        "medianSalaryINR": 64800,
+        "growthPct": 34.2,
+        "aiExposure": 66,
+        "educationYears": 11
+      }
+    },
     "film_entertainment": {
       "2000": {
         "workers": 90000,
@@ -2920,6 +3448,50 @@
         "growthPct": 15,
         "aiExposure": 97,
         "educationYears": 17
+      }
+    },
+    "gaming_esports": {
+      "2000": {
+        "workers": 27000,
+        "medianSalaryINR": 6400,
+        "growthPct": 30,
+        "aiExposure": 1,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 54000,
+        "medianSalaryINR": 12800,
+        "growthPct": 34,
+        "aiExposure": 4,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 102000,
+        "medianSalaryINR": 26800,
+        "growthPct": 35.5,
+        "aiExposure": 21,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 150000,
+        "medianSalaryINR": 40000,
+        "growthPct": 38,
+        "aiExposure": 45,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 292500,
+        "medianSalaryINR": 71200,
+        "growthPct": 42,
+        "aiExposure": 79,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 450000,
+        "medianSalaryINR": 144000,
+        "growthPct": 41,
+        "aiExposure": 97,
+        "educationYears": 16
       }
     },
     "coal_miners": {
@@ -3142,6 +3714,50 @@
         "educationYears": 12
       }
     },
+    "critical_minerals_workers": {
+      "2000": {
+        "workers": 98400,
+        "medianSalaryINR": 6080,
+        "growthPct": 29.5,
+        "aiExposure": 1,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 108000,
+        "medianSalaryINR": 12160,
+        "growthPct": 28.8,
+        "aiExposure": 3,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 116400,
+        "medianSalaryINR": 25460,
+        "growthPct": 28.3,
+        "aiExposure": 15,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 120000,
+        "medianSalaryINR": 38000,
+        "growthPct": 28,
+        "aiExposure": 32,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 105600,
+        "medianSalaryINR": 67640,
+        "growthPct": 26,
+        "aiExposure": 56,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 81600,
+        "medianSalaryINR": 136800,
+        "growthPct": 24.5,
+        "aiExposure": 85,
+        "educationYears": 16
+      }
+    },
     "power_utility": {
       "2000": {
         "workers": 528000,
@@ -3316,6 +3932,50 @@
         "growthPct": 16.5,
         "aiExposure": 74,
         "educationYears": 12
+      }
+    },
+    "nuclear_energy_workers": {
+      "2000": {
+        "workers": 35200,
+        "medianSalaryINR": 9920,
+        "growthPct": 7,
+        "aiExposure": 1,
+        "educationYears": 16
+      },
+      "2010": {
+        "workers": 46400,
+        "medianSalaryINR": 19840,
+        "growthPct": 8,
+        "aiExposure": 2,
+        "educationYears": 17
+      },
+      "2020": {
+        "workers": 63200,
+        "medianSalaryINR": 41540,
+        "growthPct": 9.2,
+        "aiExposure": 10,
+        "educationYears": 17
+      },
+      "2025": {
+        "workers": 80000,
+        "medianSalaryINR": 62000,
+        "growthPct": 10,
+        "aiExposure": 22,
+        "educationYears": 17
+      },
+      "2035": {
+        "workers": 129600,
+        "medianSalaryINR": 110360,
+        "growthPct": 13.5,
+        "aiExposure": 39,
+        "educationYears": 18
+      },
+      "2050": {
+        "workers": 192000,
+        "medianSalaryINR": 223200,
+        "growthPct": 14.5,
+        "aiExposure": 58,
+        "educationYears": 19
       }
     }
   }

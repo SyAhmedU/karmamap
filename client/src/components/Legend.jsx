@@ -37,38 +37,44 @@ export default function Legend({ layer, currency, region }) {
   const salaryMin = currency === 'usd' ? '$60' : '₹5K'
   const salaryMax = isWorld ? '$13K' : (currency === 'usd' ? '$1.6K' : '₹135K')
 
+  const TITLE = {
+    growth:      'Employment Growth (5-yr CAGR)',
+    salary:      `Median Monthly Salary (${currency === 'usd' ? 'USD' : 'INR'})`,
+    education:   'Education Required (years)',
+    ai:          'AI Automation Exposure',
+    informality: 'Informal Employment (%)',
+    gender:      'Female Workers (%)',
+  }
+
   return (
     <div className="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-xl p-3 z-30 pointer-events-none">
       <p className="text-slate-500 text-[9px] uppercase tracking-widest font-bold mb-2">
-        {layer === 'growth'    && 'Employment Growth (5-yr CAGR)'}
-        {layer === 'salary'    && `Median Monthly Salary (${currency === 'usd' ? 'USD' : 'INR'})`}
-        {layer === 'education' && 'Education Required (years)'}
-        {layer === 'ai'        && 'AI Automation Exposure'}
+        {TITLE[layer] || layer}
       </p>
 
       {layer === 'growth' && (
-        <GradBar
-          gradient="linear-gradient(to right, #991b1b, #92400e, #15803d, #86efac)"
-          minLabel="−5% (declining)" maxLabel="+48% (booming)"
-        />
+        <GradBar gradient="linear-gradient(to right, #991b1b, #92400e, #15803d, #86efac)"
+          minLabel="−5% (declining)" maxLabel="+48% (booming)" />
       )}
       {layer === 'salary' && (
-        <GradBar
-          gradient="linear-gradient(to right, #1e3a5f, #38bdf8)"
-          minLabel={salaryMin} maxLabel={salaryMax}
-        />
+        <GradBar gradient="linear-gradient(to right, #1e3a5f, #38bdf8)"
+          minLabel={salaryMin} maxLabel={salaryMax} />
       )}
       {layer === 'education' && (
-        <GradBar
-          gradient="linear-gradient(to right, #2d1657, #7c3aed, #a78bfa)"
-          minLabel="4 yrs" maxLabel="21 yrs"
-        />
+        <GradBar gradient="linear-gradient(to right, #2d1657, #7c3aed, #a78bfa)"
+          minLabel="4 yrs" maxLabel="21 yrs" />
       )}
       {layer === 'ai' && (
-        <GradBar
-          gradient="linear-gradient(to right, #14532d, #f59e0b, #ef4444)"
-          minLabel="0 — Low risk" maxLabel="100 — High risk"
-        />
+        <GradBar gradient="linear-gradient(to right, #14532d, #f59e0b, #ef4444)"
+          minLabel="0 — Safe" maxLabel="100 — High risk" />
+      )}
+      {layer === 'informality' && (
+        <GradBar gradient="linear-gradient(to right, #0f4c75, #9b1c1c)"
+          minLabel="0% — Fully formal" maxLabel="99% — Fully informal" />
+      )}
+      {layer === 'gender' && (
+        <GradBar gradient="linear-gradient(to right, #1e3a8a, #7e22ce, #9d174d)"
+          minLabel="0% — Male dominated" maxLabel="100% — Female dominated" />
       )}
 
       <div className="flex items-center gap-3 mt-2 pt-2 border-t border-slate-800">

@@ -39,6 +39,18 @@ function aiColor(v) {
   return lerp('#14532d', '#ef4444', t)
 }
 
+function informalityColor(v) {
+  const t = Math.min(v / 100, 1)
+  // formal (0%) = teal-blue, highly informal (100%) = dark red
+  return lerp('#0f4c75', '#9b1c1c', t)
+}
+
+function genderColor(v) {
+  // 0% female = deep blue, 50% = purple, 100% female = deep pink
+  if (v <= 50) return lerp('#1e3a8a', '#7e22ce', v / 50)
+  return lerp('#7e22ce', '#9d174d', (v - 50) / 50)
+}
+
 // Normalise salary to USD regardless of source dataset
 function salaryUSD(occ) {
   return occ.medianSalaryUSD ?? (occ.medianSalaryINR / EXCHANGE_RATE)
@@ -46,11 +58,13 @@ function salaryUSD(occ) {
 
 export function getColor(occupation, layer, currency) {
   switch (layer) {
-    case 'growth':    return growthColor(occupation.growthPct)
-    case 'salary':    return salaryColor(salaryUSD(occupation), 'usd')
-    case 'education': return educationColor(occupation.educationYears)
-    case 'ai':        return aiColor(occupation.aiExposure)
-    default:          return '#334155'
+    case 'growth':      return growthColor(occupation.growthPct)
+    case 'salary':      return salaryColor(salaryUSD(occupation), 'usd')
+    case 'education':   return educationColor(occupation.educationYears)
+    case 'ai':          return aiColor(occupation.aiExposure)
+    case 'informality': return informalityColor(occupation.informalityPct ?? 50)
+    case 'gender':      return genderColor(occupation.femalePct ?? 30)
+    default:            return '#334155'
   }
 }
 
@@ -74,11 +88,13 @@ function fmtSalary(occ, currency) {
 
 function fmtLayer(occ, layer, currency) {
   switch (layer) {
-    case 'growth':    return occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`
-    case 'salary':    return fmtSalary(occ, currency)
-    case 'education': return `${occ.educationYears}yr`
-    case 'ai':        return `${occ.aiExposure}/100`
-    default:          return ''
+    case 'growth':      return occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`
+    case 'salary':      return fmtSalary(occ, currency)
+    case 'education':   return `${occ.educationYears}yr`
+    case 'ai':          return `${occ.aiExposure}/100`
+    case 'informality': return `${occ.informalityPct ?? '?'}% inf`
+    case 'gender':      return `${occ.femalePct ?? '?'}% ♀`
+    default:            return ''
   }
 }
 
@@ -267,11 +283,15 @@ function Tooltip({ x, y, n, layer, currency, dims }) {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-1">
-          <Stat label="Workers" val={fmtWorkers(occ.workers)} />
-          <Stat label="Growth"  val={occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`} hi={occ.growthPct > 5} lo={occ.growthPct < 0} />
+          <Stat label="Workers"    val={fmtWorkers(occ.workers)} />
+          <Stat label="Growth"     val={occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`} hi={occ.growthPct > 5} lo={occ.growthPct < 0} />
           <Stat label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} val={fmtSalary(occ, currency)} />
           <Stat label="AI Exposure" val={`${occ.aiExposure}/100`} hi={occ.aiExposure > 60} lo={occ.aiExposure < 25} />
-          <Stat label="Education" val={`${occ.educationYears} yrs`} />
+          <Stat label="Education"  val={`${occ.educationYears} yrs`} />
+          {occ.informalityPct != null && <Stat label="Informal %" val={`${occ.informalityPct}%`} lo={occ.informalityPct > 70} />}
+          {occ.femalePct      != null && <Stat label="Female %"   val={`${occ.femalePct}%`} />}
+          {occ.topSkills?.length      && <Stat label="Top Skill"  val={occ.topSkills[0]} />}
+          {occ.iscoCode               && <Stat label="ISCO-08"    val={occ.iscoCode} />}
         </div>
       </div>
     </div>
