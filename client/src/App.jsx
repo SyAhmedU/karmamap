@@ -7,6 +7,8 @@ import DetailPanel from './components/DetailPanel.jsx'
 import LayerPicker from './components/LayerPicker.jsx'
 import Legend from './components/Legend.jsx'
 import LLMScorer from './components/LLMScorer.jsx'
+import YearSlider from './components/YearSlider.jsx'
+import { totalWorkforceAtYear } from './utils/timeline.js'
 
 export const LAYERS = [
   { id: 'growth',    label: 'Employment Growth',  unit: '%/yr',  desc: '5-year CAGR' },
@@ -24,6 +26,7 @@ export default function App() {
   const [selected, setSelected] = useState(null)
   const [showLLM, setShowLLM]   = useState(false)
   const [search, setSearch]     = useState('')
+  const [year, setYear]         = useState(2025)
 
   const data = region === 'india' ? indiaData : region === 'states' ? statesData : worldData
 
@@ -42,9 +45,10 @@ export default function App() {
     else setCurrency('inr')
   }
 
+  const wfAtYear = totalWorkforceAtYear(region, year) ?? data.meta.totalWorkforce
   const totalLabel = region === 'world'
-    ? `${(data.meta.totalWorkforce / 1e9).toFixed(2)}B workers`
-    : `${(data.meta.totalWorkforce / 1e6).toFixed(0)}M workers`
+    ? `${(wfAtYear / 1e9).toFixed(2)}B workers`
+    : `${(wfAtYear / 1e6).toFixed(0)}M workers`
 
   return (
     <div className="flex flex-col h-screen bg-[#0f172a] select-none">
@@ -112,6 +116,9 @@ export default function App() {
       {/* Layer picker */}
       <LayerPicker layer={layer} onLayer={setLayer} currency={effectiveCurrency} />
 
+      {/* Year slider */}
+      <YearSlider year={year} onYear={setYear} />
+
       {/* Main content */}
       <div className="flex flex-1 overflow-hidden">
         <div key={region} className="flex-1 relative overflow-hidden view-fade">
@@ -122,6 +129,8 @@ export default function App() {
             selected={selected}
             onSelect={setSelected}
             search={search}
+            year={year}
+            region={region}
           />
           <Legend layer={layer} currency={effectiveCurrency} region={region} />
         </div>
@@ -137,6 +146,7 @@ export default function App() {
                 occupation={selected.occupation}
                 currency={effectiveCurrency}
                 region={region}
+                year={year}
                 onClose={() => setSelected(null)}
               />
             )}

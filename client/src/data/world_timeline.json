@@ -1,0 +1,2750 @@
+{
+  "meta": {
+    "years": [
+      2000,
+      2010,
+      2020,
+      2025,
+      2035,
+      2050
+    ],
+    "totalWorkforce": {
+      "2000": 2740000000,
+      "2010": 3020000000,
+      "2020": 3160000000,
+      "2025": 3320000000,
+      "2035": 3520000000,
+      "2050": 3680000000
+    }
+  },
+  "occupations": {
+    "crop_farmers": {
+      "2000": {
+        "workers": 550000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0,
+        "aiExposure": 0,
+        "educationYears": 5
+      },
+      "2010": {
+        "workers": 520000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -0.6,
+        "aiExposure": 1,
+        "educationYears": 6
+      },
+      "2020": {
+        "workers": 510000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -1,
+        "aiExposure": 6,
+        "educationYears": 6
+      },
+      "2025": {
+        "workers": 500000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -1.2,
+        "aiExposure": 14,
+        "educationYears": 6
+      },
+      "2035": {
+        "workers": 420000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -2.2,
+        "aiExposure": 25,
+        "educationYears": 7
+      },
+      "2050": {
+        "workers": 290000000,
+        "medianSalaryUSD": 630,
+        "growthPct": -3,
+        "aiExposure": 37,
+        "educationYears": 8
+      }
+    },
+    "livestock_dairy": {
+      "2000": {
+        "workers": 110000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 2.4,
+        "aiExposure": 1,
+        "educationYears": 5
+      },
+      "2010": {
+        "workers": 118000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1.8,
+        "aiExposure": 2,
+        "educationYears": 6
+      },
+      "2020": {
+        "workers": 125000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1.4,
+        "aiExposure": 8,
+        "educationYears": 6
+      },
+      "2025": {
+        "workers": 130000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1.2,
+        "aiExposure": 18,
+        "educationYears": 6
+      },
+      "2035": {
+        "workers": 128000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0.2,
+        "aiExposure": 32,
+        "educationYears": 7
+      },
+      "2050": {
+        "workers": 110000000,
+        "medianSalaryUSD": 675,
+        "growthPct": -0.6,
+        "aiExposure": 48,
+        "educationYears": 8
+      }
+    },
+    "fisheries_global": {
+      "2000": {
+        "workers": 55000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 3.7,
+        "aiExposure": 1,
+        "educationYears": 6
+      },
+      "2010": {
+        "workers": 58000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 3.1,
+        "aiExposure": 2,
+        "educationYears": 7
+      },
+      "2020": {
+        "workers": 59000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 2.7,
+        "aiExposure": 9,
+        "educationYears": 7
+      },
+      "2025": {
+        "workers": 60000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 2.5,
+        "aiExposure": 20,
+        "educationYears": 7
+      },
+      "2035": {
+        "workers": 62000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1.5,
+        "aiExposure": 35,
+        "educationYears": 8
+      },
+      "2050": {
+        "workers": 58000000,
+        "medianSalaryUSD": 788,
+        "growthPct": 0.7,
+        "aiExposure": 53,
+        "educationYears": 9
+      }
+    },
+    "agri_wage_labour": {
+      "2000": {
+        "workers": 230000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -0.8,
+        "aiExposure": 0,
+        "educationYears": 4
+      },
+      "2010": {
+        "workers": 218000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -1.4,
+        "aiExposure": 1,
+        "educationYears": 4
+      },
+      "2020": {
+        "workers": 205000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -1.8,
+        "aiExposure": 7,
+        "educationYears": 4
+      },
+      "2025": {
+        "workers": 194000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -2,
+        "aiExposure": 16,
+        "educationYears": 4
+      },
+      "2035": {
+        "workers": 160000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -3,
+        "aiExposure": 28,
+        "educationYears": 5
+      },
+      "2050": {
+        "workers": 110000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -3.8,
+        "aiExposure": 42,
+        "educationYears": 6
+      }
+    },
+    "factory_assembly": {
+      "2000": {
+        "workers": 129600000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0.5,
+        "aiExposure": 2,
+        "educationYears": 8
+      },
+      "2010": {
+        "workers": 147600000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0,
+        "aiExposure": 5,
+        "educationYears": 9
+      },
+      "2020": {
+        "workers": 167400000,
+        "medianSalaryUSD": 508,
+        "growthPct": -0.3,
+        "aiExposure": 25,
+        "educationYears": 9
+      },
+      "2025": {
+        "workers": 180000000,
+        "medianSalaryUSD": 620,
+        "growthPct": -0.5,
+        "aiExposure": 55,
+        "educationYears": 9
+      },
+      "2035": {
+        "workers": 187200000,
+        "medianSalaryUSD": 868,
+        "growthPct": -1,
+        "aiExposure": 96,
+        "educationYears": 10
+      },
+      "2050": {
+        "workers": 165600000,
+        "medianSalaryUSD": 1395,
+        "growthPct": -1.7,
+        "aiExposure": 97,
+        "educationYears": 11
+      }
+    },
+    "garment_textile_global": {
+      "2000": {
+        "workers": 54000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 2.2,
+        "aiExposure": 1,
+        "educationYears": 7
+      },
+      "2010": {
+        "workers": 61500000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1.7,
+        "aiExposure": 4,
+        "educationYears": 8
+      },
+      "2020": {
+        "workers": 69750000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1.4,
+        "aiExposure": 21,
+        "educationYears": 8
+      },
+      "2025": {
+        "workers": 75000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1.2,
+        "aiExposure": 45,
+        "educationYears": 8
+      },
+      "2035": {
+        "workers": 78000000,
+        "medianSalaryUSD": 532,
+        "growthPct": 0.7,
+        "aiExposure": 79,
+        "educationYears": 9
+      },
+      "2050": {
+        "workers": 69000000,
+        "medianSalaryUSD": 855,
+        "growthPct": 0,
+        "aiExposure": 97,
+        "educationYears": 10
+      }
+    },
+    "food_beverage_mfg": {
+      "2000": {
+        "workers": 57600000,
+        "medianSalaryUSD": 500,
+        "growthPct": 3.8,
+        "aiExposure": 1,
+        "educationYears": 8
+      },
+      "2010": {
+        "workers": 65600000,
+        "medianSalaryUSD": 500,
+        "growthPct": 3.3,
+        "aiExposure": 3,
+        "educationYears": 9
+      },
+      "2020": {
+        "workers": 74400000,
+        "medianSalaryUSD": 574,
+        "growthPct": 3,
+        "aiExposure": 15,
+        "educationYears": 9
+      },
+      "2025": {
+        "workers": 80000000,
+        "medianSalaryUSD": 700,
+        "growthPct": 2.8,
+        "aiExposure": 32,
+        "educationYears": 9
+      },
+      "2035": {
+        "workers": 83200000,
+        "medianSalaryUSD": 980,
+        "growthPct": 2.3,
+        "aiExposure": 56,
+        "educationYears": 10
+      },
+      "2050": {
+        "workers": 73600000,
+        "medianSalaryUSD": 1575,
+        "growthPct": 1.6,
+        "aiExposure": 85,
+        "educationYears": 11
+      }
+    },
+    "auto_engineering_global": {
+      "2000": {
+        "workers": 36000000,
+        "medianSalaryUSD": 900,
+        "growthPct": 4.5,
+        "aiExposure": 1,
+        "educationYears": 11
+      },
+      "2010": {
+        "workers": 41000000,
+        "medianSalaryUSD": 1152,
+        "growthPct": 4,
+        "aiExposure": 4,
+        "educationYears": 12
+      },
+      "2020": {
+        "workers": 46500000,
+        "medianSalaryUSD": 1476,
+        "growthPct": 3.7,
+        "aiExposure": 22,
+        "educationYears": 12
+      },
+      "2025": {
+        "workers": 50000000,
+        "medianSalaryUSD": 1800,
+        "growthPct": 3.5,
+        "aiExposure": 48,
+        "educationYears": 12
+      },
+      "2035": {
+        "workers": 52000000,
+        "medianSalaryUSD": 2520,
+        "growthPct": 3,
+        "aiExposure": 84,
+        "educationYears": 13
+      },
+      "2050": {
+        "workers": 46000000,
+        "medianSalaryUSD": 4050,
+        "growthPct": 2.3,
+        "aiExposure": 97,
+        "educationYears": 14
+      }
+    },
+    "electronics_global": {
+      "2000": {
+        "workers": 57600000,
+        "medianSalaryUSD": 700,
+        "growthPct": 6.5,
+        "aiExposure": 1,
+        "educationYears": 11
+      },
+      "2010": {
+        "workers": 65600000,
+        "medianSalaryUSD": 896,
+        "growthPct": 6,
+        "aiExposure": 4,
+        "educationYears": 12
+      },
+      "2020": {
+        "workers": 74400000,
+        "medianSalaryUSD": 1148,
+        "growthPct": 5.7,
+        "aiExposure": 19,
+        "educationYears": 12
+      },
+      "2025": {
+        "workers": 80000000,
+        "medianSalaryUSD": 1400,
+        "growthPct": 5.5,
+        "aiExposure": 42,
+        "educationYears": 12
+      },
+      "2035": {
+        "workers": 83200000,
+        "medianSalaryUSD": 1960,
+        "growthPct": 5,
+        "aiExposure": 74,
+        "educationYears": 13
+      },
+      "2050": {
+        "workers": 73600000,
+        "medianSalaryUSD": 3150,
+        "growthPct": 4.3,
+        "aiExposure": 97,
+        "educationYears": 14
+      }
+    },
+    "pharma_chemical_global": {
+      "2000": {
+        "workers": 49680000,
+        "medianSalaryUSD": 1100,
+        "growthPct": 5.2,
+        "aiExposure": 1,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 56580000,
+        "medianSalaryUSD": 1408,
+        "growthPct": 4.7,
+        "aiExposure": 3,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 64170000,
+        "medianSalaryUSD": 1804,
+        "growthPct": 4.4,
+        "aiExposure": 16,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 69000000,
+        "medianSalaryUSD": 2200,
+        "growthPct": 4.2,
+        "aiExposure": 35,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 71760000,
+        "medianSalaryUSD": 3080,
+        "growthPct": 3.7,
+        "aiExposure": 61,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 63480000,
+        "medianSalaryUSD": 4950,
+        "growthPct": 3,
+        "aiExposure": 93,
+        "educationYears": 16
+      }
+    },
+    "retail_workers_global": {
+      "2000": {
+        "workers": 120000000,
+        "medianSalaryUSD": 550,
+        "growthPct": -0.7,
+        "aiExposure": 1,
+        "educationYears": 9
+      },
+      "2010": {
+        "workers": 148000000,
+        "medianSalaryUSD": 704,
+        "growthPct": 0,
+        "aiExposure": 3,
+        "educationYears": 10
+      },
+      "2020": {
+        "workers": 180000000,
+        "medianSalaryUSD": 902,
+        "growthPct": 0.5,
+        "aiExposure": 17,
+        "educationYears": 10
+      },
+      "2025": {
+        "workers": 200000000,
+        "medianSalaryUSD": 1100,
+        "growthPct": 0.8,
+        "aiExposure": 38,
+        "educationYears": 10
+      },
+      "2035": {
+        "workers": 210000000,
+        "medianSalaryUSD": 1540,
+        "growthPct": 1,
+        "aiExposure": 67,
+        "educationYears": 11
+      },
+      "2050": {
+        "workers": 180000000,
+        "medianSalaryUSD": 2475,
+        "growthPct": -0.2,
+        "aiExposure": 97,
+        "educationYears": 12
+      }
+    },
+    "ecommerce_global": {
+      "2000": {
+        "workers": 0,
+        "medianSalaryUSD": 1100,
+        "growthPct": 17,
+        "aiExposure": 2,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 3000000,
+        "medianSalaryUSD": 1408,
+        "growthPct": 17.7,
+        "aiExposure": 5,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 18000000,
+        "medianSalaryUSD": 1804,
+        "growthPct": 18.2,
+        "aiExposure": 24,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 50000000,
+        "medianSalaryUSD": 2200,
+        "growthPct": 18.5,
+        "aiExposure": 52,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 140000000,
+        "medianSalaryUSD": 3080,
+        "growthPct": 18.7,
+        "aiExposure": 91,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 210000000,
+        "medianSalaryUSD": 4950,
+        "growthPct": 17.5,
+        "aiExposure": 97,
+        "educationYears": 15
+      }
+    },
+    "wholesale_distribution_global": {
+      "2000": {
+        "workers": 90000000,
+        "medianSalaryUSD": 700,
+        "growthPct": 1,
+        "aiExposure": 1,
+        "educationYears": 11
+      },
+      "2010": {
+        "workers": 111000000,
+        "medianSalaryUSD": 896,
+        "growthPct": 1.7,
+        "aiExposure": 4,
+        "educationYears": 12
+      },
+      "2020": {
+        "workers": 135000000,
+        "medianSalaryUSD": 1148,
+        "growthPct": 2.2,
+        "aiExposure": 18,
+        "educationYears": 12
+      },
+      "2025": {
+        "workers": 150000000,
+        "medianSalaryUSD": 1400,
+        "growthPct": 2.5,
+        "aiExposure": 40,
+        "educationYears": 12
+      },
+      "2035": {
+        "workers": 157500000,
+        "medianSalaryUSD": 1960,
+        "growthPct": 2.7,
+        "aiExposure": 70,
+        "educationYears": 13
+      },
+      "2050": {
+        "workers": 135000000,
+        "medianSalaryUSD": 3150,
+        "growthPct": 1.5,
+        "aiExposure": 97,
+        "educationYears": 14
+      }
+    },
+    "street_informal_trade": {
+      "2000": {
+        "workers": 145000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -2.5,
+        "aiExposure": 0,
+        "educationYears": 4
+      },
+      "2010": {
+        "workers": 130000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -1.8,
+        "aiExposure": 1,
+        "educationYears": 5
+      },
+      "2020": {
+        "workers": 115000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -1.3,
+        "aiExposure": 4,
+        "educationYears": 5
+      },
+      "2025": {
+        "workers": 101000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -1,
+        "aiExposure": 8,
+        "educationYears": 5
+      },
+      "2035": {
+        "workers": 85000000,
+        "medianSalaryUSD": 500,
+        "growthPct": -0.8,
+        "aiExposure": 14,
+        "educationYears": 6
+      },
+      "2050": {
+        "workers": 62000000,
+        "medianSalaryUSD": 788,
+        "growthPct": -2,
+        "aiExposure": 21,
+        "educationYears": 7
+      }
+    },
+    "construction_workers_global": {
+      "2000": {
+        "workers": 60500000,
+        "medianSalaryUSD": 600,
+        "growthPct": 2.5,
+        "aiExposure": 1,
+        "educationYears": 6
+      },
+      "2010": {
+        "workers": 77000000,
+        "medianSalaryUSD": 768,
+        "growthPct": 3,
+        "aiExposure": 2,
+        "educationYears": 7
+      },
+      "2020": {
+        "workers": 96800000,
+        "medianSalaryUSD": 984,
+        "growthPct": 3.3,
+        "aiExposure": 8,
+        "educationYears": 7
+      },
+      "2025": {
+        "workers": 110000000,
+        "medianSalaryUSD": 1200,
+        "growthPct": 3.5,
+        "aiExposure": 18,
+        "educationYears": 7
+      },
+      "2035": {
+        "workers": 129800000,
+        "medianSalaryUSD": 1680,
+        "growthPct": 4,
+        "aiExposure": 32,
+        "educationYears": 8
+      },
+      "2050": {
+        "workers": 123200000,
+        "medianSalaryUSD": 2700,
+        "growthPct": 3,
+        "aiExposure": 48,
+        "educationYears": 9
+      }
+    },
+    "civil_engineers_global": {
+      "2000": {
+        "workers": 11000000,
+        "medianSalaryUSD": 2400,
+        "growthPct": 4.5,
+        "aiExposure": 2,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 14000000,
+        "medianSalaryUSD": 3072,
+        "growthPct": 5,
+        "aiExposure": 5,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 17600000,
+        "medianSalaryUSD": 3936,
+        "growthPct": 5.3,
+        "aiExposure": 23,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 20000000,
+        "medianSalaryUSD": 4800,
+        "growthPct": 5.5,
+        "aiExposure": 50,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 23600000,
+        "medianSalaryUSD": 6720,
+        "growthPct": 6,
+        "aiExposure": 88,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 22400000,
+        "medianSalaryUSD": 10800,
+        "growthPct": 5,
+        "aiExposure": 97,
+        "educationYears": 18
+      }
+    },
+    "skilled_trades_global": {
+      "2000": {
+        "workers": 24750000,
+        "medianSalaryUSD": 1400,
+        "growthPct": 4.8,
+        "aiExposure": 1,
+        "educationYears": 10
+      },
+      "2010": {
+        "workers": 31500000,
+        "medianSalaryUSD": 1792,
+        "growthPct": 5.3,
+        "aiExposure": 2,
+        "educationYears": 11
+      },
+      "2020": {
+        "workers": 39600000,
+        "medianSalaryUSD": 2296,
+        "growthPct": 5.6,
+        "aiExposure": 10,
+        "educationYears": 11
+      },
+      "2025": {
+        "workers": 45000000,
+        "medianSalaryUSD": 2800,
+        "growthPct": 5.8,
+        "aiExposure": 22,
+        "educationYears": 11
+      },
+      "2035": {
+        "workers": 53100000,
+        "medianSalaryUSD": 3920,
+        "growthPct": 6.3,
+        "aiExposure": 39,
+        "educationYears": 12
+      },
+      "2050": {
+        "workers": 50400000,
+        "medianSalaryUSD": 6300,
+        "growthPct": 5.3,
+        "aiExposure": 58,
+        "educationYears": 13
+      }
+    },
+    "real_estate_global": {
+      "2000": {
+        "workers": 13200000,
+        "medianSalaryUSD": 1600,
+        "growthPct": 1.2,
+        "aiExposure": 2,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 16800000,
+        "medianSalaryUSD": 2048,
+        "growthPct": 1.7,
+        "aiExposure": 5,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 21120000,
+        "medianSalaryUSD": 2624,
+        "growthPct": 2,
+        "aiExposure": 24,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 24000000,
+        "medianSalaryUSD": 3200,
+        "growthPct": 2.2,
+        "aiExposure": 52,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 28320000,
+        "medianSalaryUSD": 4480,
+        "growthPct": 2.7,
+        "aiExposure": 91,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 26880000,
+        "medianSalaryUSD": 7200,
+        "growthPct": 1.7,
+        "aiExposure": 97,
+        "educationYears": 16
+      }
+    },
+    "truck_drivers_global": {
+      "2000": {
+        "workers": 16800000,
+        "medianSalaryUSD": 1100,
+        "growthPct": 1,
+        "aiExposure": 2,
+        "educationYears": 8
+      },
+      "2010": {
+        "workers": 21700000,
+        "medianSalaryUSD": 1408,
+        "growthPct": 1.7,
+        "aiExposure": 6,
+        "educationYears": 9
+      },
+      "2020": {
+        "workers": 29400000,
+        "medianSalaryUSD": 1804,
+        "growthPct": 2.2,
+        "aiExposure": 31,
+        "educationYears": 9
+      },
+      "2025": {
+        "workers": 35000000,
+        "medianSalaryUSD": 2200,
+        "growthPct": 2.5,
+        "aiExposure": 68,
+        "educationYears": 9
+      },
+      "2035": {
+        "workers": 42700000,
+        "medianSalaryUSD": 3080,
+        "growthPct": 4,
+        "aiExposure": 97,
+        "educationYears": 10
+      },
+      "2050": {
+        "workers": 41300000,
+        "medianSalaryUSD": 4950,
+        "growthPct": 3,
+        "aiExposure": 97,
+        "educationYears": 11
+      }
+    },
+    "ride_gig_global": {
+      "2000": {
+        "workers": 0,
+        "medianSalaryUSD": 500,
+        "growthPct": 13.5,
+        "aiExposure": 2,
+        "educationYears": 8
+      },
+      "2010": {
+        "workers": 500000,
+        "medianSalaryUSD": 512,
+        "growthPct": 14.2,
+        "aiExposure": 5,
+        "educationYears": 9
+      },
+      "2020": {
+        "workers": 18000000,
+        "medianSalaryUSD": 656,
+        "growthPct": 14.7,
+        "aiExposure": 25,
+        "educationYears": 9
+      },
+      "2025": {
+        "workers": 55000000,
+        "medianSalaryUSD": 800,
+        "growthPct": 15,
+        "aiExposure": 55,
+        "educationYears": 9
+      },
+      "2035": {
+        "workers": 180000000,
+        "medianSalaryUSD": 1120,
+        "growthPct": 16.5,
+        "aiExposure": 96,
+        "educationYears": 10
+      },
+      "2050": {
+        "workers": 260000000,
+        "medianSalaryUSD": 1800,
+        "growthPct": 15.5,
+        "aiExposure": 97,
+        "educationYears": 11
+      }
+    },
+    "aviation_global": {
+      "2000": {
+        "workers": 4800000,
+        "medianSalaryUSD": 2750,
+        "growthPct": 8,
+        "aiExposure": 1,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 6200000,
+        "medianSalaryUSD": 3520,
+        "growthPct": 8.7,
+        "aiExposure": 3,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 8400000,
+        "medianSalaryUSD": 4510,
+        "growthPct": 9.2,
+        "aiExposure": 13,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 10000000,
+        "medianSalaryUSD": 5500,
+        "growthPct": 9.5,
+        "aiExposure": 28,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 12200000,
+        "medianSalaryUSD": 7700,
+        "growthPct": 11,
+        "aiExposure": 49,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 11800000,
+        "medianSalaryUSD": 12375,
+        "growthPct": 10,
+        "aiExposure": 74,
+        "educationYears": 17
+      }
+    },
+    "maritime_shipping": {
+      "2000": {
+        "workers": 13440000,
+        "medianSalaryUSD": 1400,
+        "growthPct": 1.7,
+        "aiExposure": 1,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 17360000,
+        "medianSalaryUSD": 1792,
+        "growthPct": 2.4,
+        "aiExposure": 3,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 23520000,
+        "medianSalaryUSD": 2296,
+        "growthPct": 2.9,
+        "aiExposure": 16,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 28000000,
+        "medianSalaryUSD": 2800,
+        "growthPct": 3.2,
+        "aiExposure": 35,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 34160000,
+        "medianSalaryUSD": 3920,
+        "growthPct": 4.7,
+        "aiExposure": 61,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 33040000,
+        "medianSalaryUSD": 6300,
+        "growthPct": 3.7,
+        "aiExposure": 93,
+        "educationYears": 15
+      }
+    },
+    "logistics_warehouse_global": {
+      "2000": {
+        "workers": 34080000,
+        "medianSalaryUSD": 750,
+        "growthPct": 11,
+        "aiExposure": 1,
+        "educationYears": 9
+      },
+      "2010": {
+        "workers": 44020000,
+        "medianSalaryUSD": 960,
+        "growthPct": 11.7,
+        "aiExposure": 4,
+        "educationYears": 10
+      },
+      "2020": {
+        "workers": 59640000,
+        "medianSalaryUSD": 1230,
+        "growthPct": 12.2,
+        "aiExposure": 22,
+        "educationYears": 10
+      },
+      "2025": {
+        "workers": 71000000,
+        "medianSalaryUSD": 1500,
+        "growthPct": 12.5,
+        "aiExposure": 48,
+        "educationYears": 10
+      },
+      "2035": {
+        "workers": 86620000,
+        "medianSalaryUSD": 2100,
+        "growthPct": 14,
+        "aiExposure": 84,
+        "educationYears": 11
+      },
+      "2050": {
+        "workers": 83780000,
+        "medianSalaryUSD": 3375,
+        "growthPct": 13,
+        "aiExposure": 97,
+        "educationYears": 12
+      }
+    },
+    "doctors_global": {
+      "2000": {
+        "workers": 4800000,
+        "medianSalaryUSD": 2750,
+        "growthPct": 5.5,
+        "aiExposure": 1,
+        "educationYears": 18
+      },
+      "2010": {
+        "workers": 6960000,
+        "medianSalaryUSD": 3520,
+        "growthPct": 6,
+        "aiExposure": 3,
+        "educationYears": 19
+      },
+      "2020": {
+        "workers": 9600000,
+        "medianSalaryUSD": 4510,
+        "growthPct": 7,
+        "aiExposure": 17,
+        "educationYears": 19
+      },
+      "2025": {
+        "workers": 12000000,
+        "medianSalaryUSD": 5500,
+        "growthPct": 7.5,
+        "aiExposure": 38,
+        "educationYears": 19
+      },
+      "2035": {
+        "workers": 18600000,
+        "medianSalaryUSD": 7700,
+        "growthPct": 9.5,
+        "aiExposure": 67,
+        "educationYears": 20
+      },
+      "2050": {
+        "workers": 27600000,
+        "medianSalaryUSD": 12375,
+        "growthPct": 10.5,
+        "aiExposure": 97,
+        "educationYears": 21
+      }
+    },
+    "nurses_global": {
+      "2000": {
+        "workers": 11160000,
+        "medianSalaryUSD": 1400,
+        "growthPct": 10,
+        "aiExposure": 1,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 16182000,
+        "medianSalaryUSD": 1792,
+        "growthPct": 10.5,
+        "aiExposure": 3,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 22320000,
+        "medianSalaryUSD": 2296,
+        "growthPct": 11.5,
+        "aiExposure": 14,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 27900000,
+        "medianSalaryUSD": 2800,
+        "growthPct": 12,
+        "aiExposure": 30,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 43245000,
+        "medianSalaryUSD": 3920,
+        "growthPct": 14,
+        "aiExposure": 53,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 64170000,
+        "medianSalaryUSD": 6300,
+        "growthPct": 15,
+        "aiExposure": 80,
+        "educationYears": 15
+      }
+    },
+    "community_health_global": {
+      "2000": {
+        "workers": 12000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 6.5,
+        "aiExposure": 1,
+        "educationYears": 9
+      },
+      "2010": {
+        "workers": 17400000,
+        "medianSalaryUSD": 576,
+        "growthPct": 7,
+        "aiExposure": 2,
+        "educationYears": 10
+      },
+      "2020": {
+        "workers": 24000000,
+        "medianSalaryUSD": 738,
+        "growthPct": 8,
+        "aiExposure": 8,
+        "educationYears": 10
+      },
+      "2025": {
+        "workers": 30000000,
+        "medianSalaryUSD": 900,
+        "growthPct": 8.5,
+        "aiExposure": 18,
+        "educationYears": 10
+      },
+      "2035": {
+        "workers": 46500000,
+        "medianSalaryUSD": 1260,
+        "growthPct": 10.5,
+        "aiExposure": 32,
+        "educationYears": 11
+      },
+      "2050": {
+        "workers": 69000000,
+        "medianSalaryUSD": 2025,
+        "growthPct": 11.5,
+        "aiExposure": 48,
+        "educationYears": 12
+      }
+    },
+    "elderly_care": {
+      "2000": {
+        "workers": 12000000,
+        "medianSalaryUSD": 800,
+        "growthPct": 12,
+        "aiExposure": 1,
+        "educationYears": 10
+      },
+      "2010": {
+        "workers": 18000000,
+        "medianSalaryUSD": 1024,
+        "growthPct": 12.5,
+        "aiExposure": 2,
+        "educationYears": 11
+      },
+      "2020": {
+        "workers": 26000000,
+        "medianSalaryUSD": 1312,
+        "growthPct": 13.5,
+        "aiExposure": 10,
+        "educationYears": 11
+      },
+      "2025": {
+        "workers": 33100000,
+        "medianSalaryUSD": 1600,
+        "growthPct": 14,
+        "aiExposure": 22,
+        "educationYears": 11
+      },
+      "2035": {
+        "workers": 55000000,
+        "medianSalaryUSD": 2240,
+        "growthPct": 16,
+        "aiExposure": 39,
+        "educationYears": 12
+      },
+      "2050": {
+        "workers": 95000000,
+        "medianSalaryUSD": 3600,
+        "growthPct": 17,
+        "aiExposure": 58,
+        "educationYears": 13
+      }
+    },
+    "school_teachers_global": {
+      "2000": {
+        "workers": 37400000,
+        "medianSalaryUSD": 1000,
+        "growthPct": 1.8,
+        "aiExposure": 1,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 47600000,
+        "medianSalaryUSD": 1280,
+        "growthPct": 2.3,
+        "aiExposure": 3,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 59160000,
+        "medianSalaryUSD": 1640,
+        "growthPct": 2.6,
+        "aiExposure": 15,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 68000000,
+        "medianSalaryUSD": 2000,
+        "growthPct": 2.8,
+        "aiExposure": 32,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 80240000,
+        "medianSalaryUSD": 2800,
+        "growthPct": 3.6,
+        "aiExposure": 56,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 91800000,
+        "medianSalaryUSD": 4500,
+        "growthPct": 4,
+        "aiExposure": 85,
+        "educationYears": 16
+      }
+    },
+    "higher_ed_global": {
+      "2000": {
+        "workers": 6600000,
+        "medianSalaryUSD": 2250,
+        "growthPct": 2.5,
+        "aiExposure": 1,
+        "educationYears": 19
+      },
+      "2010": {
+        "workers": 8400000,
+        "medianSalaryUSD": 2880,
+        "growthPct": 3,
+        "aiExposure": 4,
+        "educationYears": 20
+      },
+      "2020": {
+        "workers": 10440000,
+        "medianSalaryUSD": 3690,
+        "growthPct": 3.3,
+        "aiExposure": 19,
+        "educationYears": 20
+      },
+      "2025": {
+        "workers": 12000000,
+        "medianSalaryUSD": 4500,
+        "growthPct": 3.5,
+        "aiExposure": 42,
+        "educationYears": 20
+      },
+      "2035": {
+        "workers": 14160000,
+        "medianSalaryUSD": 6300,
+        "growthPct": 4.3,
+        "aiExposure": 74,
+        "educationYears": 21
+      },
+      "2050": {
+        "workers": 16200000,
+        "medianSalaryUSD": 10125,
+        "growthPct": 4.7,
+        "aiExposure": 97,
+        "educationYears": 22
+      }
+    },
+    "edtech_global": {
+      "2000": {
+        "workers": 0,
+        "medianSalaryUSD": 1900,
+        "growthPct": 21,
+        "aiExposure": 2,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 200000,
+        "medianSalaryUSD": 2432,
+        "growthPct": 21.5,
+        "aiExposure": 5,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 3000000,
+        "medianSalaryUSD": 3116,
+        "growthPct": 21.8,
+        "aiExposure": 25,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 10000000,
+        "medianSalaryUSD": 3800,
+        "growthPct": 22,
+        "aiExposure": 55,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 35000000,
+        "medianSalaryUSD": 5320,
+        "growthPct": 22.8,
+        "aiExposure": 96,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 80000000,
+        "medianSalaryUSD": 8550,
+        "growthPct": 23.2,
+        "aiExposure": 97,
+        "educationYears": 17
+      }
+    },
+    "software_engineers_global": {
+      "2000": {
+        "workers": 800000,
+        "medianSalaryUSD": 3400,
+        "growthPct": 6,
+        "aiExposure": 2,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 6000000,
+        "medianSalaryUSD": 4352,
+        "growthPct": 10,
+        "aiExposure": 6,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 18000000,
+        "medianSalaryUSD": 5576,
+        "growthPct": 12,
+        "aiExposure": 32,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 28000000,
+        "medianSalaryUSD": 6800,
+        "growthPct": 14,
+        "aiExposure": 70,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 60000000,
+        "medianSalaryUSD": 9520,
+        "growthPct": 17,
+        "aiExposure": 97,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 110000000,
+        "medianSalaryUSD": 15300,
+        "growthPct": 16,
+        "aiExposure": 97,
+        "educationYears": 18
+      }
+    },
+    "ai_ml_global": {
+      "2000": {
+        "workers": 0,
+        "medianSalaryUSD": 6250,
+        "growthPct": 44,
+        "aiExposure": 1,
+        "educationYears": 17
+      },
+      "2010": {
+        "workers": 20000,
+        "medianSalaryUSD": 8000,
+        "growthPct": 48,
+        "aiExposure": 3,
+        "educationYears": 18
+      },
+      "2020": {
+        "workers": 300000,
+        "medianSalaryUSD": 10250,
+        "growthPct": 50,
+        "aiExposure": 15,
+        "educationYears": 18
+      },
+      "2025": {
+        "workers": 2000000,
+        "medianSalaryUSD": 12500,
+        "growthPct": 52,
+        "aiExposure": 32,
+        "educationYears": 18
+      },
+      "2035": {
+        "workers": 12000000,
+        "medianSalaryUSD": 17500,
+        "growthPct": 55,
+        "aiExposure": 56,
+        "educationYears": 19
+      },
+      "2050": {
+        "workers": 45000000,
+        "medianSalaryUSD": 28125,
+        "growthPct": 54,
+        "aiExposure": 85,
+        "educationYears": 20
+      }
+    },
+    "cybersecurity_global": {
+      "2000": {
+        "workers": 200000,
+        "medianSalaryUSD": 4250,
+        "growthPct": 27,
+        "aiExposure": 1,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 800000,
+        "medianSalaryUSD": 5440,
+        "growthPct": 31,
+        "aiExposure": 3,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 3000000,
+        "medianSalaryUSD": 6970,
+        "growthPct": 33,
+        "aiExposure": 16,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 5500000,
+        "medianSalaryUSD": 8500,
+        "growthPct": 35,
+        "aiExposure": 35,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 18000000,
+        "medianSalaryUSD": 11900,
+        "growthPct": 38,
+        "aiExposure": 61,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 40000000,
+        "medianSalaryUSD": 19125,
+        "growthPct": 37,
+        "aiExposure": 93,
+        "educationYears": 18
+      }
+    },
+    "cloud_devops_global": {
+      "2000": {
+        "workers": 0,
+        "medianSalaryUSD": 4750,
+        "growthPct": 20,
+        "aiExposure": 2,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 200000,
+        "medianSalaryUSD": 6080,
+        "growthPct": 24,
+        "aiExposure": 5,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 2500000,
+        "medianSalaryUSD": 7790,
+        "growthPct": 26,
+        "aiExposure": 24,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 8000000,
+        "medianSalaryUSD": 9500,
+        "growthPct": 28,
+        "aiExposure": 52,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 30000000,
+        "medianSalaryUSD": 13300,
+        "growthPct": 31,
+        "aiExposure": 91,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 80000000,
+        "medianSalaryUSD": 21375,
+        "growthPct": 30,
+        "aiExposure": 97,
+        "educationYears": 18
+      }
+    },
+    "data_analysts_global": {
+      "2000": {
+        "workers": 480000,
+        "medianSalaryUSD": 3600,
+        "growthPct": 20,
+        "aiExposure": 1,
+        "educationYears": 16
+      },
+      "2010": {
+        "workers": 1920000,
+        "medianSalaryUSD": 4608,
+        "growthPct": 24,
+        "aiExposure": 4,
+        "educationYears": 17
+      },
+      "2020": {
+        "workers": 6240000,
+        "medianSalaryUSD": 5904,
+        "growthPct": 26,
+        "aiExposure": 21,
+        "educationYears": 17
+      },
+      "2025": {
+        "workers": 12000000,
+        "medianSalaryUSD": 7200,
+        "growthPct": 28,
+        "aiExposure": 45,
+        "educationYears": 17
+      },
+      "2035": {
+        "workers": 26400000,
+        "medianSalaryUSD": 10080,
+        "growthPct": 31,
+        "aiExposure": 79,
+        "educationYears": 18
+      },
+      "2050": {
+        "workers": 43200000,
+        "medianSalaryUSD": 16200,
+        "growthPct": 30,
+        "aiExposure": 97,
+        "educationYears": 19
+      }
+    },
+    "it_support_bpo_global": {
+      "2000": {
+        "workers": 2000000,
+        "medianSalaryUSD": 1100,
+        "growthPct": -4.5,
+        "aiExposure": 2,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 12000000,
+        "medianSalaryUSD": 1408,
+        "growthPct": -0.5,
+        "aiExposure": 6,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 22000000,
+        "medianSalaryUSD": 1804,
+        "growthPct": 1.5,
+        "aiExposure": 33,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 24500000,
+        "medianSalaryUSD": 2200,
+        "growthPct": 3.5,
+        "aiExposure": 72,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 18000000,
+        "medianSalaryUSD": 3080,
+        "growthPct": 6.5,
+        "aiExposure": 97,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 9000000,
+        "medianSalaryUSD": 4950,
+        "growthPct": 5.5,
+        "aiExposure": 97,
+        "educationYears": 15
+      }
+    },
+    "bank_employees_global": {
+      "2000": {
+        "workers": 7000000,
+        "medianSalaryUSD": 1400,
+        "growthPct": -1,
+        "aiExposure": 2,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 11000000,
+        "medianSalaryUSD": 1792,
+        "growthPct": 0,
+        "aiExposure": 6,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 16400000,
+        "medianSalaryUSD": 2296,
+        "growthPct": 1,
+        "aiExposure": 30,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 20000000,
+        "medianSalaryUSD": 2800,
+        "growthPct": 1.5,
+        "aiExposure": 65,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 25600000,
+        "medianSalaryUSD": 3920,
+        "growthPct": 3,
+        "aiExposure": 97,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 29000000,
+        "medianSalaryUSD": 6300,
+        "growthPct": 2,
+        "aiExposure": 97,
+        "educationYears": 17
+      }
+    },
+    "fintech_global": {
+      "2000": {
+        "workers": 0,
+        "medianSalaryUSD": 3750,
+        "growthPct": 25.5,
+        "aiExposure": 2,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 100000,
+        "medianSalaryUSD": 4800,
+        "growthPct": 26.5,
+        "aiExposure": 5,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 1500000,
+        "medianSalaryUSD": 6150,
+        "growthPct": 27.5,
+        "aiExposure": 25,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 5000000,
+        "medianSalaryUSD": 7500,
+        "growthPct": 28,
+        "aiExposure": 55,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 22000000,
+        "medianSalaryUSD": 10500,
+        "growthPct": 29.5,
+        "aiExposure": 96,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 60000000,
+        "medianSalaryUSD": 16875,
+        "growthPct": 28.5,
+        "aiExposure": 97,
+        "educationYears": 18
+      }
+    },
+    "investment_advisors_global": {
+      "2000": {
+        "workers": 1750000,
+        "medianSalaryUSD": 3600,
+        "growthPct": 3,
+        "aiExposure": 2,
+        "educationYears": 16
+      },
+      "2010": {
+        "workers": 2750000,
+        "medianSalaryUSD": 4608,
+        "growthPct": 4,
+        "aiExposure": 5,
+        "educationYears": 17
+      },
+      "2020": {
+        "workers": 4100000,
+        "medianSalaryUSD": 5904,
+        "growthPct": 5,
+        "aiExposure": 27,
+        "educationYears": 17
+      },
+      "2025": {
+        "workers": 5000000,
+        "medianSalaryUSD": 7200,
+        "growthPct": 5.5,
+        "aiExposure": 58,
+        "educationYears": 17
+      },
+      "2035": {
+        "workers": 6400000,
+        "medianSalaryUSD": 10080,
+        "growthPct": 7,
+        "aiExposure": 97,
+        "educationYears": 18
+      },
+      "2050": {
+        "workers": 7250000,
+        "medianSalaryUSD": 16200,
+        "growthPct": 6,
+        "aiExposure": 97,
+        "educationYears": 19
+      }
+    },
+    "insurance_global": {
+      "2000": {
+        "workers": 7000000,
+        "medianSalaryUSD": 1100,
+        "growthPct": 0.7,
+        "aiExposure": 2,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 11000000,
+        "medianSalaryUSD": 1408,
+        "growthPct": 1.7,
+        "aiExposure": 5,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 16400000,
+        "medianSalaryUSD": 1804,
+        "growthPct": 2.7,
+        "aiExposure": 27,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 20000000,
+        "medianSalaryUSD": 2200,
+        "growthPct": 3.2,
+        "aiExposure": 58,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 25600000,
+        "medianSalaryUSD": 3080,
+        "growthPct": 4.7,
+        "aiExposure": 97,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 29000000,
+        "medianSalaryUSD": 4950,
+        "growthPct": 3.7,
+        "aiExposure": 97,
+        "educationYears": 15
+      }
+    },
+    "accounting_audit_global": {
+      "2000": {
+        "workers": 3500000,
+        "medianSalaryUSD": 2250,
+        "growthPct": 0,
+        "aiExposure": 2,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 5500000,
+        "medianSalaryUSD": 2880,
+        "growthPct": 1,
+        "aiExposure": 6,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 8200000,
+        "medianSalaryUSD": 3690,
+        "growthPct": 2,
+        "aiExposure": 30,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 10000000,
+        "medianSalaryUSD": 4500,
+        "growthPct": 2.5,
+        "aiExposure": 65,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 12800000,
+        "medianSalaryUSD": 6300,
+        "growthPct": 4,
+        "aiExposure": 97,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 14500000,
+        "medianSalaryUSD": 10125,
+        "growthPct": 3,
+        "aiExposure": 97,
+        "educationYears": 18
+      }
+    },
+    "civil_servants_global": {
+      "2000": {
+        "workers": 46800000,
+        "medianSalaryUSD": 1250,
+        "growthPct": 1.3,
+        "aiExposure": 1,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 53300000,
+        "medianSalaryUSD": 1600,
+        "growthPct": 1.2,
+        "aiExposure": 4,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 59800000,
+        "medianSalaryUSD": 2050,
+        "growthPct": 1,
+        "aiExposure": 18,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 65000000,
+        "medianSalaryUSD": 2500,
+        "growthPct": 1,
+        "aiExposure": 40,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 67600000,
+        "medianSalaryUSD": 3500,
+        "growthPct": 0.8,
+        "aiExposure": 70,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 68900000,
+        "medianSalaryUSD": 5625,
+        "growthPct": 0.5,
+        "aiExposure": 97,
+        "educationYears": 18
+      }
+    },
+    "police_military_global": {
+      "2000": {
+        "workers": 39600000,
+        "medianSalaryUSD": 900,
+        "growthPct": 2.3,
+        "aiExposure": 1,
+        "educationYears": 11
+      },
+      "2010": {
+        "workers": 45100000,
+        "medianSalaryUSD": 1152,
+        "growthPct": 2.2,
+        "aiExposure": 2,
+        "educationYears": 12
+      },
+      "2020": {
+        "workers": 50600000,
+        "medianSalaryUSD": 1476,
+        "growthPct": 2,
+        "aiExposure": 12,
+        "educationYears": 12
+      },
+      "2025": {
+        "workers": 55000000,
+        "medianSalaryUSD": 1800,
+        "growthPct": 2,
+        "aiExposure": 25,
+        "educationYears": 12
+      },
+      "2035": {
+        "workers": 57200000,
+        "medianSalaryUSD": 2520,
+        "growthPct": 1.8,
+        "aiExposure": 44,
+        "educationYears": 13
+      },
+      "2050": {
+        "workers": 58300000,
+        "medianSalaryUSD": 4050,
+        "growthPct": 1.5,
+        "aiExposure": 66,
+        "educationYears": 14
+      }
+    },
+    "social_workers_global": {
+      "2000": {
+        "workers": 20880000,
+        "medianSalaryUSD": 1100,
+        "growthPct": 5.8,
+        "aiExposure": 1,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 23780000,
+        "medianSalaryUSD": 1408,
+        "growthPct": 5.7,
+        "aiExposure": 3,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 26680000,
+        "medianSalaryUSD": 1804,
+        "growthPct": 5.5,
+        "aiExposure": 13,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 29000000,
+        "medianSalaryUSD": 2200,
+        "growthPct": 5.5,
+        "aiExposure": 28,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 30160000,
+        "medianSalaryUSD": 3080,
+        "growthPct": 5.3,
+        "aiExposure": 49,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 30740000,
+        "medianSalaryUSD": 4950,
+        "growthPct": 5,
+        "aiExposure": 74,
+        "educationYears": 17
+      }
+    },
+    "lawyers_legal": {
+      "2000": {
+        "workers": 2560000,
+        "medianSalaryUSD": 3750,
+        "growthPct": 1.5,
+        "aiExposure": 2,
+        "educationYears": 18
+      },
+      "2010": {
+        "workers": 4160000,
+        "medianSalaryUSD": 4800,
+        "growthPct": 3,
+        "aiExposure": 6,
+        "educationYears": 19
+      },
+      "2020": {
+        "workers": 6400000,
+        "medianSalaryUSD": 6150,
+        "growthPct": 4,
+        "aiExposure": 29,
+        "educationYears": 19
+      },
+      "2025": {
+        "workers": 8000000,
+        "medianSalaryUSD": 7500,
+        "growthPct": 4.5,
+        "aiExposure": 62,
+        "educationYears": 19
+      },
+      "2035": {
+        "workers": 11200000,
+        "medianSalaryUSD": 10500,
+        "growthPct": 6.5,
+        "aiExposure": 97,
+        "educationYears": 20
+      },
+      "2050": {
+        "workers": 14400000,
+        "medianSalaryUSD": 16875,
+        "growthPct": 6,
+        "aiExposure": 97,
+        "educationYears": 21
+      }
+    },
+    "consultants_mgmt": {
+      "2000": {
+        "workers": 1600000,
+        "medianSalaryUSD": 4250,
+        "growthPct": 5.5,
+        "aiExposure": 2,
+        "educationYears": 17
+      },
+      "2010": {
+        "workers": 2600000,
+        "medianSalaryUSD": 5440,
+        "growthPct": 7,
+        "aiExposure": 5,
+        "educationYears": 18
+      },
+      "2020": {
+        "workers": 4000000,
+        "medianSalaryUSD": 6970,
+        "growthPct": 8,
+        "aiExposure": 25,
+        "educationYears": 18
+      },
+      "2025": {
+        "workers": 5000000,
+        "medianSalaryUSD": 8500,
+        "growthPct": 8.5,
+        "aiExposure": 55,
+        "educationYears": 18
+      },
+      "2035": {
+        "workers": 7000000,
+        "medianSalaryUSD": 11900,
+        "growthPct": 10.5,
+        "aiExposure": 96,
+        "educationYears": 19
+      },
+      "2050": {
+        "workers": 9000000,
+        "medianSalaryUSD": 19125,
+        "growthPct": 10,
+        "aiExposure": 97,
+        "educationYears": 20
+      }
+    },
+    "marketing_advertising_global": {
+      "2000": {
+        "workers": 8000000,
+        "medianSalaryUSD": 1750,
+        "growthPct": 5,
+        "aiExposure": 2,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 13000000,
+        "medianSalaryUSD": 2240,
+        "growthPct": 6.5,
+        "aiExposure": 6,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 20000000,
+        "medianSalaryUSD": 2870,
+        "growthPct": 7.5,
+        "aiExposure": 29,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 25000000,
+        "medianSalaryUSD": 3500,
+        "growthPct": 8,
+        "aiExposure": 62,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 35000000,
+        "medianSalaryUSD": 4900,
+        "growthPct": 10,
+        "aiExposure": 97,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 45000000,
+        "medianSalaryUSD": 7875,
+        "growthPct": 9.5,
+        "aiExposure": 97,
+        "educationYears": 17
+      }
+    },
+    "architects_designers": {
+      "2000": {
+        "workers": 1600000,
+        "medianSalaryUSD": 2100,
+        "growthPct": 1.5,
+        "aiExposure": 2,
+        "educationYears": 16
+      },
+      "2010": {
+        "workers": 2600000,
+        "medianSalaryUSD": 2688,
+        "growthPct": 3,
+        "aiExposure": 5,
+        "educationYears": 17
+      },
+      "2020": {
+        "workers": 4000000,
+        "medianSalaryUSD": 3444,
+        "growthPct": 4,
+        "aiExposure": 25,
+        "educationYears": 17
+      },
+      "2025": {
+        "workers": 5000000,
+        "medianSalaryUSD": 4200,
+        "growthPct": 4.5,
+        "aiExposure": 55,
+        "educationYears": 17
+      },
+      "2035": {
+        "workers": 7000000,
+        "medianSalaryUSD": 5880,
+        "growthPct": 6.5,
+        "aiExposure": 96,
+        "educationYears": 18
+      },
+      "2050": {
+        "workers": 9000000,
+        "medianSalaryUSD": 9450,
+        "growthPct": 6,
+        "aiExposure": 97,
+        "educationYears": 19
+      }
+    },
+    "hr_recruiters": {
+      "2000": {
+        "workers": 3200000,
+        "medianSalaryUSD": 1600,
+        "growthPct": 2.5,
+        "aiExposure": 2,
+        "educationYears": 14
+      },
+      "2010": {
+        "workers": 5200000,
+        "medianSalaryUSD": 2048,
+        "growthPct": 4,
+        "aiExposure": 5,
+        "educationYears": 15
+      },
+      "2020": {
+        "workers": 8000000,
+        "medianSalaryUSD": 2624,
+        "growthPct": 5,
+        "aiExposure": 27,
+        "educationYears": 15
+      },
+      "2025": {
+        "workers": 10000000,
+        "medianSalaryUSD": 3200,
+        "growthPct": 5.5,
+        "aiExposure": 58,
+        "educationYears": 15
+      },
+      "2035": {
+        "workers": 14000000,
+        "medianSalaryUSD": 4480,
+        "growthPct": 7.5,
+        "aiExposure": 97,
+        "educationYears": 16
+      },
+      "2050": {
+        "workers": 18000000,
+        "medianSalaryUSD": 7200,
+        "growthPct": 7,
+        "aiExposure": 97,
+        "educationYears": 17
+      }
+    },
+    "scientists_researchers": {
+      "2000": {
+        "workers": 2880000,
+        "medianSalaryUSD": 3250,
+        "growthPct": 3.5,
+        "aiExposure": 1,
+        "educationYears": 20
+      },
+      "2010": {
+        "workers": 4680000,
+        "medianSalaryUSD": 4160,
+        "growthPct": 5,
+        "aiExposure": 3,
+        "educationYears": 21
+      },
+      "2020": {
+        "workers": 7200000,
+        "medianSalaryUSD": 5330,
+        "growthPct": 6,
+        "aiExposure": 17,
+        "educationYears": 21
+      },
+      "2025": {
+        "workers": 9000000,
+        "medianSalaryUSD": 6500,
+        "growthPct": 6.5,
+        "aiExposure": 38,
+        "educationYears": 21
+      },
+      "2035": {
+        "workers": 12600000,
+        "medianSalaryUSD": 9100,
+        "growthPct": 8.5,
+        "aiExposure": 67,
+        "educationYears": 22
+      },
+      "2050": {
+        "workers": 16200000,
+        "medianSalaryUSD": 14625,
+        "growthPct": 8,
+        "aiExposure": 97,
+        "educationYears": 23
+      }
+    },
+    "journalists_media_global": {
+      "2000": {
+        "workers": 3200000,
+        "medianSalaryUSD": 1400,
+        "growthPct": -5.5,
+        "aiExposure": 2,
+        "educationYears": 15
+      },
+      "2010": {
+        "workers": 5200000,
+        "medianSalaryUSD": 1792,
+        "growthPct": -4,
+        "aiExposure": 6,
+        "educationYears": 16
+      },
+      "2020": {
+        "workers": 8000000,
+        "medianSalaryUSD": 2296,
+        "growthPct": -3,
+        "aiExposure": 30,
+        "educationYears": 16
+      },
+      "2025": {
+        "workers": 10000000,
+        "medianSalaryUSD": 2800,
+        "growthPct": -2.5,
+        "aiExposure": 65,
+        "educationYears": 16
+      },
+      "2035": {
+        "workers": 14000000,
+        "medianSalaryUSD": 3920,
+        "growthPct": -0.5,
+        "aiExposure": 97,
+        "educationYears": 17
+      },
+      "2050": {
+        "workers": 18000000,
+        "medianSalaryUSD": 6300,
+        "growthPct": -1,
+        "aiExposure": 97,
+        "educationYears": 18
+      }
+    },
+    "accountants_global_pro": {
+      "2000": {
+        "workers": 24640000,
+        "medianSalaryUSD": 900,
+        "growthPct": -4.5,
+        "aiExposure": 2,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 40040000,
+        "medianSalaryUSD": 1152,
+        "growthPct": -3,
+        "aiExposure": 6,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 61600000,
+        "medianSalaryUSD": 1476,
+        "growthPct": -2,
+        "aiExposure": 32,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 77000000,
+        "medianSalaryUSD": 1800,
+        "growthPct": -1.5,
+        "aiExposure": 70,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 107800000,
+        "medianSalaryUSD": 2520,
+        "growthPct": 0.5,
+        "aiExposure": 97,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 138600000,
+        "medianSalaryUSD": 4050,
+        "growthPct": 0,
+        "aiExposure": 97,
+        "educationYears": 15
+      }
+    },
+    "fossil_fuel_workers": {
+      "2000": {
+        "workers": 18000000,
+        "medianSalaryUSD": 2100,
+        "growthPct": -1,
+        "aiExposure": 1,
+        "educationYears": 13
+      },
+      "2010": {
+        "workers": 18500000,
+        "medianSalaryUSD": 2688,
+        "growthPct": -1.7,
+        "aiExposure": 3,
+        "educationYears": 14
+      },
+      "2020": {
+        "workers": 16000000,
+        "medianSalaryUSD": 3444,
+        "growthPct": -2.2,
+        "aiExposure": 16,
+        "educationYears": 14
+      },
+      "2025": {
+        "workers": 12000000,
+        "medianSalaryUSD": 4200,
+        "growthPct": -2.5,
+        "aiExposure": 35,
+        "educationYears": 14
+      },
+      "2035": {
+        "workers": 7000000,
+        "medianSalaryUSD": 5880,
+        "growthPct": -4,
+        "aiExposure": 61,
+        "educationYears": 15
+      },
+      "2050": {
+        "workers": 2000000,
+        "medianSalaryUSD": 9450,
+        "growthPct": -5.5,
+        "aiExposure": 93,
+        "educationYears": 16
+      }
+    },
+    "renewable_energy_global": {
+      "2000": {
+        "workers": 300000,
+        "medianSalaryUSD": 1600,
+        "growthPct": 23.5,
+        "aiExposure": 1,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 2000000,
+        "medianSalaryUSD": 2048,
+        "growthPct": 22.8,
+        "aiExposure": 3,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 7000000,
+        "medianSalaryUSD": 2624,
+        "growthPct": 22.3,
+        "aiExposure": 14,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 16200000,
+        "medianSalaryUSD": 3200,
+        "growthPct": 22,
+        "aiExposure": 30,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 65000000,
+        "medianSalaryUSD": 4480,
+        "growthPct": 20.5,
+        "aiExposure": 53,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 200000000,
+        "medianSalaryUSD": 7200,
+        "growthPct": 19,
+        "aiExposure": 80,
+        "educationYears": 15
+      }
+    },
+    "mining_workers_global": {
+      "2000": {
+        "workers": 6000000,
+        "medianSalaryUSD": 1400,
+        "growthPct": 5,
+        "aiExposure": 1,
+        "educationYears": 9
+      },
+      "2010": {
+        "workers": 7040000,
+        "medianSalaryUSD": 1792,
+        "growthPct": 4.3,
+        "aiExposure": 3,
+        "educationYears": 10
+      },
+      "2020": {
+        "workers": 7680000,
+        "medianSalaryUSD": 2296,
+        "growthPct": 3.8,
+        "aiExposure": 13,
+        "educationYears": 10
+      },
+      "2025": {
+        "workers": 8000000,
+        "medianSalaryUSD": 2800,
+        "growthPct": 3.5,
+        "aiExposure": 28,
+        "educationYears": 10
+      },
+      "2035": {
+        "workers": 7360000,
+        "medianSalaryUSD": 3920,
+        "growthPct": 2,
+        "aiExposure": 49,
+        "educationYears": 11
+      },
+      "2050": {
+        "workers": 5760000,
+        "medianSalaryUSD": 6300,
+        "growthPct": 0.5,
+        "aiExposure": 74,
+        "educationYears": 12
+      }
+    },
+    "utility_grid_workers": {
+      "2000": {
+        "workers": 5850000,
+        "medianSalaryUSD": 1900,
+        "growthPct": 9.5,
+        "aiExposure": 1,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 6864000,
+        "medianSalaryUSD": 2432,
+        "growthPct": 8.8,
+        "aiExposure": 3,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 7488000,
+        "medianSalaryUSD": 3116,
+        "growthPct": 8.3,
+        "aiExposure": 15,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 7800000,
+        "medianSalaryUSD": 3800,
+        "growthPct": 8,
+        "aiExposure": 32,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 7176000,
+        "medianSalaryUSD": 5320,
+        "growthPct": 6.5,
+        "aiExposure": 56,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 5616000,
+        "medianSalaryUSD": 8550,
+        "growthPct": 5,
+        "aiExposure": 85,
+        "educationYears": 15
+      }
+    },
+    "chefs_restaurant_global": {
+      "2000": {
+        "workers": 37440000,
+        "medianSalaryUSD": 600,
+        "growthPct": 4,
+        "aiExposure": 1,
+        "educationYears": 8
+      },
+      "2010": {
+        "workers": 48960000,
+        "medianSalaryUSD": 768,
+        "growthPct": 4.7,
+        "aiExposure": 2,
+        "educationYears": 9
+      },
+      "2020": {
+        "workers": 59040000,
+        "medianSalaryUSD": 984,
+        "growthPct": 5.2,
+        "aiExposure": 9,
+        "educationYears": 9
+      },
+      "2025": {
+        "workers": 72000000,
+        "medianSalaryUSD": 1200,
+        "growthPct": 5.5,
+        "aiExposure": 20,
+        "educationYears": 9
+      },
+      "2035": {
+        "workers": 84960000,
+        "medianSalaryUSD": 1680,
+        "growthPct": 6.3,
+        "aiExposure": 35,
+        "educationYears": 10
+      },
+      "2050": {
+        "workers": 93600000,
+        "medianSalaryUSD": 2700,
+        "growthPct": 6,
+        "aiExposure": 53,
+        "educationYears": 11
+      }
+    },
+    "hotel_hospitality_global": {
+      "2000": {
+        "workers": 26000000,
+        "medianSalaryUSD": 700,
+        "growthPct": 6,
+        "aiExposure": 1,
+        "educationYears": 10
+      },
+      "2010": {
+        "workers": 34000000,
+        "medianSalaryUSD": 896,
+        "growthPct": 6.7,
+        "aiExposure": 3,
+        "educationYears": 11
+      },
+      "2020": {
+        "workers": 41000000,
+        "medianSalaryUSD": 1148,
+        "growthPct": 7.2,
+        "aiExposure": 13,
+        "educationYears": 11
+      },
+      "2025": {
+        "workers": 50000000,
+        "medianSalaryUSD": 1400,
+        "growthPct": 7.5,
+        "aiExposure": 28,
+        "educationYears": 11
+      },
+      "2035": {
+        "workers": 59000000,
+        "medianSalaryUSD": 1960,
+        "growthPct": 8.3,
+        "aiExposure": 49,
+        "educationYears": 12
+      },
+      "2050": {
+        "workers": 65000000,
+        "medianSalaryUSD": 3150,
+        "growthPct": 8,
+        "aiExposure": 74,
+        "educationYears": 13
+      }
+    },
+    "tour_guides_travel": {
+      "2000": {
+        "workers": 14040000,
+        "medianSalaryUSD": 900,
+        "growthPct": 8.5,
+        "aiExposure": 1,
+        "educationYears": 12
+      },
+      "2010": {
+        "workers": 18360000,
+        "medianSalaryUSD": 1152,
+        "growthPct": 9.2,
+        "aiExposure": 4,
+        "educationYears": 13
+      },
+      "2020": {
+        "workers": 22140000,
+        "medianSalaryUSD": 1476,
+        "growthPct": 9.7,
+        "aiExposure": 21,
+        "educationYears": 13
+      },
+      "2025": {
+        "workers": 27000000,
+        "medianSalaryUSD": 1800,
+        "growthPct": 10,
+        "aiExposure": 45,
+        "educationYears": 13
+      },
+      "2035": {
+        "workers": 31860000,
+        "medianSalaryUSD": 2520,
+        "growthPct": 10.8,
+        "aiExposure": 79,
+        "educationYears": 14
+      },
+      "2050": {
+        "workers": 35100000,
+        "medianSalaryUSD": 4050,
+        "growthPct": 10.5,
+        "aiExposure": 97,
+        "educationYears": 15
+      }
+    },
+    "domestic_workers_global": {
+      "2000": {
+        "workers": 41250000,
+        "medianSalaryUSD": 500,
+        "growthPct": 1,
+        "aiExposure": 0,
+        "educationYears": 5
+      },
+      "2010": {
+        "workers": 52500000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0.7,
+        "aiExposure": 1,
+        "educationYears": 6
+      },
+      "2020": {
+        "workers": 65250000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0.5,
+        "aiExposure": 6,
+        "educationYears": 6
+      },
+      "2025": {
+        "workers": 75000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0.5,
+        "aiExposure": 12,
+        "educationYears": 6
+      },
+      "2035": {
+        "workers": 84000000,
+        "medianSalaryUSD": 500,
+        "growthPct": 0.7,
+        "aiExposure": 21,
+        "educationYears": 7
+      },
+      "2050": {
+        "workers": 88500000,
+        "medianSalaryUSD": 788,
+        "growthPct": 0,
+        "aiExposure": 32,
+        "educationYears": 8
+      }
+    },
+    "beauty_fitness_global": {
+      "2000": {
+        "workers": 11000000,
+        "medianSalaryUSD": 750,
+        "growthPct": 8,
+        "aiExposure": 1,
+        "educationYears": 9
+      },
+      "2010": {
+        "workers": 14000000,
+        "medianSalaryUSD": 960,
+        "growthPct": 7.7,
+        "aiExposure": 2,
+        "educationYears": 10
+      },
+      "2020": {
+        "workers": 17400000,
+        "medianSalaryUSD": 1230,
+        "growthPct": 7.5,
+        "aiExposure": 9,
+        "educationYears": 10
+      },
+      "2025": {
+        "workers": 20000000,
+        "medianSalaryUSD": 1500,
+        "growthPct": 7.5,
+        "aiExposure": 20,
+        "educationYears": 10
+      },
+      "2035": {
+        "workers": 22400000,
+        "medianSalaryUSD": 2100,
+        "growthPct": 7.7,
+        "aiExposure": 35,
+        "educationYears": 11
+      },
+      "2050": {
+        "workers": 23600000,
+        "medianSalaryUSD": 3375,
+        "growthPct": 7,
+        "aiExposure": 53,
+        "educationYears": 12
+      }
+    },
+    "security_services_global": {
+      "2000": {
+        "workers": 7700000,
+        "medianSalaryUSD": 600,
+        "growthPct": 4.5,
+        "aiExposure": 1,
+        "educationYears": 8
+      },
+      "2010": {
+        "workers": 9800000,
+        "medianSalaryUSD": 768,
+        "growthPct": 4.2,
+        "aiExposure": 2,
+        "educationYears": 9
+      },
+      "2020": {
+        "workers": 12180000,
+        "medianSalaryUSD": 984,
+        "growthPct": 4,
+        "aiExposure": 12,
+        "educationYears": 9
+      },
+      "2025": {
+        "workers": 14000000,
+        "medianSalaryUSD": 1200,
+        "growthPct": 4,
+        "aiExposure": 25,
+        "educationYears": 9
+      },
+      "2035": {
+        "workers": 15680000,
+        "medianSalaryUSD": 1680,
+        "growthPct": 4.2,
+        "aiExposure": 44,
+        "educationYears": 10
+      },
+      "2050": {
+        "workers": 16520000,
+        "medianSalaryUSD": 2700,
+        "growthPct": 3.5,
+        "aiExposure": 66,
+        "educationYears": 11
+      }
+    }
+  }
+}

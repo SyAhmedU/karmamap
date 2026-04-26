@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState, useCallback } from 'react'
 import { hierarchy, treemap, treemapSquarify } from 'd3-hierarchy'
 import { EXCHANGE_RATE } from '../App.jsx'
+import { occAtYear } from '../utils/timeline.js'
 
 // ── Color scales ──────────────────────────────────────────────────────────────
 
@@ -83,7 +84,7 @@ function fmtLayer(occ, layer, currency) {
 
 // ── Build hierarchy ───────────────────────────────────────────────────────────
 
-function buildHierarchy(data) {
+function buildHierarchy(data, year, region) {
   return {
     name: 'root',
     children: data.sectors.map(s => ({
@@ -91,20 +92,24 @@ function buildHierarchy(data) {
       id: s.id,
       color: s.color,
       sector: s,
-      children: s.occupations.map(o => ({
-        name: o.name,
-        id: o.id,
-        value: o.workers,
-        occupation: o,
-        sector: s,
-      }))
+      children: s.occupations.map(o => {
+        const oAdj = occAtYear(o, year, region)
+        return {
+          name: o.name,
+          id: o.id,
+          value: Math.max(1, oAdj.workers),
+          occupation: oAdj,   // year-adjusted data for color/label
+          occBase: o,         // original for id/name/description/sources
+          sector: s,
+        }
+      })
     }))
   }
 }
 
 // ── Treemap component ─────────────────────────────────────────────────────────
 
-export default function Treemap({ data, layer, currency, selected, onSelect, search = '' }) {
+export default function Treemap({ data, layer, currency, selected, onSelect, search = '', year = 2025, region = 'india' }) {
   const containerRef = useRef(null)
   const [dims, setDims] = useState({ w: 0, h: 0 })
   const [nodes, setNodes] = useState([])
@@ -125,7 +130,7 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
   // Compute layout
   useEffect(() => {
     if (dims.w < 10 || dims.h < 10) return
-    const root = hierarchy(buildHierarchy(data))
+    const root = hierarchy(buildHierarchy(data, year, region))
       .sum(d => d.value || 0)
       .sort((a, b) => b.value - a.value)
 
@@ -139,7 +144,8 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
     // leaf nodes (occupations)
     const leafs = root.leaves().map(n => ({
       x0: n.x0, y0: n.y0, x1: n.x1, y1: n.y1,
-      occupation: n.data.occupation,
+      occupation: n.data.occupation,   // year-adjusted
+      occBase: n.data.occBase,         // original (for click → DetailPanel)
       sector: n.data.sector,
     }))
 
@@ -152,7 +158,7 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
 
     setNodes(leafs)
     setGroups(grps)
-  }, [dims, data])
+  }, [dims, data, year, region])
 
   const isSelected = useCallback((occ) =>
     selected?.occupation?.id === occ.id, [selected])
@@ -207,7 +213,7 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
               opacity: query && !matched ? 0.18 : 1,
               transition: 'opacity 0.2s ease, filter 0.15s ease',
             }}
-            onClick={() => onSelect({ sector: n.sector, occupation: n.occupation })}
+            onClick={() => onSelect({ sector: n.sector, occupation: n.occBase || n.occupation, occAdj: n.occupation })}
             onMouseEnter={(e) => setTooltip({ x: e.clientX, y: e.clientY, n })}
             onMouseMove={(e) => setTooltip(t => t ? { ...t, x: e.clientX, y: e.clientY } : null)}
             onMouseLeave={() => setTooltip(null)}

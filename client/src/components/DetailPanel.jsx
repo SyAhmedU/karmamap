@@ -1,4 +1,5 @@
 import { EXCHANGE_RATE } from '../App.jsx'
+import { occAtYear } from '../utils/timeline.js'
 
 function fmt(n) {
   if (n >= 1e7)  return `${(n/1e7).toFixed(2)} Cr`
@@ -32,11 +33,13 @@ function Badge({ label, value, color = 'slate' }) {
   )
 }
 
-export default function DetailPanel({ sector, occupation: occ, currency, region, onClose }) {
+export default function DetailPanel({ sector, occupation: occ, currency, region, year = 2025, onClose }) {
   if (!occ) return null
 
-  const growthColor = occ.growthPct < 0 ? 'red' : occ.growthPct < 5 ? 'amber' : 'green'
-  const aiColor = occ.aiExposure > 60 ? 'red' : occ.aiExposure > 35 ? 'amber' : 'green'
+  // Merge year-adjusted metrics over the base occupation (keeps description/sources)
+  const occY        = { ...occ, ...occAtYear(occ, year, region) }
+  const growthColor = occY.growthPct < 0 ? 'red' : occY.growthPct < 5 ? 'amber' : 'green'
+  const aiColor     = occY.aiExposure > 60 ? 'red' : occY.aiExposure > 35 ? 'amber' : 'green'
 
   return (
     <div className="h-full flex flex-col bg-[#0f172a] overflow-y-auto">
@@ -52,17 +55,17 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
           </div>
           <button onClick={onClose} className="text-slate-500 hover:text-white p-1 shrink-0 text-lg leading-none">&times;</button>
         </div>
-        <p className="text-slate-300 text-[12px] leading-relaxed mt-2">{occ.description}</p>
+        <p className="text-slate-300 text-[12px] leading-relaxed mt-2">{occY.description}</p>
       </div>
 
       {/* Stats grid */}
       <div className="p-4 grid grid-cols-2 gap-2 border-b border-slate-800">
-        <Badge label="Workforce" value={fmt(occ.workers)} color="blue" />
-        <Badge label="Growth/yr" value={occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`} color={growthColor} />
-        <Badge label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} value={fmtSal(occ, currency)} color="violet" />
-        <Badge label="AI Exposure" value={`${occ.aiExposure} / 100`} color={aiColor} />
-        <Badge label="Education" value={`${occ.educationYears} years`} color="slate" />
-        <Badge label="% Workforce" value={`${((occ.workers/(region === 'world' ? 3320000000 : 582000000))*100).toFixed(2)}%`} color="slate" />
+        <Badge label="Workforce" value={fmt(occY.workers)} color="blue" />
+        <Badge label="Growth/yr" value={occY.growthPct > 0 ? `+${occY.growthPct}%` : `${occY.growthPct}%`} color={growthColor} />
+        <Badge label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} value={fmtSal(occY, currency)} color="violet" />
+        <Badge label="AI Exposure" value={`${occY.aiExposure} / 100`} color={aiColor} />
+        <Badge label="Education" value={`${occY.educationYears} years`} color="slate" />
+        <Badge label="% Workforce" value={`${((occY.workers/(region === 'world' ? 3320000000 : 582000000))*100).toFixed(2)}%`} color="slate" />
       </div>
 
       {/* AI interpretation */}
@@ -73,19 +76,19 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
             <div
               className="h-full rounded-full transition-all"
               style={{
-                width: `${occ.aiExposure}%`,
-                background: occ.aiExposure > 60 ? '#ef4444' : occ.aiExposure > 35 ? '#f59e0b' : '#22c55e'
+                width: `${occY.aiExposure}%`,
+                background: occY.aiExposure > 60 ? '#ef4444' : occY.aiExposure > 35 ? '#f59e0b' : '#22c55e'
               }}
             />
           </div>
-          <span className={`text-[11px] font-bold ${occ.aiExposure > 60 ? 'text-rose-400' : occ.aiExposure > 35 ? 'text-amber-400' : 'text-emerald-400'}`}>
-            {occ.aiExposure > 60 ? 'High Risk' : occ.aiExposure > 35 ? 'Moderate' : 'Low Risk'}
+          <span className={`text-[11px] font-bold ${occY.aiExposure > 60 ? 'text-rose-400' : occY.aiExposure > 35 ? 'text-amber-400' : 'text-emerald-400'}`}>
+            {occY.aiExposure > 60 ? 'High Risk' : occY.aiExposure > 35 ? 'Moderate' : 'Low Risk'}
           </span>
         </div>
         <p className="text-slate-400 text-[11px] leading-relaxed">
-          {occ.aiExposure > 60
+          {occY.aiExposure > 60
             ? 'Significant automation pressure. Roles involving routine digital tasks face disruption from LLMs and RPA tools in the near term.'
-            : occ.aiExposure > 35
+            : occY.aiExposure > 35
             ? 'Moderate exposure. AI will augment rather than replace, but upskilling in digital tools is essential over the next 5 years.'
             : 'Low automation risk. Roles require physical dexterity, human judgment, or regulatory oversight that AI cannot easily replicate.'}
         </p>
@@ -95,7 +98,7 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
       <div className="p-4">
         <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-2">Data Sources</p>
         <div className="space-y-1.5">
-          {occ.sources.map((s, i) => (
+          {occY.sources.map((s, i) => (
             <p key={i} className="text-slate-400 text-[10px] leading-relaxed flex gap-1.5">
               <span className="text-slate-600 shrink-0">·</span>
               {s}
