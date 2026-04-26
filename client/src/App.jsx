@@ -18,15 +18,16 @@ export const LAYERS = [
 export const EXCHANGE_RATE = indiaData.meta.exchangeRate  // 84.5
 
 export default function App() {
-  const [region, setRegion]     = useState('india')       // 'india' | 'world'
+  const [region, setRegion]     = useState('india')       // 'india' | 'world' | 'states'
   const [layer, setLayer]       = useState('growth')
   const [currency, setCurrency] = useState('inr')         // 'inr' | 'usd'
   const [selected, setSelected] = useState(null)
   const [showLLM, setShowLLM]   = useState(false)
+  const [search, setSearch]     = useState('')
 
   const data = region === 'india' ? indiaData : region === 'states' ? statesData : worldData
 
-  // World view only shows USD; India + States views show ₹ or $
+  // World view only shows USD; India + States views honour the ₹/$ toggle
   const effectiveCurrency = region === 'world' ? 'usd' : currency
 
   const layerObj = LAYERS.find(l => l.id === layer)
@@ -36,7 +37,9 @@ export default function App() {
   function handleRegion(r) {
     setRegion(r)
     setSelected(null)
+    setSearch('')
     if (r === 'world') setCurrency('usd')
+    else setCurrency('inr')
   }
 
   const totalLabel = region === 'world'
@@ -58,6 +61,15 @@ export default function App() {
         </div>
 
         <div className="flex items-center gap-3">
+          {/* Search */}
+          <input
+            type="text"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Search jobs…"
+            className="bg-slate-800 text-slate-200 text-[12px] placeholder-slate-500 border border-slate-700 rounded-lg px-3 py-1.5 w-36 focus:outline-none focus:border-slate-500 select-text"
+          />
+
           {/* Region toggle */}
           <div className="flex items-center gap-1 bg-slate-800 rounded-lg p-1">
             <button
@@ -74,8 +86,8 @@ export default function App() {
             >🗺️ States</button>
           </div>
 
-          {/* Currency toggle — India only */}
-          {region === 'india' && (
+          {/* Currency toggle — India + States */}
+          {(region === 'india' || region === 'states') && (
             <div className="flex items-center gap-1 bg-slate-800 rounded-lg p-1">
               <button
                 onClick={() => setCurrency('inr')}
@@ -102,15 +114,16 @@ export default function App() {
 
       {/* Main content */}
       <div className="flex flex-1 overflow-hidden">
-        <div className="flex-1 relative overflow-hidden">
+        <div key={region} className="flex-1 relative overflow-hidden view-fade">
           <Treemap
             data={data}
             layer={layer}
             currency={effectiveCurrency}
             selected={selected}
             onSelect={setSelected}
+            search={search}
           />
-          <Legend layer={layer} currency={effectiveCurrency} data={data} />
+          <Legend layer={layer} currency={effectiveCurrency} region={region} />
         </div>
 
         {(selected || showLLM) && (

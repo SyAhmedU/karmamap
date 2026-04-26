@@ -104,7 +104,7 @@ function buildHierarchy(data) {
 
 // ── Treemap component ─────────────────────────────────────────────────────────
 
-export default function Treemap({ data, layer, currency, selected, onSelect }) {
+export default function Treemap({ data, layer, currency, selected, onSelect, search = '' }) {
   const containerRef = useRef(null)
   const [dims, setDims] = useState({ w: 0, h: 0 })
   const [nodes, setNodes] = useState([])
@@ -157,13 +157,17 @@ export default function Treemap({ data, layer, currency, selected, onSelect }) {
   const isSelected = useCallback((occ) =>
     selected?.occupation?.id === occ.id, [selected])
 
+  const query = search.trim().toLowerCase()
+  const isMatch = useCallback((occ) =>
+    !query || occ.name.toLowerCase().includes(query), [query])
+
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {/* Sector group labels */}
       {groups.map(g => {
         const w = g.x1 - g.x0
         const h = g.y1 - g.y0
-        if (w < 60) return null
+        if (w < 60 || h < 30) return null
         return (
           <div
             key={g.sector.id}
@@ -186,6 +190,7 @@ export default function Treemap({ data, layer, currency, selected, onSelect }) {
         const h = n.y1 - n.y0
         const color = getColor(n.occupation, layer, currency)
         const sel = isSelected(n.occupation)
+        const matched = isMatch(n.occupation)
         const label = fmtLayer(n.occupation, layer, currency)
         const showName = w > 55 && h > 30
         const showVal  = w > 45 && h > 44
@@ -199,6 +204,8 @@ export default function Treemap({ data, layer, currency, selected, onSelect }) {
               width: w, height: h,
               background: color,
               border: `1px solid rgba(0,0,0,0.25)`,
+              opacity: query && !matched ? 0.18 : 1,
+              transition: 'opacity 0.2s ease, filter 0.15s ease',
             }}
             onClick={() => onSelect({ sector: n.sector, occupation: n.occupation })}
             onMouseEnter={(e) => setTooltip({ x: e.clientX, y: e.clientY, n })}

@@ -30,6 +30,18 @@ html, body, #root {
   z-index: 20;
 }
 
+/* View fade-in on region switch */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.view-fade { animation: fadeIn 0.25s ease; }
+
+/* Mobile header wrapping */
+@media (max-width: 640px) {
+  header { flex-wrap: wrap; gap: 8px; }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #1e293b; }
