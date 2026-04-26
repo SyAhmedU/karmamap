@@ -45,7 +45,8 @@
             "Mechanised Farming"
           ],
           "wageDecile": 1,
-          "iscoCode": "6111"
+          "iscoCode": "6111",
+          "shortLabel": "Crop Farmers"
         },
         {
           "id": "livestock_dairy",
@@ -68,7 +69,8 @@
             "Animal Disease Control"
           ],
           "wageDecile": 1,
-          "iscoCode": "6121"
+          "iscoCode": "6121",
+          "shortLabel": "Livestock"
         },
         {
           "id": "fisheries_global",
@@ -90,7 +92,8 @@
             "Fish Processing"
           ],
           "wageDecile": 2,
-          "iscoCode": "6141"
+          "iscoCode": "6141",
+          "shortLabel": "Fisheries"
         },
         {
           "id": "agri_wage_labour",
@@ -113,7 +116,8 @@
             "Farm Equipment Operation"
           ],
           "wageDecile": 1,
-          "iscoCode": "9211"
+          "iscoCode": "9211",
+          "shortLabel": "Agri Labour"
         },
         {
           "id": "food_scientists_global",
@@ -136,9 +140,11 @@
           "sources": [
             "IFIC (International Food Information Council) 2024",
             "Euromonitor Global Food Industry Report 2024"
-          ]
+          ],
+          "shortLabel": "Food Science"
         }
-      ]
+      ],
+      "shortName": "Agriculture"
     },
     {
       "id": "manufacturing",
@@ -176,7 +182,8 @@
             "Lean Manufacturing"
           ],
           "wageDecile": 3,
-          "iscoCode": "8211"
+          "iscoCode": "8211",
+          "shortLabel": "Factory Wkrs"
         },
         {
           "id": "garment_textile_global",
@@ -199,7 +206,8 @@
             "Quality Inspection (ISO 9001)"
           ],
           "wageDecile": 2,
-          "iscoCode": "7531"
+          "iscoCode": "7531",
+          "shortLabel": "Garments"
         },
         {
           "id": "food_beverage_mfg",
@@ -222,7 +230,8 @@
             "Packaging Automation"
           ],
           "wageDecile": 3,
-          "iscoCode": "7512"
+          "iscoCode": "7512",
+          "shortLabel": "Food/Bev Mfg"
         },
         {
           "id": "auto_engineering_global",
@@ -245,7 +254,8 @@
             "EV Powertrain Systems"
           ],
           "wageDecile": 6,
-          "iscoCode": "7231"
+          "iscoCode": "7231",
+          "shortLabel": "Auto/Eng."
         },
         {
           "id": "electronics_global",
@@ -268,7 +278,8 @@
             "Clean Room Protocols"
           ],
           "wageDecile": 5,
-          "iscoCode": "7421"
+          "iscoCode": "7421",
+          "shortLabel": "Electronics"
         },
         {
           "id": "pharma_chemical_global",
@@ -291,7 +302,8 @@
             "Regulatory Affairs (ICH)"
           ],
           "wageDecile": 6,
-          "iscoCode": "3131"
+          "iscoCode": "3131",
+          "shortLabel": "Pharma/Chem"
         },
         {
           "id": "aerospace_mfg_global",
@@ -314,7 +326,8 @@
           "sources": [
             "IATA Aerospace Workforce Outlook 2024",
             "Boeing Current Market Outlook 2024-2043 — 17,600 aircraft needed"
-          ]
+          ],
+          "shortLabel": "Aerospace"
         },
         {
           "id": "semiconductor_workers",
@@ -337,9 +350,11 @@
           "sources": [
             "SIA Semiconductor Industry Association World Fab Forecast 2024",
             "TSMC Annual Report 2023 — 76,000 employees"
-          ]
+          ],
+          "shortLabel": "Semicon."
         }
-      ]
+      ],
+      "shortName": "Manufacturing"
     },
     {
       "id": "trade_retail",
@@ -376,7 +391,8 @@
             "Visual Merchandising"
           ],
           "wageDecile": 3,
-          "iscoCode": "5223"
+          "iscoCode": "5223",
+          "shortLabel": "Retail"
         },
         {
           "id": "ecommerce_global",
@@ -399,7 +415,8 @@
             "Returns Processing"
           ],
           "wageDecile": 4,
-          "iscoCode": "4321"
+          "iscoCode": "4321",
+          "shortLabel": "E-commerce"
         },
         {
           "id": "wholesale_distribution_global",
@@ -422,7 +439,8 @@
             "Trade Finance"
           ],
           "wageDecile": 4,
-          "iscoCode": "4311"
+          "iscoCode": "4311",
+          "shortLabel": "Wholesale"
         },
         {
           "id": "street_informal_trade",
@@ -445,9 +463,11 @@
             "Product Sourcing"
           ],
           "wageDecile": 1,
-          "iscoCode": "5244"
+          "iscoCode": "5244",
+          "shortLabel": "Informal Trade"
         }
-      ]
+      ],
+      "shortName": "Trade & Retail"
     },
     {
       "id": "construction_global",
@@ -484,7 +504,8 @@
             "Blueprint Reading"
           ],
           "wageDecile": 3,
-          "iscoCode": "7112"
+          "iscoCode": "7112",
+          "shortLabel": "Construction"
         },
         {
           "id": "civil_engineers_global",
@@ -507,7 +528,8 @@
             "Project Management (PMP)"
           ],
           "wageDecile": 8,
-          "iscoCode": "2142"
+          "iscoCode": "2142",
+          "shortLabel": "Civil Eng."
         },
         {
           "id": "skilled_trades_global",
@@ -530,7 +552,8 @@
             "Renewable Energy Installation"
           ],
           "wageDecile": 6,
-          "iscoCode": "7411"
+          "iscoCode": "7411",
+          "shortLabel": "Skilled Trades"
         },
         {
           "id": "real_estate_global",
@@ -553,9 +576,11 @@
             "CRM & Sales"
           ],
           "wageDecile": 6,
-          "iscoCode": "3334"
+          "iscoCode": "3334",
+          "shortLabel": "Real Estate"
         }
-      ]
+      ],
+      "shortName": "Construction"
     },
     {
       "id": "transport_logistics_global",
@@ -592,7 +617,8 @@
             "Dangerous Goods (ADR)"
           ],
           "wageDecile": 4,
-          "iscoCode": "8332"
+          "iscoCode": "8332",
+          "shortLabel": "Truck Drivers"
         },
         {
           "id": "ride_gig_global",
@@ -615,7 +641,8 @@
             "Vehicle Maintenance"
           ],
           "wageDecile": 2,
-          "iscoCode": "8322"
+          "iscoCode": "8322",
+          "shortLabel": "Ride/Gig"
         },
         {
           "id": "aviation_global",
@@ -638,7 +665,8 @@
             "CRM (Crew Resource Mgmt)"
           ],
           "wageDecile": 9,
-          "iscoCode": "3153"
+          "iscoCode": "3153",
+          "shortLabel": "Aviation"
         },
         {
           "id": "maritime_shipping",
@@ -661,7 +689,8 @@
             "Ship Operations"
           ],
           "wageDecile": 6,
-          "iscoCode": "3152"
+          "iscoCode": "3152",
+          "shortLabel": "Maritime"
         },
         {
           "id": "logistics_warehouse_global",
@@ -684,7 +713,8 @@
             "Customs & Compliance"
           ],
           "wageDecile": 4,
-          "iscoCode": "4321"
+          "iscoCode": "4321",
+          "shortLabel": "Logistics"
         },
         {
           "id": "drone_operators_global",
@@ -707,9 +737,11 @@
           "sources": [
             "FAA Aerospace Forecast 2024-2044 — 860K commercial drone pilots by 2034",
             "DRONEII Global Drone Industry Map 2024"
-          ]
+          ],
+          "shortLabel": "Drones/UAV"
         }
-      ]
+      ],
+      "shortName": "Transport"
     },
     {
       "id": "healthcare_global",
@@ -746,7 +778,8 @@
             "Electronic Health Records (EHR)"
           ],
           "wageDecile": 9,
-          "iscoCode": "2211"
+          "iscoCode": "2211",
+          "shortLabel": "Doctors"
         },
         {
           "id": "nurses_global",
@@ -769,7 +802,8 @@
             "Critical Care Nursing"
           ],
           "wageDecile": 6,
-          "iscoCode": "2221"
+          "iscoCode": "2221",
+          "shortLabel": "Nurses"
         },
         {
           "id": "community_health_global",
@@ -792,7 +826,8 @@
             "mHealth Apps"
           ],
           "wageDecile": 2,
-          "iscoCode": "3253"
+          "iscoCode": "3253",
+          "shortLabel": "Community Hth"
         },
         {
           "id": "elderly_care",
@@ -815,7 +850,8 @@
             "Palliative Care"
           ],
           "wageDecile": 3,
-          "iscoCode": "5321"
+          "iscoCode": "5321",
+          "shortLabel": "Elderly Care"
         },
         {
           "id": "mental_health_global",
@@ -838,7 +874,8 @@
           "sources": [
             "WHO Mental Health Action Plan 2022-2030",
             "Global Mental Health Commission 2024 — 1.2M additional professionals needed"
-          ]
+          ],
+          "shortLabel": "Mental Health"
         },
         {
           "id": "biotech_researchers_global",
@@ -861,9 +898,11 @@
           "sources": [
             "EvaluatePharma World Preview 2024 — $1.8T global pharma by 2028",
             "Nature Biotechnology Industry Survey 2024"
-          ]
+          ],
+          "shortLabel": "Biotech R&D"
         }
-      ]
+      ],
+      "shortName": "Healthcare"
     },
     {
       "id": "education_global",
@@ -901,7 +940,8 @@
             "Inclusive Education"
           ],
           "wageDecile": 5,
-          "iscoCode": "2330"
+          "iscoCode": "2330",
+          "shortLabel": "Teachers"
         },
         {
           "id": "higher_ed_global",
@@ -924,7 +964,8 @@
             "Online Learning Design"
           ],
           "wageDecile": 8,
-          "iscoCode": "2310"
+          "iscoCode": "2310",
+          "shortLabel": "Professors"
         },
         {
           "id": "edtech_global",
@@ -947,9 +988,11 @@
             "Learning Analytics"
           ],
           "wageDecile": 7,
-          "iscoCode": "2359"
+          "iscoCode": "2359",
+          "shortLabel": "EdTech"
         }
-      ]
+      ],
+      "shortName": "Education"
     },
     {
       "id": "it_technology_global",
@@ -988,7 +1031,8 @@
             "System Design"
           ],
           "wageDecile": 9,
-          "iscoCode": "2512"
+          "iscoCode": "2512",
+          "shortLabel": "Software Dev"
         },
         {
           "id": "ai_ml_global",
@@ -1012,7 +1056,8 @@
             "MLOps"
           ],
           "wageDecile": 10,
-          "iscoCode": "2120"
+          "iscoCode": "2120",
+          "shortLabel": "AI/ML"
         },
         {
           "id": "cybersecurity_global",
@@ -1035,7 +1080,8 @@
             "SIEM / EDR"
           ],
           "wageDecile": 9,
-          "iscoCode": "2512"
+          "iscoCode": "2512",
+          "shortLabel": "Cybersecurity"
         },
         {
           "id": "cloud_devops_global",
@@ -1058,7 +1104,8 @@
             "Infrastructure as Code (Terraform)"
           ],
           "wageDecile": 9,
-          "iscoCode": "2514"
+          "iscoCode": "2514",
+          "shortLabel": "Cloud/DevOps"
         },
         {
           "id": "data_analysts_global",
@@ -1081,7 +1128,8 @@
             "BI Tools (Tableau/Power BI)"
           ],
           "wageDecile": 9,
-          "iscoCode": "2120"
+          "iscoCode": "2120",
+          "shortLabel": "Data Science"
         },
         {
           "id": "it_support_bpo_global",
@@ -1104,7 +1152,8 @@
             "Process Excellence (Six Sigma)"
           ],
           "wageDecile": 4,
-          "iscoCode": "4222"
+          "iscoCode": "4222",
+          "shortLabel": "IT Support"
         },
         {
           "id": "quantum_computing_global",
@@ -1127,7 +1176,8 @@
           "sources": [
             "McKinsey Quantum Technology Report 2024 — $850Bn opportunity",
             "IBM Quantum Network 2024 — 400+ partner organisations"
-          ]
+          ],
+          "shortLabel": "Quantum Comp."
         },
         {
           "id": "robotics_automation_global",
@@ -1150,9 +1200,11 @@
           "sources": [
             "IFR World Robotics Report 2024 — 541K units installed FY23",
             "BCG Robots at Work 2025 — 25M automation engineers needed by 2030"
-          ]
+          ],
+          "shortLabel": "Robotics"
         }
-      ]
+      ],
+      "shortName": "IT & Tech"
     },
     {
       "id": "finance_global",
@@ -1189,7 +1241,8 @@
             "Relationship Management"
           ],
           "wageDecile": 6,
-          "iscoCode": "3312"
+          "iscoCode": "3312",
+          "shortLabel": "Banking"
         },
         {
           "id": "fintech_global",
@@ -1212,7 +1265,8 @@
             "Regulatory Compliance (PSD2)"
           ],
           "wageDecile": 9,
-          "iscoCode": "2413"
+          "iscoCode": "2413",
+          "shortLabel": "FinTech"
         },
         {
           "id": "investment_advisors_global",
@@ -1235,7 +1289,8 @@
             "CFA Certification"
           ],
           "wageDecile": 9,
-          "iscoCode": "2413"
+          "iscoCode": "2413",
+          "shortLabel": "Investment"
         },
         {
           "id": "insurance_global",
@@ -1258,7 +1313,8 @@
             "Insurtech Platforms"
           ],
           "wageDecile": 5,
-          "iscoCode": "3321"
+          "iscoCode": "3321",
+          "shortLabel": "Insurance"
         },
         {
           "id": "accounting_audit_global",
@@ -1281,7 +1337,8 @@
             "Tax Compliance"
           ],
           "wageDecile": 7,
-          "iscoCode": "2411"
+          "iscoCode": "2411",
+          "shortLabel": "Accounting"
         },
         {
           "id": "crypto_defi_global",
@@ -1304,9 +1361,11 @@
           "sources": [
             "CoinGecko Web3 Workforce Report 2024",
             "Chainalysis Crypto Crime Report 2024 — compliance roles growing 40%"
-          ]
+          ],
+          "shortLabel": "Crypto/DeFi"
         }
-      ]
+      ],
+      "shortName": "Finance"
     },
     {
       "id": "government_global",
@@ -1343,7 +1402,8 @@
             "International Relations"
           ],
           "wageDecile": 6,
-          "iscoCode": "1111"
+          "iscoCode": "1111",
+          "shortLabel": "Civil Servants"
         },
         {
           "id": "police_military_global",
@@ -1366,7 +1426,8 @@
             "Counterterrorism"
           ],
           "wageDecile": 5,
-          "iscoCode": "5411"
+          "iscoCode": "5411",
+          "shortLabel": "Police/Military"
         },
         {
           "id": "social_workers_global",
@@ -1389,7 +1450,8 @@
             "Community Development"
           ],
           "wageDecile": 4,
-          "iscoCode": "2635"
+          "iscoCode": "2635",
+          "shortLabel": "Social Work"
         },
         {
           "id": "international_orgs",
@@ -1412,9 +1474,11 @@
           "sources": [
             "CEB (UN System Chief Executives Board) Workforce Statistics 2024",
             "World Bank Group Annual Report 2024"
-          ]
+          ],
+          "shortLabel": "Intl. Orgs"
         }
-      ]
+      ],
+      "shortName": "Government"
     },
     {
       "id": "professional_services",
@@ -1450,7 +1514,8 @@
             "LegalTech Tools"
           ],
           "wageDecile": 9,
-          "iscoCode": "2611"
+          "iscoCode": "2611",
+          "shortLabel": "Legal"
         },
         {
           "id": "consultants_mgmt",
@@ -1473,7 +1538,8 @@
             "Stakeholder Management"
           ],
           "wageDecile": 9,
-          "iscoCode": "2421"
+          "iscoCode": "2421",
+          "shortLabel": "Consulting"
         },
         {
           "id": "marketing_advertising_global",
@@ -1496,7 +1562,8 @@
             "Marketing Mix Modelling"
           ],
           "wageDecile": 7,
-          "iscoCode": "2431"
+          "iscoCode": "2431",
+          "shortLabel": "Marketing"
         },
         {
           "id": "architects_designers",
@@ -1519,7 +1586,8 @@
             "3D Rendering"
           ],
           "wageDecile": 7,
-          "iscoCode": "2161"
+          "iscoCode": "2161",
+          "shortLabel": "Architecture"
         },
         {
           "id": "hr_recruiters",
@@ -1542,7 +1610,8 @@
             "DEI Strategy"
           ],
           "wageDecile": 6,
-          "iscoCode": "2423"
+          "iscoCode": "2423",
+          "shortLabel": "HR/Recruit."
         },
         {
           "id": "scientists_researchers",
@@ -1565,7 +1634,8 @@
             "Lab / Computational Tools"
           ],
           "wageDecile": 8,
-          "iscoCode": "2111"
+          "iscoCode": "2111",
+          "shortLabel": "R&D Science"
         },
         {
           "id": "journalists_media_global",
@@ -1588,7 +1658,8 @@
             "Digital Media Publishing"
           ],
           "wageDecile": 5,
-          "iscoCode": "2641"
+          "iscoCode": "2641",
+          "shortLabel": "Journalism"
         },
         {
           "id": "accountants_global_pro",
@@ -1611,7 +1682,8 @@
             "Financial Reporting"
           ],
           "wageDecile": 4,
-          "iscoCode": "4120"
+          "iscoCode": "4120",
+          "shortLabel": "BPO/Admin"
         },
         {
           "id": "climate_sustainability_global",
@@ -1634,7 +1706,8 @@
           "sources": [
             "GreenBiz 2024 State of the Profession — 1.5M sustainability roles globally",
             "MSCI ESG Talent Report 2024"
-          ]
+          ],
+          "shortLabel": "Sustainability"
         },
         {
           "id": "legal_tech_global",
@@ -1657,9 +1730,11 @@
           "sources": [
             "ILTA 2024 Legal Technology Survey",
             "Bloomberg Law LegalTech 2025 Outlook"
-          ]
+          ],
+          "shortLabel": "LegalTech"
         }
-      ]
+      ],
+      "shortName": "Prof. Services"
     },
     {
       "id": "mining_energy_global",
@@ -1696,7 +1771,8 @@
             "Subsea Engineering"
           ],
           "wageDecile": 7,
-          "iscoCode": "8111"
+          "iscoCode": "8111",
+          "shortLabel": "Oil/Gas/Coal"
         },
         {
           "id": "renewable_energy_global",
@@ -1719,7 +1795,8 @@
             "Project Development (EPC)"
           ],
           "wageDecile": 6,
-          "iscoCode": "3131"
+          "iscoCode": "3131",
+          "shortLabel": "Renewables"
         },
         {
           "id": "mining_workers_global",
@@ -1742,7 +1819,8 @@
             "Mine Ventilation"
           ],
           "wageDecile": 4,
-          "iscoCode": "8111"
+          "iscoCode": "8111",
+          "shortLabel": "Mining"
         },
         {
           "id": "utility_grid_workers",
@@ -1765,7 +1843,8 @@
             "Demand Response Systems"
           ],
           "wageDecile": 6,
-          "iscoCode": "3131"
+          "iscoCode": "3131",
+          "shortLabel": "Grid/Utility"
         },
         {
           "id": "nuclear_global",
@@ -1788,7 +1867,8 @@
           "sources": [
             "IAEA Power Reactor Information System 2024 — 413 GW operational",
             "NEA Nuclear Energy Workforce Study 2024"
-          ]
+          ],
+          "shortLabel": "Nuclear"
         },
         {
           "id": "hydrogen_energy_global",
@@ -1811,9 +1891,11 @@
           "sources": [
             "IEA Global Hydrogen Review 2024 — 15M direct jobs by 2030",
             "IRENA World Energy Transitions Outlook 2024"
-          ]
+          ],
+          "shortLabel": "Green H₂"
         }
-      ]
+      ],
+      "shortName": "Mining/Energy"
     },
     {
       "id": "accommodation_food_global",
@@ -1850,7 +1932,8 @@
             "Kitchen Management (HACCP)"
           ],
           "wageDecile": 3,
-          "iscoCode": "5120"
+          "iscoCode": "5120",
+          "shortLabel": "Chefs"
         },
         {
           "id": "hotel_hospitality_global",
@@ -1873,7 +1956,8 @@
             "Revenue Management"
           ],
           "wageDecile": 3,
-          "iscoCode": "5151"
+          "iscoCode": "5151",
+          "shortLabel": "Hospitality"
         },
         {
           "id": "tour_guides_travel",
@@ -1896,7 +1980,8 @@
             "Tour CRM"
           ],
           "wageDecile": 3,
-          "iscoCode": "5113"
+          "iscoCode": "5113",
+          "shortLabel": "Tourism"
         },
         {
           "id": "cruise_hospitality",
@@ -1919,9 +2004,11 @@
           "sources": [
             "CLIA State of the Cruise Industry 2024",
             "ITF Seafarers Trust Cruise Workers Report 2024"
-          ]
+          ],
+          "shortLabel": "Cruise"
         }
-      ]
+      ],
+      "shortName": "Hospitality"
     },
     {
       "id": "personal_services_global",
@@ -1958,7 +2045,8 @@
             "Elder Assistance"
           ],
           "wageDecile": 1,
-          "iscoCode": "9111"
+          "iscoCode": "9111",
+          "shortLabel": "Domestic Work"
         },
         {
           "id": "beauty_fitness_global",
@@ -1981,7 +2069,8 @@
             "Client Retention"
           ],
           "wageDecile": 3,
-          "iscoCode": "5141"
+          "iscoCode": "5141",
+          "shortLabel": "Beauty/Fitness"
         },
         {
           "id": "security_services_global",
@@ -2004,7 +2093,8 @@
             "Incident Response"
           ],
           "wageDecile": 3,
-          "iscoCode": "5414"
+          "iscoCode": "5414",
+          "shortLabel": "Security"
         },
         {
           "id": "elder_childcare_global",
@@ -2027,9 +2117,11 @@
           "sources": [
             "OECD Starting Strong VI 2022 — childcare workforce analysis",
             "ILO Care Work & Care Jobs 2023"
-          ]
+          ],
+          "shortLabel": "Childcare"
         }
-      ]
+      ],
+      "shortName": "Personal Svcs"
     }
   ]
 }

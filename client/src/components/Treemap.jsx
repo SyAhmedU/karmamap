@@ -22,10 +22,8 @@ function growthColor(v) {
   return lerp('#166534', '#86efac', Math.min((v-10)/40, 1))
 }
 
-function salaryColor(v, currency) {
-  // v may be INR (India) or USD (World); normalise to USD for consistent scale
-  const usd = currency === 'usd' ? v : v / EXCHANGE_RATE
-  const t = Math.min(usd / 13000, 1)   // scale: $0 → $13K/mo max
+function salaryColor(v) {
+  const t = Math.min(v / 13000, 1)
   return lerp('#1e3a5f', '#38bdf8', t)
 }
 
@@ -39,27 +37,28 @@ function aiColor(v) {
   return lerp('#14532d', '#ef4444', t)
 }
 
+// Diverging: formal (0%) = #0f4c75, midpoint (50%) = #4a4a55, informal (100%) = #9b1c1c
 function informalityColor(v) {
   const t = Math.min(v / 100, 1)
-  // formal (0%) = teal-blue, highly informal (100%) = dark red
-  return lerp('#0f4c75', '#9b1c1c', t)
+  if (t <= 0.5) return lerp('#0f4c75', '#4a4a55', t * 2)
+  return lerp('#4a4a55', '#9b1c1c', (t - 0.5) * 2)
 }
 
+// Diverging: 0% female = #1e3a8a, 50% = #4a4a55, 100% = #9d174d
 function genderColor(v) {
-  // 0% female = deep blue, 50% = purple, 100% female = deep pink
-  if (v <= 50) return lerp('#1e3a8a', '#7e22ce', v / 50)
-  return lerp('#7e22ce', '#9d174d', (v - 50) / 50)
+  const t = Math.min(v / 100, 1)
+  if (t <= 0.5) return lerp('#1e3a8a', '#4a4a55', t * 2)
+  return lerp('#4a4a55', '#9d174d', (t - 0.5) * 2)
 }
 
-// Normalise salary to USD regardless of source dataset
 function salaryUSD(occ) {
   return occ.medianSalaryUSD ?? (occ.medianSalaryINR / EXCHANGE_RATE)
 }
 
-export function getColor(occupation, layer, currency) {
+export function getColor(occupation, layer) {
   switch (layer) {
     case 'growth':      return growthColor(occupation.growthPct)
-    case 'salary':      return salaryColor(salaryUSD(occupation), 'usd')
+    case 'salary':      return salaryColor(salaryUSD(occupation))
     case 'education':   return educationColor(occupation.educationYears)
     case 'ai':          return aiColor(occupation.aiExposure)
     case 'informality': return informalityColor(occupation.informalityPct ?? 50)
@@ -68,7 +67,24 @@ export function getColor(occupation, layer, currency) {
   }
 }
 
-// ── Format helpers ────────────────────────────────────────────────────────────
+// ── Text contrast helper (item 9) ─────────────────────────────────────────────
+// Returns white or near-black so label meets WCAG AA against the bg color.
+
+function relativeLuminance(rgbStr) {
+  const m = rgbStr.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
+  if (!m) return 0
+  return [m[1], m[2], m[3]].reduce((acc, v, i) => {
+    const c = parseInt(v) / 255
+    const lin = c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
+    return acc + lin * [0.2126, 0.7152, 0.0722][i]
+  }, 0)
+}
+
+function labelColor(bgColor) {
+  return relativeLuminance(bgColor) >= 0.35 ? '#0a0a0a' : '#ffffff'
+}
+
+// ── Format helpers ─────────────────────────────────────────────────────────────
 
 function fmtWorkers(n) {
   if (n >= 1e9) return `${(n/1e9).toFixed(2)}B`
@@ -90,15 +106,42 @@ function fmtLayer(occ, layer, currency) {
   switch (layer) {
     case 'growth':      return occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`
     case 'salary':      return fmtSalary(occ, currency)
-    case 'education':   return `${occ.educationYears}yr`
+    case 'education':   return `${occ.educationYears} yrs`
     case 'ai':          return `${occ.aiExposure}/100`
-    case 'informality': return `${occ.informalityPct ?? '?'}% inf`
-    case 'gender':      return `${occ.femalePct ?? '?'}% ♀`
+    case 'informality': return `${occ.informalityPct ?? '?'}% informal`
+    case 'gender':      return `${occ.femalePct ?? '?'}% female`
     default:            return ''
   }
 }
 
-// ── Build hierarchy ───────────────────────────────────────────────────────────
+// ── Label selection by width (item 1b) ────────────────────────────────────────
+
+function pickCellLabel(occ, w) {
+  if (w >= 180) return occ.name                                   // full name, allow wrap
+  if (w >= 100) return occ.shortLabel || occ.name.slice(0, 14)   // short form
+  if (w >= 60)  return (occ.shortLabel || occ.name).slice(0, 6)  // first 6 chars, no ellipsis (tooltip has full)
+  return ''                                                        // too narrow — skip
+}
+
+// Font size interpolated by sqrt(area) (item 1c)
+function cellFontSize(w, h) {
+  const sqrtArea = Math.sqrt(w * h)
+  const t = Math.min(sqrtArea / 220, 1)
+  return Math.round(10 + t * 4) // 10 → 14 px
+}
+
+// Section header label — never truncates (item 1d)
+function sectorLabel(sector, w) {
+  const full  = sector.name
+  const short = sector.shortName || full
+  if (w >= 150) return full
+  if (w >= 80)  return short
+  // drop "& ..." suffix first, then truncate
+  const noAmp = short.replace(/\s*&.*$/, '').trim()
+  return noAmp.slice(0, Math.max(8, Math.floor(w / 8)))
+}
+
+// ── Build hierarchy ────────────────────────────────────────────────────────────
 
 function buildHierarchy(data, year, region) {
   return {
@@ -114,8 +157,8 @@ function buildHierarchy(data, year, region) {
           name: o.name,
           id: o.id,
           value: Math.max(1, oAdj.workers),
-          occupation: oAdj,   // year-adjusted data for color/label
-          occBase: o,         // original for id/name/description/sources
+          occupation: { ...oAdj, shortLabel: o.shortLabel },
+          occBase: o,
           sector: s,
         }
       })
@@ -127,12 +170,12 @@ function buildHierarchy(data, year, region) {
 
 export default function Treemap({ data, layer, currency, selected, onSelect, search = '', year = 2025, region = 'india' }) {
   const containerRef = useRef(null)
-  const [dims, setDims] = useState({ w: 0, h: 0 })
-  const [nodes, setNodes] = useState([])
+  const [dims, setDims]     = useState({ w: 0, h: 0 })
+  const [nodes, setNodes]   = useState([])
   const [groups, setGroups] = useState([])
   const [tooltip, setTooltip] = useState(null)
+  const [focused, setFocused] = useState(null)
 
-  // Measure container
   useEffect(() => {
     if (!containerRef.current) return
     const ro = new ResizeObserver(([entry]) => {
@@ -143,7 +186,6 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
     return () => ro.disconnect()
   }, [])
 
-  // Compute layout
   useEffect(() => {
     if (dims.w < 10 || dims.h < 10) return
     const root = hierarchy(buildHierarchy(data, year, region))
@@ -157,19 +199,16 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
       .paddingTop(22)
       .paddingInner(1)(root)
 
-    // leaf nodes (occupations)
     const leafs = root.leaves().map(n => ({
       x0: n.x0, y0: n.y0, x1: n.x1, y1: n.y1,
-      occupation: n.data.occupation,   // year-adjusted
-      occBase: n.data.occBase,         // original (for click → DetailPanel)
-      sector: n.data.sector,
+      occupation: n.data.occupation,
+      occBase:    n.data.occBase,
+      sector:     n.data.sector,
     }))
 
-    // sector group nodes
     const grps = root.children.map(n => ({
       x0: n.x0, y0: n.y0, x1: n.x1, y1: n.y1,
       sector: n.data.sector,
-      name: n.data.name,
     }))
 
     setNodes(leafs)
@@ -183,13 +222,22 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
   const isMatch = useCallback((occ) =>
     !query || occ.name.toLowerCase().includes(query), [query])
 
+  // Keyboard: dismiss on Escape anywhere in the container
+  function handleContainerKey(e) {
+    if (e.key === 'Escape') { setTooltip(null); setFocused(null) }
+  }
+
   return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
-      {/* Sector group labels */}
+    <div
+      ref={containerRef}
+      className="absolute inset-0 overflow-hidden"
+      onKeyDown={handleContainerKey}
+    >
+      {/* Sector group labels (item 1d + item 10 — neutral color) */}
       {groups.map(g => {
         const w = g.x1 - g.x0
         const h = g.y1 - g.y0
-        if (w < 60 || h < 30) return null
+        if (w < 40 || h < 24) return null
         return (
           <div
             key={g.sector.id}
@@ -197,29 +245,39 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
             style={{ left: g.x0 + 3, top: g.y0, width: w - 6, height: 20 }}
           >
             <span
-              className="text-[10px] font-bold uppercase tracking-widest truncate block"
-              style={{ color: g.sector.color, opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}
+              className="text-[10px] font-bold uppercase tracking-widest block whitespace-nowrap text-slate-400"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}
             >
-              {g.name}
+              {sectorLabel(g.sector, w - 6)}
             </span>
           </div>
         )
       })}
 
       {/* Occupation cells */}
-      {nodes.map(n => {
-        const w = n.x1 - n.x0
-        const h = n.y1 - n.y0
-        const color = getColor(n.occupation, layer, currency)
-        const sel = isSelected(n.occupation)
-        const matched = isMatch(n.occupation)
-        const label = fmtLayer(n.occupation, layer, currency)
-        const showName = w > 55 && h > 30
-        const showVal  = w > 45 && h > 44
+      {nodes.map((n, idx) => {
+        const w   = n.x1 - n.x0
+        const h   = n.y1 - n.y0
+        const occ = n.occupation
+        const base = n.occBase || occ
+        const color     = getColor(occ, layer)
+        const txtColor  = labelColor(color)
+        const sel       = isSelected(occ)
+        const matched   = isMatch(occ)
+        const cellLabel = pickCellLabel(occ, w)
+        const valLabel  = fmtLayer(occ, layer, currency)
+        const fontSize  = cellFontSize(w, h)
+        const showVal   = w > 55 && h > 44
+        const ariaLabel = `${base.name}, ${valLabel}, ${fmtWorkers(occ.workers)} workers`
+        const showFemalePill = layer === 'gender' && (occ.femalePct ?? 0) >= 60 && w > 60 && h > 40
 
         return (
           <div
-            key={n.occupation.id}
+            key={occ.id}
+            role="button"
+            tabIndex={0}
+            aria-label={ariaLabel}
+            title={ariaLabel}
             className={`treemap-cell ${sel ? 'selected' : ''}`}
             style={{
               left: n.x0, top: n.y0,
@@ -228,22 +286,44 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
               border: `1px solid rgba(0,0,0,0.25)`,
               opacity: query && !matched ? 0.18 : 1,
               transition: 'opacity 0.2s ease, filter 0.15s ease',
+              outline: focused === idx ? '2px solid #f8fafc' : undefined,
+              outlineOffset: focused === idx ? '-2px' : undefined,
             }}
-            onClick={() => onSelect({ sector: n.sector, occupation: n.occBase || n.occupation, occAdj: n.occupation })}
+            onClick={() => onSelect({ sector: n.sector, occupation: base, occAdj: occ })}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') onSelect({ sector: n.sector, occupation: base, occAdj: occ })
+              if (e.key === 'Escape') { setTooltip(null); setFocused(null) }
+            }}
+            onFocus={() => setFocused(idx)}
+            onBlur={() => setFocused(f => f === idx ? null : f)}
             onMouseEnter={(e) => setTooltip({ x: e.clientX, y: e.clientY, n })}
             onMouseMove={(e) => setTooltip(t => t ? { ...t, x: e.clientX, y: e.clientY } : null)}
             onMouseLeave={() => setTooltip(null)}
           >
-            {showName && (
+            {cellLabel && (
               <div className="absolute inset-0 p-1 flex flex-col justify-end pointer-events-none">
-                <p className="text-white text-[10px] font-semibold leading-tight drop-shadow truncate">
-                  {n.occupation.name}
+                {/* Wide cell: allow 2-line wrap; narrow: single line */}
+                <p
+                  className={`font-semibold leading-tight drop-shadow ${w >= 180 ? 'line-clamp-2 whitespace-normal' : 'whitespace-nowrap'}`}
+                  style={{ fontSize, color: txtColor, textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}
+                >
+                  {cellLabel}
                 </p>
                 {showVal && (
-                  <p className="text-white/70 text-[9px] font-bold drop-shadow">
-                    {label}
+                  <p
+                    className="font-bold drop-shadow mt-0.5 whitespace-nowrap"
+                    style={{ fontSize: Math.max(fontSize - 2, 9), color: txtColor, opacity: 0.75, textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}
+                  >
+                    {valLabel}
                   </p>
                 )}
+              </div>
+            )}
+
+            {/* ♀ non-color signal for high female participation (item 12) */}
+            {showFemalePill && (
+              <div className="absolute top-1 right-1 pointer-events-none">
+                <span className="text-[9px] bg-fuchsia-800/70 text-fuchsia-200 rounded px-1 leading-tight font-bold">♀</span>
               </div>
             )}
           </div>
@@ -258,51 +338,95 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
   )
 }
 
-function Tooltip({ x, y, n, layer, currency, dims }) {
-  const occ = n.occupation
-  const PAD = 12
-  const W = 220
-  const H = 130
+// ── Tooltip (item 3) ──────────────────────────────────────────────────────────
 
+const LAYER_LABEL = {
+  growth:      'Growth/yr',
+  salary:      'Salary/mo',
+  education:   'Education',
+  ai:          'AI Exposure',
+  informality: 'Informal %',
+  gender:      'Female %',
+}
+
+function Tooltip({ x, y, n, layer, currency, dims }) {
+  const occ  = n.occupation         // year-adjusted metrics
+  const base = n.occBase || occ     // full name, description, sources
+  const PAD  = 14
+  const W    = 240
+
+  // Definition: first sentence of description
+  const defn = base.description
+    ? base.description.split(/\.\s/)[0].replace(/\.$/, '') + '.'
+    : null
+
+  // Position: never overflow viewport
   let tx = x + PAD
   let ty = y + PAD
   if (tx + W > dims.w) tx = x - W - PAD
-  if (ty + H > dims.h) ty = y - H - PAD
+  if (ty + 220 > dims.h) ty = Math.max(4, dims.h - 224)
+
+  // Other metrics (everything except the currently selected layer)
+  const others = [
+    layer !== 'growth'      && { label: 'Growth/yr',   val: occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`, hi: occ.growthPct > 5, lo: occ.growthPct < 0 },
+    layer !== 'salary'      && { label: currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo', val: fmtSalary(occ, currency) },
+    layer !== 'education'   && { label: 'Education',   val: `${occ.educationYears} yrs` },
+    layer !== 'ai'          && { label: 'AI Exposure',  val: `${occ.aiExposure}/100`, hi: occ.aiExposure > 60, lo: occ.aiExposure < 25 },
+    layer !== 'informality' && occ.informalityPct != null && { label: 'Informal %', val: `${occ.informalityPct}%`, lo: occ.informalityPct > 70 },
+    layer !== 'gender'      && occ.femalePct != null && { label: 'Female %',  val: `${occ.femalePct}%` },
+  ].filter(Boolean)
 
   return (
     <div
       className="absolute z-50 pointer-events-none"
       style={{ left: tx, top: ty, width: W }}
     >
-      <div className="bg-slate-900/95 backdrop-blur border border-slate-700 rounded-xl p-3 shadow-2xl">
+      <div className="bg-slate-900/97 backdrop-blur border border-slate-700 rounded-xl p-3 shadow-2xl">
+        {/* Header */}
         <div className="flex items-start gap-2 mb-2">
-          <div className="w-2.5 h-2.5 rounded-sm mt-1 shrink-0" style={{ background: n.sector.color }} />
+          <div className="w-2.5 h-2.5 rounded-sm mt-0.5 shrink-0" style={{ background: n.sector.color }} />
           <div>
-            <p className="text-white text-[12px] font-bold leading-tight">{occ.name}</p>
+            <p className="text-white text-[12px] font-bold leading-tight">{base.name}</p>
             <p className="text-slate-400 text-[10px]">{n.sector.name}</p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-1">
-          <Stat label="Workers"    val={fmtWorkers(occ.workers)} />
-          <Stat label="Growth"     val={occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`} hi={occ.growthPct > 5} lo={occ.growthPct < 0} />
-          <Stat label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} val={fmtSalary(occ, currency)} />
-          <Stat label="AI Exposure" val={`${occ.aiExposure}/100`} hi={occ.aiExposure > 60} lo={occ.aiExposure < 25} />
-          <Stat label="Education"  val={`${occ.educationYears} yrs`} />
-          {occ.informalityPct != null && <Stat label="Informal %" val={`${occ.informalityPct}%`} lo={occ.informalityPct > 70} />}
-          {occ.femalePct      != null && <Stat label="Female %"   val={`${occ.femalePct}%`} />}
-          {occ.topSkills?.length      && <Stat label="Top Skill"  val={occ.topSkills[0]} />}
-          {occ.iscoCode               && <Stat label="ISCO-08"    val={occ.iscoCode} />}
-        </div>
-      </div>
-    </div>
-  )
-}
 
-function Stat({ label, val, hi, lo }) {
-  return (
-    <div className="bg-slate-800 rounded-lg p-1.5">
-      <p className="text-slate-500 text-[9px] uppercase tracking-wide">{label}</p>
-      <p className={`text-[11px] font-bold ${hi ? 'text-emerald-400' : lo ? 'text-rose-400' : 'text-white'}`}>{val}</p>
+        {/* Definition */}
+        {defn && (
+          <p className="text-slate-400 text-[10px] leading-relaxed mb-2 border-b border-slate-800 pb-2">
+            {defn}
+          </p>
+        )}
+
+        {/* Workforce size — always prominent */}
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-slate-500 text-[9px] uppercase tracking-wide">Workers</span>
+          <span className="text-sky-300 text-[13px] font-black">{fmtWorkers(occ.workers)}</span>
+        </div>
+
+        {/* Active metric — highlighted */}
+        <div className="bg-slate-800 rounded-lg px-2 py-1.5 mb-2 flex items-center justify-between">
+          <span className="text-slate-400 text-[9px] uppercase tracking-wide">{LAYER_LABEL[layer]}</span>
+          <span className="text-white text-[13px] font-black">{fmtLayer(occ, layer, currency)}</span>
+        </div>
+
+        {/* Other metrics */}
+        <div className="grid grid-cols-2 gap-1">
+          {others.map(({ label, val, hi, lo }) => (
+            <div key={label} className="bg-slate-800/60 rounded p-1">
+              <p className="text-slate-500 text-[8px] uppercase tracking-wide leading-none mb-0.5">{label}</p>
+              <p className={`text-[10px] font-bold ${hi ? 'text-emerald-400' : lo ? 'text-rose-400' : 'text-slate-300'}`}>{val}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Top skill */}
+        {occ.topSkills?.[0] && (
+          <p className="text-slate-500 text-[9px] mt-1.5 pt-1.5 border-t border-slate-800">
+            <span className="text-slate-600">Top skill: </span>{occ.topSkills[0]}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

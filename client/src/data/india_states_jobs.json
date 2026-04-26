@@ -15,51 +15,104 @@
       "pctWorkforce": 15.1,
       "sectorGrowth": 4.2,
       "color": "#d97706",
-      "sources": ["PLFS 2023-24 state tables — UP WPR 37.1%", "UP Economic Survey 2023-24, GoUP Finance Dept."],
+      "sources": [
+        "PLFS 2023-24 state tables — UP WPR 37.1%",
+        "UP Economic Survey 2023-24, GoUP Finance Dept."
+      ],
       "occupations": [
         {
-          "id": "up_agri", "name": "Agriculture & Farming",
-          "workers": 45000000, "medianSalaryINR": 7500, "growthPct": 0.5,
-          "educationYears": 5, "aiExposure": 12,
+          "id": "up_agri",
+          "name": "Agriculture & Farming",
+          "workers": 45000000,
+          "medianSalaryINR": 7500,
+          "growthPct": 0.5,
+          "educationYears": 5,
+          "aiExposure": 12,
           "description": "India's largest agricultural state. Wheat, sugarcane, potato, rice. 45M agri workers; still employs 51% of UP workforce.",
-          "sources": ["PLFS 2023-24 UP agriculture sector", "UP Agriculture Dept. Annual Report 2023-24", "Directorate of Agriculture & Food Production, GoUP"]
+          "sources": [
+            "PLFS 2023-24 UP agriculture sector",
+            "UP Agriculture Dept. Annual Report 2023-24",
+            "Directorate of Agriculture & Food Production, GoUP"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "up_msme", "name": "MSME, Handlooms & Crafts",
-          "workers": 14000000, "medianSalaryINR": 9500, "growthPct": 3.5,
-          "educationYears": 7, "aiExposure": 22,
+          "id": "up_msme",
+          "name": "MSME, Handlooms & Crafts",
+          "workers": 14000000,
+          "medianSalaryINR": 9500,
+          "growthPct": 3.5,
+          "educationYears": 7,
+          "aiExposure": 22,
           "description": "Varanasi silk, Agra leather, Moradabad brassware, Kanpur textiles. UP has India's largest MSME cluster base.",
-          "sources": ["MSME Annual Report 2023-24 — UP MSME count", "DC Handicrafts UP Cluster Report 2023-24"]
+          "sources": [
+            "MSME Annual Report 2023-24 — UP MSME count",
+            "DC Handicrafts UP Cluster Report 2023-24"
+          ],
+          "shortLabel": "MSME, Handloom"
         },
         {
-          "id": "up_construction", "name": "Construction & Infrastructure",
-          "workers": 12000000, "medianSalaryINR": 12000, "growthPct": 6.5,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "up_construction",
+          "name": "Construction & Infrastructure",
+          "workers": 12000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 6.5,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "Expressway projects (Purvanchal, Bundelkhand), PM Awas Yojana housing, Jewar Airport driving construction boom.",
-          "sources": ["UP Expressways Industrial Development Authority (UPEIDA) 2024", "PLFS 2023-24 UP construction workers"]
+          "sources": [
+            "UP Expressways Industrial Development Authority (UPEIDA) 2024",
+            "PLFS 2023-24 UP construction workers"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "up_trade", "name": "Trade & Commerce",
-          "workers": 12000000, "medianSalaryINR": 10000, "growthPct": 3.8,
-          "educationYears": 9, "aiExposure": 30,
+          "id": "up_trade",
+          "name": "Trade & Commerce",
+          "workers": 12000000,
+          "medianSalaryINR": 10000,
+          "growthPct": 3.8,
+          "educationYears": 9,
+          "aiExposure": 30,
           "description": "Retail trade, wholesale markets across 75 districts. Agra, Kanpur, Varanasi are major commercial centres.",
-          "sources": ["PLFS 2023-24 UP trade sector", "UP Economic Survey 2023-24"]
+          "sources": [
+            "PLFS 2023-24 UP trade sector",
+            "UP Economic Survey 2023-24"
+          ],
+          "shortLabel": "Trade & Commer"
         },
         {
-          "id": "up_it", "name": "IT & New Economy (Noida/Lucknow)",
-          "workers": 800000, "medianSalaryINR": 42000, "growthPct": 14.0,
-          "educationYears": 16, "aiExposure": 65,
+          "id": "up_it",
+          "name": "IT & New Economy (Noida/Lucknow)",
+          "workers": 800000,
+          "medianSalaryINR": 42000,
+          "growthPct": 14,
+          "educationYears": 16,
+          "aiExposure": 65,
           "description": "Noida (NCR) hosts 1,000+ IT firms. Lucknow Tech City emerging. UP IT exports ₹30,000 Cr FY24.",
-          "sources": ["NASSCOM State IT Report 2025 — UP IT workforce", "UPEIDA IT/ITeS Policy 2023"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — UP IT workforce",
+            "UPEIDA IT/ITeS Policy 2023"
+          ],
+          "shortLabel": "IT & New Econo"
         },
         {
-          "id": "up_govt", "name": "Government & Public Services",
-          "workers": 4200000, "medianSalaryINR": 28000, "growthPct": 1.0,
-          "educationYears": 13, "aiExposure": 35,
+          "id": "up_govt",
+          "name": "Government & Public Services",
+          "workers": 4200000,
+          "medianSalaryINR": 28000,
+          "growthPct": 1,
+          "educationYears": 13,
+          "aiExposure": 35,
           "description": "UP has India's largest state government workforce. UPPSC, UPSSSC recruitments employ lakhs across 75 districts.",
-          "sources": ["DoP&T UP State Employee Census 2023", "UP Budget 2024-25 — salary head expenditure"]
+          "sources": [
+            "DoP&T UP State Employee Census 2023",
+            "UP Budget 2024-25 — salary head expenditure"
+          ],
+          "shortLabel": "Government & P"
         }
-      ]
+      ],
+      "shortName": "Uttar Pradesh"
     },
     {
       "id": "maharashtra",
@@ -69,51 +122,104 @@
       "pctWorkforce": 9.5,
       "sectorGrowth": 6.5,
       "color": "#7c3aed",
-      "sources": ["PLFS 2023-24 Maharashtra state tables", "Maharashtra Economic Survey 2023-24, Finance Dept. GoM"],
+      "sources": [
+        "PLFS 2023-24 Maharashtra state tables",
+        "Maharashtra Economic Survey 2023-24, Finance Dept. GoM"
+      ],
       "occupations": [
         {
-          "id": "mh_finance_it", "name": "Finance, IT & Professional Services",
-          "workers": 8000000, "medianSalaryINR": 58000, "growthPct": 10.5,
-          "educationYears": 16, "aiExposure": 62,
+          "id": "mh_finance_it",
+          "name": "Finance, IT & Professional Services",
+          "workers": 8000000,
+          "medianSalaryINR": 58000,
+          "growthPct": 10.5,
+          "educationYears": 16,
+          "aiExposure": 62,
           "description": "Mumbai = India's financial capital. Pune = 2nd largest IT hub. Maharashtra IT exports ₹2.4L Cr FY24; 14L IT employees.",
-          "sources": ["NASSCOM State IT Report 2025 — Maharashtra 1.4M IT workers", "RBI Annual Report 2024 — Mumbai financial sector employment", "Maharashtra Economic Survey 2023-24"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — Maharashtra 1.4M IT workers",
+            "RBI Annual Report 2024 — Mumbai financial sector employment",
+            "Maharashtra Economic Survey 2023-24"
+          ],
+          "shortLabel": "Finance, IT & "
         },
         {
-          "id": "mh_manufacturing", "name": "Manufacturing & Engineering",
-          "workers": 10000000, "medianSalaryINR": 22000, "growthPct": 5.5,
-          "educationYears": 11, "aiExposure": 42,
+          "id": "mh_manufacturing",
+          "name": "Manufacturing & Engineering",
+          "workers": 10000000,
+          "medianSalaryINR": 22000,
+          "growthPct": 5.5,
+          "educationYears": 11,
+          "aiExposure": 42,
           "description": "Pune auto hub (Tata, Bajaj, Mercedes), Nashik (Mahindra, Sula wines), Nagpur SEZ, Aurangabad AURIC. Maharashtra = 15% of India's industrial output.",
-          "sources": ["ASI 2022-23 Maharashtra manufacturing employment", "FICCI Maharashtra Industrial Survey 2024"]
+          "sources": [
+            "ASI 2022-23 Maharashtra manufacturing employment",
+            "FICCI Maharashtra Industrial Survey 2024"
+          ],
+          "shortLabel": "Manufacturing "
         },
         {
-          "id": "mh_agri", "name": "Agriculture (Sugarcane, Cotton)",
-          "workers": 12000000, "medianSalaryINR": 9800, "growthPct": 2.0,
-          "educationYears": 6, "aiExposure": 14,
+          "id": "mh_agri",
+          "name": "Agriculture (Sugarcane, Cotton)",
+          "workers": 12000000,
+          "medianSalaryINR": 9800,
+          "growthPct": 2,
+          "educationYears": 6,
+          "aiExposure": 14,
           "description": "Maharashtra is largest sugarcane and cotton producer. Vidarbha farmer distress; drip irrigation adoption growing.",
-          "sources": ["Maharashtra Dept. of Agriculture Annual Report 2023-24", "PLFS 2023-24 MH agriculture tables"]
+          "sources": [
+            "Maharashtra Dept. of Agriculture Annual Report 2023-24",
+            "PLFS 2023-24 MH agriculture tables"
+          ],
+          "shortLabel": "Agriculture (S"
         },
         {
-          "id": "mh_trade", "name": "Trade, Hospitality & Tourism",
-          "workers": 12000000, "medianSalaryINR": 16000, "growthPct": 6.5,
-          "educationYears": 10, "aiExposure": 30,
+          "id": "mh_trade",
+          "name": "Trade, Hospitality & Tourism",
+          "workers": 12000000,
+          "medianSalaryINR": 16000,
+          "growthPct": 6.5,
+          "educationYears": 10,
+          "aiExposure": 30,
           "description": "Mumbai retail, hospitality, Ajanta-Ellora tourism. Maharashtra received 12Cr domestic tourists FY24.",
-          "sources": ["Maharashtra Tourism Dept. Annual Report 2023-24", "PLFS 2023-24 MH trade sector"]
+          "sources": [
+            "Maharashtra Tourism Dept. Annual Report 2023-24",
+            "PLFS 2023-24 MH trade sector"
+          ],
+          "shortLabel": "Trade, Hospita"
         },
         {
-          "id": "mh_construction", "name": "Construction & Real Estate",
-          "workers": 8000000, "medianSalaryINR": 14000, "growthPct": 7.5,
-          "educationYears": 8, "aiExposure": 18,
+          "id": "mh_construction",
+          "name": "Construction & Real Estate",
+          "workers": 8000000,
+          "medianSalaryINR": 14000,
+          "growthPct": 7.5,
+          "educationYears": 8,
+          "aiExposure": 18,
           "description": "Mumbai Metro 2A/7, Pune Ring Road, Nagpur-Mumbai Samruddhi Expressway. Maharashtra accounts for 25% of India's real estate market.",
-          "sources": ["CREDAI Maharashtra Report 2024", "MahaMetro Progress Report FY24"]
+          "sources": [
+            "CREDAI Maharashtra Report 2024",
+            "MahaMetro Progress Report FY24"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "mh_govt", "name": "Government & Public Sector",
-          "workers": 5000000, "medianSalaryINR": 38000, "growthPct": 0.8,
-          "educationYears": 14, "aiExposure": 38,
+          "id": "mh_govt",
+          "name": "Government & Public Sector",
+          "workers": 5000000,
+          "medianSalaryINR": 38000,
+          "growthPct": 0.8,
+          "educationYears": 14,
+          "aiExposure": 38,
           "description": "State government, BEST, MSEDCL, MMRDA, PSU employees. Maharashtra 7th Pay Commission equivalent scales.",
-          "sources": ["Maharashtra Finance Dept. Budget 2024-25 — staff expenditure", "MPSC recruitment data 2024"]
+          "sources": [
+            "Maharashtra Finance Dept. Budget 2024-25 — staff expenditure",
+            "MPSC recruitment data 2024"
+          ],
+          "shortLabel": "Government & P"
         }
-      ]
+      ],
+      "shortName": "Maharashtra"
     },
     {
       "id": "bihar",
@@ -123,44 +229,89 @@
       "pctWorkforce": 7.2,
       "sectorGrowth": 5.5,
       "color": "#dc2626",
-      "sources": ["PLFS 2023-24 Bihar state tables — WPR 33%", "Bihar Economic Survey 2023-24, Finance Dept. GoB"],
+      "sources": [
+        "PLFS 2023-24 Bihar state tables — WPR 33%",
+        "Bihar Economic Survey 2023-24, Finance Dept. GoB"
+      ],
       "occupations": [
         {
-          "id": "br_agri", "name": "Agriculture & Allied",
-          "workers": 23000000, "medianSalaryINR": 6500, "growthPct": 2.0,
-          "educationYears": 5, "aiExposure": 12,
+          "id": "br_agri",
+          "name": "Agriculture & Allied",
+          "workers": 23000000,
+          "medianSalaryINR": 6500,
+          "growthPct": 2,
+          "educationYears": 5,
+          "aiExposure": 12,
           "description": "Bihar = major rice, wheat, maize, litchi, makhana producer. ~55% workforce in agriculture. Heavy flood-dependence.",
-          "sources": ["Bihar Agriculture Dept. Annual Report 2023-24", "PLFS 2023-24 Bihar agriculture tables", "Bihar Economic Survey 2023-24"]
+          "sources": [
+            "Bihar Agriculture Dept. Annual Report 2023-24",
+            "PLFS 2023-24 Bihar agriculture tables",
+            "Bihar Economic Survey 2023-24"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "br_construction", "name": "Construction & Infrastructure",
-          "workers": 7000000, "medianSalaryINR": 11000, "growthPct": 8.5,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "br_construction",
+          "name": "Construction & Infrastructure",
+          "workers": 7000000,
+          "medianSalaryINR": 11000,
+          "growthPct": 8.5,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "Bihar Road Works, Ganga Bridge projects, rural housing. Construction is fastest-growing formal employer in Bihar.",
-          "sources": ["Bihar State Road Development Corporation 2024", "PMAY-G Bihar progress report FY24"]
+          "sources": [
+            "Bihar State Road Development Corporation 2024",
+            "PMAY-G Bihar progress report FY24"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "br_migrant_trade", "name": "Trade & Migrant Remittance Economy",
-          "workers": 6000000, "medianSalaryINR": 9000, "growthPct": 4.0,
-          "educationYears": 8, "aiExposure": 20,
+          "id": "br_migrant_trade",
+          "name": "Trade & Migrant Remittance Economy",
+          "workers": 6000000,
+          "medianSalaryINR": 9000,
+          "growthPct": 4,
+          "educationYears": 8,
+          "aiExposure": 20,
           "description": "Largest source of migrant labour to Delhi, Punjab, Maharashtra, Gujarat. Remittances ₹35,000 Cr/yr support rural consumption.",
-          "sources": ["Economic Survey of India 2023-24 Bihar migration data", "World Bank Bihar Migration Study 2023"]
+          "sources": [
+            "Economic Survey of India 2023-24 Bihar migration data",
+            "World Bank Bihar Migration Study 2023"
+          ],
+          "shortLabel": "Trade & Migran"
         },
         {
-          "id": "br_govt", "name": "Government & Education Services",
-          "workers": 3500000, "medianSalaryINR": 22000, "growthPct": 3.5,
-          "educationYears": 13, "aiExposure": 30,
+          "id": "br_govt",
+          "name": "Government & Education Services",
+          "workers": 3500000,
+          "medianSalaryINR": 22000,
+          "growthPct": 3.5,
+          "educationYears": 13,
+          "aiExposure": 30,
           "description": "State government, Jeevika SHG network, BPSC recruits. Bihar's education hiring (Niyojit teachers) is among India's largest.",
-          "sources": ["Bihar Finance Dept. Budget 2024-25", "BPSC Annual Recruitment Report 2023-24"]
+          "sources": [
+            "Bihar Finance Dept. Budget 2024-25",
+            "BPSC Annual Recruitment Report 2023-24"
+          ],
+          "shortLabel": "Government & E"
         },
         {
-          "id": "br_msme", "name": "MSME & Food Processing",
-          "workers": 2500000, "medianSalaryINR": 8500, "growthPct": 5.5,
-          "educationYears": 7, "aiExposure": 22,
+          "id": "br_msme",
+          "name": "MSME & Food Processing",
+          "workers": 2500000,
+          "medianSalaryINR": 8500,
+          "growthPct": 5.5,
+          "educationYears": 7,
+          "aiExposure": 22,
           "description": "Muzaffarpur litchi processing, Bhagalpur silk (Tussar), Madhubani handlooms, makhana processing SMEs.",
-          "sources": ["Bihar MSME Dept. Annual Report 2023-24", "One District One Product (ODOP) Bihar data 2024"]
+          "sources": [
+            "Bihar MSME Dept. Annual Report 2023-24",
+            "One District One Product (ODOP) Bihar data 2024"
+          ],
+          "shortLabel": "MSME & Food Pr"
         }
-      ]
+      ],
+      "shortName": "Bihar"
     },
     {
       "id": "west_bengal",
@@ -170,51 +321,103 @@
       "pctWorkforce": 7.4,
       "sectorGrowth": 5.8,
       "color": "#2563eb",
-      "sources": ["PLFS 2023-24 WB state tables", "West Bengal Economic Review 2023-24, Finance Dept. GoWB"],
+      "sources": [
+        "PLFS 2023-24 WB state tables",
+        "West Bengal Economic Review 2023-24, Finance Dept. GoWB"
+      ],
       "occupations": [
         {
-          "id": "wb_agri", "name": "Agriculture (Rice, Jute, Tea)",
-          "workers": 16000000, "medianSalaryINR": 7800, "growthPct": 1.5,
-          "educationYears": 5, "aiExposure": 13,
+          "id": "wb_agri",
+          "name": "Agriculture (Rice, Jute, Tea)",
+          "workers": 16000000,
+          "medianSalaryINR": 7800,
+          "growthPct": 1.5,
+          "educationYears": 5,
+          "aiExposure": 13,
           "description": "India's largest rice and jute producer. Darjeeling/Dooars tea plantations employ 1M. West Bengal: 38% workforce in agriculture.",
-          "sources": ["WB Agriculture Dept. Annual Report 2023-24", "Tea Board of India Annual Report 2023-24 — 1M tea workers"]
+          "sources": [
+            "WB Agriculture Dept. Annual Report 2023-24",
+            "Tea Board of India Annual Report 2023-24 — 1M tea workers"
+          ],
+          "shortLabel": "Agriculture (R"
         },
         {
-          "id": "wb_manufacturing", "name": "Manufacturing & Engineering",
-          "workers": 7000000, "medianSalaryINR": 16000, "growthPct": 4.5,
-          "educationYears": 10, "aiExposure": 38,
+          "id": "wb_manufacturing",
+          "name": "Manufacturing & Engineering",
+          "workers": 7000000,
+          "medianSalaryINR": 16000,
+          "growthPct": 4.5,
+          "educationYears": 10,
+          "aiExposure": 38,
           "description": "Haldia Petrochemicals, Durgapur steel, Howrah engineering cluster. WB historically strong in jute mills (declining) and metal goods.",
-          "sources": ["ASI 2022-23 West Bengal manufacturing", "WBIDC (WB Industrial Development Corp.) Annual Report 2024"]
+          "sources": [
+            "ASI 2022-23 West Bengal manufacturing",
+            "WBIDC (WB Industrial Development Corp.) Annual Report 2024"
+          ],
+          "shortLabel": "Manufacturing "
         },
         {
-          "id": "wb_it_kolkata", "name": "IT & Knowledge Services (Kolkata)",
-          "workers": 500000, "medianSalaryINR": 38000, "growthPct": 9.5,
-          "educationYears": 16, "aiExposure": 62,
+          "id": "wb_it_kolkata",
+          "name": "IT & Knowledge Services (Kolkata)",
+          "workers": 500000,
+          "medianSalaryINR": 38000,
+          "growthPct": 9.5,
+          "educationYears": 16,
+          "aiExposure": 62,
           "description": "Sector V Salt Lake (IT hub), Newtown Kolkata FinTech hub. WB IT exports ₹42,000 Cr FY24; growing faster than national average.",
-          "sources": ["NASSCOM State IT Report 2025 — WB IT workforce 5L", "WBTCL (WB Electronics Industry Development Corp.) 2024"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — WB IT workforce 5L",
+            "WBTCL (WB Electronics Industry Development Corp.) 2024"
+          ],
+          "shortLabel": "IT & Knowledge"
         },
         {
-          "id": "wb_trade", "name": "Trade, Informal & Gig Economy",
-          "workers": 12000000, "medianSalaryINR": 9500, "growthPct": 3.5,
-          "educationYears": 9, "aiExposure": 28,
+          "id": "wb_trade",
+          "name": "Trade, Informal & Gig Economy",
+          "workers": 12000000,
+          "medianSalaryINR": 9500,
+          "growthPct": 3.5,
+          "educationYears": 9,
+          "aiExposure": 28,
           "description": "Kolkata wholesale market, Burrabazar, border trade with Bangladesh/Nepal. Large informal hawker economy in Kolkata.",
-          "sources": ["PLFS 2023-24 WB trade sector", "Kolkata Metropolitan Area Trade Survey 2023"]
+          "sources": [
+            "PLFS 2023-24 WB trade sector",
+            "Kolkata Metropolitan Area Trade Survey 2023"
+          ],
+          "shortLabel": "Trade, Informa"
         },
         {
-          "id": "wb_govt", "name": "Government & PSUs",
-          "workers": 3500000, "medianSalaryINR": 32000, "growthPct": 0.5,
-          "educationYears": 14, "aiExposure": 38,
+          "id": "wb_govt",
+          "name": "Government & PSUs",
+          "workers": 3500000,
+          "medianSalaryINR": 32000,
+          "growthPct": 0.5,
+          "educationYears": 14,
+          "aiExposure": 38,
           "description": "State govt, WBSEDCL, Kolkata Metro Railway, PSU headquarters (Coal India, SAIL, Exide). WB has high public sector density.",
-          "sources": ["GoWB Finance Dept. Budget 2024-25", "Coal India HQ Kolkata employee data 2024"]
+          "sources": [
+            "GoWB Finance Dept. Budget 2024-25",
+            "Coal India HQ Kolkata employee data 2024"
+          ],
+          "shortLabel": "Government & P"
         },
         {
-          "id": "wb_artisan", "name": "Artisans, Weavers & Creative",
-          "workers": 4000000, "medianSalaryINR": 8500, "growthPct": 2.5,
-          "educationYears": 7, "aiExposure": 18,
+          "id": "wb_artisan",
+          "name": "Artisans, Weavers & Creative",
+          "workers": 4000000,
+          "medianSalaryINR": 8500,
+          "growthPct": 2.5,
+          "educationYears": 7,
+          "aiExposure": 18,
           "description": "Baluchari, Jamdani, Kantha handlooms; Bishnupur terracotta; Kumartuli potters. WB's handloom sector employs 7L weavers.",
-          "sources": ["WB Handloom & Textile Dept. Annual Report 2023-24", "DC Handicrafts WB Cluster Report 2024"]
+          "sources": [
+            "WB Handloom & Textile Dept. Annual Report 2023-24",
+            "DC Handicrafts WB Cluster Report 2024"
+          ],
+          "shortLabel": "Artisans, Weav"
         }
-      ]
+      ],
+      "shortName": "West Bengal"
     },
     {
       "id": "tamil_nadu",
@@ -224,51 +427,104 @@
       "pctWorkforce": 5.9,
       "sectorGrowth": 7.2,
       "color": "#0d9488",
-      "sources": ["PLFS 2023-24 TN state tables", "Tamil Nadu Economic Appraisal 2023-24, Finance Dept. GoTN"],
+      "sources": [
+        "PLFS 2023-24 TN state tables",
+        "Tamil Nadu Economic Appraisal 2023-24, Finance Dept. GoTN"
+      ],
       "occupations": [
         {
-          "id": "tn_auto_mfg", "name": "Automobile & Auto Components",
-          "workers": 5000000, "medianSalaryINR": 22000, "growthPct": 8.5,
-          "educationYears": 11, "aiExposure": 45,
+          "id": "tn_auto_mfg",
+          "name": "Automobile & Auto Components",
+          "workers": 5000000,
+          "medianSalaryINR": 22000,
+          "growthPct": 8.5,
+          "educationYears": 11,
+          "aiExposure": 45,
           "description": "Chennai = 'Detroit of India'. Ford, Hyundai, BMW, Renault-Nissan, TVS, Ashok Leyland. TN produces 35% of India's vehicles.",
-          "sources": ["SIAM TN Auto Cluster Report 2024", "ACMA TN Auto Components Employment 2024", "TN Industries Dept. Annual Report 2023-24"]
+          "sources": [
+            "SIAM TN Auto Cluster Report 2024",
+            "ACMA TN Auto Components Employment 2024",
+            "TN Industries Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Automobile & A"
         },
         {
-          "id": "tn_textile_garment", "name": "Textile, Garment & Leather",
-          "workers": 4500000, "medianSalaryINR": 12000, "growthPct": 3.5,
-          "educationYears": 8, "aiExposure": 40,
+          "id": "tn_textile_garment",
+          "name": "Textile, Garment & Leather",
+          "workers": 4500000,
+          "medianSalaryINR": 12000,
+          "growthPct": 3.5,
+          "educationYears": 8,
+          "aiExposure": 40,
           "description": "Tiruppur knitwear (₹35,000 Cr exports), Chennai leather (40% of India's leather exports), Coimbatore spinning mills.",
-          "sources": ["AEPC (Apparel Export Promotion Council) TN data 2024", "CLE (Council for Leather Exports) Annual Report 2023-24"]
+          "sources": [
+            "AEPC (Apparel Export Promotion Council) TN data 2024",
+            "CLE (Council for Leather Exports) Annual Report 2023-24"
+          ],
+          "shortLabel": "Textile, Garme"
         },
         {
-          "id": "tn_it", "name": "IT & BPO Services (Chennai)",
-          "workers": 2000000, "medianSalaryINR": 52000, "growthPct": 10.5,
-          "educationYears": 16, "aiExposure": 65,
+          "id": "tn_it",
+          "name": "IT & BPO Services (Chennai)",
+          "workers": 2000000,
+          "medianSalaryINR": 52000,
+          "growthPct": 10.5,
+          "educationYears": 16,
+          "aiExposure": 65,
           "description": "Chennai is India's 3rd largest IT city. 20L IT workers; Cognizant, Infosys, TCS, Zoho HQ. TN IT exports ₹1.5L Cr FY24.",
-          "sources": ["NASSCOM State IT Report 2025 — TN 2M IT workers", "STPI Chennai Annual Performance Report FY24"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — TN 2M IT workers",
+            "STPI Chennai Annual Performance Report FY24"
+          ],
+          "shortLabel": "IT & BPO Servi"
         },
         {
-          "id": "tn_agri", "name": "Agriculture & Fisheries",
-          "workers": 8000000, "medianSalaryINR": 8500, "growthPct": 1.8,
-          "educationYears": 6, "aiExposure": 14,
+          "id": "tn_agri",
+          "name": "Agriculture & Fisheries",
+          "workers": 8000000,
+          "medianSalaryINR": 8500,
+          "growthPct": 1.8,
+          "educationYears": 6,
+          "aiExposure": 14,
           "description": "Rice, bananas, turmeric, groundnut. Tamil Nadu is India's leading seafood exporter (₹12,000 Cr FY24).",
-          "sources": ["TN Agriculture Dept. Annual Report 2023-24", "MPEDA (Marine Products Export Development Authority) TN data 2024"]
+          "sources": [
+            "TN Agriculture Dept. Annual Report 2023-24",
+            "MPEDA (Marine Products Export Development Authority) TN data 2024"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "tn_healthcare_edu", "name": "Healthcare & Higher Education Hub",
-          "workers": 2500000, "medianSalaryINR": 28000, "growthPct": 9.0,
-          "educationYears": 15, "aiExposure": 40,
+          "id": "tn_healthcare_edu",
+          "name": "Healthcare & Higher Education Hub",
+          "workers": 2500000,
+          "medianSalaryINR": 28000,
+          "growthPct": 9,
+          "educationYears": 15,
+          "aiExposure": 40,
           "description": "Chennai = India's healthcare hub (medical tourism ₹8,000 Cr). TN leads in MBBS seats; Apollo, Fortis, MIOT anchor a growing export-quality healthcare sector.",
-          "sources": ["TN Health Dept. HMIS Report 2023-24", "CII TN Healthcare Sector Report 2024"]
+          "sources": [
+            "TN Health Dept. HMIS Report 2023-24",
+            "CII TN Healthcare Sector Report 2024"
+          ],
+          "shortLabel": "Healthcare & H"
         },
         {
-          "id": "tn_trade_govt", "name": "Trade, Services & Government",
-          "workers": 12400000, "medianSalaryINR": 16000, "growthPct": 4.5,
-          "educationYears": 10, "aiExposure": 30,
+          "id": "tn_trade_govt",
+          "name": "Trade, Services & Government",
+          "workers": 12400000,
+          "medianSalaryINR": 16000,
+          "growthPct": 4.5,
+          "educationYears": 10,
+          "aiExposure": 30,
           "description": "Retail trade across 37 districts, TNPSC government jobs, TANGEDCO, TIDCO public sector. TN per-capita income ₹2.5L, well above national average.",
-          "sources": ["TN Economic Appraisal 2023-24", "TNPSC Recruitment Data 2024"]
+          "sources": [
+            "TN Economic Appraisal 2023-24",
+            "TNPSC Recruitment Data 2024"
+          ],
+          "shortLabel": "Trade, Service"
         }
-      ]
+      ],
+      "shortName": "Tamil Nadu"
     },
     {
       "id": "karnataka",
@@ -278,51 +534,105 @@
       "pctWorkforce": 5.4,
       "sectorGrowth": 8.5,
       "color": "#4f46e5",
-      "sources": ["PLFS 2023-24 Karnataka state tables", "Karnataka Economic Survey 2023-24, Finance Dept. GoK"],
+      "sources": [
+        "PLFS 2023-24 Karnataka state tables",
+        "Karnataka Economic Survey 2023-24, Finance Dept. GoK"
+      ],
       "occupations": [
         {
-          "id": "ka_it", "name": "IT, Startups & Digital Economy (Bengaluru)",
-          "workers": 3000000, "medianSalaryINR": 68000, "growthPct": 12.5,
-          "educationYears": 16, "aiExposure": 68,
+          "id": "ka_it",
+          "name": "IT, Startups & Digital Economy (Bengaluru)",
+          "workers": 3000000,
+          "medianSalaryINR": 68000,
+          "growthPct": 12.5,
+          "educationYears": 16,
+          "aiExposure": 68,
           "description": "Bengaluru = India's Silicon Valley. 30L IT workers, 60K+ startups, 45 unicorns. Karnataka IT exports $50Bn FY24 (38% of India's total).",
-          "sources": ["NASSCOM State IT Report 2025 — Karnataka 3M IT workers", "STPI Bengaluru Annual Report FY24", "Karnataka Startup Policy 2022-27 Annual Report"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — Karnataka 3M IT workers",
+            "STPI Bengaluru Annual Report FY24",
+            "Karnataka Startup Policy 2022-27 Annual Report"
+          ],
+          "shortLabel": "IT, Startups &"
         },
         {
-          "id": "ka_aerospace_defense", "name": "Aerospace, Defence & Electronics",
-          "workers": 500000, "medianSalaryINR": 55000, "growthPct": 9.5,
-          "educationYears": 16, "aiExposure": 42,
+          "id": "ka_aerospace_defense",
+          "name": "Aerospace, Defence & Electronics",
+          "workers": 500000,
+          "medianSalaryINR": 55000,
+          "growthPct": 9.5,
+          "educationYears": 16,
+          "aiExposure": 42,
           "description": "HAL, ISRO, DRDO, BEL, NAL HQ in Bengaluru. Karnataka accounts for 65% of India's aerospace output.",
-          "sources": ["HAL Annual Report 2023-24", "Karnataka Aerospace Policy 2023-28 Review", "ISRO Annual Report 2023-24"]
+          "sources": [
+            "HAL Annual Report 2023-24",
+            "Karnataka Aerospace Policy 2023-28 Review",
+            "ISRO Annual Report 2023-24"
+          ],
+          "shortLabel": "Aerospace, Def"
         },
         {
-          "id": "ka_agri_horticulture", "name": "Agriculture, Coffee & Horticulture",
-          "workers": 10000000, "medianSalaryINR": 9500, "growthPct": 2.5,
-          "educationYears": 6, "aiExposure": 16,
+          "id": "ka_agri_horticulture",
+          "name": "Agriculture, Coffee & Horticulture",
+          "workers": 10000000,
+          "medianSalaryINR": 9500,
+          "growthPct": 2.5,
+          "educationYears": 6,
+          "aiExposure": 16,
           "description": "Karnataka produces 70% of India's coffee, 60% of silk (Mysuru), largest ragi producer. Coorg coffee estates employ 3L workers.",
-          "sources": ["Coffee Board of India Annual Report 2023-24 — Karnataka 70% production", "Karnataka Agriculture Dept. Annual Report 2023-24"]
+          "sources": [
+            "Coffee Board of India Annual Report 2023-24 — Karnataka 70% production",
+            "Karnataka Agriculture Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Agriculture, C"
         },
         {
-          "id": "ka_manufacturing", "name": "Manufacturing & Engineering",
-          "workers": 5000000, "medianSalaryINR": 20000, "growthPct": 6.5,
-          "educationYears": 11, "aiExposure": 40,
+          "id": "ka_manufacturing",
+          "name": "Manufacturing & Engineering",
+          "workers": 5000000,
+          "medianSalaryINR": 20000,
+          "growthPct": 6.5,
+          "educationYears": 11,
+          "aiExposure": 40,
           "description": "Mysuru machinery, Dharwad textiles, Hubli-Dharwad industrial estates, Tumkur electronics PLI units.",
-          "sources": ["KSSIDC (Karnataka Small Scale Industries Development Corp.) Annual Report 2024", "Karnataka Industries Dept. FDI data 2023-24"]
+          "sources": [
+            "KSSIDC (Karnataka Small Scale Industries Development Corp.) Annual Report 2024",
+            "Karnataka Industries Dept. FDI data 2023-24"
+          ],
+          "shortLabel": "Manufacturing "
         },
         {
-          "id": "ka_trade_services", "name": "Trade, Hospitality & Tourism",
-          "workers": 9800000, "medianSalaryINR": 16000, "growthPct": 5.5,
-          "educationYears": 10, "aiExposure": 32,
+          "id": "ka_trade_services",
+          "name": "Trade, Hospitality & Tourism",
+          "workers": 9800000,
+          "medianSalaryINR": 16000,
+          "growthPct": 5.5,
+          "educationYears": 10,
+          "aiExposure": 32,
           "description": "Bengaluru retail (India's highest per-capita consumption city), Mysuru-Coorg tourism (₹15,000 Cr). Karnataka received 17Cr domestic tourists FY24.",
-          "sources": ["Karnataka Tourism Dept. Annual Report 2023-24", "PLFS 2023-24 Karnataka trade sector"]
+          "sources": [
+            "Karnataka Tourism Dept. Annual Report 2023-24",
+            "PLFS 2023-24 Karnataka trade sector"
+          ],
+          "shortLabel": "Trade, Hospita"
         },
         {
-          "id": "ka_govt", "name": "Government & Public Services",
-          "workers": 3000000, "medianSalaryINR": 40000, "growthPct": 1.0,
-          "educationYears": 14, "aiExposure": 38,
+          "id": "ka_govt",
+          "name": "Government & Public Services",
+          "workers": 3000000,
+          "medianSalaryINR": 40000,
+          "growthPct": 1,
+          "educationYears": 14,
+          "aiExposure": 38,
           "description": "State government, BESCOM, KSRTC, BMRCL, Sarakari Shakti recruitment. KPSC among India's most competitive state PSCs.",
-          "sources": ["GoK Finance Dept. Budget 2024-25 — salary expenditure", "KPSC Annual Recruitment Report 2023-24"]
+          "sources": [
+            "GoK Finance Dept. Budget 2024-25 — salary expenditure",
+            "KPSC Annual Recruitment Report 2023-24"
+          ],
+          "shortLabel": "Government & P"
         }
-      ]
+      ],
+      "shortName": "Karnataka"
     },
     {
       "id": "gujarat",
@@ -332,51 +642,103 @@
       "pctWorkforce": 5.6,
       "sectorGrowth": 8.2,
       "color": "#ea580c",
-      "sources": ["PLFS 2023-24 Gujarat state tables", "Gujarat Economic Survey 2023-24, Finance Dept. GoG"],
+      "sources": [
+        "PLFS 2023-24 Gujarat state tables",
+        "Gujarat Economic Survey 2023-24, Finance Dept. GoG"
+      ],
       "occupations": [
         {
-          "id": "gj_chemicals_pharma", "name": "Chemicals, Pharma & Petrochemicals",
-          "workers": 3500000, "medianSalaryINR": 22000, "growthPct": 7.5,
-          "educationYears": 13, "aiExposure": 35,
+          "id": "gj_chemicals_pharma",
+          "name": "Chemicals, Pharma & Petrochemicals",
+          "workers": 3500000,
+          "medianSalaryINR": 22000,
+          "growthPct": 7.5,
+          "educationYears": 13,
+          "aiExposure": 35,
           "description": "Gujarat produces 35% of India's chemicals and 40% of pharma exports. Ankleshwar, Vapi, Dahej chemical clusters; Ahmedabad-Vadodara pharma belt.",
-          "sources": ["Indian Chemical Council Gujarat Chapter Report 2024", "Pharmexcil Gujarat data 2023-24"]
+          "sources": [
+            "Indian Chemical Council Gujarat Chapter Report 2024",
+            "Pharmexcil Gujarat data 2023-24"
+          ],
+          "shortLabel": "Chemicals, Pha"
         },
         {
-          "id": "gj_diamond_textile", "name": "Diamond, Textile & Apparel",
-          "workers": 5000000, "medianSalaryINR": 14000, "growthPct": 4.5,
-          "educationYears": 9, "aiExposure": 35,
+          "id": "gj_diamond_textile",
+          "name": "Diamond, Textile & Apparel",
+          "workers": 5000000,
+          "medianSalaryINR": 14000,
+          "growthPct": 4.5,
+          "educationYears": 9,
+          "aiExposure": 35,
           "description": "Surat processes 90% of world's cut-and-polished diamonds; 8L diamond workers. Surat also = synthetic textile capital of India.",
-          "sources": ["GJEPC (Gems & Jewellery Export Promotion Council) Surat data 2024 — 90% global diamond processing", "Southern Gujarat Chamber of Commerce Textile Report 2024"]
+          "sources": [
+            "GJEPC (Gems & Jewellery Export Promotion Council) Surat data 2024 — 90% global diamond processing",
+            "Southern Gujarat Chamber of Commerce Textile Report 2024"
+          ],
+          "shortLabel": "Diamond, Texti"
         },
         {
-          "id": "gj_ports_trade", "name": "Ports, Logistics & Trade",
-          "workers": 4000000, "medianSalaryINR": 18000, "growthPct": 8.5,
-          "educationYears": 10, "aiExposure": 40,
+          "id": "gj_ports_trade",
+          "name": "Ports, Logistics & Trade",
+          "workers": 4000000,
+          "medianSalaryINR": 18000,
+          "growthPct": 8.5,
+          "educationYears": 10,
+          "aiExposure": 40,
           "description": "Gujarat handles 40% of India's maritime cargo via Mundra, Kandla, Hazira ports. GIFT City (India's first IFSC) adds FinTech jobs.",
-          "sources": ["Sagarmala Programme Gujarat Ports data FY24", "IFSCA (International Financial Services Centres Authority) GIFT City Report 2024"]
+          "sources": [
+            "Sagarmala Programme Gujarat Ports data FY24",
+            "IFSCA (International Financial Services Centres Authority) GIFT City Report 2024"
+          ],
+          "shortLabel": "Ports, Logisti"
         },
         {
-          "id": "gj_agri", "name": "Agriculture & Dairy (Amul Belt)",
-          "workers": 10000000, "medianSalaryINR": 8500, "growthPct": 3.5,
-          "educationYears": 6, "aiExposure": 18,
+          "id": "gj_agri",
+          "name": "Agriculture & Dairy (Amul Belt)",
+          "workers": 10000000,
+          "medianSalaryINR": 8500,
+          "growthPct": 3.5,
+          "educationYears": 6,
+          "aiExposure": 18,
           "description": "GCMMF (Amul) cooperative model covers 36L dairy farmers. Gujarat leads in cotton, groundnut, castor oil. White Revolution model.",
-          "sources": ["GCMMF Annual Report 2023-24 — 36L farmer members", "Gujarat Agriculture Dept. Annual Report 2023-24"]
+          "sources": [
+            "GCMMF Annual Report 2023-24 — 36L farmer members",
+            "Gujarat Agriculture Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "gj_manufacturing", "name": "Heavy Engineering & Auto",
-          "workers": 5500000, "medianSalaryINR": 20000, "growthPct": 7.8,
-          "educationYears": 11, "aiExposure": 42,
+          "id": "gj_manufacturing",
+          "name": "Heavy Engineering & Auto",
+          "workers": 5500000,
+          "medianSalaryINR": 20000,
+          "growthPct": 7.8,
+          "educationYears": 11,
+          "aiExposure": 42,
           "description": "Tata Nano plant (now EV), Maruti Suzuki Hansalpur, Ford Sanand (repurposed for Tata EV), Adani Wilmar, ONGC Hazira.",
-          "sources": ["GIDC (Gujarat Industrial Development Corp.) Annual Report 2023-24", "Gujarat Industries Commissioner's Report 2024"]
+          "sources": [
+            "GIDC (Gujarat Industrial Development Corp.) Annual Report 2023-24",
+            "Gujarat Industries Commissioner's Report 2024"
+          ],
+          "shortLabel": "Heavy Engineer"
         },
         {
-          "id": "gj_renewable", "name": "Renewable Energy & New Sectors",
-          "workers": 700000, "medianSalaryINR": 22000, "growthPct": 30.0,
-          "educationYears": 12, "aiExposure": 30,
+          "id": "gj_renewable",
+          "name": "Renewable Energy & New Sectors",
+          "workers": 700000,
+          "medianSalaryINR": 22000,
+          "growthPct": 30,
+          "educationYears": 12,
+          "aiExposure": 30,
           "description": "Rewa Ultra Mega Solar, Adani Green, Torrent Power, RE-Invest 2024 pledges. Gujarat targets 100GW RE by 2030.",
-          "sources": ["GEDA (Gujarat Energy Development Agency) Annual Report 2023-24", "MNRE Gujarat Solar/Wind installed capacity data 2024"]
+          "sources": [
+            "GEDA (Gujarat Energy Development Agency) Annual Report 2023-24",
+            "MNRE Gujarat Solar/Wind installed capacity data 2024"
+          ],
+          "shortLabel": "Renewable Ener"
         }
-      ]
+      ],
+      "shortName": "Gujarat"
     },
     {
       "id": "rajasthan",
@@ -384,53 +746,105 @@
       "capital": "Jaipur",
       "workers": 38500000,
       "pctWorkforce": 6.6,
-      "sectorGrowth": 6.0,
+      "sectorGrowth": 6,
       "color": "#b45309",
-      "sources": ["PLFS 2023-24 Rajasthan state tables", "Rajasthan Economic Review 2023-24, Finance Dept. GoR"],
+      "sources": [
+        "PLFS 2023-24 Rajasthan state tables",
+        "Rajasthan Economic Review 2023-24, Finance Dept. GoR"
+      ],
       "occupations": [
         {
-          "id": "rj_agri", "name": "Agriculture & Animal Husbandry",
-          "workers": 18000000, "medianSalaryINR": 7000, "growthPct": 2.5,
-          "educationYears": 5, "aiExposure": 12,
+          "id": "rj_agri",
+          "name": "Agriculture & Animal Husbandry",
+          "workers": 18000000,
+          "medianSalaryINR": 7000,
+          "growthPct": 2.5,
+          "educationYears": 5,
+          "aiExposure": 12,
           "description": "Rajasthan = largest wheat & mustard producer; largest livestock population in India. Arid farming; Indira Gandhi Canal region high-yield wheat.",
-          "sources": ["Rajasthan Agriculture Dept. Annual Report 2023-24", "DAHD Animal Husbandry census 2023 — Rajasthan largest cattle state"]
+          "sources": [
+            "Rajasthan Agriculture Dept. Annual Report 2023-24",
+            "DAHD Animal Husbandry census 2023 — Rajasthan largest cattle state"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "rj_mining_minerals", "name": "Mining & Marble (Rajasthan = India's Mineral State)",
-          "workers": 2500000, "medianSalaryINR": 14000, "growthPct": 5.0,
-          "educationYears": 8, "aiExposure": 22,
+          "id": "rj_mining_minerals",
+          "name": "Mining & Marble (Rajasthan = India's Mineral State)",
+          "workers": 2500000,
+          "medianSalaryINR": 14000,
+          "growthPct": 5,
+          "educationYears": 8,
+          "aiExposure": 22,
           "description": "Rajasthan has India's richest mineral base: zinc (Hindustan Zinc, Udaipur), marble (Makrana), limestone, gypsum, sand stone. 23% of national mineral production.",
-          "sources": ["Ministry of Mines Annual Report 2023-24 — Rajasthan 23% output", "IBM (Indian Bureau of Mines) Rajasthan Mineral Data 2024"]
+          "sources": [
+            "Ministry of Mines Annual Report 2023-24 — Rajasthan 23% output",
+            "IBM (Indian Bureau of Mines) Rajasthan Mineral Data 2024"
+          ],
+          "shortLabel": "Mining & Marbl"
         },
         {
-          "id": "rj_tourism_crafts", "name": "Tourism, Handicrafts & Gems",
-          "workers": 5000000, "medianSalaryINR": 11000, "growthPct": 9.5,
-          "educationYears": 8, "aiExposure": 20,
+          "id": "rj_tourism_crafts",
+          "name": "Tourism, Handicrafts & Gems",
+          "workers": 5000000,
+          "medianSalaryINR": 11000,
+          "growthPct": 9.5,
+          "educationYears": 8,
+          "aiExposure": 20,
           "description": "Jaipur (Pink City) Blue Pottery, Jodhpur furniture, Jaisalmer tourism. Rajasthan received 15Cr domestic tourists FY24; Jaipur = top gems & jewellery hub.",
-          "sources": ["Rajasthan Tourism Dept. Annual Report 2023-24 — 15Cr tourists", "GJEPC Jaipur Gems Report 2024"]
+          "sources": [
+            "Rajasthan Tourism Dept. Annual Report 2023-24 — 15Cr tourists",
+            "GJEPC Jaipur Gems Report 2024"
+          ],
+          "shortLabel": "Tourism, Handi"
         },
         {
-          "id": "rj_construction", "name": "Construction & Infrastructure",
-          "workers": 7000000, "medianSalaryINR": 12000, "growthPct": 6.5,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "rj_construction",
+          "name": "Construction & Infrastructure",
+          "workers": 7000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 6.5,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "Delhi-Mumbai Industrial Corridor (DMIC) nodes at Neemrana, Khushkhera. PM Awas Yojana housing. Expressway projects: Delhi-Vadodara-Mumbai.",
-          "sources": ["DMIC Project Implementation Trust Fund — Rajasthan node progress 2024", "RUIFDCO (Rajasthan Urban Infra Finance Dev Corp.) 2024"]
+          "sources": [
+            "DMIC Project Implementation Trust Fund — Rajasthan node progress 2024",
+            "RUIFDCO (Rajasthan Urban Infra Finance Dev Corp.) 2024"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "rj_renewable_energy", "name": "Renewable Energy (Solar Capital)",
-          "workers": 400000, "medianSalaryINR": 20000, "growthPct": 35.0,
-          "educationYears": 12, "aiExposure": 28,
+          "id": "rj_renewable_energy",
+          "name": "Renewable Energy (Solar Capital)",
+          "workers": 400000,
+          "medianSalaryINR": 20000,
+          "growthPct": 35,
+          "educationYears": 12,
+          "aiExposure": 28,
           "description": "Rajasthan = India's #1 solar state: 25GW+ installed, Bhadla Solar Park (2,245 MW, world's largest). Targets 90GW by 2030.",
-          "sources": ["MNRE Rajasthan Solar/Wind installed capacity 2024", "Rajasthan Renewable Energy Corporation (RRECL) Annual Report 2023-24"]
+          "sources": [
+            "MNRE Rajasthan Solar/Wind installed capacity 2024",
+            "Rajasthan Renewable Energy Corporation (RRECL) Annual Report 2023-24"
+          ],
+          "shortLabel": "Renewable Ener"
         },
         {
-          "id": "rj_trade_govt", "name": "Trade, Government & Services",
-          "workers": 5600000, "medianSalaryINR": 18000, "growthPct": 3.8,
-          "educationYears": 11, "aiExposure": 32,
+          "id": "rj_trade_govt",
+          "name": "Trade, Government & Services",
+          "workers": 5600000,
+          "medianSalaryINR": 18000,
+          "growthPct": 3.8,
+          "educationYears": 11,
+          "aiExposure": 32,
           "description": "RPSC government services, Jaipur retail, Ajmer textile trade. Rajasthan per-capita GSDP growing at 11% CAGR.",
-          "sources": ["Rajasthan Economic Review 2023-24", "RPSC Recruitment Data 2024"]
+          "sources": [
+            "Rajasthan Economic Review 2023-24",
+            "RPSC Recruitment Data 2024"
+          ],
+          "shortLabel": "Trade, Governm"
         }
-      ]
+      ],
+      "shortName": "Rajasthan"
     },
     {
       "id": "andhra_pradesh",
@@ -438,46 +852,90 @@
       "capital": "Amaravati",
       "workers": 28100000,
       "pctWorkforce": 4.8,
-      "sectorGrowth": 7.0,
+      "sectorGrowth": 7,
       "color": "#16a34a",
-      "sources": ["PLFS 2023-24 AP state tables", "Andhra Pradesh Economic Survey 2023-24, GoAP"],
+      "sources": [
+        "PLFS 2023-24 AP state tables",
+        "Andhra Pradesh Economic Survey 2023-24, GoAP"
+      ],
       "occupations": [
         {
-          "id": "ap_agri_aqua", "name": "Agriculture & Aquaculture",
-          "workers": 12000000, "medianSalaryINR": 8500, "growthPct": 4.5,
-          "educationYears": 6, "aiExposure": 16,
+          "id": "ap_agri_aqua",
+          "name": "Agriculture & Aquaculture",
+          "workers": 12000000,
+          "medianSalaryINR": 8500,
+          "growthPct": 4.5,
+          "educationYears": 6,
+          "aiExposure": 16,
           "description": "AP is India's largest aquaculture state (shrimp exports $3Bn, 40% of national total). Also major rice, tobacco, chilli producer.",
-          "sources": ["MPEDA AP aquaculture data 2023-24 — 40% of India's shrimp exports", "AP Agriculture Dept. Annual Report 2023-24"]
+          "sources": [
+            "MPEDA AP aquaculture data 2023-24 — 40% of India's shrimp exports",
+            "AP Agriculture Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "ap_it_vizag", "name": "IT & Knowledge Economy (Vizag, Amaravati)",
-          "workers": 500000, "medianSalaryINR": 38000, "growthPct": 15.0,
-          "educationYears": 16, "aiExposure": 62,
+          "id": "ap_it_vizag",
+          "name": "IT & Knowledge Economy (Vizag, Amaravati)",
+          "workers": 500000,
+          "medianSalaryINR": 38000,
+          "growthPct": 15,
+          "educationYears": 16,
+          "aiExposure": 62,
           "description": "Vizag Pharma City SEZ, Amaravati IT corridor, AP Innovation Society. AP IT exports growing rapidly post-capital construction restart.",
-          "sources": ["NASSCOM State IT Report 2025 — AP", "AP Economic Development Board IT data 2024"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — AP",
+            "AP Economic Development Board IT data 2024"
+          ],
+          "shortLabel": "IT & Knowledge"
         },
         {
-          "id": "ap_manufacturing", "name": "Pharma, Ports & Manufacturing",
-          "workers": 4000000, "medianSalaryINR": 18000, "growthPct": 8.5,
-          "educationYears": 11, "aiExposure": 38,
+          "id": "ap_manufacturing",
+          "name": "Pharma, Ports & Manufacturing",
+          "workers": 4000000,
+          "medianSalaryINR": 18000,
+          "growthPct": 8.5,
+          "educationYears": 11,
+          "aiExposure": 38,
           "description": "Vizag Pharma City (bulk drugs), Krishnapatnam & Gangavaram ports, Nellore MSME. AP = 2nd in pharma production by value.",
-          "sources": ["AP Industrial Policy 2023-27 Progress Report", "Pharmexcil AP pharma data 2023-24"]
+          "sources": [
+            "AP Industrial Policy 2023-27 Progress Report",
+            "Pharmexcil AP pharma data 2023-24"
+          ],
+          "shortLabel": "Pharma, Ports "
         },
         {
-          "id": "ap_trade_services", "name": "Trade, Tourism & Services",
-          "workers": 8600000, "medianSalaryINR": 12000, "growthPct": 4.5,
-          "educationYears": 9, "aiExposure": 28,
+          "id": "ap_trade_services",
+          "name": "Trade, Tourism & Services",
+          "workers": 8600000,
+          "medianSalaryINR": 12000,
+          "growthPct": 4.5,
+          "educationYears": 9,
+          "aiExposure": 28,
           "description": "Tirupati temple tourism (1.5Cr visitors/year), Vijayawada retail, Vizag port city services.",
-          "sources": ["TTD (Tirumala Tirupati Devasthanams) Annual Statistics 2023-24", "PLFS 2023-24 AP trade sector"]
+          "sources": [
+            "TTD (Tirumala Tirupati Devasthanams) Annual Statistics 2023-24",
+            "PLFS 2023-24 AP trade sector"
+          ],
+          "shortLabel": "Trade, Tourism"
         },
         {
-          "id": "ap_govt", "name": "Government & Social Welfare",
-          "workers": 3000000, "medianSalaryINR": 28000, "growthPct": 2.0,
-          "educationYears": 13, "aiExposure": 35,
+          "id": "ap_govt",
+          "name": "Government & Social Welfare",
+          "workers": 3000000,
+          "medianSalaryINR": 28000,
+          "growthPct": 2,
+          "educationYears": 13,
+          "aiExposure": 35,
           "description": "APPSC, Rythu Bharosa scheme employees, AP Grama Volunteers (2.7L). AP government a major direct employer.",
-          "sources": ["GoAP Finance Dept. Budget 2024-25", "APPSC Annual Report 2023-24"]
+          "sources": [
+            "GoAP Finance Dept. Budget 2024-25",
+            "APPSC Annual Report 2023-24"
+          ],
+          "shortLabel": "Government & S"
         }
-      ]
+      ],
+      "shortName": "Andhra Pradesh"
     },
     {
       "id": "telangana",
@@ -487,44 +945,88 @@
       "pctWorkforce": 3.4,
       "sectorGrowth": 9.5,
       "color": "#b45309",
-      "sources": ["PLFS 2023-24 Telangana state tables", "Telangana Economic Outlook 2023-24, Finance Dept. GoTS"],
+      "sources": [
+        "PLFS 2023-24 Telangana state tables",
+        "Telangana Economic Outlook 2023-24, Finance Dept. GoTS"
+      ],
       "occupations": [
         {
-          "id": "ts_it_pharma", "name": "IT, Pharma & Life Sciences (Hyderabad)",
-          "workers": 1000000, "medianSalaryINR": 62000, "growthPct": 14.5,
-          "educationYears": 16, "aiExposure": 65,
+          "id": "ts_it_pharma",
+          "name": "IT, Pharma & Life Sciences (Hyderabad)",
+          "workers": 1000000,
+          "medianSalaryINR": 62000,
+          "growthPct": 14.5,
+          "educationYears": 16,
+          "aiExposure": 65,
           "description": "Hyderabad = India's HITEC City (3rd largest IT hub). 10L IT workers. Genome Valley = Asia's largest pharma cluster. Google, Microsoft, Amazon, Apple major presence.",
-          "sources": ["NASSCOM State IT Report 2025 — TS 1M+ IT workers", "Genome Valley Industry Association Report 2024"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — TS 1M+ IT workers",
+            "Genome Valley Industry Association Report 2024"
+          ],
+          "shortLabel": "IT, Pharma & L"
         },
         {
-          "id": "ts_agri", "name": "Agriculture & Horticulture",
-          "workers": 7000000, "medianSalaryINR": 8500, "growthPct": 3.5,
-          "educationYears": 6, "aiExposure": 14,
+          "id": "ts_agri",
+          "name": "Agriculture & Horticulture",
+          "workers": 7000000,
+          "medianSalaryINR": 8500,
+          "growthPct": 3.5,
+          "educationYears": 6,
+          "aiExposure": 14,
           "description": "Rytu Bandhu scheme supports 69L farmers. Major paddy, maize, cotton, turmeric producer. Drip irrigation adoption leading nationally.",
-          "sources": ["Telangana Agriculture Dept. Annual Report 2023-24", "Rytu Bandhu Samithi beneficiary data 2024"]
+          "sources": [
+            "Telangana Agriculture Dept. Annual Report 2023-24",
+            "Rytu Bandhu Samithi beneficiary data 2024"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "ts_manufacturing", "name": "Manufacturing, Aerospace & Defence",
-          "workers": 3000000, "medianSalaryINR": 22000, "growthPct": 7.5,
-          "educationYears": 12, "aiExposure": 40,
+          "id": "ts_manufacturing",
+          "name": "Manufacturing, Aerospace & Defence",
+          "workers": 3000000,
+          "medianSalaryINR": 22000,
+          "growthPct": 7.5,
+          "educationYears": 12,
+          "aiExposure": 40,
           "description": "Hyderabad = 2nd aerospace hub after Bengaluru (BHEL, DRDO, BDL). Pharma manufacturing, Warangal textiles, Zaheerabad fertilisers.",
-          "sources": ["TSIIC (TS Industrial Infrastructure Corp.) Annual Report 2024", "BDL Annual Report 2023-24"]
+          "sources": [
+            "TSIIC (TS Industrial Infrastructure Corp.) Annual Report 2024",
+            "BDL Annual Report 2023-24"
+          ],
+          "shortLabel": "Manufacturing,"
         },
         {
-          "id": "ts_trade_services", "name": "Trade, Real Estate & Hospitality",
-          "workers": 7000000, "medianSalaryINR": 15000, "growthPct": 6.5,
-          "educationYears": 10, "aiExposure": 35,
+          "id": "ts_trade_services",
+          "name": "Trade, Real Estate & Hospitality",
+          "workers": 7000000,
+          "medianSalaryINR": 15000,
+          "growthPct": 6.5,
+          "educationYears": 10,
+          "aiExposure": 35,
           "description": "Hyderabad realty among India's hottest markets. Old City pearl/bangle trade. Telangana MICE tourism growing.",
-          "sources": ["Knight Frank Hyderabad Real Estate Report H2 2024", "PLFS 2023-24 Telangana trade sector"]
+          "sources": [
+            "Knight Frank Hyderabad Real Estate Report H2 2024",
+            "PLFS 2023-24 Telangana trade sector"
+          ],
+          "shortLabel": "Trade, Real Es"
         },
         {
-          "id": "ts_govt", "name": "Government & Public Services",
-          "workers": 2000000, "medianSalaryINR": 35000, "growthPct": 1.5,
-          "educationYears": 14, "aiExposure": 38,
+          "id": "ts_govt",
+          "name": "Government & Public Services",
+          "workers": 2000000,
+          "medianSalaryINR": 35000,
+          "growthPct": 1.5,
+          "educationYears": 14,
+          "aiExposure": 38,
           "description": "TSPSC, Central government offices (ECIL, BDL, BSNL), TS Transco/DISCOMS. Hyderabad = Central/State government office hub.",
-          "sources": ["GoTS Finance Dept. Budget 2024-25", "TSPSC Recruitment Data 2024"]
+          "sources": [
+            "GoTS Finance Dept. Budget 2024-25",
+            "TSPSC Recruitment Data 2024"
+          ],
+          "shortLabel": "Government & P"
         }
-      ]
+      ],
+      "shortName": "Telangana"
     },
     {
       "id": "madhya_pradesh",
@@ -534,44 +1036,88 @@
       "pctWorkforce": 6.7,
       "sectorGrowth": 7.5,
       "color": "#059669",
-      "sources": ["PLFS 2023-24 MP state tables", "Madhya Pradesh Economic Survey 2023-24, Finance Dept. GoMP"],
+      "sources": [
+        "PLFS 2023-24 MP state tables",
+        "Madhya Pradesh Economic Survey 2023-24, Finance Dept. GoMP"
+      ],
       "occupations": [
         {
-          "id": "mp_agri", "name": "Agriculture (Soybean, Wheat, Pulses)",
-          "workers": 18000000, "medianSalaryINR": 7000, "growthPct": 3.5,
-          "educationYears": 5, "aiExposure": 12,
+          "id": "mp_agri",
+          "name": "Agriculture (Soybean, Wheat, Pulses)",
+          "workers": 18000000,
+          "medianSalaryINR": 7000,
+          "growthPct": 3.5,
+          "educationYears": 5,
+          "aiExposure": 12,
           "description": "MP = largest soybean, chickpea, lentil, garlic producer. Wheat output growing rapidly post-MSP hike. Agriculture 48% of workforce.",
-          "sources": ["MP Agriculture Dept. Annual Report 2023-24", "PLFS 2023-24 MP agriculture tables"]
+          "sources": [
+            "MP Agriculture Dept. Annual Report 2023-24",
+            "PLFS 2023-24 MP agriculture tables"
+          ],
+          "shortLabel": "Agriculture (S"
         },
         {
-          "id": "mp_mining", "name": "Mining (Diamonds, Coal, Manganese)",
-          "workers": 2000000, "medianSalaryINR": 16000, "growthPct": 4.5,
-          "educationYears": 8, "aiExposure": 20,
+          "id": "mp_mining",
+          "name": "Mining (Diamonds, Coal, Manganese)",
+          "workers": 2000000,
+          "medianSalaryINR": 16000,
+          "growthPct": 4.5,
+          "educationYears": 8,
+          "aiExposure": 20,
           "description": "Panna = India's only diamond mining site. Singrauli coalfields, Balaghat copper, Jabalpur cement. MP ranks 5th in mineral production.",
-          "sources": ["Ministry of Mines MP data 2023-24", "IBM Mineral Production Statistics 2024 — MP 5th rank"]
+          "sources": [
+            "Ministry of Mines MP data 2023-24",
+            "IBM Mineral Production Statistics 2024 — MP 5th rank"
+          ],
+          "shortLabel": "Mining (Diamon"
         },
         {
-          "id": "mp_tourism_culture", "name": "Tourism, Temples & Handicrafts",
-          "workers": 3000000, "medianSalaryINR": 10000, "growthPct": 8.5,
-          "educationYears": 7, "aiExposure": 18,
+          "id": "mp_tourism_culture",
+          "name": "Tourism, Temples & Handicrafts",
+          "workers": 3000000,
+          "medianSalaryINR": 10000,
+          "growthPct": 8.5,
+          "educationYears": 7,
+          "aiExposure": 18,
           "description": "Khajuraho temples, Kanha-Bandhavgarh tigers, Ujjain Mahakaleshwar. MP received 9.5Cr domestic tourists FY24 — 3rd highest nationally.",
-          "sources": ["MP Tourism Dept. Annual Report 2023-24 — 9.5Cr tourists", "MP Handicraft Development Corp. 2024"]
+          "sources": [
+            "MP Tourism Dept. Annual Report 2023-24 — 9.5Cr tourists",
+            "MP Handicraft Development Corp. 2024"
+          ],
+          "shortLabel": "Tourism, Templ"
         },
         {
-          "id": "mp_construction_infra", "name": "Construction & Infrastructure",
-          "workers": 8000000, "medianSalaryINR": 12000, "growthPct": 7.0,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "mp_construction_infra",
+          "name": "Construction & Infrastructure",
+          "workers": 8000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 7,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "Delhi-Mumbai Expressway, Narmada Valley Development, Smart Cities (Bhopal, Indore). MP GSDP growing at 13% CAGR 2018-24.",
-          "sources": ["MPRRDA (MP Rural Roads Development Authority) 2024", "MP GSDP data, Finance Dept. 2023-24"]
+          "sources": [
+            "MPRRDA (MP Rural Roads Development Authority) 2024",
+            "MP GSDP data, Finance Dept. 2023-24"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "mp_trade_services", "name": "Trade, Services & IT (Indore)",
-          "workers": 7700000, "medianSalaryINR": 14000, "growthPct": 5.5,
-          "educationYears": 10, "aiExposure": 30,
+          "id": "mp_trade_services",
+          "name": "Trade, Services & IT (Indore)",
+          "workers": 7700000,
+          "medianSalaryINR": 14000,
+          "growthPct": 5.5,
+          "educationYears": 10,
+          "aiExposure": 30,
           "description": "Indore = cleanest city 7 years running, emerging IT hub. Pithampur auto-ancillary zone. MP IT exports ₹12,000 Cr FY24.",
-          "sources": ["MP Economic Survey 2023-24", "NASSCOM State IT Report 2025 — MP"]
+          "sources": [
+            "MP Economic Survey 2023-24",
+            "NASSCOM State IT Report 2025 — MP"
+          ],
+          "shortLabel": "Trade, Service"
         }
-      ]
+      ],
+      "shortName": "Madhya Pradesh"
     },
     {
       "id": "kerala",
@@ -581,51 +1127,103 @@
       "pctWorkforce": 2.6,
       "sectorGrowth": 6.5,
       "color": "#0891b2",
-      "sources": ["PLFS 2023-24 Kerala state tables", "Kerala Economic Review 2023-24, State Planning Board, GoK"],
+      "sources": [
+        "PLFS 2023-24 Kerala state tables",
+        "Kerala Economic Review 2023-24, State Planning Board, GoK"
+      ],
       "occupations": [
         {
-          "id": "kl_gulf_remittance", "name": "NRI Remittance & Gulf Economy",
-          "workers": 2500000, "medianSalaryINR": 28000, "growthPct": 5.0,
-          "educationYears": 12, "aiExposure": 30,
+          "id": "kl_gulf_remittance",
+          "name": "NRI Remittance & Gulf Economy",
+          "workers": 2500000,
+          "medianSalaryINR": 28000,
+          "growthPct": 5,
+          "educationYears": 12,
+          "aiExposure": 30,
           "description": "35L Keralites abroad (mostly Gulf); remittances ₹1.15L Cr FY24 = 30% of Kerala GSDP. Highest literacy + social indicators driven by Gulf money.",
-          "sources": ["Norka Roots (NRI Affairs Dept. Kerala) Annual Report 2023-24 — ₹1.15L Cr remittance", "Kerala State Planning Board Economic Review 2023-24"]
+          "sources": [
+            "Norka Roots (NRI Affairs Dept. Kerala) Annual Report 2023-24 — ₹1.15L Cr remittance",
+            "Kerala State Planning Board Economic Review 2023-24"
+          ],
+          "shortLabel": "NRI Remittance"
         },
         {
-          "id": "kl_healthcare_edu", "name": "Healthcare, Education & Social Services",
-          "workers": 2500000, "medianSalaryINR": 30000, "growthPct": 9.0,
-          "educationYears": 15, "aiExposure": 38,
+          "id": "kl_healthcare_edu",
+          "name": "Healthcare, Education & Social Services",
+          "workers": 2500000,
+          "medianSalaryINR": 30000,
+          "growthPct": 9,
+          "educationYears": 15,
+          "aiExposure": 38,
           "description": "Kerala = India's healthcare export powerhouse. Kozhikode, Ernakulam hospital hubs. 100% literacy; highest nurse-to-population ratio nationally.",
-          "sources": ["Kerala Health Systems Resource Centre Report 2023-24", "INC — Kerala nursing registration data 2024"]
+          "sources": [
+            "Kerala Health Systems Resource Centre Report 2023-24",
+            "INC — Kerala nursing registration data 2024"
+          ],
+          "shortLabel": "Healthcare, Ed"
         },
         {
-          "id": "kl_tourism", "name": "Tourism & Hospitality (God's Own Country)",
-          "workers": 1500000, "medianSalaryINR": 18000, "growthPct": 12.0,
-          "educationYears": 10, "aiExposure": 25,
+          "id": "kl_tourism",
+          "name": "Tourism & Hospitality (God's Own Country)",
+          "workers": 1500000,
+          "medianSalaryINR": 18000,
+          "growthPct": 12,
+          "educationYears": 10,
+          "aiExposure": 25,
           "description": "₹42,000 Cr tourism revenue FY24. Backwaters, Munnar tea estates, Kovalam beach, ayurvedic wellness. International tourist arrivals fastest growing in South India.",
-          "sources": ["Kerala Tourism Dept. Annual Report 2023-24 — ₹42K Cr revenue", "Ministry of Tourism India's top-10 states FY24"]
+          "sources": [
+            "Kerala Tourism Dept. Annual Report 2023-24 — ₹42K Cr revenue",
+            "Ministry of Tourism India's top-10 states FY24"
+          ],
+          "shortLabel": "Tourism & Hosp"
         },
         {
-          "id": "kl_agri_spices", "name": "Agriculture, Spices & Coconut",
-          "workers": 3200000, "medianSalaryINR": 9500, "growthPct": 2.0,
-          "educationYears": 8, "aiExposure": 18,
+          "id": "kl_agri_spices",
+          "name": "Agriculture, Spices & Coconut",
+          "workers": 3200000,
+          "medianSalaryINR": 9500,
+          "growthPct": 2,
+          "educationYears": 8,
+          "aiExposure": 18,
           "description": "Kerala produces 95% of India's black pepper, 80% of rubber, 50% of coconut. Spice Board certified organic farming growing.",
-          "sources": ["Spice Board of India Annual Report 2023-24 — Kerala 95% pepper", "Rubber Board Annual Report 2023-24 — Kerala 80% rubber"]
+          "sources": [
+            "Spice Board of India Annual Report 2023-24 — Kerala 95% pepper",
+            "Rubber Board Annual Report 2023-24 — Kerala 80% rubber"
+          ],
+          "shortLabel": "Agriculture, S"
         },
         {
-          "id": "kl_it_kochi", "name": "IT & Digital Services (Kochi, Thiruvananthapuram)",
-          "workers": 400000, "medianSalaryINR": 48000, "growthPct": 11.0,
-          "educationYears": 16, "aiExposure": 62,
+          "id": "kl_it_kochi",
+          "name": "IT & Digital Services (Kochi, Thiruvananthapuram)",
+          "workers": 400000,
+          "medianSalaryINR": 48000,
+          "growthPct": 11,
+          "educationYears": 16,
+          "aiExposure": 62,
           "description": "Infopark Kochi, Technopark Thiruvananthapuram — India's first IT parks. 4L IT workers. Kerala IT exports ₹30,000 Cr FY24.",
-          "sources": ["NASSCOM State IT Report 2025 — Kerala 4L IT workers", "Kerala IT Dept. Annual Report 2023-24"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — Kerala 4L IT workers",
+            "Kerala IT Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "IT & Digital S"
         },
         {
-          "id": "kl_fisheries_trade", "name": "Fisheries, Trade & Services",
-          "workers": 5000000, "medianSalaryINR": 12000, "growthPct": 4.5,
-          "educationYears": 9, "aiExposure": 22,
+          "id": "kl_fisheries_trade",
+          "name": "Fisheries, Trade & Services",
+          "workers": 5000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 4.5,
+          "educationYears": 9,
+          "aiExposure": 22,
           "description": "Kerala = largest marine fish exporter (₹8,000 Cr). Kochi = spice/commodity trade hub; Kozhikode and Thrissur trade centres.",
-          "sources": ["MPEDA Kerala fisheries export data 2023-24", "PLFS 2023-24 Kerala trade sector"]
+          "sources": [
+            "MPEDA Kerala fisheries export data 2023-24",
+            "PLFS 2023-24 Kerala trade sector"
+          ],
+          "shortLabel": "Fisheries, Tra"
         }
-      ]
+      ],
+      "shortName": "Kerala"
     },
     {
       "id": "odisha",
@@ -633,46 +1231,91 @@
       "capital": "Bhubaneswar",
       "workers": 22100000,
       "pctWorkforce": 3.8,
-      "sectorGrowth": 8.0,
+      "sectorGrowth": 8,
       "color": "#78350f",
-      "sources": ["PLFS 2023-24 Odisha state tables", "Odisha Economic Survey 2023-24, Finance Dept. GoO"],
+      "sources": [
+        "PLFS 2023-24 Odisha state tables",
+        "Odisha Economic Survey 2023-24, Finance Dept. GoO"
+      ],
       "occupations": [
         {
-          "id": "od_agri_tribal", "name": "Agriculture & Tribal Forest Economy",
-          "workers": 11000000, "medianSalaryINR": 7500, "growthPct": 2.5,
-          "educationYears": 5, "aiExposure": 12,
+          "id": "od_agri_tribal",
+          "name": "Agriculture & Tribal Forest Economy",
+          "workers": 11000000,
+          "medianSalaryINR": 7500,
+          "growthPct": 2.5,
+          "educationYears": 5,
+          "aiExposure": 12,
           "description": "Odisha = major rice, pulse, minor forest produce (MFP) state. 26.9% tribal population relies on forest economy. Agriculture 50% of workforce.",
-          "sources": ["Odisha Agriculture Dept. Annual Report 2023-24", "OSFDC (Odisha State Forest Dev. Corp.) Tribal Economy Report 2023"]
+          "sources": [
+            "Odisha Agriculture Dept. Annual Report 2023-24",
+            "OSFDC (Odisha State Forest Dev. Corp.) Tribal Economy Report 2023"
+          ],
+          "shortLabel": "Agriculture & "
         },
         {
-          "id": "od_steel_mining", "name": "Steel, Mining & Metals (India's Resource Hub)",
-          "workers": 2500000, "medianSalaryINR": 22000, "growthPct": 7.5,
-          "educationYears": 11, "aiExposure": 28,
+          "id": "od_steel_mining",
+          "name": "Steel, Mining & Metals (India's Resource Hub)",
+          "workers": 2500000,
+          "medianSalaryINR": 22000,
+          "growthPct": 7.5,
+          "educationYears": 11,
+          "aiExposure": 28,
           "description": "Odisha produces 50% of India's iron ore; home to JSW Steel (Dolvi), SAIL (Rourkela), Tata Steel (Kalinganagar, world's most modern plant), NALCO aluminium.",
-          "sources": ["Ministry of Mines Annual Report 2023-24 — Odisha 50% iron ore", "SAIL Rourkela Plant Annual Report 2023-24", "Tata Steel Kalinganagar production data 2024"]
+          "sources": [
+            "Ministry of Mines Annual Report 2023-24 — Odisha 50% iron ore",
+            "SAIL Rourkela Plant Annual Report 2023-24",
+            "Tata Steel Kalinganagar production data 2024"
+          ],
+          "shortLabel": "Steel, Mining "
         },
         {
-          "id": "od_it_bhubaneswar", "name": "IT & Knowledge Economy (Bhubaneswar)",
-          "workers": 150000, "medianSalaryINR": 35000, "growthPct": 18.0,
-          "educationYears": 16, "aiExposure": 60,
+          "id": "od_it_bhubaneswar",
+          "name": "IT & Knowledge Economy (Bhubaneswar)",
+          "workers": 150000,
+          "medianSalaryINR": 35000,
+          "growthPct": 18,
+          "educationYears": 16,
+          "aiExposure": 60,
           "description": "Infocity Bhubaneswar, Startup Odisha, C-DAC hub. Odisha IT exports growing 25%+ YoY from a low base. IIT Bhubaneswar talent pipeline.",
-          "sources": ["NASSCOM State IT Report 2025 — Odisha", "Startup Odisha Annual Report 2023-24"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — Odisha",
+            "Startup Odisha Annual Report 2023-24"
+          ],
+          "shortLabel": "IT & Knowledge"
         },
         {
-          "id": "od_construction", "name": "Construction & Infra",
-          "workers": 4000000, "medianSalaryINR": 12000, "growthPct": 8.5,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "od_construction",
+          "name": "Construction & Infra",
+          "workers": 4000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 8.5,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "Odisha = poster child for infrastructure governance. Major port, expressway, industrial corridor investments. GSDP growing 11%+ CAGR.",
-          "sources": ["Odisha Works Dept. Annual Report 2023-24", "Invest Odisha progress report FY24"]
+          "sources": [
+            "Odisha Works Dept. Annual Report 2023-24",
+            "Invest Odisha progress report FY24"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "od_trade_services", "name": "Trade, Handlooms & Tourism",
-          "workers": 4450000, "medianSalaryINR": 10000, "growthPct": 5.5,
-          "educationYears": 8, "aiExposure": 22,
+          "id": "od_trade_services",
+          "name": "Trade, Handlooms & Tourism",
+          "workers": 4450000,
+          "medianSalaryINR": 10000,
+          "growthPct": 5.5,
+          "educationYears": 8,
+          "aiExposure": 22,
           "description": "Puri Jagannath tourism (1Cr+ pilgrims), Konark Sun Temple. Sambalpuri & Kotpad handlooms, Dhokra metalcraft. Odisha tourism revenues ₹10,000 Cr FY24.",
-          "sources": ["Odisha Tourism Dept. Annual Report 2023-24", "Office of DC Handlooms Odisha 2023-24"]
+          "sources": [
+            "Odisha Tourism Dept. Annual Report 2023-24",
+            "Office of DC Handlooms Odisha 2023-24"
+          ],
+          "shortLabel": "Trade, Handloo"
         }
-      ]
+      ],
+      "shortName": "Odisha"
     },
     {
       "id": "punjab",
@@ -682,44 +1325,88 @@
       "pctWorkforce": 2.3,
       "sectorGrowth": 5.5,
       "color": "#1d4ed8",
-      "sources": ["PLFS 2023-24 Punjab state tables", "Punjab Economic Survey 2023-24, Finance Dept. GoPb"],
+      "sources": [
+        "PLFS 2023-24 Punjab state tables",
+        "Punjab Economic Survey 2023-24, Finance Dept. GoPb"
+      ],
       "occupations": [
         {
-          "id": "pb_agri", "name": "Agriculture (India's Granary)",
-          "workers": 5200000, "medianSalaryINR": 12000, "growthPct": 1.5,
-          "educationYears": 8, "aiExposure": 18,
+          "id": "pb_agri",
+          "name": "Agriculture (India's Granary)",
+          "workers": 5200000,
+          "medianSalaryINR": 12000,
+          "growthPct": 1.5,
+          "educationYears": 8,
+          "aiExposure": 18,
           "description": "Punjab contributes 50% of India's central grain pool (wheat) from 1.5% of land. Farm MSP reforms and paddy-water crisis driving crop diversification.",
-          "sources": ["Food Corporation of India Procurement Data FY24 — Punjab 50% wheat", "Punjab Agriculture Dept. Annual Report 2023-24"]
+          "sources": [
+            "Food Corporation of India Procurement Data FY24 — Punjab 50% wheat",
+            "Punjab Agriculture Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Agriculture (I"
         },
         {
-          "id": "pb_manufacturing_ludhiana", "name": "Manufacturing & Engineering (Ludhiana Hub)",
-          "workers": 3000000, "medianSalaryINR": 18000, "growthPct": 4.5,
-          "educationYears": 10, "aiExposure": 38,
+          "id": "pb_manufacturing_ludhiana",
+          "name": "Manufacturing & Engineering (Ludhiana Hub)",
+          "workers": 3000000,
+          "medianSalaryINR": 18000,
+          "growthPct": 4.5,
+          "educationYears": 10,
+          "aiExposure": 38,
           "description": "Ludhiana = 'Manchester of India': hosiery, bicycles (Hero Cycles), sewing machines, auto parts. Punjab knitwear exports ₹10,000 Cr.",
-          "sources": ["PHDCCI (Punjab, Haryana Delhi Chamber of Commerce) Punjab Industry Report 2024", "Hero Cycles Annual Production Data 2024"]
+          "sources": [
+            "PHDCCI (Punjab, Haryana Delhi Chamber of Commerce) Punjab Industry Report 2024",
+            "Hero Cycles Annual Production Data 2024"
+          ],
+          "shortLabel": "Manufacturing "
         },
         {
-          "id": "pb_services_trade", "name": "Trade, Remittance & Diaspora Economy",
-          "workers": 3500000, "medianSalaryINR": 18000, "growthPct": 5.5,
-          "educationYears": 11, "aiExposure": 32,
+          "id": "pb_services_trade",
+          "name": "Trade, Remittance & Diaspora Economy",
+          "workers": 3500000,
+          "medianSalaryINR": 18000,
+          "growthPct": 5.5,
+          "educationYears": 11,
+          "aiExposure": 32,
           "description": "Largest Indian diaspora state (Canada, UK, US, Gulf). Remittances ₹50,000 Cr/yr. Amritsar border trade with Pakistan (limited). NRI investment in real estate.",
-          "sources": ["RBI State Finances Study 2023-24 — Punjab remittances", "Punjab NRI Affairs Dept. Data 2024"]
+          "sources": [
+            "RBI State Finances Study 2023-24 — Punjab remittances",
+            "Punjab NRI Affairs Dept. Data 2024"
+          ],
+          "shortLabel": "Trade, Remitta"
         },
         {
-          "id": "pb_transport_logistics", "name": "Transport, Trucking & Logistics",
-          "workers": 1200000, "medianSalaryINR": 18000, "growthPct": 5.0,
-          "educationYears": 8, "aiExposure": 50,
+          "id": "pb_transport_logistics",
+          "name": "Transport, Trucking & Logistics",
+          "workers": 1200000,
+          "medianSalaryINR": 18000,
+          "growthPct": 5,
+          "educationYears": 8,
+          "aiExposure": 50,
           "description": "Punjab is India's trucking hub — connects north India to rest of country. Ludhiana dry port, Attari-Wagah land customs.",
-          "sources": ["AIMTC Punjab Trucking Data 2024", "PLFS 2023-24 Punjab transport sector"]
+          "sources": [
+            "AIMTC Punjab Trucking Data 2024",
+            "PLFS 2023-24 Punjab transport sector"
+          ],
+          "shortLabel": "Transport, Tru"
         },
         {
-          "id": "pb_govt_defence", "name": "Government, Defence & Education",
-          "workers": 700000, "medianSalaryINR": 32000, "growthPct": 1.0,
-          "educationYears": 14, "aiExposure": 30,
+          "id": "pb_govt_defence",
+          "name": "Government, Defence & Education",
+          "workers": 700000,
+          "medianSalaryINR": 32000,
+          "growthPct": 1,
+          "educationYears": 14,
+          "aiExposure": 30,
           "description": "High military enrollment (Sikh regiments). Chandigarh UT government. Amritsar SGPC religious employment.",
-          "sources": ["GoP Finance Dept. Budget 2024-25", "PPSC Recruitment Data 2024"]
+          "sources": [
+            "GoP Finance Dept. Budget 2024-25",
+            "PPSC Recruitment Data 2024"
+          ],
+          "shortLabel": "Government, De"
         }
-      ]
+      ],
+      "shortName": "Punjab"
     },
     {
       "id": "haryana",
@@ -727,46 +1414,90 @@
       "capital": "Chandigarh",
       "workers": 13500000,
       "pctWorkforce": 2.3,
-      "sectorGrowth": 7.0,
+      "sectorGrowth": 7,
       "color": "#7c2d12",
-      "sources": ["PLFS 2023-24 Haryana state tables", "Haryana Economic Survey 2023-24, Finance Dept. GoHR"],
+      "sources": [
+        "PLFS 2023-24 Haryana state tables",
+        "Haryana Economic Survey 2023-24, Finance Dept. GoHR"
+      ],
       "occupations": [
         {
-          "id": "hr_auto_manufacturing", "name": "Automobile & Manufacturing (Gurugram/Manesar/Faridabad)",
-          "workers": 3000000, "medianSalaryINR": 22000, "growthPct": 7.5,
-          "educationYears": 11, "aiExposure": 42,
+          "id": "hr_auto_manufacturing",
+          "name": "Automobile & Manufacturing (Gurugram/Manesar/Faridabad)",
+          "workers": 3000000,
+          "medianSalaryINR": 22000,
+          "growthPct": 7.5,
+          "educationYears": 11,
+          "aiExposure": 42,
           "description": "Maruti Suzuki Manesar (largest plant globally), Hero MotoCorp HQ, Honda Tapukara, JCB Ballabhgarh. Haryana produces 60% of India's passenger cars.",
-          "sources": ["SIAM Haryana Auto Production Data 2024 — 60% passenger cars", "HSIIDC (Haryana State Industrial Dev.) Annual Report 2024"]
+          "sources": [
+            "SIAM Haryana Auto Production Data 2024 — 60% passenger cars",
+            "HSIIDC (Haryana State Industrial Dev.) Annual Report 2024"
+          ],
+          "shortLabel": "Automobile & M"
         },
         {
-          "id": "hr_it_gurgaon", "name": "IT, Finance & Corporate HQ (Gurugram)",
-          "workers": 1200000, "medianSalaryINR": 65000, "growthPct": 11.5,
-          "educationYears": 16, "aiExposure": 62,
+          "id": "hr_it_gurgaon",
+          "name": "IT, Finance & Corporate HQ (Gurugram)",
+          "workers": 1200000,
+          "medianSalaryINR": 65000,
+          "growthPct": 11.5,
+          "educationYears": 16,
+          "aiExposure": 62,
           "description": "Gurugram = Corporate India's backyard: 200+ Fortune 500 companies, 50+ unicorns. Cyberabad-like IT concentration; banking, consulting, e-commerce HQs.",
-          "sources": ["NASSCOM State IT Report 2025 — Haryana/Gurugram", "Haryana EDB (Economic Development Board) FDI Data 2023-24"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — Haryana/Gurugram",
+            "Haryana EDB (Economic Development Board) FDI Data 2023-24"
+          ],
+          "shortLabel": "IT, Finance & "
         },
         {
-          "id": "hr_agri", "name": "Agriculture (Wheat, Rice, Dairy)",
-          "workers": 4000000, "medianSalaryINR": 14000, "growthPct": 2.0,
-          "educationYears": 8, "aiExposure": 18,
+          "id": "hr_agri",
+          "name": "Agriculture (Wheat, Rice, Dairy)",
+          "workers": 4000000,
+          "medianSalaryINR": 14000,
+          "growthPct": 2,
+          "educationYears": 8,
+          "aiExposure": 18,
           "description": "Haryana = 2nd in per-hectare wheat yield. Karnal basmati rice, Rohtak dairy (Verka, Mother Dairy). Crop diversification push ongoing.",
-          "sources": ["Haryana Agriculture Dept. Annual Report 2023-24", "PLFS 2023-24 Haryana agriculture tables"]
+          "sources": [
+            "Haryana Agriculture Dept. Annual Report 2023-24",
+            "PLFS 2023-24 Haryana agriculture tables"
+          ],
+          "shortLabel": "Agriculture (W"
         },
         {
-          "id": "hr_trade_services", "name": "Trade, Logistics & E-commerce",
-          "workers": 4300000, "medianSalaryINR": 18000, "growthPct": 8.0,
-          "educationYears": 10, "aiExposure": 38,
+          "id": "hr_trade_services",
+          "name": "Trade, Logistics & E-commerce",
+          "workers": 4300000,
+          "medianSalaryINR": 18000,
+          "growthPct": 8,
+          "educationYears": 10,
+          "aiExposure": 38,
           "description": "Haryana is India's logistics gateway: Kundli-Manesar-Palwal (KMP) corridor, Tauru logistics park, Amazon/Flipkart NCR warehouses.",
-          "sources": ["PLFS 2023-24 Haryana trade sector", "Haryana Logistics Policy 2023 Annual Report"]
+          "sources": [
+            "PLFS 2023-24 Haryana trade sector",
+            "Haryana Logistics Policy 2023 Annual Report"
+          ],
+          "shortLabel": "Trade, Logisti"
         },
         {
-          "id": "hr_govt", "name": "Government & Defence Establishments",
-          "workers": 1000000, "medianSalaryINR": 35000, "growthPct": 1.0,
-          "educationYears": 13, "aiExposure": 30,
+          "id": "hr_govt",
+          "name": "Government & Defence Establishments",
+          "workers": 1000000,
+          "medianSalaryINR": 35000,
+          "growthPct": 1,
+          "educationYears": 13,
+          "aiExposure": 30,
           "description": "High military enrolment (Jat and Ahir regiments). HPSC state government recruits. IAF bases at Ambala, Hisar, Sirsa.",
-          "sources": ["GoHR Finance Dept. Budget 2024-25", "HPSC Recruitment Data 2024"]
+          "sources": [
+            "GoHR Finance Dept. Budget 2024-25",
+            "HPSC Recruitment Data 2024"
+          ],
+          "shortLabel": "Government & D"
         }
-      ]
+      ],
+      "shortName": "Haryana"
     },
     {
       "id": "jharkhand",
@@ -776,37 +1507,73 @@
       "pctWorkforce": 2.5,
       "sectorGrowth": 6.5,
       "color": "#4d7c0f",
-      "sources": ["PLFS 2023-24 Jharkhand state tables", "Jharkhand Economic Survey 2023-24, Finance Dept. GoJH"],
+      "sources": [
+        "PLFS 2023-24 Jharkhand state tables",
+        "Jharkhand Economic Survey 2023-24, Finance Dept. GoJH"
+      ],
       "occupations": [
         {
-          "id": "jh_mining_steel", "name": "Mining, Steel & Minerals (Dhanbad/Jamshedpur)",
-          "workers": 2500000, "medianSalaryINR": 20000, "growthPct": 5.5,
-          "educationYears": 10, "aiExposure": 25,
+          "id": "jh_mining_steel",
+          "name": "Mining, Steel & Minerals (Dhanbad/Jamshedpur)",
+          "workers": 2500000,
+          "medianSalaryINR": 20000,
+          "growthPct": 5.5,
+          "educationYears": 10,
+          "aiExposure": 25,
           "description": "Jharkhand has 40% of India's coal, 25% of iron ore, major copper, mica. Tata Steel Jamshedpur (oldest steel plant), Bokaro Steel (SAIL), Dhanbad coalfields.",
-          "sources": ["Ministry of Mines Jharkhand data 2023-24 — 40% India coal reserves", "Tata Steel Jamshedpur Plant Annual Report 2023-24"]
+          "sources": [
+            "Ministry of Mines Jharkhand data 2023-24 — 40% India coal reserves",
+            "Tata Steel Jamshedpur Plant Annual Report 2023-24"
+          ],
+          "shortLabel": "Mining, Steel "
         },
         {
-          "id": "jh_agri_forest", "name": "Agriculture, Forest & Tribal Economy",
-          "workers": 7000000, "medianSalaryINR": 7000, "growthPct": 2.0,
-          "educationYears": 5, "aiExposure": 10,
+          "id": "jh_agri_forest",
+          "name": "Agriculture, Forest & Tribal Economy",
+          "workers": 7000000,
+          "medianSalaryINR": 7000,
+          "growthPct": 2,
+          "educationYears": 5,
+          "aiExposure": 10,
           "description": "28% tribal population (Santali, Ho, Mundari). Lac, tasar silk, kendu leaf collection. Rice, maize subsistence farming in dense forest zones.",
-          "sources": ["JSLPS (Jharkhand State Livelihood Promotion Society) Annual Report 2023-24", "Jharkhand Tribal Welfare Dept. 2023-24"]
+          "sources": [
+            "JSLPS (Jharkhand State Livelihood Promotion Society) Annual Report 2023-24",
+            "Jharkhand Tribal Welfare Dept. 2023-24"
+          ],
+          "shortLabel": "Agriculture, F"
         },
         {
-          "id": "jh_construction", "name": "Construction & Infrastructure",
-          "workers": 3000000, "medianSalaryINR": 12000, "growthPct": 7.5,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "jh_construction",
+          "name": "Construction & Infrastructure",
+          "workers": 3000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 7.5,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "Jharkhand Accelerated Road Project, Ranchi Metro, Deoghar Airport. GSDP growing at 8%+ CAGR driven by infra capex.",
-          "sources": ["JRDA (Jharkhand Road Development Agency) 2024", "Jharkhand Urban Development Dept. 2023-24"]
+          "sources": [
+            "JRDA (Jharkhand Road Development Agency) 2024",
+            "Jharkhand Urban Development Dept. 2023-24"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "jh_services_govt", "name": "Government, Services & Education",
-          "workers": 2300000, "medianSalaryINR": 22000, "growthPct": 3.5,
-          "educationYears": 12, "aiExposure": 28,
+          "id": "jh_services_govt",
+          "name": "Government, Services & Education",
+          "workers": 2300000,
+          "medianSalaryINR": 22000,
+          "growthPct": 3.5,
+          "educationYears": 12,
+          "aiExposure": 28,
           "description": "JPSC state government, Central government (CIL HQ Kolkata-linked Dhanbad), NIT Jamshedpur, IIM Ranchi ecosystem.",
-          "sources": ["GoJH Finance Dept. Budget 2024-25", "JPSC Recruitment Data 2024"]
+          "sources": [
+            "GoJH Finance Dept. Budget 2024-25",
+            "JPSC Recruitment Data 2024"
+          ],
+          "shortLabel": "Government, Se"
         }
-      ]
+      ],
+      "shortName": "Jharkhand"
     },
     {
       "id": "assam",
@@ -814,46 +1581,90 @@
       "capital": "Dispur (Guwahati)",
       "workers": 14000000,
       "pctWorkforce": 2.4,
-      "sectorGrowth": 6.0,
+      "sectorGrowth": 6,
       "color": "#9f1239",
-      "sources": ["PLFS 2023-24 Assam state tables", "Assam Economic Survey 2023-24, Finance Dept. GoA"],
+      "sources": [
+        "PLFS 2023-24 Assam state tables",
+        "Assam Economic Survey 2023-24, Finance Dept. GoA"
+      ],
       "occupations": [
         {
-          "id": "as_tea_agri", "name": "Tea Plantations & Agriculture",
-          "workers": 5000000, "medianSalaryINR": 7500, "growthPct": 2.5,
-          "educationYears": 6, "aiExposure": 14,
+          "id": "as_tea_agri",
+          "name": "Tea Plantations & Agriculture",
+          "workers": 5000000,
+          "medianSalaryINR": 7500,
+          "growthPct": 2.5,
+          "educationYears": 6,
+          "aiExposure": 14,
           "description": "Assam produces 55% of India's tea; 8L permanent + 12L seasonal tea workers. Rice, jute, banana major crops. Assam tea export ₹5,000 Cr.",
-          "sources": ["Tea Board of India Annual Report 2023-24 — Assam 55% production", "Assam Agriculture Dept. Annual Report 2023-24"]
+          "sources": [
+            "Tea Board of India Annual Report 2023-24 — Assam 55% production",
+            "Assam Agriculture Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Tea Plantation"
         },
         {
-          "id": "as_oil_gas", "name": "Oil, Gas & Petrochemicals (Digboi-Duliajan)",
-          "workers": 200000, "medianSalaryINR": 40000, "growthPct": 3.5,
-          "educationYears": 14, "aiExposure": 35,
+          "id": "as_oil_gas",
+          "name": "Oil, Gas & Petrochemicals (Digboi-Duliajan)",
+          "workers": 200000,
+          "medianSalaryINR": 40000,
+          "growthPct": 3.5,
+          "educationYears": 14,
+          "aiExposure": 35,
           "description": "Digboi = world's oldest oil refinery (1889). OIL India (Duliajan), Numaligarh Refinery, GAIL. Brahmaputra Valley is India's oldest petroleum zone.",
-          "sources": ["OIL India Limited Annual Report 2023-24", "Numaligarh Refinery Limited Annual Report 2023-24"]
+          "sources": [
+            "OIL India Limited Annual Report 2023-24",
+            "Numaligarh Refinery Limited Annual Report 2023-24"
+          ],
+          "shortLabel": "Oil, Gas & Pet"
         },
         {
-          "id": "as_handlooms_craft", "name": "Handlooms, Silk & Crafts",
-          "workers": 1500000, "medianSalaryINR": 8000, "growthPct": 4.0,
-          "educationYears": 7, "aiExposure": 16,
+          "id": "as_handlooms_craft",
+          "name": "Handlooms, Silk & Crafts",
+          "workers": 1500000,
+          "medianSalaryINR": 8000,
+          "growthPct": 4,
+          "educationYears": 7,
+          "aiExposure": 16,
           "description": "Assam produces Muga silk (GI tag; world exclusive), Eri silk, Mekhela Chador handlooms. 15L weavers; government support through NEHHDC.",
-          "sources": ["CSB (Central Silk Board) Assam Muga silk data 2023-24", "Office of DC Handlooms Assam 2023-24"]
+          "sources": [
+            "CSB (Central Silk Board) Assam Muga silk data 2023-24",
+            "Office of DC Handlooms Assam 2023-24"
+          ],
+          "shortLabel": "Handlooms, Sil"
         },
         {
-          "id": "as_construction_infra", "name": "Construction & BTC Development",
-          "workers": 3000000, "medianSalaryINR": 12000, "growthPct": 8.5,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "as_construction_infra",
+          "name": "Construction & BTC Development",
+          "workers": 3000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 8.5,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "PMGSY roads, Assam Mala road project, Guwahati Metro Phase 1, Bodoland Territorial Council development. Infrastructure fastest-growing employment segment.",
-          "sources": ["ASCON (Assam Construction Company) 2024", "GoA Public Works Dept. Annual Report 2023-24"]
+          "sources": [
+            "ASCON (Assam Construction Company) 2024",
+            "GoA Public Works Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "as_services_govt", "name": "Government, Education & Services",
-          "workers": 4300000, "medianSalaryINR": 22000, "growthPct": 3.5,
-          "educationYears": 12, "aiExposure": 30,
+          "id": "as_services_govt",
+          "name": "Government, Education & Services",
+          "workers": 4300000,
+          "medianSalaryINR": 22000,
+          "growthPct": 3.5,
+          "educationYears": 12,
+          "aiExposure": 30,
           "description": "APSC state recruits, Central government (ONGC, BSNL, NF Railway), IIT Guwahati, Gauhati University. Gateway to Northeast India.",
-          "sources": ["GoA Finance Dept. Budget 2024-25", "APSC Annual Report 2023-24"]
+          "sources": [
+            "GoA Finance Dept. Budget 2024-25",
+            "APSC Annual Report 2023-24"
+          ],
+          "shortLabel": "Government, Ed"
         }
-      ]
+      ],
+      "shortName": "Assam"
     },
     {
       "id": "delhi",
@@ -861,53 +1672,105 @@
       "capital": "New Delhi",
       "workers": 9000000,
       "pctWorkforce": 1.5,
-      "sectorGrowth": 8.0,
+      "sectorGrowth": 8,
       "color": "#6d28d9",
-      "sources": ["PLFS 2023-24 Delhi state tables", "Delhi Economic Survey 2023-24, Finance Dept. GoDL"],
+      "sources": [
+        "PLFS 2023-24 Delhi state tables",
+        "Delhi Economic Survey 2023-24, Finance Dept. GoDL"
+      ],
       "occupations": [
         {
-          "id": "dl_govt_admin", "name": "Central Government & Administration",
-          "workers": 1000000, "medianSalaryINR": 58000, "growthPct": 0.5,
-          "educationYears": 16, "aiExposure": 40,
+          "id": "dl_govt_admin",
+          "name": "Central Government & Administration",
+          "workers": 1000000,
+          "medianSalaryINR": 58000,
+          "growthPct": 0.5,
+          "educationYears": 16,
+          "aiExposure": 40,
           "description": "North Block, South Block, Ministries, UPSC, SSC, Supreme Court, Parliament, Armed Forces HQs — Delhi is India's administrative core.",
-          "sources": ["DoP&T Annual Report 2023-24 — Central govt HQ employment", "UPSC Annual Report 2023-24"]
+          "sources": [
+            "DoP&T Annual Report 2023-24 — Central govt HQ employment",
+            "UPSC Annual Report 2023-24"
+          ],
+          "shortLabel": "Central Govern"
         },
         {
-          "id": "dl_it_startups", "name": "IT, Startups & Digital Economy",
-          "workers": 1000000, "medianSalaryINR": 68000, "growthPct": 12.5,
-          "educationYears": 16, "aiExposure": 65,
+          "id": "dl_it_startups",
+          "name": "IT, Startups & Digital Economy",
+          "workers": 1000000,
+          "medianSalaryINR": 68000,
+          "growthPct": 12.5,
+          "educationYears": 16,
+          "aiExposure": 65,
           "description": "Delhi NCR = largest startup ecosystem outside Bengaluru. Zomato, Paytm, PolicyBazaar, Info Edge HQ. NCR's IT-BPM workforce exceeds 10L.",
-          "sources": ["NASSCOM State IT Report 2025 — Delhi NCR 1M+ IT workers", "Inc42 Delhi NCR Startup Ecosystem Report 2024"]
+          "sources": [
+            "NASSCOM State IT Report 2025 — Delhi NCR 1M+ IT workers",
+            "Inc42 Delhi NCR Startup Ecosystem Report 2024"
+          ],
+          "shortLabel": "IT, Startups &"
         },
         {
-          "id": "dl_trade_retail", "name": "Trade, Wholesale & Retail Markets",
-          "workers": 3500000, "medianSalaryINR": 20000, "growthPct": 5.0,
-          "educationYears": 10, "aiExposure": 35,
+          "id": "dl_trade_retail",
+          "name": "Trade, Wholesale & Retail Markets",
+          "workers": 3500000,
+          "medianSalaryINR": 20000,
+          "growthPct": 5,
+          "educationYears": 10,
+          "aiExposure": 35,
           "description": "Chandni Chowk, Karol Bagh, Sarojini Nagar, INA market. Delhi = India's largest wholesale trade hub for electronics, textiles, spices, hardware.",
-          "sources": ["PLFS 2023-24 Delhi trade sector", "Delhi Chamber of Commerce Annual Report 2024"]
+          "sources": [
+            "PLFS 2023-24 Delhi trade sector",
+            "Delhi Chamber of Commerce Annual Report 2024"
+          ],
+          "shortLabel": "Trade, Wholesa"
         },
         {
-          "id": "dl_hospitality_media", "name": "Hospitality, Media & Creative",
-          "workers": 1000000, "medianSalaryINR": 32000, "growthPct": 8.0,
-          "educationYears": 14, "aiExposure": 52,
+          "id": "dl_hospitality_media",
+          "name": "Hospitality, Media & Creative",
+          "workers": 1000000,
+          "medianSalaryINR": 32000,
+          "growthPct": 8,
+          "educationYears": 14,
+          "aiExposure": 52,
           "description": "National media capital: Times of India, NDTV, Zee, OTT production. 1,200+ hotels; MICE capital (Pragati Maidan ITPO). G20 Summit 2023 boost.",
-          "sources": ["Ministry of Tourism Delhi hotel data 2023-24", "FICCI-EY M&E Report 2024 Delhi segment"]
+          "sources": [
+            "Ministry of Tourism Delhi hotel data 2023-24",
+            "FICCI-EY M&E Report 2024 Delhi segment"
+          ],
+          "shortLabel": "Hospitality, M"
         },
         {
-          "id": "dl_construction_metro", "name": "Construction & Metro-Urban Development",
-          "workers": 1500000, "medianSalaryINR": 16000, "growthPct": 6.5,
-          "educationYears": 8, "aiExposure": 20,
+          "id": "dl_construction_metro",
+          "name": "Construction & Metro-Urban Development",
+          "workers": 1500000,
+          "medianSalaryINR": 16000,
+          "growthPct": 6.5,
+          "educationYears": 8,
+          "aiExposure": 20,
           "description": "Delhi Metro Phase 4 (65 km), redevelopment of rail colonies (DUSIB), DDA housing. NCR construction mega-projects ongoing.",
-          "sources": ["DMRC Annual Report 2023-24", "DDA Annual Report 2023-24"]
+          "sources": [
+            "DMRC Annual Report 2023-24",
+            "DDA Annual Report 2023-24"
+          ],
+          "shortLabel": "Construction &"
         },
         {
-          "id": "dl_gig_services", "name": "Gig, Logistics & Personal Services",
-          "workers": 1000000, "medianSalaryINR": 14000, "growthPct": 18.0,
-          "educationYears": 8, "aiExposure": 38,
+          "id": "dl_gig_services",
+          "name": "Gig, Logistics & Personal Services",
+          "workers": 1000000,
+          "medianSalaryINR": 14000,
+          "growthPct": 18,
+          "educationYears": 8,
+          "aiExposure": 38,
           "description": "Delhi NCR = India's gig capital. Swiggy/Zomato/Zepto delivery, Rapido/Ola/Uber, Urban Company home services. Highest density of gig workers in India.",
-          "sources": ["NITI Aayog Gig Economy Report 2022 — Delhi highest density", "Swiggy DRHP 2024 NCR partner data"]
+          "sources": [
+            "NITI Aayog Gig Economy Report 2022 — Delhi highest density",
+            "Swiggy DRHP 2024 NCR partner data"
+          ],
+          "shortLabel": "Gig, Logistics"
         }
-      ]
+      ],
+      "shortName": "Delhi NCT"
     },
     {
       "id": "chhattisgarh",
@@ -915,39 +1778,75 @@
       "capital": "Raipur",
       "workers": 14100000,
       "pctWorkforce": 2.4,
-      "sectorGrowth": 7.0,
+      "sectorGrowth": 7,
       "color": "#166534",
-      "sources": ["PLFS 2023-24 Chhattisgarh state tables", "Chhattisgarh Economic Survey 2023-24, Finance Dept. GoCG"],
+      "sources": [
+        "PLFS 2023-24 Chhattisgarh state tables",
+        "Chhattisgarh Economic Survey 2023-24, Finance Dept. GoCG"
+      ],
       "occupations": [
         {
-          "id": "cg_steel_mining", "name": "Steel, Mining & Power (India's Energy State)",
-          "workers": 2000000, "medianSalaryINR": 18000, "growthPct": 7.0,
-          "educationYears": 10, "aiExposure": 25,
+          "id": "cg_steel_mining",
+          "name": "Steel, Mining & Power (India's Energy State)",
+          "workers": 2000000,
+          "medianSalaryINR": 18000,
+          "growthPct": 7,
+          "educationYears": 10,
+          "aiExposure": 25,
           "description": "Chhattisgarh = 3rd largest steel-producing state. Bhilai Steel Plant (SAIL, flagship). Coal reserves in Korba, Raigarh. Jindal Steel & Power, NMDC iron ore.",
-          "sources": ["SAIL Bhilai Plant Annual Report 2023-24", "Ministry of Mines CG mineral data 2023-24"]
+          "sources": [
+            "SAIL Bhilai Plant Annual Report 2023-24",
+            "Ministry of Mines CG mineral data 2023-24"
+          ],
+          "shortLabel": "Steel, Mining "
         },
         {
-          "id": "cg_agri_tribal", "name": "Agriculture, Forest & Tribal Economy",
-          "workers": 7000000, "medianSalaryINR": 7000, "growthPct": 3.0,
-          "educationYears": 5, "aiExposure": 11,
+          "id": "cg_agri_tribal",
+          "name": "Agriculture, Forest & Tribal Economy",
+          "workers": 7000000,
+          "medianSalaryINR": 7000,
+          "growthPct": 3,
+          "educationYears": 5,
+          "aiExposure": 11,
           "description": "CG is India's 'rice bowl' state; 33% tribal. Tendu patta, bamboo, mahua MFP collection. Bastar tribal economy + govt MSP support.",
-          "sources": ["Chhattisgarh Agriculture Dept. Annual Report 2023-24", "CGMFPF (CG Minor Forest Produce Federation) 2023-24"]
+          "sources": [
+            "Chhattisgarh Agriculture Dept. Annual Report 2023-24",
+            "CGMFPF (CG Minor Forest Produce Federation) 2023-24"
+          ],
+          "shortLabel": "Agriculture, F"
         },
         {
-          "id": "cg_power", "name": "Power Generation & Distribution",
-          "workers": 300000, "medianSalaryINR": 28000, "growthPct": 8.0,
-          "educationYears": 12, "aiExposure": 30,
+          "id": "cg_power",
+          "name": "Power Generation & Distribution",
+          "workers": 300000,
+          "medianSalaryINR": 28000,
+          "growthPct": 8,
+          "educationYears": 12,
+          "aiExposure": 30,
           "description": "CG generates 14,000 MW thermal power, supplying 8 states. NTPC Sipat, CSEB thermal plants. Power surplus state.",
-          "sources": ["CSERC (CG State Electricity Regulatory Commission) Annual Report 2023-24", "NTPC Sipat Plant data 2024"]
+          "sources": [
+            "CSERC (CG State Electricity Regulatory Commission) Annual Report 2023-24",
+            "NTPC Sipat Plant data 2024"
+          ],
+          "shortLabel": "Power Generati"
         },
         {
-          "id": "cg_services_govt", "name": "Government, Trade & Services",
-          "workers": 4800000, "medianSalaryINR": 18000, "growthPct": 4.5,
-          "educationYears": 10, "aiExposure": 28,
+          "id": "cg_services_govt",
+          "name": "Government, Trade & Services",
+          "workers": 4800000,
+          "medianSalaryINR": 18000,
+          "growthPct": 4.5,
+          "educationYears": 10,
+          "aiExposure": 28,
           "description": "CGPSC state government, Raipur trade hub (steel, agri commodities), AIIMS Raipur, IIT Bhilai ecosystem.",
-          "sources": ["GoC Finance Dept. Budget 2024-25", "CGPSC Recruitment Data 2024"]
+          "sources": [
+            "GoC Finance Dept. Budget 2024-25",
+            "CGPSC Recruitment Data 2024"
+          ],
+          "shortLabel": "Government, Tr"
         }
-      ]
+      ],
+      "shortName": "Chhattisgarh"
     },
     {
       "id": "uttarakhand_himachal",
@@ -957,44 +1856,88 @@
       "pctWorkforce": 1.6,
       "sectorGrowth": 7.5,
       "color": "#0e7490",
-      "sources": ["PLFS 2023-24 UK & HP state tables", "UK Economic Survey 2023-24 + HP Economic Survey 2023-24"],
+      "sources": [
+        "PLFS 2023-24 UK & HP state tables",
+        "UK Economic Survey 2023-24 + HP Economic Survey 2023-24"
+      ],
       "occupations": [
         {
-          "id": "ukhl_pharma_mfg", "name": "Pharma & FMCG Manufacturing (Haridwar/Baddi)",
-          "workers": 1200000, "medianSalaryINR": 20000, "growthPct": 8.5,
-          "educationYears": 12, "aiExposure": 35,
+          "id": "ukhl_pharma_mfg",
+          "name": "Pharma & FMCG Manufacturing (Haridwar/Baddi)",
+          "workers": 1200000,
+          "medianSalaryINR": 20000,
+          "growthPct": 8.5,
+          "educationYears": 12,
+          "aiExposure": 35,
           "description": "Haridwar/Roorkee (UK) + Baddi (HP) = India's largest pharma manufacturing belt with tax incentives. Patanjali, ITC, Hindustan Unilever plants.",
-          "sources": ["UK Industrial Dev. Dept. Annual Report 2023-24", "HP Industrial Dev. Report 2023-24 — Baddi pharma cluster"]
+          "sources": [
+            "UK Industrial Dev. Dept. Annual Report 2023-24",
+            "HP Industrial Dev. Report 2023-24 — Baddi pharma cluster"
+          ],
+          "shortLabel": "Pharma & FMCG "
         },
         {
-          "id": "ukhl_tourism_pilgrimage", "name": "Tourism, Pilgrimage & Hospitality",
-          "workers": 2000000, "medianSalaryINR": 14000, "growthPct": 12.0,
-          "educationYears": 9, "aiExposure": 22,
+          "id": "ukhl_tourism_pilgrimage",
+          "name": "Tourism, Pilgrimage & Hospitality",
+          "workers": 2000000,
+          "medianSalaryINR": 14000,
+          "growthPct": 12,
+          "educationYears": 9,
+          "aiExposure": 22,
           "description": "Char Dham (Kedarnath, Badrinath, Gangotri, Yamunotri), Rishikesh yoga tourism, Shimla-Manali adventure tourism. Combined 5Cr+ pilgrims/tourists FY24.",
-          "sources": ["UK Tourism Dept. Annual Report 2023-24", "HP Tourism Annual Report 2023-24"]
+          "sources": [
+            "UK Tourism Dept. Annual Report 2023-24",
+            "HP Tourism Annual Report 2023-24"
+          ],
+          "shortLabel": "Tourism, Pilgr"
         },
         {
-          "id": "ukhl_agri_horticulture", "name": "Horticulture, Apples & Agriculture",
-          "workers": 3500000, "medianSalaryINR": 10000, "growthPct": 3.5,
-          "educationYears": 7, "aiExposure": 15,
+          "id": "ukhl_agri_horticulture",
+          "name": "Horticulture, Apples & Agriculture",
+          "workers": 3500000,
+          "medianSalaryINR": 10000,
+          "growthPct": 3.5,
+          "educationYears": 7,
+          "aiExposure": 15,
           "description": "HP = India's apple capital (70% of India's apple production). UK = ginger, turmeric, Basmati rice (Dehradun). High-altitude horticulture.",
-          "sources": ["HP Horticulture Dept. Annual Report 2023-24 — 70% India apple", "UK Agriculture Dept. Annual Report 2023-24"]
+          "sources": [
+            "HP Horticulture Dept. Annual Report 2023-24 — 70% India apple",
+            "UK Agriculture Dept. Annual Report 2023-24"
+          ],
+          "shortLabel": "Horticulture, "
         },
         {
-          "id": "ukhl_hydro_power", "name": "Hydro Power & Defence",
-          "workers": 300000, "medianSalaryINR": 35000, "growthPct": 4.5,
-          "educationYears": 13, "aiExposure": 28,
+          "id": "ukhl_hydro_power",
+          "name": "Hydro Power & Defence",
+          "workers": 300000,
+          "medianSalaryINR": 35000,
+          "growthPct": 4.5,
+          "educationYears": 13,
+          "aiExposure": 28,
           "description": "Combined 30,000+ MW hydro potential in Himalayan states. NTPC Tehri, NHPC projects. Defence establishments (Lansdowne, Chakrata, Subathu).",
-          "sources": ["NHPC Annual Report 2023-24", "NTPC Tehri Power Station data 2024"]
+          "sources": [
+            "NHPC Annual Report 2023-24",
+            "NTPC Tehri Power Station data 2024"
+          ],
+          "shortLabel": "Hydro Power & "
         },
         {
-          "id": "ukhl_govt_services", "name": "Government & Education Services",
-          "workers": 2100000, "medianSalaryINR": 28000, "growthPct": 2.0,
-          "educationYears": 13, "aiExposure": 32,
+          "id": "ukhl_govt_services",
+          "name": "Government & Education Services",
+          "workers": 2100000,
+          "medianSalaryINR": 28000,
+          "growthPct": 2,
+          "educationYears": 13,
+          "aiExposure": 32,
           "description": "UKPSC/HPPSC state recruits. IIT Roorkee, Doon School, Rashtriya Indian Military College anchor education economy.",
-          "sources": ["GoUK Finance Dept. Budget 2024-25", "GoHP Finance Dept. Budget 2024-25"]
+          "sources": [
+            "GoUK Finance Dept. Budget 2024-25",
+            "GoHP Finance Dept. Budget 2024-25"
+          ],
+          "shortLabel": "Government & E"
         }
-      ]
+      ],
+      "shortName": "Uttarakhand & "
     },
     {
       "id": "northeast_states",
@@ -1004,44 +1947,89 @@
       "pctWorkforce": 2.1,
       "sectorGrowth": 7.5,
       "color": "#6b7280",
-      "sources": ["PLFS 2023-24 NE state tables", "DONER (Ministry of Development of NE Region) Annual Report 2023-24", "NEC (North Eastern Council) Statistical Handbook 2024"],
+      "sources": [
+        "PLFS 2023-24 NE state tables",
+        "DONER (Ministry of Development of NE Region) Annual Report 2023-24",
+        "NEC (North Eastern Council) Statistical Handbook 2024"
+      ],
       "occupations": [
         {
-          "id": "ne_agri_horticulture", "name": "Agriculture, Horticulture & Organic Farming",
-          "workers": 5000000, "medianSalaryINR": 8000, "growthPct": 4.5,
-          "educationYears": 7, "aiExposure": 14,
+          "id": "ne_agri_horticulture",
+          "name": "Agriculture, Horticulture & Organic Farming",
+          "workers": 5000000,
+          "medianSalaryINR": 8000,
+          "growthPct": 4.5,
+          "educationYears": 7,
+          "aiExposure": 14,
           "description": "NE = India's organic farming frontier. Sikkim = 100% organic (first state globally). Assam tea, Nagaland spices, Meghalaya organic turmeric & ginger.",
-          "sources": ["APEDA NE Organic Exports data 2023-24", "Sikkim Organic Mission Annual Report 2024"]
+          "sources": [
+            "APEDA NE Organic Exports data 2023-24",
+            "Sikkim Organic Mission Annual Report 2024"
+          ],
+          "shortLabel": "Agriculture, H"
         },
         {
-          "id": "ne_tourism_culture", "name": "Tourism, Culture & Eco-Tourism",
-          "workers": 1500000, "medianSalaryINR": 12000, "growthPct": 15.0,
-          "educationYears": 10, "aiExposure": 20,
+          "id": "ne_tourism_culture",
+          "name": "Tourism, Culture & Eco-Tourism",
+          "workers": 1500000,
+          "medianSalaryINR": 12000,
+          "growthPct": 15,
+          "educationYears": 10,
+          "aiExposure": 20,
           "description": "Kaziranga (one-horned rhino), Cherrapunji (wettest place), Tawang monastery, Hornbill Festival (Nagaland). NE tourism fastest-growing in India at 15%+ CAGR.",
-          "sources": ["Ministry of Tourism NE States data 2023-24", "DONER NE Tourism Development Report 2024"]
+          "sources": [
+            "Ministry of Tourism NE States data 2023-24",
+            "DONER NE Tourism Development Report 2024"
+          ],
+          "shortLabel": "Tourism, Cultu"
         },
         {
-          "id": "ne_defence_govt", "name": "Government, Defence & Border Security",
-          "workers": 2500000, "medianSalaryINR": 25000, "growthPct": 2.0,
-          "educationYears": 12, "aiExposure": 22,
+          "id": "ne_defence_govt",
+          "name": "Government, Defence & Border Security",
+          "workers": 2500000,
+          "medianSalaryINR": 25000,
+          "growthPct": 2,
+          "educationYears": 12,
+          "aiExposure": 22,
           "description": "NE = high defence and CAPF presence (Assam Rifles, BSF, ITBP, CRPF). Central government the largest formal employer across all 8 NE states.",
-          "sources": ["MHA Annual Report 2023-24 — NE CAPF deployment", "DONER Annual Report 2023-24"]
+          "sources": [
+            "MHA Annual Report 2023-24 — NE CAPF deployment",
+            "DONER Annual Report 2023-24"
+          ],
+          "shortLabel": "Government, De"
         },
         {
-          "id": "ne_handicrafts_bamboo", "name": "Handlooms, Bamboo & Forest Crafts",
-          "workers": 2000000, "medianSalaryINR": 7500, "growthPct": 5.5,
-          "educationYears": 6, "aiExposure": 16,
+          "id": "ne_handicrafts_bamboo",
+          "name": "Handlooms, Bamboo & Forest Crafts",
+          "workers": 2000000,
+          "medianSalaryINR": 7500,
+          "growthPct": 5.5,
+          "educationYears": 6,
+          "aiExposure": 16,
           "description": "NE = world's richest bamboo forest; 66% of India's bamboo. Manipuri Moirangphee weaving, Naga shawls, Mizo puan, Arunachali cane crafts.",
-          "sources": ["NEHHDC (NE Handicrafts & Handlooms Dev. Corp.) Annual Report 2023-24", "National Bamboo Mission NE data 2024"]
+          "sources": [
+            "NEHHDC (NE Handicrafts & Handlooms Dev. Corp.) Annual Report 2023-24",
+            "National Bamboo Mission NE data 2024"
+          ],
+          "shortLabel": "Handlooms, Bam"
         },
         {
-          "id": "ne_construction_acteast", "name": "Infrastructure & Act East Policy",
-          "workers": 1000000, "medianSalaryINR": 14000, "growthPct": 12.0,
-          "educationYears": 8, "aiExposure": 15,
+          "id": "ne_construction_acteast",
+          "name": "Infrastructure & Act East Policy",
+          "workers": 1000000,
+          "medianSalaryINR": 14000,
+          "growthPct": 12,
+          "educationYears": 8,
+          "aiExposure": 15,
           "description": "₹76,000 Cr NE capex in FY24 under PM-DevINE, NESIDS, DONER. Roads, bridges, Jiribam-Imphal rail, Greenfield airports at Hollongi, Deoghar.",
-          "sources": ["DONER Annual Report 2023-24 — ₹76K Cr capex", "BRO (Border Roads Organisation) NE projects FY24"]
+          "sources": [
+            "DONER Annual Report 2023-24 — ₹76K Cr capex",
+            "BRO (Border Roads Organisation) NE projects FY24"
+          ],
+          "shortLabel": "Infrastructure"
         }
-      ]
+      ],
+      "shortName": "Northeast & Sm"
     }
   ]
 }

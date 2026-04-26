@@ -1,5 +1,5 @@
 import { EXCHANGE_RATE } from '../App.jsx'
-import { occAtYear } from '../utils/timeline.js'
+import { occAtYear, getTimelineData, TIMELINE_YEARS } from '../utils/timeline.js'
 
 function fmt(n) {
   if (n >= 1e7)  return `${(n/1e7).toFixed(2)} Cr`
@@ -33,13 +33,63 @@ function Badge({ label, value, color = 'slate' }) {
   )
 }
 
+// Tiny SVG sparkline with area fill
+function Sparkline({ values, color = '#38bdf8', nowIdx = 3, width = 230, height = 34, yearLabels }) {
+  if (!values || values.length < 2) return null
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  const range = max - min || 1
+  const pts = values.map((v, i) => [
+    (i / (values.length - 1)) * (width - 2) + 1,
+    height - 4 - ((v - min) / range) * (height - 10),
+  ])
+  const line = pts.map(([x, y], i) => `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`).join(' ')
+  const area = `${line} L${pts[pts.length-1][0].toFixed(1)},${height} L${pts[0][0].toFixed(1)},${height}Z`
+  const gradId = `sg${color.replace(/[^a-z0-9]/gi, '')}`
+  const nowPt  = pts[nowIdx]
+
+  return (
+    <div>
+      <svg width={width} height={height} className="overflow-visible block">
+        <defs>
+          <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stopColor={color} stopOpacity="0.3" />
+            <stop offset="100%" stopColor={color} stopOpacity="0"   />
+          </linearGradient>
+        </defs>
+        <path d={area} fill={`url(#${gradId})`} />
+        <path d={line} fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        {nowPt && (
+          <circle cx={nowPt[0]} cy={nowPt[1]} r="3" fill={color} stroke="#0f172a" strokeWidth="1.5" />
+        )}
+      </svg>
+      {yearLabels && (
+        <div className="flex justify-between mt-0.5">
+          {yearLabels.map((y, i) => (
+            <span key={i} className="text-slate-700 text-[8px] tabular-nums">{y}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function DetailPanel({ sector, occupation: occ, currency, region, year = 2025, onClose }) {
   if (!occ) return null
 
-  // Merge year-adjusted metrics over the base occupation (keeps description/sources)
   const occY        = { ...occ, ...occAtYear(occ, year, region) }
   const growthColor = occY.growthPct < 0 ? 'red' : occY.growthPct < 5 ? 'amber' : 'green'
   const aiColor     = occY.aiExposure > 60 ? 'red' : occY.aiExposure > 35 ? 'amber' : 'green'
+
+  // Sparkline data from timeline anchors
+  const tl     = getTimelineData(region)
+  const tlOcc  = tl?.occupations?.[occ.id]
+  const salKey = region === 'world' ? 'medianSalaryUSD' : 'medianSalaryINR'
+  const nowIdx = TIMELINE_YEARS.indexOf(2025)
+
+  const workerVals = tlOcc ? TIMELINE_YEARS.map(y => tlOcc[y]?.workers).filter(Boolean) : []
+  const salaryVals = tlOcc ? TIMELINE_YEARS.map(y => tlOcc[y]?.[salKey]).filter(Boolean) : []
+  const aiVals     = tlOcc ? TIMELINE_YEARS.map(y => tlOcc[y]?.aiExposure).filter(v => v != null) : []
 
   return (
     <div className="h-full flex flex-col bg-[#0f172a] overflow-y-auto">
@@ -81,6 +131,34 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
           <Badge label="ISCO-08" value={occY.iscoCode} color="slate" />
         )}
       </div>
+
+      {/* Sparklines — 2000 → 2050 trends */}
+      {tlOcc && (workerVals.length >= 2 || salaryVals.length >= 2) && (
+        <div className="p-4 border-b border-slate-800">
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-3">Trends (2000 → 2050)</p>
+          <div className="space-y-4">
+            {workerVals.length >= 2 && (
+              <div>
+                <p className="text-slate-500 text-[9px] mb-1.5">Workforce size <span className="text-slate-600">● = 2025</span></p>
+                <Sparkline values={workerVals} color="#38bdf8" nowIdx={nowIdx} width={230} height={34}
+                  yearLabels={['2000','2010','2020','2025','2035','2050']} />
+              </div>
+            )}
+            {salaryVals.length >= 2 && (
+              <div>
+                <p className="text-slate-500 text-[9px] mb-1.5">Salary trend</p>
+                <Sparkline values={salaryVals} color="#a78bfa" nowIdx={nowIdx} width={230} height={34} />
+              </div>
+            )}
+            {aiVals.length >= 2 && (
+              <div>
+                <p className="text-slate-500 text-[9px] mb-1.5">AI exposure trajectory</p>
+                <Sparkline values={aiVals} color="#f87171" nowIdx={nowIdx} width={230} height={28} />
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Top Skills */}
       {occY.topSkills?.length > 0 && (
@@ -136,9 +214,7 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
       {/* Sector source */}
       <div className="px-4 pb-4">
         <p className="text-slate-600 text-[10px]">
-          {sector.plfsCode || sector.iloCode
-            ? `Sector: ${sector.plfsCode || sector.iloCode} · `
-            : ''}
+          {sector.plfsCode || sector.iloCode ? `Sector: ${sector.plfsCode || sector.iloCode} · ` : ''}
           {sector.sources?.slice(0,1).join('')}
         </p>
       </div>
