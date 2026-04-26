@@ -47,7 +47,7 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
             <div className="w-3 h-3 rounded-sm mt-1 shrink-0" style={{ background: sector.color }} />
             <div>
               <h2 className="text-white font-bold text-sm leading-tight">{occ.name}</h2>
-              <p className="text-slate-400 text-[11px]">{sector.name}</p>
+              <p className="text-slate-400 text-[11px]">{sector.name}{sector.capital ? ` · ${sector.capital}` : ''}</p>
             </div>
           </div>
           <button onClick={onClose} className="text-slate-500 hover:text-white p-1 shrink-0 text-lg leading-none">&times;</button>

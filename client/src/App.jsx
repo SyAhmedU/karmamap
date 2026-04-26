@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import indiaData from './data/india_jobs.json'
 import worldData from './data/world_jobs.json'
+import statesData from './data/india_states_jobs.json'
 import Treemap from './components/Treemap.jsx'
 import DetailPanel from './components/DetailPanel.jsx'
 import LayerPicker from './components/LayerPicker.jsx'
@@ -23,9 +24,9 @@ export default function App() {
   const [selected, setSelected] = useState(null)
   const [showLLM, setShowLLM]   = useState(false)
 
-  const data = region === 'india' ? indiaData : worldData
+  const data = region === 'india' ? indiaData : region === 'states' ? statesData : worldData
 
-  // World view only shows USD; India view shows ₹ or $
+  // World view only shows USD; India + States views show ₹ or $
   const effectiveCurrency = region === 'world' ? 'usd' : currency
 
   const layerObj = LAYERS.find(l => l.id === layer)
@@ -38,9 +39,9 @@ export default function App() {
     if (r === 'world') setCurrency('usd')
   }
 
-  const totalLabel = region === 'india'
-    ? `${(data.meta.totalWorkforce / 1e6).toFixed(0)}M workers`
-    : `${(data.meta.totalWorkforce / 1e9).toFixed(2)}B workers`
+  const totalLabel = region === 'world'
+    ? `${(data.meta.totalWorkforce / 1e9).toFixed(2)}B workers`
+    : `${(data.meta.totalWorkforce / 1e6).toFixed(0)}M workers`
 
   return (
     <div className="flex flex-col h-screen bg-[#0f172a] select-none">
@@ -60,17 +61,17 @@ export default function App() {
           {/* Region toggle */}
           <div className="flex items-center gap-1 bg-slate-800 rounded-lg p-1">
             <button
-              onClick={() => handleRegion('india')}
-              className={`px-3 py-1 rounded text-[12px] font-bold transition-all flex items-center gap-1.5 ${region === 'india' ? 'bg-orange-500 text-white' : 'text-slate-400 hover:text-white'}`}
-            >
-              🇮🇳 India
-            </button>
-            <button
               onClick={() => handleRegion('world')}
-              className={`px-3 py-1 rounded text-[12px] font-bold transition-all flex items-center gap-1.5 ${region === 'world' ? 'bg-blue-500 text-white' : 'text-slate-400 hover:text-white'}`}
-            >
-              🌍 World
-            </button>
+              className={`px-3 py-1 rounded text-[12px] font-bold transition-all ${region === 'world' ? 'bg-blue-500 text-white' : 'text-slate-400 hover:text-white'}`}
+            >🌍 World</button>
+            <button
+              onClick={() => handleRegion('india')}
+              className={`px-3 py-1 rounded text-[12px] font-bold transition-all ${region === 'india' ? 'bg-orange-500 text-white' : 'text-slate-400 hover:text-white'}`}
+            >🇮🇳 India</button>
+            <button
+              onClick={() => handleRegion('states')}
+              className={`px-3 py-1 rounded text-[12px] font-bold transition-all ${region === 'states' ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-white'}`}
+            >🗺️ States</button>
           </div>
 
           {/* Currency toggle — India only */}
