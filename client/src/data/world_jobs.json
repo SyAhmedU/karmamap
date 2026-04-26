@@ -1,0 +1,1109 @@
+{
+  "meta": {
+    "title": "Global Job Market 2023-24",
+    "totalWorkforce": 3320000000,
+    "wpRate": 58.3,
+    "exchangeRate": 1,
+    "primarySource": "ILO World Employment and Social Outlook: Trends 2024, International Labour Organization, Geneva",
+    "primarySourceUrl": "https://www.ilo.org/publications/flagship-reports/world-employment-and-social-outlook-trends-2024",
+    "notes": "Sector shares from ILO ILOSTAT sectoral employment database 2023. Salaries are nominal USD/month global medians from ILO Global Wage Report 2024/25. AI exposure based on Oxford Martin School (Frey & Osborne 2017 update) and McKinsey Global Institute 2023 methodology."
+  },
+  "sectors": [
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Food Systems",
+      "iloCode": "ISIC A",
+      "workers": 884000000,
+      "pctWorkforce": 26.7,
+      "sectorGrowth": -0.8,
+      "color": "#16a34a",
+      "sources": [
+        "ILO ILOSTAT Sectoral Employment 2023 — Agriculture share 26.7% of global workforce",
+        "FAO The State of Food and Agriculture 2023",
+        "World Bank World Development Report 2024"
+      ],
+      "occupations": [
+        {
+          "id": "crop_farmers",
+          "name": "Crop Farmers & Cultivators",
+          "workers": 500000000,
+          "medianSalaryUSD": 280,
+          "growthPct": -1.2,
+          "educationYears": 6,
+          "aiExposure": 14,
+          "description": "Smallholder and commercial crop farmers globally. ~70% in Asia and Sub-Saharan Africa. Mechanisation and climate stress driving structural decline.",
+          "sources": [
+            "FAO The State of Food and Agriculture 2023 — 500M smallholder farming households",
+            "ILO ILOSTAT agricultural employment by occupation 2023",
+            "World Bank Agriculture and Food Global Practice 2024"
+          ]
+        },
+        {
+          "id": "livestock_dairy",
+          "name": "Livestock & Dairy Workers",
+          "workers": 130000000,
+          "medianSalaryUSD": 300,
+          "growthPct": 1.2,
+          "educationYears": 6,
+          "aiExposure": 18,
+          "description": "Cattle, poultry, dairy farm workers. Growing demand from rising protein consumption in emerging markets.",
+          "sources": [
+            "FAO Livestock & Livelihoods 2023",
+            "ILO Global Employment Trends in Agriculture 2023"
+          ]
+        },
+        {
+          "id": "fisheries_global",
+          "name": "Fisheries & Aquaculture",
+          "workers": 60000000,
+          "medianSalaryUSD": 350,
+          "growthPct": 2.5,
+          "educationYears": 7,
+          "aiExposure": 20,
+          "description": "600M people depend on fisheries for livelihoods. Aquaculture is world's fastest-growing food sector.",
+          "sources": [
+            "FAO The State of World Fisheries and Aquaculture 2024 — 600M livelihoods, 60M directly employed"
+          ]
+        },
+        {
+          "id": "agri_wage_labour",
+          "name": "Agricultural Wage Labour",
+          "workers": 194000000,
+          "medianSalaryUSD": 220,
+          "growthPct": -2.0,
+          "educationYears": 4,
+          "aiExposure": 16,
+          "description": "Seasonal and permanent wage labourers on farms globally. Most vulnerable to automation and climate displacement.",
+          "sources": [
+            "ILO Global Wage Report 2024/25 — agricultural wages by region",
+            "ILO ILOSTAT casual agricultural employment 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing & Industry",
+      "iloCode": "ISIC C",
+      "workers": 534000000,
+      "pctWorkforce": 16.1,
+      "sectorGrowth": 1.5,
+      "color": "#7c3aed",
+      "sources": [
+        "ILO ILOSTAT Sectoral Employment 2023 — Manufacturing 16.1% global share",
+        "UNIDO World Manufacturing Production 2024",
+        "ILO Global Supply Chain Report 2023"
+      ],
+      "occupations": [
+        {
+          "id": "factory_assembly",
+          "name": "Factory & Assembly Line Workers",
+          "workers": 180000000,
+          "medianSalaryUSD": 620,
+          "growthPct": -0.5,
+          "educationYears": 9,
+          "aiExposure": 55,
+          "description": "Assembly, packaging, production line workers globally. Robot adoption accelerating in high-wage economies; shifting to Vietnam, Bangladesh, Ethiopia.",
+          "sources": [
+            "ILO Global Supply Chains and Decent Work 2023",
+            "IFR World Robotics Report 2024 — 3.5M industrial robots installed",
+            "UNIDO World Manufacturing Production Statistics 2024"
+          ]
+        },
+        {
+          "id": "garment_textile_global",
+          "name": "Garment & Textile Workers",
+          "workers": 75000000,
+          "medianSalaryUSD": 380,
+          "growthPct": 1.2,
+          "educationYears": 8,
+          "aiExposure": 45,
+          "description": "75M workers globally; 80% women. Concentrated in Bangladesh, China, Vietnam, India, Ethiopia. Brands shifting supply chains post-pandemic.",
+          "sources": [
+            "ILO Textiles, Clothing, Leather and Footwear Sector 2023",
+            "ILO Better Work Programme Annual Report 2023-24"
+          ]
+        },
+        {
+          "id": "food_beverage_mfg",
+          "name": "Food & Beverage Processing",
+          "workers": 80000000,
+          "medianSalaryUSD": 700,
+          "growthPct": 2.8,
+          "educationYears": 9,
+          "aiExposure": 32,
+          "description": "Largest manufacturing sub-sector by employment. Packaged food, beverages, dairy. Resilient to downturns.",
+          "sources": [
+            "ILO Food & Drink Industries Global Employment 2023",
+            "FAO Agri-food Systems Employment Report 2024"
+          ]
+        },
+        {
+          "id": "auto_engineering_global",
+          "name": "Automobile & Engineering",
+          "workers": 50000000,
+          "medianSalaryUSD": 1800,
+          "growthPct": 3.5,
+          "educationYears": 12,
+          "aiExposure": 48,
+          "description": "8M direct auto workers + 50M in supply chain. EV transition disrupting powertrain jobs but creating battery/software roles.",
+          "sources": [
+            "ILO Future of Work in the Automotive Sector 2023",
+            "OICA (International Org of Motor Vehicle Manufacturers) Employment Data 2024"
+          ]
+        },
+        {
+          "id": "electronics_global",
+          "name": "Electronics & Semiconductors",
+          "workers": 80000000,
+          "medianSalaryUSD": 1400,
+          "growthPct": 5.5,
+          "educationYears": 12,
+          "aiExposure": 42,
+          "description": "Chips, consumer electronics, components. Geopolitical reshoring (CHIPS Act, EU Chips Act) driving new plant construction in US, Europe, India.",
+          "sources": [
+            "SIA (Semiconductor Industry Association) Global Employment Data 2024",
+            "SEMI Global Semiconductor Equipment Market Statistics 2024"
+          ]
+        },
+        {
+          "id": "pharma_chemical_global",
+          "name": "Pharma & Chemical Workers",
+          "workers": 69000000,
+          "medianSalaryUSD": 2200,
+          "growthPct": 4.2,
+          "educationYears": 14,
+          "aiExposure": 35,
+          "description": "Life sciences and specialty chemicals. Post-COVID reshoring of API manufacturing from China to India, Europe, US.",
+          "sources": [
+            "IFPMA (International Federation of Pharmaceutical Manufacturers) Data 2024",
+            "ICCA (International Council of Chemical Associations) Employment Report 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trade_retail",
+      "name": "Trade, Wholesale & Retail",
+      "iloCode": "ISIC G",
+      "workers": 501000000,
+      "pctWorkforce": 15.1,
+      "sectorGrowth": 3.2,
+      "color": "#2563eb",
+      "sources": [
+        "ILO ILOSTAT 2023 — Trade sector 15.1% of global workforce",
+        "World Trade Organization Global Trade Outlook 2024",
+        "UNCTAD Digital Economy Report 2024"
+      ],
+      "occupations": [
+        {
+          "id": "retail_workers_global",
+          "name": "Retail Store Workers",
+          "workers": 200000000,
+          "medianSalaryUSD": 1100,
+          "growthPct": 0.8,
+          "educationYears": 10,
+          "aiExposure": 38,
+          "description": "2nd largest global employer after agriculture. Amazon, Walmart automation threatening checkout and warehouse roles in high-wage markets.",
+          "sources": [
+            "ILO Commerce Sector Employment 2023",
+            "WTO Annual Report 2024 — global retail employment"
+          ]
+        },
+        {
+          "id": "ecommerce_global",
+          "name": "E-commerce & Digital Retail",
+          "workers": 50000000,
+          "medianSalaryUSD": 2200,
+          "growthPct": 18.5,
+          "educationYears": 13,
+          "aiExposure": 52,
+          "description": "Global e-commerce $5.8Tr in 2023. Created 50M+ direct jobs; fastest growing segment in retail globally.",
+          "sources": [
+            "UNCTAD Digital Economy Report 2024 — e-commerce $5.8Tr",
+            "eMarketer Global E-Commerce Forecast 2024"
+          ]
+        },
+        {
+          "id": "wholesale_distribution_global",
+          "name": "Wholesale & Distribution",
+          "workers": 150000000,
+          "medianSalaryUSD": 1400,
+          "growthPct": 2.5,
+          "educationYears": 12,
+          "aiExposure": 40,
+          "description": "B2B trade intermediaries, FMCG distributors, commodity traders connecting manufacturers to retailers globally.",
+          "sources": [
+            "ILO ILOSTAT wholesale trade employment 2023",
+            "World Bank Enterprise Survey 2024"
+          ]
+        },
+        {
+          "id": "street_informal_trade",
+          "name": "Informal & Street Traders",
+          "workers": 101000000,
+          "medianSalaryUSD": 350,
+          "growthPct": -1.0,
+          "educationYears": 5,
+          "aiExposure": 8,
+          "description": "Street vendors, market traders primarily in Africa, Asia, Latin America. ILO estimates 60% of global employment is informal.",
+          "sources": [
+            "ILO Women and Men in the Informal Economy 2023 — 60% informal workforce globally",
+            "World Bank Informal Economy Report 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "construction_global",
+      "name": "Construction",
+      "iloCode": "ISIC F",
+      "workers": 199000000,
+      "pctWorkforce": 6.0,
+      "sectorGrowth": 3.8,
+      "color": "#ea580c",
+      "sources": [
+        "ILO ILOSTAT 2023 — Construction 6% of global workforce",
+        "Oxford Economics Global Construction 2030 Report",
+        "World Bank Infrastructure Report 2024"
+      ],
+      "occupations": [
+        {
+          "id": "construction_workers_global",
+          "name": "General Construction Workers",
+          "workers": 110000000,
+          "medianSalaryUSD": 1200,
+          "growthPct": 3.5,
+          "educationYears": 7,
+          "aiExposure": 18,
+          "description": "Masons, carpenters, steel fixers, site labourers. Demand driven by $15Tr global infrastructure gap (G20 Global Infrastructure Hub).",
+          "sources": [
+            "ILO Construction Sector Employment 2023",
+            "G20 Global Infrastructure Hub Investment Gap Report 2023"
+          ]
+        },
+        {
+          "id": "civil_engineers_global",
+          "name": "Civil & Structural Engineers",
+          "workers": 20000000,
+          "medianSalaryUSD": 4800,
+          "growthPct": 5.5,
+          "educationYears": 16,
+          "aiExposure": 50,
+          "description": "Infrastructure engineers globally. Chronic shortage in developing nations; AI-assisted BIM changing design workflows.",
+          "sources": [
+            "FIDIC (International Federation of Consulting Engineers) Global Report 2024",
+            "World Bank Infrastructure Finance 2024"
+          ]
+        },
+        {
+          "id": "skilled_trades_global",
+          "name": "Electricians, Plumbers & Trades",
+          "workers": 45000000,
+          "medianSalaryUSD": 2800,
+          "growthPct": 5.8,
+          "educationYears": 11,
+          "aiExposure": 22,
+          "description": "Critical skilled trades for green building, solar installation, EV charging networks. Severe shortage in EU, US, Australia.",
+          "sources": [
+            "ILO Skills for Green Jobs 2023",
+            "IRENA Renewable Energy and Jobs Annual Review 2024"
+          ]
+        },
+        {
+          "id": "real_estate_global",
+          "name": "Real Estate Agents & Developers",
+          "workers": 24000000,
+          "medianSalaryUSD": 3200,
+          "growthPct": 2.2,
+          "educationYears": 14,
+          "aiExposure": 52,
+          "description": "Property agents, developers, valuers. Global real estate market $326Tr (Savills 2023). Proptech AI disrupting agent roles.",
+          "sources": [
+            "Savills Global Real Estate Market Report 2023 — $326Tr total value",
+            "NAR (National Assoc. of Realtors) International Data 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transport_logistics_global",
+      "name": "Transport & Logistics",
+      "iloCode": "ISIC H",
+      "workers": 199000000,
+      "pctWorkforce": 6.0,
+      "sectorGrowth": 5.2,
+      "color": "#d97706",
+      "sources": [
+        "ILO ILOSTAT 2023 — Transport 6% global workforce",
+        "ITF (International Transport Forum) Transport Outlook 2024",
+        "World Bank Logistics Performance Index 2023"
+      ],
+      "occupations": [
+        {
+          "id": "truck_drivers_global",
+          "name": "Truck & HGV Drivers",
+          "workers": 35000000,
+          "medianSalaryUSD": 2200,
+          "growthPct": 2.5,
+          "educationYears": 9,
+          "aiExposure": 68,
+          "description": "Highest AI-exposure transport role. Autonomous trucking pilots (Waymo Via, Plus.ai, TuSimple) progressing in US, China, EU. Shortage of 3M drivers globally (IRU 2023).",
+          "sources": [
+            "IRU (International Road Transport Union) Driver Shortage Report 2023 — 3M shortage",
+            "ILO Future of Work in Transport 2023"
+          ]
+        },
+        {
+          "id": "ride_gig_global",
+          "name": "Ride-hail & Gig Delivery",
+          "workers": 55000000,
+          "medianSalaryUSD": 800,
+          "growthPct": 15.0,
+          "educationYears": 9,
+          "aiExposure": 55,
+          "description": "Uber, Lyft, DiDi, Grab, Bolt drivers + DoorDash, Deliveroo gig workers. ILO estimates 100M+ platform workers globally.",
+          "sources": [
+            "ILO World Employment and Social Outlook 2021 — platform workers 100M+",
+            "OECD Digital Platform Work Report 2024"
+          ]
+        },
+        {
+          "id": "aviation_global",
+          "name": "Aviation (Pilots, Crew, Ground)",
+          "workers": 10000000,
+          "medianSalaryUSD": 5500,
+          "growthPct": 9.5,
+          "educationYears": 15,
+          "aiExposure": 28,
+          "description": "4.5Bn passengers in 2023 (ICAO). Global pilot shortage of 80,000 by 2032 (Boeing). Fastest post-COVID recovery sector.",
+          "sources": [
+            "ICAO Annual Report 2023 — 4.5Bn passengers",
+            "Boeing Pilot & Technician Outlook 2024-2043 — 800K new pilots needed"
+          ]
+        },
+        {
+          "id": "maritime_shipping",
+          "name": "Maritime & Shipping",
+          "workers": 28000000,
+          "medianSalaryUSD": 2800,
+          "growthPct": 3.2,
+          "educationYears": 13,
+          "aiExposure": 35,
+          "description": "80% of world trade moves by sea. 1.89M seafarers on merchant ships (BIMCO/ICS 2023). Port automation accelerating.",
+          "sources": [
+            "BIMCO/ICS Seafarer Workforce Report 2023 — 1.89M seafarers",
+            "UNCTAD Review of Maritime Transport 2024"
+          ]
+        },
+        {
+          "id": "logistics_warehouse_global",
+          "name": "Logistics, Warehousing & Fulfilment",
+          "workers": 71000000,
+          "medianSalaryUSD": 1500,
+          "growthPct": 12.5,
+          "educationYears": 10,
+          "aiExposure": 48,
+          "description": "E-commerce boom driving warehouse expansion. Amazon alone employs 1.5M globally. Robotics (Kiva, Locus) automating picking.",
+          "sources": [
+            "Global Logistics & Supply Chain Management Market Report 2024 — Mordor Intelligence",
+            "ILO E-Commerce and Logistics Employment 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healthcare_global",
+      "name": "Healthcare & Social Work",
+      "iloCode": "ISIC Q",
+      "workers": 103000000,
+      "pctWorkforce": 3.1,
+      "sectorGrowth": 10.2,
+      "color": "#dc2626",
+      "sources": [
+        "ILO ILOSTAT 2023 — Healthcare 3.1% of global workforce",
+        "WHO Global Health Workforce Statistics 2024",
+        "ILO Care Work and Care Jobs for the Future 2023"
+      ],
+      "occupations": [
+        {
+          "id": "doctors_global",
+          "name": "Doctors & Physicians",
+          "workers": 12000000,
+          "medianSalaryUSD": 5500,
+          "growthPct": 7.5,
+          "educationYears": 19,
+          "aiExposure": 38,
+          "description": "WHO estimates global shortage of 10M health workers by 2030. AI-assisted diagnostics augmenting rather than replacing physicians.",
+          "sources": [
+            "WHO Health Workforce 2030 — 10M global shortage projection",
+            "WHO Global Health Observatory: Physician density 2024"
+          ]
+        },
+        {
+          "id": "nurses_global",
+          "name": "Nurses & Midwives",
+          "workers": 27900000,
+          "medianSalaryUSD": 2800,
+          "growthPct": 12.0,
+          "educationYears": 13,
+          "aiExposure": 30,
+          "description": "Largest healthcare workforce globally. Severe shortage: 5.9M nurse deficit (WHO 2023). Migration from Philippines, India, Africa to OECD nations.",
+          "sources": [
+            "WHO State of the World's Nursing 2023 — 5.9M global nurse deficit",
+            "ICN (International Council of Nurses) Workforce Data 2024"
+          ]
+        },
+        {
+          "id": "community_health_global",
+          "name": "Community & Allied Health Workers",
+          "workers": 30000000,
+          "medianSalaryUSD": 900,
+          "growthPct": 8.5,
+          "educationYears": 10,
+          "aiExposure": 18,
+          "description": "Community health workers, paramedics, physiotherapists. Backbone of PHC in low-income nations; growing in ageing high-income countries.",
+          "sources": [
+            "WHO Global Health Workforce Statistics 2024",
+            "ILO Care Economy Jobs Report 2023"
+          ]
+        },
+        {
+          "id": "elderly_care",
+          "name": "Elderly & Social Care Workers",
+          "workers": 33100000,
+          "medianSalaryUSD": 1600,
+          "growthPct": 14.0,
+          "educationYears": 11,
+          "aiExposure": 22,
+          "description": "Fastest-growing healthcare segment due to global ageing. 1.4Bn people over 60 by 2030 (UN). Japan, Germany, South Korea facing acute shortages.",
+          "sources": [
+            "ILO Care Work and Care Jobs for the Future 2022",
+            "UN World Population Ageing Report 2023 — 1.4Bn over 60 by 2030"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education_global",
+      "name": "Education",
+      "iloCode": "ISIC P",
+      "workers": 90000000,
+      "pctWorkforce": 2.7,
+      "sectorGrowth": 3.5,
+      "color": "#0d9488",
+      "sources": [
+        "ILO ILOSTAT 2023 — Education 2.7% of global workforce",
+        "UNESCO Global Education Monitoring Report 2024",
+        "ILO Teachers and Education Personnel 2023"
+      ],
+      "occupations": [
+        {
+          "id": "school_teachers_global",
+          "name": "School Teachers (K-12)",
+          "workers": 68000000,
+          "medianSalaryUSD": 2000,
+          "growthPct": 2.8,
+          "educationYears": 14,
+          "aiExposure": 32,
+          "description": "UNESCO estimates 69M new teachers needed by 2030 to achieve SDG 4. Sub-Saharan Africa faces the most acute shortage.",
+          "sources": [
+            "UNESCO Global Education Monitoring Report 2024 — 69M teacher shortage",
+            "ILO Teachers in the 21st Century 2023",
+            "UIS (UNESCO Institute for Statistics) Teacher Data 2024"
+          ]
+        },
+        {
+          "id": "higher_ed_global",
+          "name": "University & Higher Education Faculty",
+          "workers": 12000000,
+          "medianSalaryUSD": 4500,
+          "growthPct": 3.5,
+          "educationYears": 20,
+          "aiExposure": 42,
+          "description": "216M students enrolled globally (UNESCO 2024). Research universities under pressure to adopt AI in curriculum.",
+          "sources": [
+            "UNESCO IESALC Higher Education Global Report 2022",
+            "ILO Academic Staff Working Conditions 2023"
+          ]
+        },
+        {
+          "id": "edtech_global",
+          "name": "EdTech & Online Learning",
+          "workers": 10000000,
+          "medianSalaryUSD": 3800,
+          "growthPct": 22.0,
+          "educationYears": 15,
+          "aiExposure": 55,
+          "description": "Global EdTech market $350Bn by 2025 (HolonIQ). Coursera, Udemy, Duolingo and 20,000+ startups creating new instructional design roles.",
+          "sources": [
+            "HolonIQ Global EdTech Market Intelligence 2024 — $350Bn projection",
+            "UNESCO IESALC Online Education 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it_technology_global",
+      "name": "IT & Digital Economy",
+      "iloCode": "ISIC J",
+      "workers": 80000000,
+      "pctWorkforce": 2.4,
+      "sectorGrowth": 16.5,
+      "color": "#4f46e5",
+      "sources": [
+        "ILO ILOSTAT 2023 — ICT sector employment",
+        "ITU Global ICT Skills Outlook 2024",
+        "NASSCOM Global Technology Talent Report 2025",
+        "Stack Overflow Developer Survey 2024"
+      ],
+      "occupations": [
+        {
+          "id": "software_engineers_global",
+          "name": "Software Developers & Engineers",
+          "workers": 28000000,
+          "medianSalaryUSD": 6800,
+          "growthPct": 14.0,
+          "educationYears": 16,
+          "aiExposure": 70,
+          "description": "GitHub reports 100M+ developers globally. US, India, China dominate. Copilot-style AI raising productivity but not yet displacing jobs.",
+          "sources": [
+            "GitHub Octoverse State of Open Source Report 2024 — 100M developers",
+            "Stack Overflow Developer Survey 2024 — salaries and demographics",
+            "OECD ICT Employment Indicators 2024"
+          ]
+        },
+        {
+          "id": "ai_ml_global",
+          "name": "AI / ML Engineers & Researchers",
+          "workers": 2000000,
+          "medianSalaryUSD": 12500,
+          "growthPct": 52.0,
+          "educationYears": 18,
+          "aiExposure": 32,
+          "description": "Fastest-growing and highest-paid tech role globally. Only 300K people worldwide have deep ML expertise (Element AI 2019); gap widening with demand.",
+          "sources": [
+            "LinkedIn AI Jobs on the Rise 2024 — AI roles grew 74% in 4 years",
+            "Stanford AI Index Report 2024",
+            "Global AI Talent Report 2023 — talent concentration analysis"
+          ]
+        },
+        {
+          "id": "cybersecurity_global",
+          "name": "Cybersecurity Professionals",
+          "workers": 5500000,
+          "medianSalaryUSD": 8500,
+          "growthPct": 35.0,
+          "educationYears": 16,
+          "aiExposure": 35,
+          "description": "4M unfilled cybersecurity positions globally (ISC2 2024). Ransomware costing $8Tr annually (Cybersecurity Ventures). Demand structurally outpacing supply.",
+          "sources": [
+            "ISC2 Cybersecurity Workforce Study 2024 — 4M global gap",
+            "Cybersecurity Ventures Cybercrime Report 2024 — $8Tr annual cost"
+          ]
+        },
+        {
+          "id": "cloud_devops_global",
+          "name": "Cloud & DevOps Engineers",
+          "workers": 8000000,
+          "medianSalaryUSD": 9500,
+          "growthPct": 28.0,
+          "educationYears": 16,
+          "aiExposure": 52,
+          "description": "AWS, Azure, GCP combined revenue $270Bn (FY2024). Cloud engineers among the most sought-after profiles in every country.",
+          "sources": [
+            "Gartner Worldwide Public Cloud Services Forecast 2024 — $679Bn cloud market",
+            "LinkedIn Global Talent Trends 2024"
+          ]
+        },
+        {
+          "id": "data_analysts_global",
+          "name": "Data Scientists & Analysts",
+          "workers": 12000000,
+          "medianSalaryUSD": 7200,
+          "growthPct": 28.0,
+          "educationYears": 17,
+          "aiExposure": 45,
+          "description": "Data roles in every industry vertical. World Economic Forum calls data analysts the #1 fastest-growing job category globally.",
+          "sources": [
+            "WEF Future of Jobs Report 2025 — Data Analysts #1 growing role",
+            "LinkedIn Emerging Jobs Report 2024"
+          ]
+        },
+        {
+          "id": "it_support_bpo_global",
+          "name": "IT Support & BPO",
+          "workers": 24500000,
+          "medianSalaryUSD": 2200,
+          "growthPct": 3.5,
+          "educationYears": 13,
+          "aiExposure": 72,
+          "description": "Highest AI-risk tech role. LLMs now handle Tier-1 support. Sector shifting to AI training, quality assurance, exception handling.",
+          "sources": [
+            "Gartner Predicts 2024 — 80% of customer service interactions AI-handled by 2025",
+            "NASSCOM BPO Sector Global Competitive Analysis 2025"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finance_global",
+      "name": "Finance & Insurance",
+      "iloCode": "ISIC K",
+      "workers": 60000000,
+      "pctWorkforce": 1.8,
+      "sectorGrowth": 6.5,
+      "color": "#059669",
+      "sources": [
+        "ILO ILOSTAT 2023 — Finance sector employment",
+        "World Bank Financial Development Report 2024",
+        "BIS Annual Economic Report 2024"
+      ],
+      "occupations": [
+        {
+          "id": "bank_employees_global",
+          "name": "Bank Employees",
+          "workers": 20000000,
+          "medianSalaryUSD": 2800,
+          "growthPct": 1.5,
+          "educationYears": 15,
+          "aiExposure": 65,
+          "description": "Global banking employs 20M; headcount declining in developed markets as AI handles back-office. Jobs growing in emerging markets.",
+          "sources": [
+            "BIS Annual Economic Report 2024 — banking sector employment trends",
+            "ILO Finance Sector Future of Work 2023"
+          ]
+        },
+        {
+          "id": "fintech_global",
+          "name": "FinTech Professionals",
+          "workers": 5000000,
+          "medianSalaryUSD": 7500,
+          "growthPct": 28.0,
+          "educationYears": 16,
+          "aiExposure": 55,
+          "description": "Global FinTech investment $113Bn in 2023 (CB Insights). Neobanks, crypto, DeFi, embedded finance creating new role categories.",
+          "sources": [
+            "CB Insights State of FinTech 2024 — $113Bn global investment",
+            "WEF Future of Financial Services 2024"
+          ]
+        },
+        {
+          "id": "investment_advisors_global",
+          "name": "Investment Advisors & Analysts",
+          "workers": 5000000,
+          "medianSalaryUSD": 7200,
+          "growthPct": 5.5,
+          "educationYears": 17,
+          "aiExposure": 58,
+          "description": "Wealth management, equity research, M&A advisory. AUM automation (robo-advisors like Betterment, Wealthfront) disrupting retail advisory.",
+          "sources": [
+            "CFA Institute Global Employment Survey 2024",
+            "Bloomberg AI in Finance Special Report 2024"
+          ]
+        },
+        {
+          "id": "insurance_global",
+          "name": "Insurance Agents & Underwriters",
+          "workers": 20000000,
+          "medianSalaryUSD": 2200,
+          "growthPct": 3.2,
+          "educationYears": 13,
+          "aiExposure": 58,
+          "description": "Global insurance premium $7Tr (Swiss Re 2024). Underwriting being automated by ML; agent roles shifting to advisory.",
+          "sources": [
+            "Swiss Re World Insurance Report 2024 — $7Tr global premium",
+            "Accenture Future of Insurance Workforce 2024"
+          ]
+        },
+        {
+          "id": "accounting_audit_global",
+          "name": "Accountants & Auditors",
+          "workers": 10000000,
+          "medianSalaryUSD": 4500,
+          "growthPct": 2.5,
+          "educationYears": 16,
+          "aiExposure": 65,
+          "description": "Big 4 employing 1.5M globally. AI (CoCounsel, Harvey, ChatGPT-4) automating routine compliance and audit tasks at pace.",
+          "sources": [
+            "IFAC (International Federation of Accountants) Global Accountancy Report 2024",
+            "Deloitte Future of Audit Report 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "government_global",
+      "name": "Government & Public Admin",
+      "iloCode": "ISIC O",
+      "workers": 149000000,
+      "pctWorkforce": 4.5,
+      "sectorGrowth": 1.5,
+      "color": "#475569",
+      "sources": [
+        "ILO ILOSTAT 2023 — Public Admin 4.5% global workforce",
+        "UN DESA World Public Sector Report 2023",
+        "World Bank Government Effectiveness Index 2023"
+      ],
+      "occupations": [
+        {
+          "id": "civil_servants_global",
+          "name": "Civil Servants & Government Officers",
+          "workers": 65000000,
+          "medianSalaryUSD": 2500,
+          "growthPct": 1.0,
+          "educationYears": 16,
+          "aiExposure": 40,
+          "description": "Government bureaucracies in 195 countries. AI-driven e-government reducing routine paperwork roles; growing in digital governance.",
+          "sources": [
+            "UN DESA Global e-Government Survey 2024",
+            "OECD Government at a Glance 2023 — public employment 18% of total employment in OECD"
+          ]
+        },
+        {
+          "id": "police_military_global",
+          "name": "Police & Armed Forces",
+          "workers": 55000000,
+          "medianSalaryUSD": 1800,
+          "growthPct": 2.0,
+          "educationYears": 12,
+          "aiExposure": 25,
+          "description": "27M active military + 28M police globally. Defence spending at post-Cold War highs ($2.24Tr, SIPRI 2023).",
+          "sources": [
+            "SIPRI Military Expenditure Database 2024 — $2.24Tr global defence spending",
+            "UNODC World Drug Report 2024 — police workforce data"
+          ]
+        },
+        {
+          "id": "social_workers_global",
+          "name": "Social Workers & Welfare Staff",
+          "workers": 29000000,
+          "medianSalaryUSD": 2200,
+          "growthPct": 5.5,
+          "educationYears": 15,
+          "aiExposure": 28,
+          "description": "Growing demand from ageing populations, mental health crisis, refugee crises. IFSW estimates 3M professional social workers globally.",
+          "sources": [
+            "IFSW (International Federation of Social Workers) Global Report 2023",
+            "OECD Health at a Glance 2023 — social care workforce"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "professional_services",
+      "name": "Professional Services",
+      "iloCode": "ISIC M–N",
+      "workers": 149000000,
+      "pctWorkforce": 4.5,
+      "sectorGrowth": 7.2,
+      "color": "#0891b2",
+      "sources": [
+        "ILO ILOSTAT 2023 — Professional services 4.5% global workforce",
+        "IBISWorld Global Professional Services Report 2024"
+      ],
+      "occupations": [
+        {
+          "id": "lawyers_legal",
+          "name": "Lawyers & Legal Professionals",
+          "workers": 8000000,
+          "medianSalaryUSD": 7500,
+          "growthPct": 4.5,
+          "educationYears": 19,
+          "aiExposure": 62,
+          "description": "Global legal services market $1.1Tr. AI tools (Harvey, CoCounsel) automating contract review, due diligence — disrupting paralegal and junior associate roles.",
+          "sources": [
+            "Thomson Reuters Future of Professionals Report 2024",
+            "IBISWorld Global Legal Services Market 2024 — $1.1Tr"
+          ]
+        },
+        {
+          "id": "consultants_mgmt",
+          "name": "Management Consultants",
+          "workers": 5000000,
+          "medianSalaryUSD": 8500,
+          "growthPct": 8.5,
+          "educationYears": 18,
+          "aiExposure": 55,
+          "description": "McKinsey, BCG, Bain and Big 4 consulting employ 5M. AI reshaping deliverables; firms investing heavily in GenAI practices.",
+          "sources": [
+            "Source Global Research Consulting Market Review 2024",
+            "MCA (Management Consultancies Association) Annual Report 2024"
+          ]
+        },
+        {
+          "id": "marketing_advertising_global",
+          "name": "Marketing & Advertising",
+          "workers": 25000000,
+          "medianSalaryUSD": 3500,
+          "growthPct": 8.0,
+          "educationYears": 15,
+          "aiExposure": 62,
+          "description": "Global ad spend $1.1Tr (Dentsu 2025). Generative AI disrupting copywriting, image creation; growing demand for AI prompt engineers and data-driven marketers.",
+          "sources": [
+            "Dentsu Global Ad Spend Forecast 2025 — $1.1Tr",
+            "WPP AI and Creativity Report 2024"
+          ]
+        },
+        {
+          "id": "architects_designers",
+          "name": "Architects & Industrial Designers",
+          "workers": 5000000,
+          "medianSalaryUSD": 4200,
+          "growthPct": 4.5,
+          "educationYears": 17,
+          "aiExposure": 55,
+          "description": "AI generative design (Autodesk, Midjourney) changing workflows. Architects using AI to explore 1000x more design variants.",
+          "sources": [
+            "UIA (Union Internationale des Architectes) Global Profession Report 2024",
+            "Autodesk State of Design & Make Report 2024"
+          ]
+        },
+        {
+          "id": "hr_recruiters",
+          "name": "HR & Recruitment Professionals",
+          "workers": 10000000,
+          "medianSalaryUSD": 3200,
+          "growthPct": 5.5,
+          "educationYears": 15,
+          "aiExposure": 58,
+          "description": "AI screening tools (HireVue, Pymetrics, LinkedIn AI) handling 70% of resume screening. HR shifting to strategic people analytics.",
+          "sources": [
+            "SHRM (Society for Human Resource Management) Workplace 2024 Survey",
+            "LinkedIn Future of Recruiting Report 2024"
+          ]
+        },
+        {
+          "id": "scientists_researchers",
+          "name": "Scientists & R&D Researchers",
+          "workers": 9000000,
+          "medianSalaryUSD": 6500,
+          "growthPct": 6.5,
+          "educationYears": 21,
+          "aiExposure": 38,
+          "description": "8.8M researchers globally (UNESCO 2024). AI dramatically accelerating drug discovery (AlphaFold), materials science, climate modelling.",
+          "sources": [
+            "UNESCO Science Report 2023 — 8.8M researchers globally",
+            "Nature Index AI in Science Special Report 2024"
+          ]
+        },
+        {
+          "id": "journalists_media_global",
+          "name": "Journalists & Media Professionals",
+          "workers": 10000000,
+          "medianSalaryUSD": 2800,
+          "growthPct": -2.5,
+          "educationYears": 16,
+          "aiExposure": 65,
+          "description": "Newsroom employment fell 26% in 2008-2020 (ILO). AI-generated news threatening further contraction; investigative journalism more valued.",
+          "sources": [
+            "IFJ (International Federation of Journalists) Global Employment Report 2024",
+            "Reuters Institute Digital News Report 2024"
+          ]
+        },
+        {
+          "id": "accountants_global_pro",
+          "name": "Business Process & Admin Support",
+          "workers": 77000000,
+          "medianSalaryUSD": 1800,
+          "growthPct": -1.5,
+          "educationYears": 13,
+          "aiExposure": 70,
+          "description": "Data entry, admin assistants, bookkeepers. Highest AI disruption risk in white-collar work. WEF projects 26M such jobs displaced by 2027.",
+          "sources": [
+            "WEF Future of Jobs Report 2025 — 26M admin jobs at risk",
+            "OECD Employment Outlook 2024 — automation risk by occupation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mining_energy_global",
+      "name": "Mining & Energy",
+      "iloCode": "ISIC B+D+E",
+      "workers": 44000000,
+      "pctWorkforce": 1.3,
+      "sectorGrowth": 4.5,
+      "color": "#78350f",
+      "sources": [
+        "ILO ILOSTAT 2023 — Mining + Utilities sector employment",
+        "IEA World Energy Employment 2024",
+        "IRENA Renewable Energy and Jobs 2024"
+      ],
+      "occupations": [
+        {
+          "id": "fossil_fuel_workers",
+          "name": "Oil, Gas & Coal Workers",
+          "workers": 12000000,
+          "medianSalaryUSD": 4200,
+          "growthPct": -2.5,
+          "educationYears": 14,
+          "aiExposure": 35,
+          "description": "IEA Net Zero Scenario requires no new O&G fields beyond 2021. Just transition concerns for 12M workers in fossil fuels.",
+          "sources": [
+            "IEA World Energy Outlook 2024 — fossil fuel employment 12M",
+            "ILO Just Transition Guidelines 2024"
+          ]
+        },
+        {
+          "id": "renewable_energy_global",
+          "name": "Renewable Energy Workers",
+          "workers": 16200000,
+          "medianSalaryUSD": 3200,
+          "growthPct": 22.0,
+          "educationYears": 13,
+          "aiExposure": 30,
+          "description": "16.2M renewable energy jobs globally in 2023 (IRENA) — solar PV 7.1M, wind 1.3M. Fastest growing energy employment category.",
+          "sources": [
+            "IRENA Renewable Energy and Jobs Annual Review 2024 — 16.2M jobs",
+            "IEA World Energy Employment 2024"
+          ]
+        },
+        {
+          "id": "mining_workers_global",
+          "name": "Mining & Quarrying Workers",
+          "workers": 8000000,
+          "medianSalaryUSD": 2800,
+          "growthPct": 3.5,
+          "educationYears": 10,
+          "aiExposure": 28,
+          "description": "Critical mineral mining (lithium, cobalt, rare earths) booming for EV batteries and electronics. Autonomous mining vehicles (Rio Tinto, BHP) automating haul trucks.",
+          "sources": [
+            "IEA Critical Minerals Market Review 2024",
+            "Mining.com Global Mining Employment Statistics 2024"
+          ]
+        },
+        {
+          "id": "utility_grid_workers",
+          "name": "Power Grid & Utility Workers",
+          "workers": 7800000,
+          "medianSalaryUSD": 3800,
+          "growthPct": 8.0,
+          "educationYears": 13,
+          "aiExposure": 32,
+          "description": "Electricity grid modernisation for net-zero requires $21Tr in grid investment by 2050 (IEA). Smart grid technicians in high demand.",
+          "sources": [
+            "IEA World Energy Investment 2024 — $21Tr grid investment needed",
+            "CEA/ENTSO-E Grid Employment Outlook 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accommodation_food_global",
+      "name": "Accommodation & Food Services",
+      "iloCode": "ISIC I",
+      "workers": 149000000,
+      "pctWorkforce": 4.5,
+      "sectorGrowth": 6.5,
+      "color": "#be185d",
+      "sources": [
+        "ILO ILOSTAT 2023 — Accommodation & Food 4.5% global workforce",
+        "UNWTO World Tourism Barometer 2024",
+        "World Travel & Tourism Council Economic Impact Report 2024"
+      ],
+      "occupations": [
+        {
+          "id": "chefs_restaurant_global",
+          "name": "Chefs, Cooks & Restaurant Staff",
+          "workers": 72000000,
+          "medianSalaryUSD": 1200,
+          "growthPct": 5.5,
+          "educationYears": 9,
+          "aiExposure": 20,
+          "description": "Food service employs 72M globally. Post-COVID labour shortages in OECD nations driving wages up. Robot chefs remain limited to narrow tasks.",
+          "sources": [
+            "ILO Hotels, Catering & Tourism Sector Report 2023",
+            "NRA (National Restaurant Association) Global Industry Report 2024"
+          ]
+        },
+        {
+          "id": "hotel_hospitality_global",
+          "name": "Hotel & Hospitality Workers",
+          "workers": 50000000,
+          "medianSalaryUSD": 1400,
+          "growthPct": 7.5,
+          "educationYears": 11,
+          "aiExposure": 28,
+          "description": "Tourism recovered to 88% of 2019 levels in 2023 (UNWTO). 1.5Bn international arrivals projected by 2030. AI concierge and self-check-in growing.",
+          "sources": [
+            "UNWTO World Tourism Barometer April 2024",
+            "WTTC Economic Impact Report 2024 — 330M travel & tourism jobs"
+          ]
+        },
+        {
+          "id": "tour_guides_travel",
+          "name": "Tour Guides & Travel Agents",
+          "workers": 27000000,
+          "medianSalaryUSD": 1800,
+          "growthPct": 10.0,
+          "educationYears": 13,
+          "aiExposure": 45,
+          "description": "Travel agents declining (AI booking), but tour guides and experience designers growing with experiential travel trend.",
+          "sources": [
+            "UNWTO Tourism Statistics 2024",
+            "WTTC Future of Travel Report 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal_services_global",
+      "name": "Personal & Domestic Services",
+      "iloCode": "ISIC T",
+      "workers": 109000000,
+      "pctWorkforce": 3.3,
+      "sectorGrowth": 3.0,
+      "color": "#9f1239",
+      "sources": [
+        "ILO ILOSTAT 2023 — Personal Services 3.3% global workforce",
+        "ILO Domestic Workers Global Report 2023",
+        "ILO Women and Men in the Informal Economy 2023"
+      ],
+      "occupations": [
+        {
+          "id": "domestic_workers_global",
+          "name": "Domestic Workers",
+          "workers": 75000000,
+          "medianSalaryUSD": 350,
+          "growthPct": 0.5,
+          "educationYears": 6,
+          "aiExposure": 12,
+          "description": "ILO estimates 75.6M domestic workers globally; 76% women, majority informal. Philippines, Indonesia, Ethiopia major source countries.",
+          "sources": [
+            "ILO Making Decent Work a Reality for Domestic Workers 2023 — 75.6M workers",
+            "ILO Women and Men in the Informal Economy 2023"
+          ]
+        },
+        {
+          "id": "beauty_fitness_global",
+          "name": "Beauty, Wellness & Fitness",
+          "workers": 20000000,
+          "medianSalaryUSD": 1500,
+          "growthPct": 7.5,
+          "educationYears": 10,
+          "aiExposure": 20,
+          "description": "Global wellness economy $5.6Tr (GWI 2023). Fastest growth in Asia-Pacific personal care and fitness segments.",
+          "sources": [
+            "Global Wellness Institute Economy Report 2024 — $5.6Tr market",
+            "IBISWorld Global Salons & Beauty Services 2024"
+          ]
+        },
+        {
+          "id": "security_services_global",
+          "name": "Security Guards & Services",
+          "workers": 14000000,
+          "medianSalaryUSD": 1200,
+          "growthPct": 4.0,
+          "educationYears": 9,
+          "aiExposure": 25,
+          "description": "Global private security market $350Bn. AI surveillance (facial recognition, anomaly detection) augmenting guards, not yet replacing.",
+          "sources": [
+            "Freedonia Global Security Services Market Report 2024 — $350Bn",
+            "CoESS (Confederation of European Security Services) World Report 2024"
+          ]
+        }
+      ]
+    }
+  ]
+}

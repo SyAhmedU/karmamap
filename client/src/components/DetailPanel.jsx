@@ -6,12 +6,13 @@ function fmt(n) {
   return `${(n/1000).toFixed(0)}K`
 }
 
-function fmtSal(v, currency) {
+function fmtSal(occ, currency) {
+  const usd = occ.medianSalaryUSD ?? (occ.medianSalaryINR / EXCHANGE_RATE)
   if (currency === 'usd') {
-    const d = v / EXCHANGE_RATE
-    return `$${d >= 1000 ? (d/1000).toFixed(1)+'K' : Math.round(d)}/mo`
+    return `$${usd >= 1000 ? (usd/1000).toFixed(1)+'K' : Math.round(usd)}/mo`
   }
-  return `₹${v >= 100000 ? (v/1000).toFixed(0)+'K' : v.toLocaleString('en-IN')}/mo`
+  const inr = occ.medianSalaryINR ?? (usd * EXCHANGE_RATE)
+  return `₹${inr >= 100000 ? (inr/1000).toFixed(0)+'K' : Math.round(inr/1000)+'K'}/mo`
 }
 
 function Badge({ label, value, color = 'slate' }) {
@@ -31,7 +32,7 @@ function Badge({ label, value, color = 'slate' }) {
   )
 }
 
-export default function DetailPanel({ sector, occupation: occ, currency, onClose }) {
+export default function DetailPanel({ sector, occupation: occ, currency, region, onClose }) {
   if (!occ) return null
 
   const growthColor = occ.growthPct < 0 ? 'red' : occ.growthPct < 5 ? 'amber' : 'green'
@@ -58,10 +59,10 @@ export default function DetailPanel({ sector, occupation: occ, currency, onClose
       <div className="p-4 grid grid-cols-2 gap-2 border-b border-slate-800">
         <Badge label="Workforce" value={fmt(occ.workers)} color="blue" />
         <Badge label="Growth/yr" value={occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`} color={growthColor} />
-        <Badge label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} value={fmtSal(occ.medianSalaryINR, currency)} color="violet" />
+        <Badge label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} value={fmtSal(occ, currency)} color="violet" />
         <Badge label="AI Exposure" value={`${occ.aiExposure} / 100`} color={aiColor} />
         <Badge label="Education" value={`${occ.educationYears} years`} color="slate" />
-        <Badge label="% Workforce" value={`${((occ.workers/582000000)*100).toFixed(2)}%`} color="slate" />
+        <Badge label="% Workforce" value={`${((occ.workers/(region === 'world' ? 3320000000 : 582000000))*100).toFixed(2)}%`} color="slate" />
       </div>
 
       {/* AI interpretation */}

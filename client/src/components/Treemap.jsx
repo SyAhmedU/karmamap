@@ -22,9 +22,9 @@ function growthColor(v) {
 }
 
 function salaryColor(v, currency) {
-  const monthly = currency === 'usd' ? v / EXCHANGE_RATE : v
-  const maxM = currency === 'usd' ? 1600 : 135000
-  const t = Math.min(monthly / maxM, 1)
+  // v may be INR (India) or USD (World); normalise to USD for consistent scale
+  const usd = currency === 'usd' ? v : v / EXCHANGE_RATE
+  const t = Math.min(usd / 13000, 1)   // scale: $0 → $13K/mo max
   return lerp('#1e3a5f', '#38bdf8', t)
 }
 
@@ -38,10 +38,15 @@ function aiColor(v) {
   return lerp('#14532d', '#ef4444', t)
 }
 
+// Normalise salary to USD regardless of source dataset
+function salaryUSD(occ) {
+  return occ.medianSalaryUSD ?? (occ.medianSalaryINR / EXCHANGE_RATE)
+}
+
 export function getColor(occupation, layer, currency) {
   switch (layer) {
     case 'growth':    return growthColor(occupation.growthPct)
-    case 'salary':    return salaryColor(occupation.medianSalaryINR, currency)
+    case 'salary':    return salaryColor(salaryUSD(occupation), 'usd')
     case 'education': return educationColor(occupation.educationYears)
     case 'ai':        return aiColor(occupation.aiExposure)
     default:          return '#334155'
@@ -51,22 +56,25 @@ export function getColor(occupation, layer, currency) {
 // ── Format helpers ────────────────────────────────────────────────────────────
 
 function fmtWorkers(n) {
+  if (n >= 1e9) return `${(n/1e9).toFixed(2)}B`
   if (n >= 1e7) return `${(n/1e7).toFixed(1)}Cr`
   if (n >= 1e5) return `${(n/1e5).toFixed(1)}L`
   return `${(n/1000).toFixed(0)}K`
 }
 
-function fmtSalary(v, currency) {
-  const monthly = currency === 'usd' ? v / EXCHANGE_RATE : v
-  const symbol = currency === 'usd' ? '$' : '₹'
-  if (monthly >= 100000) return `${symbol}${(monthly/1000).toFixed(0)}K`
-  return `${symbol}${Math.round(monthly/1000)}K`
+function fmtSalary(occ, currency) {
+  const usd = salaryUSD(occ)
+  if (currency === 'usd') {
+    return usd >= 1000 ? `$${(usd/1000).toFixed(1)}K` : `$${Math.round(usd)}`
+  }
+  const inr = occ.medianSalaryINR ?? (usd * EXCHANGE_RATE)
+  return inr >= 100000 ? `₹${(inr/1000).toFixed(0)}K` : `₹${Math.round(inr/1000)}K`
 }
 
 function fmtLayer(occ, layer, currency) {
   switch (layer) {
     case 'growth':    return occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`
-    case 'salary':    return fmtSalary(occ.medianSalaryINR, currency)
+    case 'salary':    return fmtSalary(occ, currency)
     case 'education': return `${occ.educationYears}yr`
     case 'ai':        return `${occ.aiExposure}/100`
     default:          return ''
@@ -248,7 +256,7 @@ function Tooltip({ x, y, n, layer, currency, dims }) {
         <div className="grid grid-cols-2 gap-1">
           <Stat label="Workers" val={fmtWorkers(occ.workers)} />
           <Stat label="Growth"  val={occ.growthPct > 0 ? `+${occ.growthPct}%` : `${occ.growthPct}%`} hi={occ.growthPct > 5} lo={occ.growthPct < 0} />
-          <Stat label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} val={fmtSalary(occ.medianSalaryINR, currency)} />
+          <Stat label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} val={fmtSalary(occ, currency)} />
           <Stat label="AI Exposure" val={`${occ.aiExposure}/100`} hi={occ.aiExposure > 60} lo={occ.aiExposure < 25} />
           <Stat label="Education" val={`${occ.educationYears} yrs`} />
         </div>
