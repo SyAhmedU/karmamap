@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: #0f172a;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.treemap-cell {
+  position: absolute;
+  overflow: hidden;
+  transition: filter 0.15s ease;
+  cursor: pointer;
+}
+
+.treemap-cell:hover {
+  filter: brightness(1.18);
+  z-index: 10;
+}
+
+.treemap-cell.selected {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  z-index: 20;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }

@@ -1,0 +1,1269 @@
+{
+  "meta": {
+    "title": "India Job Market 2023-24",
+    "totalWorkforce": 582000000,
+    "wpRate": 58.2,
+    "exchangeRate": 84.5,
+    "exchangeRateSource": "RBI Reference Rate, April 2026",
+    "primarySource": "PLFS Annual Report 2023-24 (July 2023–June 2024), Ministry of Statistics & Programme Implementation (MoSPI), Government of India, Published September 2024",
+    "primarySourceUrl": "https://mospi.gov.in/sites/default/files/publication_reports/PLFS_2023-24.pdf",
+    "notes": "PLFS uses NIC-2008 industrial classification. 'Other Services' (11.5%) is disaggregated into IT, Education, Healthcare, Government, Creative & Media, and Personal Services using sector-specific official sources. Worker counts are estimates based on WPR × population data."
+  },
+  "sectors": [
+    {
+      "id": "agriculture",
+      "name": "Agriculture & Allied",
+      "plfsCode": "NIC A01–A03",
+      "workers": 268000000,
+      "pctWorkforce": 46.1,
+      "sectorGrowth": 1.2,
+      "color": "#16a34a",
+      "sources": ["PLFS Annual Report 2023-24, Table A-1, MoSPI", "Economic Survey 2023-24, Chapter 8, Ministry of Finance"],
+      "occupations": [
+        {
+          "id": "crop_farming",
+          "name": "Crop & Field Farming",
+          "workers": 172000000,
+          "medianSalaryINR": 7500,
+          "growthPct": 0.8,
+          "educationYears": 5,
+          "aiExposure": 12,
+          "description": "Cultivators and farmers growing food, cash and commercial crops. Bulk of rural self-employed workforce.",
+          "sources": [
+            "PLFS 2023-24, Table 23 — usual-status workers in crop production",
+            "ICAR Annual Report 2023-24, Indian Council of Agricultural Research",
+            "Agricultural Census 2021-22, Department of Agriculture & Farmers' Welfare (DAFQ)"
+          ]
+        },
+        {
+          "id": "animal_husbandry",
+          "name": "Animal Husbandry & Dairy",
+          "workers": 34000000,
+          "medianSalaryINR": 8500,
+          "growthPct": 3.2,
+          "educationYears": 5,
+          "aiExposure": 20,
+          "description": "Livestock rearing, poultry, dairy farming. India is world's largest milk producer (239MT, 2023-24).",
+          "sources": [
+            "DAHD Annual Report 2023-24, Dept. of Animal Husbandry & Dairying, MoFAHD",
+            "NDDB Annual Report 2023-24, National Dairy Development Board"
+          ]
+        },
+        {
+          "id": "fisheries",
+          "name": "Fisheries & Aquaculture",
+          "workers": 14000000,
+          "medianSalaryINR": 9200,
+          "growthPct": 4.5,
+          "educationYears": 6,
+          "aiExposure": 18,
+          "description": "Marine and inland fisheries, aquaculture. India is 3rd largest fish producer globally.",
+          "sources": [
+            "DAHD Annual Report 2023-24, Fisheries Division",
+            "Pradhan Mantri Matsya Sampada Yojana Progress Report 2024, DoF"
+          ]
+        },
+        {
+          "id": "agri_labour",
+          "name": "Agricultural Wage Labour",
+          "workers": 42000000,
+          "medianSalaryINR": 6800,
+          "growthPct": -1.5,
+          "educationYears": 4,
+          "aiExposure": 15,
+          "description": "Landless casual agricultural labourers. Declining as mechanisation increases.",
+          "sources": [
+            "PLFS 2023-24, Table A-12 — casual labour in agriculture",
+            "Agricultural Wages in India 2022-23, DAFQ"
+          ]
+        },
+        {
+          "id": "horticulture",
+          "name": "Horticulture & Plantation",
+          "workers": 6000000,
+          "medianSalaryINR": 9800,
+          "growthPct": 5.5,
+          "educationYears": 7,
+          "aiExposure": 22,
+          "description": "Fruits, vegetables, floriculture, spices, tea, coffee plantations. High-growth export segment.",
+          "sources": [
+            "NHB Annual Report 2023-24, National Horticulture Board",
+            "Second Advance Estimates of Horticulture 2023-24, NHB"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "Construction",
+      "plfsCode": "NIC F",
+      "workers": 69800000,
+      "pctWorkforce": 12.0,
+      "sectorGrowth": 5.8,
+      "color": "#ea580c",
+      "sources": ["PLFS Annual Report 2023-24", "NSO GDP Estimates 2023-24, MoSPI (Construction GDP growth 9.9% in FY24)"],
+      "occupations": [
+        {
+          "id": "construction_workers",
+          "name": "General Construction Workers",
+          "workers": 42000000,
+          "medianSalaryINR": 12500,
+          "growthPct": 5.0,
+          "educationYears": 7,
+          "aiExposure": 15,
+          "description": "Masons, carpenters, painters, site labourers. Demand driven by PM Awas Yojana, infra push.",
+          "sources": [
+            "PLFS 2023-24, NIC F casual workers",
+            "Building & Other Construction Workers Act data, Ministry of Labour 2024",
+            "CMIE Unemployment Survey Q4 FY24"
+          ]
+        },
+        {
+          "id": "electricians_plumbers",
+          "name": "Electricians & Plumbers",
+          "workers": 8000000,
+          "medianSalaryINR": 16000,
+          "growthPct": 7.5,
+          "educationYears": 10,
+          "aiExposure": 25,
+          "description": "Skilled trades in growing demand from residential, industrial and solar installations.",
+          "sources": [
+            "NSDC (National Skill Development Corporation) Skill Gap Study 2024",
+            "ITI (Industrial Training Institute) Enrolment Data, DGT 2023-24"
+          ]
+        },
+        {
+          "id": "construction_supervisors",
+          "name": "Construction Supervisors & Foremen",
+          "workers": 5000000,
+          "medianSalaryINR": 22000,
+          "growthPct": 4.5,
+          "educationYears": 12,
+          "aiExposure": 32,
+          "description": "Site supervisors, project coordinators overseeing residential and commercial builds.",
+          "sources": ["PLFS 2023-24 regular salaried in construction", "CREDAI (Confederation of Real Estate Developers) India Report 2024"]
+        },
+        {
+          "id": "civil_engineers",
+          "name": "Civil & Structural Engineers",
+          "workers": 1800000,
+          "medianSalaryINR": 45000,
+          "growthPct": 8.5,
+          "educationYears": 16,
+          "aiExposure": 52,
+          "description": "Degree-level engineers in construction, infrastructure (roads, bridges, metros, airports).",
+          "sources": [
+            "AICTE All India Survey on Higher Education 2023-24",
+            "MoRTH Annual Report 2023-24 (17,840 km of highways built in FY24)"
+          ]
+        },
+        {
+          "id": "real_estate_agents",
+          "name": "Real Estate Agents & Brokers",
+          "workers": 2000000,
+          "medianSalaryINR": 25000,
+          "growthPct": 6.5,
+          "educationYears": 12,
+          "aiExposure": 50,
+          "description": "Property sales agents registered under RERA. Residential market at record ₹3.47L cr in FY24.",
+          "sources": [
+            "RERA (Real Estate Regulatory Authority) Registration Data 2024",
+            "Knight Frank India Real Estate Market Review H2 2024"
+          ]
+        },
+        {
+          "id": "equipment_operators",
+          "name": "Heavy Equipment Operators",
+          "workers": 11000000,
+          "medianSalaryINR": 15000,
+          "growthPct": 6.2,
+          "educationYears": 8,
+          "aiExposure": 30,
+          "description": "Crane, excavator, JCB and bulldozer operators. Demand from NIP (National Infrastructure Pipeline ₹111L cr).",
+          "sources": [
+            "PLFS 2023-24, plant and machine operators in construction",
+            "NIP Progress Report FY24, DEA, Ministry of Finance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trade",
+      "name": "Trade, Hotels & Restaurants",
+      "plfsCode": "NIC G–I",
+      "workers": 71000000,
+      "pctWorkforce": 12.2,
+      "sectorGrowth": 5.5,
+      "color": "#2563eb",
+      "sources": ["PLFS Annual Report 2023-24", "DPIIT FDI Statistics 2024", "NITI Aayog India's Booming Gig & Platform Economy 2022"],
+      "occupations": [
+        {
+          "id": "retail_workers",
+          "name": "Retail Shop Workers",
+          "workers": 28000000,
+          "medianSalaryINR": 10500,
+          "growthPct": 2.5,
+          "educationYears": 10,
+          "aiExposure": 35,
+          "description": "Owners and employees of kiranas, retail outlets, showrooms. ~14M kirana stores in India.",
+          "sources": [
+            "PLFS 2023-24 trade sector workers",
+            "Retailers Association of India (RAI) Annual Report 2024",
+            "BCG Future of Retail India 2024"
+          ]
+        },
+        {
+          "id": "restaurant_hotel",
+          "name": "Restaurant & Hotel Staff",
+          "workers": 13000000,
+          "medianSalaryINR": 11500,
+          "growthPct": 6.5,
+          "educationYears": 9,
+          "aiExposure": 22,
+          "description": "Chefs, waitstaff, housekeeping. Hospitality recovering strongly post-COVID; revenue ₹3.4L cr FY24.",
+          "sources": [
+            "PLFS 2023-24 accommodation & food services",
+            "FHRAI (Federation of Hotels & Restaurants Assoc. India) Annual Survey 2024",
+            "Ministry of Tourism Annual Report 2023-24"
+          ]
+        },
+        {
+          "id": "wholesale_trade",
+          "name": "Wholesale & Distribution",
+          "workers": 8000000,
+          "medianSalaryINR": 15000,
+          "growthPct": 3.8,
+          "educationYears": 12,
+          "aiExposure": 40,
+          "description": "Wholesale merchants, distributors, FMCG channel partners.",
+          "sources": ["PLFS 2023-24", "IBEF Trade Sector Report 2024"]
+        },
+        {
+          "id": "ecommerce",
+          "name": "E-commerce & Online Retail",
+          "workers": 3500000,
+          "medianSalaryINR": 20000,
+          "growthPct": 22.0,
+          "educationYears": 12,
+          "aiExposure": 55,
+          "description": "Warehouse pickers, online seller support, marketplace operations. India e-commerce $70Bn FY24.",
+          "sources": [
+            "IBEF E-Commerce Report 2024",
+            "NASSCOM e-commerce sector note 2024",
+            "Redseer India E-Commerce Report FY2024"
+          ]
+        },
+        {
+          "id": "gig_delivery",
+          "name": "Food & Package Delivery (Gig)",
+          "workers": 5000000,
+          "medianSalaryINR": 13000,
+          "growthPct": 28.0,
+          "educationYears": 8,
+          "aiExposure": 38,
+          "description": "Swiggy, Zomato, Zepto, Blinkit, Dunzo delivery partners. Fastest-growing informal employment.",
+          "sources": [
+            "NITI Aayog: India's Booming Gig & Platform Economy, 2022 (est. 7.7M gig workers by 2024-25)",
+            "Swiggy, Zomato partner count disclosures in DRHP/annual reports 2024"
+          ]
+        },
+        {
+          "id": "tourism_travel",
+          "name": "Tourism & Travel Agents",
+          "workers": 5000000,
+          "medianSalaryINR": 18000,
+          "growthPct": 12.0,
+          "educationYears": 13,
+          "aiExposure": 48,
+          "description": "Travel agents, tour operators, guides. Domestic tourism crossed 2.5Bn trips FY24.",
+          "sources": [
+            "Ministry of Tourism Annual Report 2023-24",
+            "WTTC India Travel & Tourism 2024"
+          ]
+        },
+        {
+          "id": "street_vendors",
+          "name": "Street Vendors & Hawkers",
+          "workers": 8500000,
+          "medianSalaryINR": 8000,
+          "growthPct": -0.5,
+          "educationYears": 5,
+          "aiExposure": 8,
+          "description": "Street food vendors, mobile hawkers. PM SVANidhi scheme has registered 6.8M vendors.",
+          "sources": [
+            "PM SVANidhi Dashboard, Ministry of Housing & Urban Affairs, April 2024",
+            "NASVI (National Assoc. of Street Vendors of India) census data 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing",
+      "plfsCode": "NIC C",
+      "workers": 66300000,
+      "pctWorkforce": 11.4,
+      "sectorGrowth": 5.2,
+      "color": "#7c3aed",
+      "sources": ["PLFS Annual Report 2023-24", "Annual Survey of Industries 2022-23, MoSPI", "Make in India dashboard 2024"],
+      "occupations": [
+        {
+          "id": "garment_textile",
+          "name": "Garment & Textile Workers",
+          "workers": 15000000,
+          "medianSalaryINR": 11000,
+          "growthPct": 2.5,
+          "educationYears": 8,
+          "aiExposure": 42,
+          "description": "Apparel stitching, spinning, weaving. India's textile exports $35Bn FY24; 2nd largest employer in manufacturing.",
+          "sources": [
+            "Ministry of Textiles Annual Report 2023-24",
+            "Confederation of Indian Textile Industry (CITI) Annual Survey 2024",
+            "ASI 2022-23, MoSPI"
+          ]
+        },
+        {
+          "id": "food_processing",
+          "name": "Food Processing Workers",
+          "workers": 10000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 4.8,
+          "educationYears": 9,
+          "aiExposure": 30,
+          "description": "Packaged food, beverages, dairy processing, milling. Sector grew 7.4% in FY24.",
+          "sources": [
+            "Ministry of Food Processing Industries Annual Report 2023-24",
+            "ASI 2022-23 food manufacturing segment"
+          ]
+        },
+        {
+          "id": "automobile",
+          "name": "Automobile & Auto Components",
+          "workers": 7000000,
+          "medianSalaryINR": 20000,
+          "growthPct": 7.5,
+          "educationYears": 12,
+          "aiExposure": 45,
+          "description": "Vehicle assembly, auto parts, EV components. India became 3rd largest auto market in 2023.",
+          "sources": [
+            "SIAM (Society of Indian Automobile Manufacturers) Annual Report 2023-24",
+            "ACMA (Auto Component Manufacturers Assoc.) Industry Survey 2024"
+          ]
+        },
+        {
+          "id": "electronics",
+          "name": "Electronics Assembly",
+          "workers": 4500000,
+          "medianSalaryINR": 14500,
+          "growthPct": 9.5,
+          "educationYears": 10,
+          "aiExposure": 38,
+          "description": "Mobile phones, consumer electronics assembly. PLI scheme boosted production; Apple, Samsung scale up.",
+          "sources": [
+            "ICEA (India Cellular & Electronics Association) Annual Report 2024",
+            "MeitY PLI for Large Scale Electronics progress report 2024"
+          ]
+        },
+        {
+          "id": "chemical_pharma",
+          "name": "Chemical & Pharmaceutical Workers",
+          "workers": 4500000,
+          "medianSalaryINR": 18000,
+          "growthPct": 6.5,
+          "educationYears": 12,
+          "aiExposure": 32,
+          "description": "API manufacturing, formulations, specialty chemicals. India = 'Pharmacy of the World', $28Bn exports FY24.",
+          "sources": [
+            "Pharmexcil Annual Report 2023-24, Pharmaceuticals Export Promotion Council",
+            "Indian Chemical Council Report 2024"
+          ]
+        },
+        {
+          "id": "msme_workers",
+          "name": "MSME Workers (General)",
+          "workers": 20000000,
+          "medianSalaryINR": 10000,
+          "growthPct": 3.5,
+          "educationYears": 8,
+          "aiExposure": 28,
+          "description": "Workers across 63M registered MSMEs covering diverse light manufacturing sub-sectors.",
+          "sources": [
+            "MSME Annual Report 2023-24, Ministry of MSME",
+            "Udyam Registration Portal data, April 2024 (6.3Cr MSMEs registered)"
+          ]
+        },
+        {
+          "id": "craft_artisans",
+          "name": "Skilled Craft & Artisans",
+          "workers": 5300000,
+          "medianSalaryINR": 11000,
+          "growthPct": 1.5,
+          "educationYears": 7,
+          "aiExposure": 20,
+          "description": "Handicrafts, handlooms, pottery, jewellery making. Heritage crafts supported by GI tagging.",
+          "sources": [
+            "Development Commissioner for Handicrafts Annual Report 2023-24, Ministry of Textiles",
+            "Office of DC Handlooms, Ministry of Textiles, 2023-24"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it_technology",
+      "name": "IT & Technology",
+      "plfsCode": "NIC J (subset of Other Services, PLFS 2023-24)",
+      "workers": 8000000,
+      "pctWorkforce": 1.4,
+      "sectorGrowth": 14.5,
+      "color": "#4f46e5",
+      "sources": [
+        "NASSCOM Strategic Review 2025 (5.8M direct IT-BPM employees)",
+        "PLFS 2023-24 Other Services disaggregation",
+        "MeitY Annual Report 2023-24"
+      ],
+      "occupations": [
+        {
+          "id": "software_engineers",
+          "name": "Software Developers & Engineers",
+          "workers": 2200000,
+          "medianSalaryINR": 65000,
+          "growthPct": 11.0,
+          "educationYears": 16,
+          "aiExposure": 72,
+          "description": "India's 5.8M IT workforce exports $194Bn (FY24). Software engineers are the core — Java, Python, cloud-native stacks.",
+          "sources": [
+            "NASSCOM Strategic Review 2025 — IT-BPM direct employment 5.8M",
+            "NASSCOM IT-BPM Sector Revenue $194Bn FY24",
+            "QS/Times Higher Education India STEM Graduate Output 2024"
+          ]
+        },
+        {
+          "id": "it_support_bpo",
+          "name": "IT Support & BPO / ITeS",
+          "workers": 2500000,
+          "medianSalaryINR": 25000,
+          "growthPct": 4.5,
+          "educationYears": 14,
+          "aiExposure": 68,
+          "description": "Customer support, data entry, back-office processing. BPO industry $38Bn revenue FY24 but Gen-AI poses high disruption risk.",
+          "sources": [
+            "NASSCOM Strategic Review 2025, BPO/ITeS segment",
+            "IBEF BPO/ITeS Sector Report 2024"
+          ]
+        },
+        {
+          "id": "data_scientists",
+          "name": "Data Scientists & Analysts",
+          "workers": 400000,
+          "medianSalaryINR": 90000,
+          "growthPct": 30.0,
+          "educationYears": 17,
+          "aiExposure": 42,
+          "description": "ML modellers, analytics leads, BI developers. India has the world's 3rd largest analytics talent pool.",
+          "sources": [
+            "NASSCOM Analytics India Market Study 2025",
+            "Analytics India Magazine Salary Report 2024",
+            "LinkedIn Jobs on the Rise India 2024"
+          ]
+        },
+        {
+          "id": "cybersecurity",
+          "name": "Cybersecurity Professionals",
+          "workers": 150000,
+          "medianSalaryINR": 95000,
+          "growthPct": 38.0,
+          "educationYears": 16,
+          "aiExposure": 38,
+          "description": "Severe global shortage: 4M unfilled positions. India needs 1M cybersecurity pros by 2025 (DSCI).",
+          "sources": [
+            "DSCI (Data Security Council of India) India Cybersecurity Report 2024",
+            "ISC2 Cybersecurity Workforce Study 2024"
+          ]
+        },
+        {
+          "id": "cloud_devops",
+          "name": "Cloud & DevOps Engineers",
+          "workers": 300000,
+          "medianSalaryINR": 95000,
+          "growthPct": 32.0,
+          "educationYears": 16,
+          "aiExposure": 55,
+          "description": "AWS/Azure/GCP certified engineers managing cloud infra. India hosts largest AWS skill certification base outside US.",
+          "sources": [
+            "AWS India Partner Network data 2024",
+            "NASSCOM Cloud Adoption in India 2025",
+            "LinkedIn India Emerging Jobs 2024"
+          ]
+        },
+        {
+          "id": "ai_ml_engineers",
+          "name": "AI / ML Engineers",
+          "workers": 200000,
+          "medianSalaryINR": 135000,
+          "growthPct": 48.0,
+          "educationYears": 17,
+          "aiExposure": 35,
+          "description": "Highest-paid and fastest-growing role. LLM fine-tuning, GenAI product development, MLOps.",
+          "sources": [
+            "NASSCOM GenAI Readiness Study 2025",
+            "IIT/IISc placement data 2024",
+            "LinkedIn Jobs on the Rise India 2024"
+          ]
+        },
+        {
+          "id": "product_managers",
+          "name": "Product Managers (Tech)",
+          "workers": 250000,
+          "medianSalaryINR": 125000,
+          "growthPct": 22.0,
+          "educationYears": 16,
+          "aiExposure": 50,
+          "description": "Tech PMs at India's 112 unicorns and global tech centres. Top-paying non-engineering role.",
+          "sources": [
+            "Naukri.com PM Salary Insights 2024",
+            "NASSCOM Startup Report 2025 (112 unicorns, 3,000+ active startups)"
+          ]
+        },
+        {
+          "id": "ui_ux_designers",
+          "name": "UI/UX Designers",
+          "workers": 200000,
+          "medianSalaryINR": 55000,
+          "growthPct": 20.0,
+          "educationYears": 15,
+          "aiExposure": 62,
+          "description": "Product designers for apps, web, enterprise software. Growing with India's SaaS and consumer internet boom.",
+          "sources": [
+            "LinkedIn Design Jobs Growth India 2024",
+            "Naukri.com UX Salary Report Q4 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "plfsCode": "NIC P (subset of Other Services, PLFS 2023-24)",
+      "workers": 12000000,
+      "pctWorkforce": 2.1,
+      "sectorGrowth": 4.0,
+      "color": "#0d9488",
+      "sources": [
+        "UDISE+ 2024-25, Department of School Education & Literacy (DSEL), MoE — 10.12M school teachers",
+        "AISHE 2023-24, Dept. of Higher Education, MoE — 1.6M college/university faculty"
+      ],
+      "occupations": [
+        {
+          "id": "school_teachers",
+          "name": "School Teachers (Primary & Secondary)",
+          "workers": 10120000,
+          "medianSalaryINR": 22000,
+          "growthPct": 2.5,
+          "educationYears": 14,
+          "aiExposure": 35,
+          "description": "10.12M teachers across 14.7L govt and private schools. 50% govt school teachers median ₹16K; private school median ₹28K.",
+          "sources": [
+            "UDISE+ Flash Statistics 2024-25, DSEL, MoE — 1.47M schools, 10.12M teachers",
+            "6th Economic Census / PLFS 2023-24 education workers"
+          ]
+        },
+        {
+          "id": "college_faculty",
+          "name": "College & University Faculty",
+          "workers": 1600000,
+          "medianSalaryINR": 56000,
+          "growthPct": 3.5,
+          "educationYears": 18,
+          "aiExposure": 40,
+          "description": "Professors, associate and assistant professors in 1,168 universities and 45,473 colleges.",
+          "sources": [
+            "AISHE 2023-24 Report, Dept. of Higher Education, MoE",
+            "UGC 7th Pay Commission faculty scales"
+          ]
+        },
+        {
+          "id": "edtech_professionals",
+          "name": "EdTech Professionals",
+          "workers": 300000,
+          "medianSalaryINR": 38000,
+          "growthPct": 28.0,
+          "educationYears": 15,
+          "aiExposure": 55,
+          "description": "Content creators, instructors, LMS developers at BYJU'S, Unacademy, PhysicsWallah and 4,500+ EdTech startups.",
+          "sources": [
+            "IAMAI EdTech India Report 2024",
+            "Tracxn India EdTech Sector Report 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare",
+      "plfsCode": "NIC Q (subset of Other Services, PLFS 2023-24)",
+      "workers": 6500000,
+      "pctWorkforce": 1.1,
+      "sectorGrowth": 9.5,
+      "color": "#dc2626",
+      "sources": [
+        "IMA (Indian Medical Association): 1.3M registered doctors, 2024",
+        "Indian Nursing Council Annual Report 2023-24: 2.1M registered nurses",
+        "IBEF Healthcare Report 2024",
+        "MoHFW Annual Report 2023-24"
+      ],
+      "occupations": [
+        {
+          "id": "doctors",
+          "name": "Doctors (Allopathic, MBBS+)",
+          "workers": 1300000,
+          "medianSalaryINR": 80000,
+          "growthPct": 8.0,
+          "educationYears": 19,
+          "aiExposure": 40,
+          "description": "MBBS, MD, specialist doctors across public and private hospitals. 1 doctor per 834 population (NMC 2024).",
+          "sources": [
+            "National Medical Commission (NMC) Annual Report 2023-24 — 1.3M registered allopathic doctors",
+            "IMA Membership Data 2024"
+          ]
+        },
+        {
+          "id": "nurses",
+          "name": "Nurses & Midwives",
+          "workers": 2100000,
+          "medianSalaryINR": 22000,
+          "growthPct": 11.0,
+          "educationYears": 13,
+          "aiExposure": 32,
+          "description": "India's largest regulated healthcare workforce. Global demand opens overseas migration pathways.",
+          "sources": [
+            "Indian Nursing Council Annual Report 2023-24 — 2.1M registered nurses",
+            "MoHFW Human Resources for Health Report 2024"
+          ]
+        },
+        {
+          "id": "pharmacists",
+          "name": "Pharmacists",
+          "workers": 800000,
+          "medianSalaryINR": 28000,
+          "growthPct": 8.0,
+          "educationYears": 15,
+          "aiExposure": 48,
+          "description": "Retail pharmacy, hospital dispensing, drug quality testing. India has 6.5L+ registered pharmacists.",
+          "sources": [
+            "Pharmacy Council of India (PCI) Annual Report 2023-24",
+            "IBEF Pharmaceuticals Report 2024"
+          ]
+        },
+        {
+          "id": "paramedics",
+          "name": "Paramedics & Lab Technicians",
+          "workers": 900000,
+          "medianSalaryINR": 20000,
+          "growthPct": 10.0,
+          "educationYears": 13,
+          "aiExposure": 40,
+          "description": "Pathology lab techs, radiology techs, EMTs, physiotherapists. Diagnostics market growing 15% p.a.",
+          "sources": [
+            "IBEF Healthcare Report 2024",
+            "CII Indian Healthcare Sector Report 2024"
+          ]
+        },
+        {
+          "id": "asha_workers",
+          "name": "ASHA & Community Health Workers",
+          "workers": 1100000,
+          "medianSalaryINR": 5000,
+          "growthPct": 4.0,
+          "educationYears": 10,
+          "aiExposure": 15,
+          "description": "Front-line community health workers under NHM. 10.5L ASHA workers; India's primary rural healthcare backbone.",
+          "sources": [
+            "MoHFW National Health Mission Annual Report 2023-24",
+            "NHSRC ASHA Programme Update April 2024"
+          ]
+        },
+        {
+          "id": "hospital_admin",
+          "name": "Hospital Administrators & Managers",
+          "workers": 300000,
+          "medianSalaryINR": 52000,
+          "growthPct": 9.0,
+          "educationYears": 16,
+          "aiExposure": 50,
+          "description": "Hospital operations, health informatics, revenue cycle management. Growing with private hospital chains.",
+          "sources": [
+            "CII–Deloitte Indian Healthcare Sector Report 2024",
+            "AHPI (Assoc. of Healthcare Providers India) data 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "Transport & Logistics",
+      "plfsCode": "NIC H",
+      "workers": 29100000,
+      "pctWorkforce": 5.0,
+      "sectorGrowth": 7.8,
+      "color": "#d97706",
+      "sources": ["PLFS Annual Report 2023-24, NIC H", "MoRTH Annual Report 2023-24", "CRISIL India Logistics Report 2024"],
+      "occupations": [
+        {
+          "id": "truck_drivers",
+          "name": "Truck & Commercial Drivers",
+          "workers": 13000000,
+          "medianSalaryINR": 18500,
+          "growthPct": 4.5,
+          "educationYears": 8,
+          "aiExposure": 62,
+          "description": "Trucking moves 65% of India's freight. Chronic driver shortage (22L deficit per AIMTC) supports wages.",
+          "sources": [
+            "AIMTC (All India Motor Transport Congress) Manpower Survey 2024",
+            "MoRTH Road Transport Yearbook 2022-23 (55M registered vehicles)"
+          ]
+        },
+        {
+          "id": "auto_taxi_drivers",
+          "name": "Auto-Rickshaw & App Cab Drivers",
+          "workers": 8000000,
+          "medianSalaryINR": 15000,
+          "growthPct": 6.5,
+          "educationYears": 8,
+          "aiExposure": 58,
+          "description": "Ola, Uber, Rapido, Namma Yatri, BEST, city auto drivers. 5M+ on app platforms; gig classification debate ongoing.",
+          "sources": [
+            "Niti Aayog Gig Economy Report 2022",
+            "MoRTH Annual Report 2023-24 transport workers",
+            "Ola/Uber India partner disclosures 2024"
+          ]
+        },
+        {
+          "id": "railway_staff",
+          "name": "Indian Railways Staff",
+          "workers": 1400000,
+          "medianSalaryINR": 35000,
+          "growthPct": 1.2,
+          "educationYears": 12,
+          "aiExposure": 28,
+          "description": "India's largest employer: 1.4M employees. Loco pilots, TTEs, trackmen, station masters, workshop technicians.",
+          "sources": [
+            "Indian Railways Annual Report 2023-24, Ministry of Railways (₹2.62L cr capex)",
+            "RRB (Railway Recruitment Board) Vacancy Data 2024"
+          ]
+        },
+        {
+          "id": "logistics_warehouse",
+          "name": "Logistics & Warehouse Workers",
+          "workers": 4000000,
+          "medianSalaryINR": 14500,
+          "growthPct": 18.0,
+          "educationYears": 10,
+          "aiExposure": 45,
+          "description": "Fastest growing segment. PM Gati Shakti + warehousing parks push. India logistics market $250Bn by 2026.",
+          "sources": [
+            "CRISIL India Logistics Sector Report 2024",
+            "PM Gati Shakti Progress Report FY24, DPIIT"
+          ]
+        },
+        {
+          "id": "aviation",
+          "name": "Aviation (Pilots, Crew & Ground)",
+          "workers": 350000,
+          "medianSalaryINR": 85000,
+          "growthPct": 14.0,
+          "educationYears": 15,
+          "aiExposure": 30,
+          "description": "India to become 3rd largest aviation market by 2025; 150M passengers FY24. Severe pilot shortage.",
+          "sources": [
+            "DGCA Annual Report 2023-24 (6,285 licensed pilots; 150M pax)",
+            "MoCA (Ministry of Civil Aviation) UDAN scheme 2024"
+          ]
+        },
+        {
+          "id": "postal_courier",
+          "name": "Postal & Courier Workers",
+          "workers": 2350000,
+          "medianSalaryINR": 20000,
+          "growthPct": 8.0,
+          "educationYears": 10,
+          "aiExposure": 42,
+          "description": "India Post's 5.64L employees + private courier (Delhivery, Ecom Express, Blue Dart) 1M+ workers.",
+          "sources": [
+            "India Post Annual Report 2023-24 (1.59L post offices)",
+            "DPIIT Logistics Division courier sector data 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Finance & Banking",
+      "plfsCode": "NIC K–L",
+      "workers": 4650000,
+      "pctWorkforce": 0.8,
+      "sectorGrowth": 8.2,
+      "color": "#059669",
+      "sources": [
+        "PLFS Annual Report 2023-24, NIC K–L",
+        "IBA (Indian Banks' Association) Annual Report 2024",
+        "SEBI Annual Report 2023-24",
+        "IRDAI Annual Report 2023-24"
+      ],
+      "occupations": [
+        {
+          "id": "bank_employees",
+          "name": "Bank Employees",
+          "workers": 1800000,
+          "medianSalaryINR": 38000,
+          "growthPct": 2.8,
+          "educationYears": 15,
+          "aiExposure": 62,
+          "description": "PSBs + private + RRBs + co-operative banks. SBI alone has 2.32L employees; HDFC Bank 1.85L.",
+          "sources": [
+            "IBA Workforce & HR Roundtable Report 2024",
+            "SBI, HDFC Bank, PNB annual reports FY2024"
+          ]
+        },
+        {
+          "id": "insurance",
+          "name": "Insurance Agents & Professionals",
+          "workers": 1100000,
+          "medianSalaryINR": 18000,
+          "growthPct": 5.5,
+          "educationYears": 12,
+          "aiExposure": 55,
+          "description": "LIC + private insurer agents. India's insurance penetration 4.2% GDP (2023); large underpenetrated market.",
+          "sources": [
+            "IRDAI Annual Report 2023-24 (56L licensed agents)",
+            "Life Insurance Council Report 2024"
+          ]
+        },
+        {
+          "id": "fintech_professionals",
+          "name": "FinTech Professionals",
+          "workers": 400000,
+          "medianSalaryINR": 75000,
+          "growthPct": 32.0,
+          "educationYears": 16,
+          "aiExposure": 58,
+          "description": "India's FinTech ecosystem: $31Bn cumulative funding, 10,000+ startups. UPI processed 13Bn transactions/month.",
+          "sources": [
+            "IAMAI India FinTech Report 2024",
+            "NPCI UPI Transaction Data April 2024",
+            "Inc42 Indian FinTech Startup Report 2024"
+          ]
+        },
+        {
+          "id": "chartered_accountants",
+          "name": "Chartered Accountants & Auditors",
+          "workers": 400000,
+          "medianSalaryINR": 80000,
+          "growthPct": 5.0,
+          "educationYears": 17,
+          "aiExposure": 65,
+          "description": "4L ICAI members + student pool. Company audit, tax, GST compliance, M&A advisory.",
+          "sources": [
+            "ICAI (Institute of Chartered Accountants of India) Annual Report 2023-24",
+            "NFRA (National Financial Reporting Authority) 2024"
+          ]
+        },
+        {
+          "id": "stock_brokers",
+          "name": "Stock Brokers & Investment Advisors",
+          "workers": 350000,
+          "medianSalaryINR": 65000,
+          "growthPct": 10.0,
+          "educationYears": 16,
+          "aiExposure": 52,
+          "description": "SEBI-registered brokers, research analysts, mutual fund distributors. Demat accounts hit 15.8Cr in FY24.",
+          "sources": [
+            "SEBI Annual Report 2023-24 (9,000+ registered brokers)",
+            "NSE Investor Survey 2024 — 15.8Cr demat accounts"
+          ]
+        },
+        {
+          "id": "microfinance",
+          "name": "Microfinance & Rural Banking",
+          "workers": 600000,
+          "medianSalaryINR": 20000,
+          "growthPct": 12.0,
+          "educationYears": 12,
+          "aiExposure": 38,
+          "description": "MFI loan officers, BC (Business Correspondent) agents. GLP ₹3.5L cr; 7.3Cr active borrowers.",
+          "sources": [
+            "MFIN (Microfinance Institutions Network) Micrometer Report Q4 FY24",
+            "PMJDY — Jan Dhan Yojana BC network data April 2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "government",
+      "name": "Government & Public Sector",
+      "plfsCode": "NIC O (subset of Other Services, PLFS 2023-24)",
+      "workers": 9500000,
+      "pctWorkforce": 1.6,
+      "sectorGrowth": 1.2,
+      "color": "#475569",
+      "sources": [
+        "7th Central Pay Commission Report (30L central govt employees)",
+        "DPE Annual Survey of Central PSEs 2023-24",
+        "MHA Police Organisations in India 2022-23"
+      ],
+      "occupations": [
+        {
+          "id": "civil_servants",
+          "name": "Central & State Government Officers",
+          "workers": 3200000,
+          "medianSalaryINR": 55000,
+          "growthPct": 0.8,
+          "educationYears": 16,
+          "aiExposure": 42,
+          "description": "IAS/IPS/IRS officers + Grade B/C officers in central and 28 state governments.",
+          "sources": [
+            "7th CPC Report, GoI — 32L central govt civilian employees",
+            "DoP&T Annual Report 2023-24 (Dept. of Personnel & Training)"
+          ]
+        },
+        {
+          "id": "police_paramilitary",
+          "name": "Police & Paramilitary Forces",
+          "workers": 2100000,
+          "medianSalaryINR": 30000,
+          "growthPct": 1.5,
+          "educationYears": 12,
+          "aiExposure": 22,
+          "description": "State police (21L) + CAPF (BSF, CRPF, CISF, SSB, ITBP, AR) 10.3L personnel.",
+          "sources": [
+            "MHA Police Organisations in India 2022-23 — 21.42L sanctioned state police",
+            "MHA Annual Report 2023-24 — CAPF strength"
+          ]
+        },
+        {
+          "id": "municipal_workers",
+          "name": "Municipal & Urban Local Body Workers",
+          "workers": 2500000,
+          "medianSalaryINR": 18000,
+          "growthPct": 1.2,
+          "educationYears": 10,
+          "aiExposure": 18,
+          "description": "Sanitation, water supply, street maintenance workers across 4,000+ ULBs (Urban Local Bodies).",
+          "sources": [
+            "MoHUA (Ministry of Housing & Urban Affairs) Annual Report 2023-24",
+            "Census 2011 Urban Employment Data (latest official count)"
+          ]
+        },
+        {
+          "id": "psu_employees",
+          "name": "PSU Employees (Central Public Sector)",
+          "workers": 1700000,
+          "medianSalaryINR": 48000,
+          "growthPct": 0.5,
+          "educationYears": 15,
+          "aiExposure": 38,
+          "description": "Employees of 256 Central PSEs (ONGC, SAIL, NTPC, HAL etc.). Workforce declining as PSEs divest.",
+          "sources": [
+            "DPE Annual Survey of Central Public Sector Enterprises 2023-24 — 9.36L employees",
+            "Public Enterprises Survey 2022-23, DPE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal_services",
+      "name": "Personal & Domestic Services",
+      "plfsCode": "NIC T–U (subset of Other Services, PLFS 2023-24)",
+      "workers": 18750000,
+      "pctWorkforce": 3.2,
+      "sectorGrowth": 3.5,
+      "color": "#9f1239",
+      "sources": [
+        "PLFS 2023-24 household activities and personal services",
+        "ILO India Domestic Workers Sector Brief 2023",
+        "ASSOCHAM Private Security Sector Report 2024"
+      ],
+      "occupations": [
+        {
+          "id": "domestic_workers",
+          "name": "Household Domestic Workers",
+          "workers": 4750000,
+          "medianSalaryINR": 8000,
+          "growthPct": -0.5,
+          "educationYears": 5,
+          "aiExposure": 12,
+          "description": "Maids, cooks, nannies, drivers in private households. Mostly informal, women-dominated workforce.",
+          "sources": [
+            "ILO India Domestic Workers Sector Brief 2023 (4–7M estimate)",
+            "PLFS 2023-24 Table 12, private household employers"
+          ]
+        },
+        {
+          "id": "security_guards",
+          "name": "Security Guards",
+          "workers": 8000000,
+          "medianSalaryINR": 12000,
+          "growthPct": 4.0,
+          "educationYears": 8,
+          "aiExposure": 18,
+          "description": "India has the world's largest private security industry: 90L guards employed by 15,000+ agencies.",
+          "sources": [
+            "ASSOCHAM Private Security Industry Report 2024 — 90L guards, ₹75K cr market",
+            "PSARA (Private Security Agencies Regulation Act) licensing data 2024"
+          ]
+        },
+        {
+          "id": "beauty_wellness",
+          "name": "Beauty, Wellness & Fitness",
+          "workers": 2000000,
+          "medianSalaryINR": 15000,
+          "growthPct": 8.5,
+          "educationYears": 9,
+          "aiExposure": 22,
+          "description": "Salons, spas, gyms. India beauty & wellness market ₹1.5L cr growing 12% YoY.",
+          "sources": [
+            "CII–KPMG India Wellness Sector Report 2024",
+            "IBEF Beauty & Wellness Sector Brief 2024"
+          ]
+        },
+        {
+          "id": "sanitation_waste",
+          "name": "Sanitation & Waste Management",
+          "workers": 4000000,
+          "medianSalaryINR": 8000,
+          "growthPct": 2.0,
+          "educationYears": 5,
+          "aiExposure": 8,
+          "description": "Municipal sweepers, garbage collectors, sewage workers. Swachh Bharat Mission expanded this workforce.",
+          "sources": [
+            "Swachh Bharat Mission Urban 2.0 Progress Report FY24, MoHUA",
+            "PLFS 2023-24 sanitation and cleaning occupations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creative_media",
+      "name": "Creative & Media",
+      "plfsCode": "NIC R–S (subset of Other Services, PLFS 2023-24)",
+      "workers": 1700000,
+      "pctWorkforce": 0.3,
+      "sectorGrowth": 10.5,
+      "color": "#be185d",
+      "sources": [
+        "FICCI-EY Media & Entertainment Industry Report 2024",
+        "IAMAI Digital Advertising Report 2024",
+        "Broadcast Audience Research Council (BARC) India 2024"
+      ],
+      "occupations": [
+        {
+          "id": "film_entertainment",
+          "name": "Film, TV & OTT Professionals",
+          "workers": 500000,
+          "medianSalaryINR": 35000,
+          "growthPct": 12.0,
+          "educationYears": 14,
+          "aiExposure": 50,
+          "description": "India produces 1,500+ films/year. OTT platforms (Netflix, Prime, JioHotstar) adding original content demand.",
+          "sources": [
+            "FICCI-EY M&E Report 2024 — ₹2.32L cr M&E industry",
+            "CBFC (Central Board of Film Certification) Annual Report 2023-24"
+          ]
+        },
+        {
+          "id": "digital_creators",
+          "name": "Digital Content Creators & Influencers",
+          "workers": 500000,
+          "medianSalaryINR": 22000,
+          "growthPct": 45.0,
+          "educationYears": 12,
+          "aiExposure": 55,
+          "description": "YouTube, Instagram, Moj, Josh, ShareChat content creators. India has 3rd largest creator economy globally.",
+          "sources": [
+            "IAMAI Creator Economy India Report 2024",
+            "YouTube India 100M+ monthly active channels data 2024",
+            "Redseer Creator Economy India 2024 — 80M+ active creators"
+          ]
+        },
+        {
+          "id": "journalists",
+          "name": "Journalists & Print/Digital Media",
+          "workers": 300000,
+          "medianSalaryINR": 28000,
+          "growthPct": -1.5,
+          "educationYears": 15,
+          "aiExposure": 62,
+          "description": "Print declining; digital growing. Wire services, digital news desks growing while circulation journalists decline.",
+          "sources": [
+            "Press Council of India Annual Report 2023-24",
+            "FICCI-EY M&E Report 2024 — print segment contraction",
+            "RNI (Registrar of Newspapers) Annual Report 2023"
+          ]
+        },
+        {
+          "id": "advertising_marketing",
+          "name": "Advertising & Marketing Professionals",
+          "workers": 400000,
+          "medianSalaryINR": 50000,
+          "growthPct": 12.0,
+          "educationYears": 15,
+          "aiExposure": 60,
+          "description": "Ad agencies, brand managers, performance marketers. India digital ad market ₹60,000 cr FY24 growing 25%.",
+          "sources": [
+            "IAMAI India Digital Advertising Report FY2024",
+            "GroupM This Year Next Year India 2024 — ₹1.35L cr total ad market"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mining",
+      "name": "Mining & Quarrying",
+      "plfsCode": "NIC B",
+      "workers": 2900000,
+      "pctWorkforce": 0.5,
+      "sectorGrowth": 4.5,
+      "color": "#78350f",
+      "sources": ["PLFS Annual Report 2023-24, NIC B", "Ministry of Mines Annual Report 2023-24", "Coal India Limited Annual Report 2023-24"],
+      "occupations": [
+        {
+          "id": "coal_miners",
+          "name": "Coal Miners",
+          "workers": 800000,
+          "medianSalaryINR": 28000,
+          "growthPct": -1.2,
+          "educationYears": 8,
+          "aiExposure": 20,
+          "description": "CIL (Coal India Limited) employs 2.87L; private coal block workers. India target 1.5BT coal by 2030.",
+          "sources": [
+            "Coal India Limited Annual Report 2023-24 (2.87L employees, 773MT production)",
+            "Ministry of Coal Annual Report 2023-24"
+          ]
+        },
+        {
+          "id": "stone_quarry",
+          "name": "Stone & Sand Quarry Workers",
+          "workers": 1200000,
+          "medianSalaryINR": 10000,
+          "growthPct": 2.5,
+          "educationYears": 5,
+          "aiExposure": 12,
+          "description": "Granite, marble, sand and aggregate extraction; largely informal, hazardous work.",
+          "sources": ["Ministry of Mines Annual Report 2023-24", "PLFS 2023-24 mining casual workers"]
+        },
+        {
+          "id": "mining_engineers",
+          "name": "Mining Engineers & Geologists",
+          "workers": 200000,
+          "medianSalaryINR": 65000,
+          "growthPct": 5.0,
+          "educationYears": 16,
+          "aiExposure": 45,
+          "description": "Mine planners, geologists for critical minerals (lithium, cobalt, REEs) for EV and defence.",
+          "sources": [
+            "Ministry of Mines Critical Minerals Strategy 2024",
+            "AICTE Mining Engineering Enrolment Data 2024"
+          ]
+        },
+        {
+          "id": "oil_gas_workers",
+          "name": "Oil & Gas Workers",
+          "workers": 350000,
+          "medianSalaryINR": 48000,
+          "growthPct": 4.5,
+          "educationYears": 14,
+          "aiExposure": 38,
+          "description": "ONGC, OIL, RIL, Cairn India upstream exploration and production workers.",
+          "sources": [
+            "ONGC Annual Report 2023-24",
+            "DGH (Directorate General of Hydrocarbons) India Petroleum Statistics 2024"
+          ]
+        },
+        {
+          "id": "mineral_processing",
+          "name": "Mineral Processing Workers",
+          "workers": 350000,
+          "medianSalaryINR": 14000,
+          "growthPct": 3.5,
+          "educationYears": 10,
+          "aiExposure": 25,
+          "description": "Iron ore beneficiation, bauxite processing, smelting. Linked to steel, aluminium sectors.",
+          "sources": ["Ministry of Mines Annual Report 2023-24", "IBM (Indian Bureau of Mines) Statistics 2024"]
+        }
+      ]
+    },
+    {
+      "id": "utilities",
+      "name": "Electricity, Gas & Water",
+      "plfsCode": "NIC D–E",
+      "workers": 2900000,
+      "pctWorkforce": 0.5,
+      "sectorGrowth": 9.5,
+      "color": "#0284c7",
+      "sources": [
+        "PLFS Annual Report 2023-24, NIC D–E",
+        "CEA (Central Electricity Authority) Annual Report 2023-24",
+        "MNRE Annual Report 2023-24",
+        "Jal Shakti Ministry Annual Report 2023-24"
+      ],
+      "occupations": [
+        {
+          "id": "power_utility",
+          "name": "Power Plant & Grid Workers",
+          "workers": 1200000,
+          "medianSalaryINR": 38000,
+          "growthPct": 5.5,
+          "educationYears": 12,
+          "aiExposure": 35,
+          "description": "Thermal, hydro, nuclear plant operators plus transmission & distribution workers. India's installed capacity 950GW target by 2030.",
+          "sources": [
+            "CEA Annual Report 2023-24 (installed capacity 940GW FY24, target 950GW by 2030)",
+            "NTPC Annual Report 2023-24"
+          ]
+        },
+        {
+          "id": "renewable_energy",
+          "name": "Renewable Energy Workers (Solar & Wind)",
+          "workers": 400000,
+          "medianSalaryINR": 22000,
+          "growthPct": 35.0,
+          "educationYears": 12,
+          "aiExposure": 30,
+          "description": "India's solar capacity 90GW (Mar 2024), targeting 500GW by 2030. Fastest-growing utility employment segment.",
+          "sources": [
+            "MNRE Annual Report 2023-24 (90GW solar, 46GW wind installed)",
+            "IRENA India Renewable Energy Employment 2024",
+            "TERI Green Jobs in India 2024"
+          ]
+        },
+        {
+          "id": "water_sanitation_utility",
+          "name": "Water Supply & Utility Workers",
+          "workers": 800000,
+          "medianSalaryINR": 20000,
+          "growthPct": 8.0,
+          "educationYears": 10,
+          "aiExposure": 22,
+          "description": "Jal Jeevan Mission targets tap water to 19Cr rural households; creating large water utility workforce.",
+          "sources": [
+            "Jal Shakti Ministry Annual Report 2023-24",
+            "JJM (Jal Jeevan Mission) Dashboard April 2024 — 14.2Cr connections made"
+          ]
+        },
+        {
+          "id": "gas_distribution",
+          "name": "Gas Distribution & Pipeline Workers",
+          "workers": 500000,
+          "medianSalaryINR": 25000,
+          "growthPct": 12.0,
+          "educationYears": 10,
+          "aiExposure": 28,
+          "description": "City Gas Distribution (CGD) networks expanding. 630+ districts covered under CGD policy.",
+          "sources": [
+            "PNGRB (Petroleum & Natural Gas Regulatory Board) Annual Report 2023-24",
+            "MoPNG (Ministry of Petroleum & Natural Gas) Annual Report 2023-24"
+          ]
+        }
+      ]
+    }
+  ]
+}
