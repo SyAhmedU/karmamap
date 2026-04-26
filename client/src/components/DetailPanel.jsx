@@ -1,6 +1,28 @@
 import { EXCHANGE_RATE } from '../App.jsx'
 import { occAtYear, getTimelineData, TIMELINE_YEARS } from '../utils/timeline.js'
 
+function getPivots(occ, occY, data, year, region) {
+  if ((occY.aiExposure ?? 0) < 52) return []
+  const salUSD = occY.medianSalaryUSD ?? (occY.medianSalaryINR != null ? occY.medianSalaryINR / EXCHANGE_RATE : null)
+  const eduYrs = occY.educationYears ?? 12
+  return data.sectors
+    .flatMap(s => s.occupations.map(o => ({ occ: o, sector: s, oy: occAtYear(o, year, region) })))
+    .filter(c =>
+      c.occ.id !== occ.id &&
+      (c.oy.aiExposure ?? 100) < 42 &&
+      Math.abs((c.oy.educationYears ?? 12) - eduYrs) <= 3
+    )
+    .sort((a, b) => {
+      const aSal = a.oy.medianSalaryUSD ?? (a.oy.medianSalaryINR != null ? a.oy.medianSalaryINR / EXCHANGE_RATE : 0)
+      const bSal = b.oy.medianSalaryUSD ?? (b.oy.medianSalaryINR != null ? b.oy.medianSalaryINR / EXCHANGE_RATE : 0)
+      const ref  = salUSD || 500
+      const aScore = Math.abs(aSal - ref) / ref + (a.oy.aiExposure || 0) / 200
+      const bScore = Math.abs(bSal - ref) / ref + (b.oy.aiExposure || 0) / 200
+      return aScore - bScore
+    })
+    .slice(0, 3)
+}
+
 function fmt(n) {
   if (n >= 1e7)  return `${(n/1e7).toFixed(2)} Cr`
   if (n >= 1e5)  return `${(n/1e5).toFixed(1)} Lakh`
@@ -74,7 +96,7 @@ function Sparkline({ values, color = '#38bdf8', nowIdx = 3, width = 230, height 
   )
 }
 
-export default function DetailPanel({ sector, occupation: occ, currency, region, year = 2025, onClose }) {
+export default function DetailPanel({ sector, occupation: occ, currency, region, year = 2025, onClose, data, onPivot }) {
   if (!occ) return null
 
   const occY        = { ...occ, ...occAtYear(occ, year, region) }
@@ -82,6 +104,8 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
   const aiColor     = occY.aiExposure > 60 ? 'red' : occY.aiExposure > 35 ? 'amber' : 'green'
 
   // Sparkline data from timeline anchors
+  const pivots = (data && onPivot) ? getPivots(occ, occY, data, year, region) : []
+
   const tl     = getTimelineData(region)
   const tlOcc  = tl?.occupations?.[occ.id]
   const salKey = region === 'world' ? 'medianSalaryUSD' : 'medianSalaryINR'
@@ -168,6 +192,37 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
             {occY.topSkills.map((sk, i) => (
               <span key={i} className="bg-slate-800 text-slate-300 text-[10px] font-semibold px-2 py-1 rounded-lg border border-slate-700">{sk}</span>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* Career pivot suggestions — shown when AI risk is high */}
+      {pivots.length > 0 && (
+        <div className="p-4 border-b border-slate-800">
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-1">🔄 Lower-Risk Career Pivots</p>
+          <p className="text-slate-600 text-[9px] mb-3">Similar education · AI exposure below 42 · Closest salary match</p>
+          <div className="space-y-1.5">
+            {pivots.map(p => {
+              const aiC = p.oy.aiExposure > 35 ? 'text-amber-400' : 'text-emerald-400'
+              return (
+                <button
+                  key={p.occ.id}
+                  onClick={() => onPivot({ sector: p.sector, occupation: p.occ })}
+                  className="w-full flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-700/60 transition-colors text-left group"
+                >
+                  <div className="w-2 h-2 rounded-sm shrink-0 mt-0.5" style={{ background: p.sector.color }} />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-slate-200 text-[11px] font-semibold truncate group-hover:text-white">{p.occ.name}</p>
+                    <p className="text-slate-500 text-[9px]">{p.sector.name}</p>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <p className={`text-[10px] font-bold ${aiC}`}>AI {p.oy.aiExposure}/100</p>
+                    <p className="text-slate-500 text-[9px]">{p.oy.educationYears} yrs edu</p>
+                  </div>
+                  <span className="text-slate-600 group-hover:text-slate-300 text-[12px]">→</span>
+                </button>
+              )
+            })}
           </div>
         </div>
       )}

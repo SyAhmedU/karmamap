@@ -168,7 +168,7 @@ function buildHierarchy(data, year, region) {
 
 // ── Treemap component ─────────────────────────────────────────────────────────
 
-export default function Treemap({ data, layer, currency, selected, onSelect, search = '', year = 2025, region = 'india' }) {
+export default function Treemap({ data, layer, currency, selected, onSelect, search = '', year = 2025, region = 'india', onDrillSector }) {
   const containerRef = useRef(null)
   const [dims, setDims]     = useState({ w: 0, h: 0 })
   const [nodes, setNodes]   = useState([])
@@ -233,7 +233,7 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
       className="absolute inset-0 overflow-hidden"
       onKeyDown={handleContainerKey}
     >
-      {/* Sector group labels (item 1d + item 10 — neutral color) */}
+      {/* Sector group labels — clickable when onDrillSector provided */}
       {groups.map(g => {
         const w = g.x1 - g.x0
         const h = g.y1 - g.y0
@@ -241,14 +241,17 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
         return (
           <div
             key={g.sector.id}
-            className="absolute pointer-events-none z-10"
+            className={`absolute z-10 sector-header ${onDrillSector ? 'cursor-pointer' : 'pointer-events-none'}`}
             style={{ left: g.x0 + 3, top: g.y0, width: w - 6, height: 20 }}
+            onClick={() => onDrillSector && onDrillSector(g.sector.id)}
+            title={onDrillSector ? `Drill into ${g.sector.name}` : undefined}
           >
             <span
-              className="text-[10px] font-bold uppercase tracking-widest block whitespace-nowrap text-slate-400"
+              className="sector-label text-[10px] font-bold uppercase tracking-widest block whitespace-nowrap text-slate-400"
               style={{ textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}
             >
               {sectorLabel(g.sector, w - 6)}
+              {onDrillSector && w > 120 && <span className="text-slate-600 text-[8px] ml-1.5 normal-case tracking-normal font-normal">zoom →</span>}
             </span>
           </div>
         )

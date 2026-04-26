@@ -12,37 +12,66 @@ html, body, #root {
   overflow: hidden;
 }
 
+/* ── Treemap cells ── */
 .treemap-cell {
   position: absolute;
   overflow: hidden;
-  transition: filter 0.15s ease;
   cursor: pointer;
+  /* Animate color changes when layer switches */
+  transition: background-color 0.38s ease, opacity 0.2s ease, filter 0.15s ease;
 }
-
-.treemap-cell:hover {
-  filter: brightness(1.18);
-  z-index: 10;
-}
-
+.treemap-cell:hover  { filter: brightness(1.2); z-index: 10; }
 .treemap-cell.selected {
   outline: 2px solid #fff;
   outline-offset: -2px;
   z-index: 20;
 }
 
-/* View fade-in on region switch */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.view-fade { animation: fadeIn 0.25s ease; }
+/* ── Sector header drill-down ── */
+.sector-header { transition: opacity 0.15s ease; }
+.sector-header:hover .sector-label { color: #fff !important; }
+.sector-header:hover { opacity: 0.9; }
 
-/* Mobile header wrapping */
-@media (max-width: 640px) {
-  header { flex-wrap: wrap; gap: 8px; }
+/* ── View fade — scale + fade on region switch ── */
+@keyframes viewEnter {
+  from { opacity: 0; transform: scale(0.975); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.view-fade { animation: viewEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Mobile bottom sheet (detail panel) ── */
+@media (max-width: 767px) {
+  .detail-panel-mobile {
+    position: fixed !important;
+    bottom: 0; left: 0; right: 0;
+    height: 68vh;
+    border-radius: 20px 20px 0 0;
+    border-top: 1px solid #334155;
+    border-left: none !important;
+    z-index: 50;
+    animation: sheetUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+    width: auto !important;
+  }
+  @keyframes sheetUp {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+  /* Drag handle */
+  .detail-panel-mobile::before {
+    content: '';
+    display: block;
+    width: 40px; height: 4px;
+    background: #475569;
+    border-radius: 2px;
+    margin: 10px auto 0;
+  }
+
+  /* Compact header on mobile */
+  .mobile-header-subtitle { display: none; }
+  .mobile-hide            { display: none !important; }
 }
 
-/* Custom scrollbar */
+/* ── Custom scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #1e293b; }
 ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
