@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import indiaData  from './data/india_jobs.json'
 import worldData  from './data/world_jobs.json'
 import statesData from './data/india_states_jobs.json'
@@ -120,6 +120,15 @@ export default function App() {
     window.location.hash = p.toString()
   }, [region, layer, year, selected])
 
+  // ESC closes the detail panel
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'Escape') { setSelected(null); setShowLLM(false) }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   function handleRegion(r) {
     setRegion(r); setSelected(null); setSearch(''); setDrillSector(null)
     setCurrency(r === 'world' ? 'usd' : 'inr')
@@ -133,6 +142,9 @@ export default function App() {
   const totalLabel = region === 'world'
     ? `${(wfAtYear / 1e9).toFixed(2)}B workers`
     : `${(wfAtYear / 1e6).toFixed(0)}M workers`
+
+  // Memoised — only re-runs when data, year or region change
+  const atRisk = useMemo(() => computeAtRisk(data, year, region), [data, year, region])
 
   const panelOpen  = selected || showLLM
   const drillName  = drillSector ? data.sectors.find(s => s.id === drillSector)?.name : null
@@ -239,21 +251,30 @@ export default function App() {
       <YearSlider year={year} onYear={setYear} />
 
       {/* ── Workers at Risk Banner ── */}
-      {(() => {
-        const { workers, count } = computeAtRisk(data, year, region)
-        if (!workers) return null
-        const totalWf = totalWorkforceAtYear(region, year) ?? data.meta.totalWorkforce
-        const pct = ((workers / totalWf) * 100).toFixed(1)
+      {atRisk.workers > 0 && (() => {
+        const { workers, count } = atRisk
+        const pct = ((workers / wfAtYear) * 100)
+        const pctLabel = pct.toFixed(1)
         const wLabel = region === 'world'
           ? workers >= 1e9 ? `${(workers/1e9).toFixed(2)}B` : `${(workers/1e6).toFixed(0)}M`
           : workers >= 1e7 ? `${(workers/1e7).toFixed(1)} Cr` : `${(workers/1e5).toFixed(1)} L`
         return (
-          <div className="shrink-0 flex items-center gap-3 px-4 py-1.5 bg-rose-950/50 border-b border-rose-900/40 text-[11px]">
-            <span className="inline-block w-2 h-2 rounded-full bg-rose-500 animate-pulse shrink-0" />
-            <span className="text-rose-300 font-bold">{wLabel} workers</span>
-            <span className="text-rose-400/80">({pct}% of workforce)</span>
-            <span className="text-rose-500">·</span>
-            <span className="text-rose-400/70">{count} occupations at HIGH AI displacement risk in {year}</span>
+          <div className="shrink-0 border-b border-rose-900/30 bg-rose-950/40">
+            {/* Progress bar */}
+            <div className="h-0.5 bg-slate-900">
+              <div
+                className="h-full bg-gradient-to-r from-rose-700 to-rose-500 risk-fill"
+                style={{ width: `${Math.min(pct, 100)}%` }}
+              />
+            </div>
+            <div className="flex items-center gap-3 px-4 py-1.5 text-[11px]">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse shrink-0" />
+              <span className="text-rose-300 font-bold tabular-nums">{wLabel}</span>
+              <span className="text-rose-400/70">workers ({pctLabel}% of workforce)</span>
+              <span className="text-rose-700 select-none">|</span>
+              <span className="text-rose-500/70 tabular-nums">{count} occupations</span>
+              <span className="text-rose-400/50 ml-auto hidden sm:block">HIGH displacement risk · {year}</span>
+            </div>
           </div>
         )
       })()}
@@ -335,6 +356,7 @@ export default function App() {
             )}
             {selected && !showLLM && (
               <DetailPanel
+                key={`${region}-${selected.occupation.id}`}
                 sector={selected.sector}
                 occupation={selected.occupation}
                 currency={effectiveCurrency}

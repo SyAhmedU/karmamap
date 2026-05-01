@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { EXCHANGE_RATE } from '../App.jsx'
-import { occAtYear, getTimelineData, TIMELINE_YEARS } from '../utils/timeline.js'
+import { occAtYear, getTimelineData, TIMELINE_YEARS, totalWorkforceAtYear } from '../utils/timeline.js'
 
 // India occupation ID → nearest World equivalent ID
 const INDIA_TO_WORLD = {
@@ -150,7 +150,7 @@ function Badge({ label, value, color = 'slate' }) {
 }
 
 // Tiny SVG sparkline with area fill
-function Sparkline({ values, color = '#38bdf8', nowIdx = 3, width = 230, height = 34, yearLabels }) {
+function Sparkline({ values, color = '#38bdf8', nowIdx, width = 230, height = 34, yearLabels }) {
   if (!values || values.length < 2) return null
   const min = Math.min(...values)
   const max = Math.max(...values)
@@ -162,7 +162,7 @@ function Sparkline({ values, color = '#38bdf8', nowIdx = 3, width = 230, height 
   const line = pts.map(([x, y], i) => `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`).join(' ')
   const area = `${line} L${pts[pts.length-1][0].toFixed(1)},${height} L${pts[0][0].toFixed(1)},${height}Z`
   const gradId = `sg${color.replace(/[^a-z0-9]/gi, '')}`
-  const nowPt  = pts[nowIdx]
+  const nowPt  = nowIdx != null && nowIdx >= 0 && nowIdx < pts.length ? pts[nowIdx] : null
 
   return (
     <div>
@@ -176,13 +176,13 @@ function Sparkline({ values, color = '#38bdf8', nowIdx = 3, width = 230, height 
         <path d={area} fill={`url(#${gradId})`} />
         <path d={line} fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         {nowPt && (
-          <circle cx={nowPt[0]} cy={nowPt[1]} r="3" fill={color} stroke="#0f172a" strokeWidth="1.5" />
+          <circle cx={nowPt[0]} cy={nowPt[1]} r="3.5" fill={color} stroke="#0f172a" strokeWidth="2" />
         )}
       </svg>
       {yearLabels && (
         <div className="flex justify-between mt-0.5">
-          {yearLabels.map((y, i) => (
-            <span key={i} className="text-slate-700 text-[8px] tabular-nums">{y}</span>
+          {yearLabels.map((lbl, i) => (
+            <span key={i} className={`text-[8px] tabular-nums ${lbl ? 'text-slate-600' : ''}`}>{lbl}</span>
           ))}
         </div>
       )}
@@ -204,6 +204,7 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
   const digitalColor     = dii == null ? 'slate' : dii > 70 ? 'blue' : dii > 40 ? 'amber' : 'slate'
   const displacementRisk = (occY.aiExposure != null && dii != null) ? Math.round(occY.aiExposure * dii / 100) : null
   const drColor          = displacementRisk == null ? 'slate' : displacementRisk > 55 ? 'red' : displacementRisk > 28 ? 'amber' : 'green'
+  const wfTotal          = totalWorkforceAtYear(region, year) ?? (region === 'world' ? 3_500_000_000 : 582_000_000)
 
   async function fetchOutlook() {
     setLoading(true); setOutlookError(null); setOutlook(null)
@@ -255,14 +256,41 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
   const tl     = getTimelineData(region)
   const tlOcc  = tl?.occupations?.[occ.id]
   const salKey = region === 'world' ? 'medianSalaryUSD' : 'medianSalaryINR'
-  const nowIdx = TIMELINE_YEARS.indexOf(2025)
 
-  const workerVals = tlOcc ? TIMELINE_YEARS.map(y => tlOcc[y]?.workers).filter(Boolean) : []
-  const salaryVals = tlOcc ? TIMELINE_YEARS.map(y => tlOcc[y]?.[salKey]).filter(Boolean) : []
-  const aiVals     = tlOcc ? TIMELINE_YEARS.map(y => tlOcc[y]?.aiExposure).filter(v => v != null) : []
+  // Build (year, value) pairs so nowIdx stays correct after filtering
+  const workerPairs = tlOcc ? TIMELINE_YEARS.map(yr => [yr, tlOcc[yr]?.workers]).filter(([,v]) => v > 0)    : []
+  const salaryPairs = tlOcc ? TIMELINE_YEARS.map(yr => [yr, tlOcc[yr]?.[salKey]]).filter(([,v]) => v > 0)   : []
+  const aiPairs     = tlOcc ? TIMELINE_YEARS.map(yr => [yr, tlOcc[yr]?.aiExposure]).filter(([,v]) => v != null) : []
+
+  const workerVals = workerPairs.map(([,v]) => v)
+  const salaryVals = salaryPairs.map(([,v]) => v)
+  const aiVals     = aiPairs.map(([,v]) => v)
+
+  const workerNowIdx = workerPairs.findIndex(([yr]) => yr === 2025)
+  const salaryNowIdx = salaryPairs.findIndex(([yr]) => yr === 2025)
+  const aiNowIdx     = aiPairs.findIndex(([yr]) => yr === 2025)
+
+  // Sparse year labels: show only start, 2025, and end
+  function spkLabels(pairs) {
+    if (!pairs.length) return []
+    return pairs.map(([yr], i) =>
+      i === 0 || yr === 2025 || i === pairs.length - 1 ? String(yr) : ''
+    )
+  }
+
+  // Accent stripe — coloured top border signals risk level at a glance
+  const riskStripe =
+    drColor === 'red'   ? 'linear-gradient(90deg, #be123c 0%, #f43f5e 45%, transparent 100%)' :
+    drColor === 'amber' ? 'linear-gradient(90deg, #b45309 0%, #f59e0b 45%, transparent 100%)' :
+    drColor === 'green' ? 'linear-gradient(90deg, #065f46 0%, #10b981 45%, transparent 100%)' :
+                          'linear-gradient(90deg, #334155 0%, transparent 100%)'
 
   return (
-    <div className="h-full flex flex-col bg-[#0f172a] overflow-y-auto">
+    <div className="h-full flex flex-col bg-[#0f172a] overflow-y-auto detail-panel-scroll">
+
+      {/* Risk accent stripe */}
+      <div className="h-[3px] shrink-0 risk-stripe" style={{ background: riskStripe }} />
+
       {/* Header */}
       <div className="p-4 border-b border-slate-800 shrink-0">
         <div className="flex items-start justify-between gap-2 mb-1">
@@ -273,95 +301,138 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
               <p className="text-slate-400 text-[11px]">{sector.name}{sector.capital ? ` · ${sector.capital}` : ''}</p>
             </div>
           </div>
-          <button onClick={onClose} className="text-slate-500 hover:text-white p-1 shrink-0 text-lg leading-none">&times;</button>
+          <button
+            onClick={onClose}
+            title="Close (Esc)"
+            className="text-slate-500 hover:text-white hover:bg-slate-800 w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors text-lg leading-none"
+          >&times;</button>
         </div>
         <p className="text-slate-300 text-[12px] leading-relaxed mt-2">{occY.description}</p>
       </div>
 
-      {/* Stats grid */}
-      <div className="p-4 grid grid-cols-2 gap-2 border-b border-slate-800">
-        <Badge label="Workforce"  value={fmt(occY.workers)} color="blue" />
-        <Badge label="Growth/yr"  value={occY.growthPct > 0 ? `+${occY.growthPct}%` : `${occY.growthPct}%`} color={growthColor} />
-        <Badge label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} value={fmtSal(occY, currency)} color="violet" />
-        <Badge label="AI Exposure" value={`${occY.aiExposure} / 100`} color={aiColor} />
-        {dii != null && <Badge label="Digital Intensity" value={`${dii} / 100`} color={digitalColor} />}
-        <Badge label="Education"  value={`${occY.educationYears} years`} color="slate" />
-        <Badge label="% Workforce" value={`${((occY.workers/(region === 'world' ? 3320000000 : 582000000))*100).toFixed(2)}%`} color="slate" />
-        {occY.informalityPct != null && (
-          <Badge label="Informal Work" value={`${occY.informalityPct}%`}
-            color={occY.informalityPct > 70 ? 'red' : occY.informalityPct > 40 ? 'amber' : 'green'} />
-        )}
-        {occY.femalePct != null && (
-          <Badge label="Female Workers" value={`${occY.femalePct}%`} color="violet" />
-        )}
-        {occY.wageDecile != null && (
-          <Badge label="Wage Decile" value={`D${occY.wageDecile} / 10`}
-            color={occY.wageDecile >= 8 ? 'green' : occY.wageDecile <= 3 ? 'red' : 'amber'} />
-        )}
-        {occY.iscoCode && (
-          <Badge label="ISCO-08" value={occY.iscoCode} color="slate" />
-        )}
-      </div>
-
-      {/* AI Displacement Risk — compound score */}
+      {/* AI Displacement Risk — shown first so it's never missed */}
       {displacementRisk != null && (
-        <div className="px-4 pb-4 border-b border-slate-800">
-          <div className="rounded-xl p-3 bg-slate-900 border border-slate-700">
+        <div className="px-4 pt-4 pb-0 shrink-0">
+          <div className={`rounded-xl p-3 border transition-colors ${
+            drColor === 'red'   ? 'bg-rose-950/50 border-rose-900/50'   :
+            drColor === 'amber' ? 'bg-amber-950/50 border-amber-900/50' :
+                                  'bg-emerald-950/40 border-emerald-900/40'
+          }`}>
             <div className="flex items-center justify-between mb-1.5">
               <p className="text-[9px] uppercase tracking-widest text-slate-400 font-bold">AI Displacement Risk</p>
-              <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
-                drColor === 'red'   ? 'bg-rose-900/60 text-rose-300' :
-                drColor === 'amber' ? 'bg-amber-900/60 text-amber-300' :
-                                     'bg-emerald-900/60 text-emerald-300'
+              <span className={`text-[9px] font-black px-2 py-0.5 rounded-full ${
+                drColor === 'red'   ? 'bg-rose-900/70 text-rose-300'     :
+                drColor === 'amber' ? 'bg-amber-900/70 text-amber-300'   :
+                                      'bg-emerald-900/70 text-emerald-300'
               }`}>
                 {displacementRisk > 55 ? 'HIGH' : displacementRisk > 28 ? 'MODERATE' : 'LOW'}
               </span>
             </div>
             <div className="flex items-end gap-3">
-              <p className="text-2xl font-black text-white leading-none">
-                {displacementRisk}<span className="text-slate-500 text-xs font-normal"> / 100</span>
+              <p className={`text-3xl font-black leading-none ${
+                drColor === 'red' ? 'text-rose-300' : drColor === 'amber' ? 'text-amber-300' : 'text-emerald-300'
+              }`}>
+                {displacementRisk}<span className="text-slate-600 text-sm font-normal"> / 100</span>
               </p>
-              <div className="flex-1 mb-1">
-                <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
+              <div className="flex-1 mb-1.5">
+                <div className="h-2 rounded-full bg-slate-800/80 overflow-hidden">
                   <div
-                    className={`h-full rounded-full transition-all ${
-                      drColor === 'red' ? 'bg-rose-500' : drColor === 'amber' ? 'bg-amber-500' : 'bg-emerald-500'
+                    className={`h-full rounded-full transition-all duration-500 ${
+                      drColor === 'red' ? 'bg-gradient-to-r from-rose-700 to-rose-400' :
+                      drColor === 'amber' ? 'bg-gradient-to-r from-amber-700 to-amber-400' :
+                                           'bg-gradient-to-r from-emerald-700 to-emerald-400'
                     }`}
                     style={{ width: `${displacementRisk}%` }}
                   />
                 </div>
               </div>
             </div>
-            <p className="text-[10px] text-slate-500 mt-1.5">
+            <p className="text-[10px] text-slate-500 mt-1">
               AI Exposure ({occY.aiExposure}) × Digital Intensity ({dii}) ÷ 100
-              <span className="ml-1 text-slate-600">— higher digital intensity means AI can act on this job today, not just theoretically</span>
             </p>
           </div>
         </div>
       )}
 
-      {/* Sparklines — 2000 → 2050 trends */}
+      {/* Stats grid */}
+      <div className="p-4 border-b border-slate-800">
+        {/* Primary row: Workers + Growth + Salary */}
+        <div className="grid grid-cols-3 gap-2 mb-2">
+          <div className="col-span-1 rounded-xl p-2.5 bg-sky-900/40 border border-sky-800/40">
+            <p className="text-[8px] uppercase tracking-widest text-sky-400/70 font-bold mb-0.5">Workers</p>
+            <p className="text-sm font-black text-sky-200">{fmt(occY.workers)}</p>
+          </div>
+          <div className={`rounded-xl p-2.5 border ${
+            growthColor === 'green' ? 'bg-emerald-900/40 border-emerald-800/40' :
+            growthColor === 'amber' ? 'bg-amber-900/40 border-amber-800/40' :
+                                      'bg-rose-900/40 border-rose-800/40'
+          }`}>
+            <p className="text-[8px] uppercase tracking-widest opacity-60 font-bold mb-0.5 text-current">Growth</p>
+            <p className={`text-sm font-black ${growthColor === 'green' ? 'text-emerald-200' : growthColor === 'amber' ? 'text-amber-200' : 'text-rose-200'}`}>
+              {occY.growthPct > 0 ? `+${occY.growthPct}%` : `${occY.growthPct}%`}
+            </p>
+          </div>
+          <div className="rounded-xl p-2.5 bg-violet-900/40 border border-violet-800/40">
+            <p className="text-[8px] uppercase tracking-widest text-violet-400/70 font-bold mb-0.5">{currency === 'usd' ? '$/mo' : '₹/mo'}</p>
+            <p className="text-sm font-black text-violet-200">{fmtSal(occY, currency)}</p>
+          </div>
+        </div>
+
+        {/* Secondary grid: AI, DII, Education + optionals */}
+        <div className="grid grid-cols-2 gap-2">
+          <Badge label="AI Exposure"  value={`${occY.aiExposure} / 100`} color={aiColor} />
+          {dii != null
+            ? <Badge label="Digital Intensity" value={`${dii} / 100`} color={digitalColor} />
+            : <Badge label="Education"         value={`${occY.educationYears} yrs`} color="slate" />
+          }
+          {dii != null && <Badge label="Education" value={`${occY.educationYears} yrs`} color="slate" />}
+          <Badge label="% of Workforce" value={`${((occY.workers / wfTotal) * 100).toFixed(2)}%`} color="slate" />
+          {occY.informalityPct != null && (
+            <Badge label="Informal Work" value={`${occY.informalityPct}%`}
+              color={occY.informalityPct > 70 ? 'red' : occY.informalityPct > 40 ? 'amber' : 'green'} />
+          )}
+          {occY.femalePct != null && (
+            <Badge label="Female Workers" value={`${occY.femalePct}%`} color="violet" />
+          )}
+          {occY.wageDecile != null && (
+            <Badge label="Wage Decile" value={`D${occY.wageDecile} / 10`}
+              color={occY.wageDecile >= 8 ? 'green' : occY.wageDecile <= 3 ? 'red' : 'amber'} />
+          )}
+          {occY.iscoCode && (
+            <Badge label="ISCO-08" value={occY.iscoCode} color="slate" />
+          )}
+        </div>
+      </div>
+
+      {/* Sparklines — 1950 → 2050 trends */}
       {tlOcc && (workerVals.length >= 2 || salaryVals.length >= 2) && (
         <div className="p-4 border-b border-slate-800">
-          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-3">Trends (2000 → 2050)</p>
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-3">
+            Trends ({workerPairs[0]?.[0] ?? 1950} → {workerPairs.at(-1)?.[0] ?? 2050})
+          </p>
           <div className="space-y-4">
             {workerVals.length >= 2 && (
               <div>
                 <p className="text-slate-500 text-[9px] mb-1.5">Workforce size <span className="text-slate-600">● = 2025</span></p>
-                <Sparkline values={workerVals} color="#38bdf8" nowIdx={nowIdx} width={230} height={34}
-                  yearLabels={['2000','2010','2020','2025','2035','2050']} />
+                <Sparkline values={workerVals} color="#38bdf8"
+                  nowIdx={workerNowIdx >= 0 ? workerNowIdx : undefined}
+                  width={230} height={34} yearLabels={spkLabels(workerPairs)} />
               </div>
             )}
             {salaryVals.length >= 2 && (
               <div>
-                <p className="text-slate-500 text-[9px] mb-1.5">Salary trend</p>
-                <Sparkline values={salaryVals} color="#a78bfa" nowIdx={nowIdx} width={230} height={34} />
+                <p className="text-slate-500 text-[9px] mb-1.5">Salary trend <span className="text-slate-600">● = 2025</span></p>
+                <Sparkline values={salaryVals} color="#a78bfa"
+                  nowIdx={salaryNowIdx >= 0 ? salaryNowIdx : undefined}
+                  width={230} height={34} yearLabels={spkLabels(salaryPairs)} />
               </div>
             )}
             {aiVals.length >= 2 && (
               <div>
-                <p className="text-slate-500 text-[9px] mb-1.5">AI exposure trajectory</p>
-                <Sparkline values={aiVals} color="#f87171" nowIdx={nowIdx} width={230} height={28} />
+                <p className="text-slate-500 text-[9px] mb-1.5">AI exposure trajectory <span className="text-slate-600">● = 2025</span></p>
+                <Sparkline values={aiVals} color="#f87171"
+                  nowIdx={aiNowIdx >= 0 ? aiNowIdx : undefined}
+                  width={230} height={28} yearLabels={spkLabels(aiPairs)} />
               </div>
             )}
           </div>

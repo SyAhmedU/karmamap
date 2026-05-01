@@ -17,8 +17,7 @@ html, body, #root {
   position: absolute;
   overflow: hidden;
   cursor: pointer;
-  /* Animate color changes when layer switches */
-  transition: background-color 0.38s ease, opacity 0.2s ease, filter 0.15s ease;
+  transition: background-color 0.28s ease, opacity 0.18s ease, filter 0.12s ease;
 }
 .treemap-cell:hover  { filter: brightness(1.2); z-index: 10; }
 .treemap-cell.selected {
@@ -75,3 +74,29 @@ html, body, #root {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #1e293b; }
 ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+
+/* ── Focus-visible ring (keyboard nav) ── */
+:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Detail panel smooth scroll ── */
+.detail-panel-scroll {
+  scroll-behavior: smooth;
+}
+
+/* ── Risk stripe entrance animation ── */
+@keyframes stripeIn {
+  from { opacity: 0; transform: scaleX(0); transform-origin: left; }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+.risk-stripe { animation: stripeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Workers-at-risk progress bar fill animation ── */
+@keyframes fillRight {
+  from { width: 0; }
+}
+.risk-fill { animation: fillRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
