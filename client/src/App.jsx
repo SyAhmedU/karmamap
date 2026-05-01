@@ -13,6 +13,20 @@ import RankingView  from './components/RankingView.jsx'
 import BubbleChart  from './components/BubbleChart.jsx'
 import { totalWorkforceAtYear, occAtYear, TIMELINE_YEARS } from './utils/timeline.js'
 
+function computeAtRisk(data, year, region) {
+  let workers = 0, count = 0
+  for (const s of data.sectors) {
+    for (const o of s.occupations) {
+      const oy  = occAtYear(o, year, region)
+      const dii = o.digitalIntensity ?? null
+      if (oy.aiExposure == null || dii == null) continue
+      const dr = Math.round(oy.aiExposure * dii / 100)
+      if (dr > 55) { workers += (oy.workers || 0); count++ }
+    }
+  }
+  return { workers, count }
+}
+
 export const LAYERS = [
   { id: 'growth',       label: 'Employment Growth',   unit: '%/yr',  desc: '5-year CAGR' },
   { id: 'salary',       label: 'Median Salary',        unit: '₹/mo', desc: 'Monthly median earnings' },
@@ -224,6 +238,26 @@ export default function App() {
       {/* ── Year slider ── */}
       <YearSlider year={year} onYear={setYear} />
 
+      {/* ── Workers at Risk Banner ── */}
+      {(() => {
+        const { workers, count } = computeAtRisk(data, year, region)
+        if (!workers) return null
+        const totalWf = totalWorkforceAtYear(region, year) ?? data.meta.totalWorkforce
+        const pct = ((workers / totalWf) * 100).toFixed(1)
+        const wLabel = region === 'world'
+          ? workers >= 1e9 ? `${(workers/1e9).toFixed(2)}B` : `${(workers/1e6).toFixed(0)}M`
+          : workers >= 1e7 ? `${(workers/1e7).toFixed(1)} Cr` : `${(workers/1e5).toFixed(1)} L`
+        return (
+          <div className="shrink-0 flex items-center gap-3 px-4 py-1.5 bg-rose-950/50 border-b border-rose-900/40 text-[11px]">
+            <span className="inline-block w-2 h-2 rounded-full bg-rose-500 animate-pulse shrink-0" />
+            <span className="text-rose-300 font-bold">{wLabel} workers</span>
+            <span className="text-rose-400/80">({pct}% of workforce)</span>
+            <span className="text-rose-500">·</span>
+            <span className="text-rose-400/70">{count} occupations at HIGH AI displacement risk in {year}</span>
+          </div>
+        )
+      })()}
+
       {/* ── Drill-down breadcrumb ── */}
       {drillName && (
         <div className="flex items-center gap-2 px-4 py-1.5 bg-slate-800/70 border-b border-slate-700 shrink-0">
@@ -307,6 +341,7 @@ export default function App() {
                 region={region}
                 year={year}
                 data={data}
+                worldData={worldData}
                 onClose={() => setSelected(null)}
                 onPivot={({ sector, occupation }) => setSelected({ sector, occupation })}
               />

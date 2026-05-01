@@ -2,7 +2,7 @@ import indiaTL  from '../data/india_timeline.json'
 import worldTL  from '../data/world_timeline.json'
 import statesTL from '../data/states_timeline.json'
 
-export const TIMELINE_YEARS = [2000, 2010, 2020, 2025, 2035, 2050]
+export const TIMELINE_YEARS = [1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020, 2025, 2030, 2035, 2040, 2050]
 
 function lerp(a, b, t) { return a + (b - a) * t }
 

@@ -1,5 +1,99 @@
+import { useState } from 'react'
 import { EXCHANGE_RATE } from '../App.jsx'
 import { occAtYear, getTimelineData, TIMELINE_YEARS } from '../utils/timeline.js'
+
+// India occupation ID → nearest World equivalent ID
+const INDIA_TO_WORLD = {
+  crop_farming:           'crop_farmers',
+  animal_husbandry:       'livestock_dairy',
+  fisheries:              'fisheries_global',
+  agri_labour:            'agri_wage_labour',
+  horticulture:           'crop_farmers',
+  agri_engineers_ext:     'food_scientists_global',
+  construction_workers:   'construction_workers_global',
+  electricians_plumbers:  'skilled_trades_global',
+  construction_supervisors:'civil_engineers_global',
+  civil_engineers:        'civil_engineers_global',
+  real_estate_agents:     'real_estate_global',
+  equipment_operators:    'factory_assembly',
+  architects_india:       'architects_designers',
+  retail_workers:         'retail_workers_global',
+  restaurant_hotel:       'chefs_restaurant_global',
+  wholesale_trade:        'wholesale_distribution_global',
+  ecommerce:              'ecommerce_global',
+  gig_delivery:           'ride_gig_global',
+  tourism_travel:         'tour_guides_travel',
+  street_vendors:         'street_informal_trade',
+  garment_textile:        'garment_textile_global',
+  food_processing:        'food_beverage_mfg',
+  automobile:             'auto_engineering_global',
+  electronics:            'electronics_global',
+  chemical_pharma:        'pharma_chemical_global',
+  msme_workers:           'factory_assembly',
+  ev_battery_workers:     'electronics_global',
+  defence_manufacturing:  'aerospace_mfg_global',
+  software_engineers:     'software_engineers_global',
+  it_support_bpo:         'it_support_bpo_global',
+  data_scientists:        'data_analysts_global',
+  cybersecurity:          'cybersecurity_global',
+  cloud_devops:           'cloud_devops_global',
+  ai_ml_engineers:        'ai_ml_global',
+  product_managers:       'consultants_mgmt',
+  ui_ux_designers:        'architects_designers',
+  hardware_network_eng:   'cloud_devops_global',
+  school_teachers:        'school_teachers_global',
+  college_faculty:        'higher_ed_global',
+  edtech_professionals:   'edtech_global',
+  private_tutors:         'school_teachers_global',
+  doctors:                'doctors_global',
+  nurses:                 'nurses_global',
+  pharmacists:            'biotech_researchers_global',
+  paramedics:             'community_health_global',
+  asha_workers:           'community_health_global',
+  hospital_admin:         'civil_servants_global',
+  ayush_practitioners:    'community_health_global',
+  mental_health_workers:  'mental_health_global',
+  truck_drivers:          'truck_drivers_global',
+  auto_taxi_drivers:      'ride_gig_global',
+  railway_staff:          'logistics_warehouse_global',
+  logistics_warehouse:    'logistics_warehouse_global',
+  aviation:               'aviation_global',
+  postal_courier:         'logistics_warehouse_global',
+  metro_urban_transit:    'logistics_warehouse_global',
+  bank_employees:         'bank_employees_global',
+  insurance:              'insurance_global',
+  fintech_professionals:  'fintech_global',
+  chartered_accountants:  'accounting_audit_global',
+  stock_brokers:          'investment_advisors_global',
+  microfinance:           'bank_employees_global',
+  mutual_fund_agents:     'investment_advisors_global',
+  civil_servants:         'civil_servants_global',
+  police_paramilitary:    'police_military_global',
+  municipal_workers:      'civil_servants_global',
+  psu_employees:          'civil_servants_global',
+  armed_forces:           'police_military_global',
+  domestic_workers:       'domestic_workers_global',
+  security_guards:        'security_services_global',
+  beauty_wellness:        'beauty_fitness_global',
+  sanitation_waste:       'community_health_global',
+  gig_home_services:      'ride_gig_global',
+  film_entertainment:     'journalists_media_global',
+  digital_creators:       'marketing_advertising_global',
+  journalists:            'journalists_media_global',
+  advertising_marketing:  'marketing_advertising_global',
+  gaming_esports:         'software_engineers_global',
+  coal_miners:            'mining_workers_global',
+  stone_quarry:           'mining_workers_global',
+  mining_engineers:       'mining_workers_global',
+  oil_gas_workers:        'fossil_fuel_workers',
+  mineral_processing:     'mining_workers_global',
+  critical_minerals_workers:'mining_workers_global',
+  power_utility:          'utility_grid_workers',
+  renewable_energy:       'renewable_energy_global',
+  water_sanitation_utility:'utility_grid_workers',
+  gas_distribution:       'fossil_fuel_workers',
+  nuclear_energy_workers: 'nuclear_global',
+}
 
 function getPivots(occ, occY, data, year, region) {
   if ((occY.aiExposure ?? 0) < 52) return []
@@ -96,7 +190,11 @@ function Sparkline({ values, color = '#38bdf8', nowIdx = 3, width = 230, height 
   )
 }
 
-export default function DetailPanel({ sector, occupation: occ, currency, region, year = 2025, onClose, data, onPivot }) {
+export default function DetailPanel({ sector, occupation: occ, currency, region, year = 2025, onClose, data, worldData, onPivot }) {
+  const [outlook, setOutlook]           = useState(null)
+  const [outlookLoading, setLoading]    = useState(false)
+  const [outlookError, setOutlookError] = useState(null)
+
   if (!occ) return null
 
   const occY             = { ...occ, ...occAtYear(occ, year, region) }
@@ -106,6 +204,50 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
   const digitalColor     = dii == null ? 'slate' : dii > 70 ? 'blue' : dii > 40 ? 'amber' : 'slate'
   const displacementRisk = (occY.aiExposure != null && dii != null) ? Math.round(occY.aiExposure * dii / 100) : null
   const drColor          = displacementRisk == null ? 'slate' : displacementRisk > 55 ? 'red' : displacementRisk > 28 ? 'amber' : 'green'
+
+  async function fetchOutlook() {
+    setLoading(true); setOutlookError(null); setOutlook(null)
+    try {
+      const res = await fetch('/api/outlook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          occupation: occ.name,
+          sector: sector.name,
+          region,
+          metrics: {
+            aiExposure:       occY.aiExposure,
+            digitalIntensity: dii,
+            displacementRisk: displacementRisk,
+            growthPct:        occY.growthPct,
+            workers:          occY.workers,
+            salaryINR:        occY.medianSalaryINR,
+            salaryUSD:        occY.medianSalaryUSD,
+          },
+        }),
+      })
+      if (!res.ok) throw new Error(await res.text())
+      setOutlook(await res.json())
+    } catch (e) {
+      setOutlookError(e.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // India vs World comparison
+  const worldOccId = region === 'india' ? INDIA_TO_WORLD[occ.id] : null
+  let worldComp = null
+  if (worldOccId && worldData) {
+    for (const s of worldData.sectors) {
+      const wo = s.occupations.find(o => o.id === worldOccId)
+      if (wo) {
+        const woy = occAtYear(wo, year, 'world')
+        worldComp = { occ: wo, occY: woy, sector: s }
+        break
+      }
+    }
+  }
 
   // Sparkline data from timeline anchors
   const pivots = (data && onPivot) ? getPivots(occ, occY, data, year, region) : []
@@ -293,6 +435,140 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
             ? 'Moderate exposure. AI will augment rather than replace, but upskilling in digital tools is essential over the next 5 years.'
             : 'Low automation risk. Roles require physical dexterity, human judgment, or regulatory oversight that AI cannot easily replicate.'}
         </p>
+      </div>
+
+      {/* India vs World Comparison */}
+      {worldComp && (
+        <div className="p-4 border-b border-slate-800">
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-3">India vs World</p>
+          <p className="text-slate-600 text-[9px] mb-3">Closest global equivalent: <span className="text-slate-400 font-semibold">{worldComp.occ.name}</span></p>
+          <div className="space-y-2">
+            {[
+              {
+                label: 'AI Exposure',
+                india: occY.aiExposure,
+                world: worldComp.occY.aiExposure,
+                fmt: v => `${v}/100`,
+                barColor: v => v > 60 ? '#f87171' : v > 35 ? '#fbbf24' : '#34d399',
+              },
+              {
+                label: 'Growth/yr',
+                india: occY.growthPct,
+                world: worldComp.occY.growthPct,
+                fmt: v => `${v > 0 ? '+' : ''}${v}%`,
+                barColor: v => v < 0 ? '#f87171' : v < 3 ? '#fbbf24' : '#34d399',
+              },
+              {
+                label: 'Education (yrs)',
+                india: occY.educationYears,
+                world: worldComp.occY.educationYears,
+                fmt: v => `${v} yrs`,
+                barColor: () => '#818cf8',
+              },
+              {
+                label: 'Salary (USD/mo)',
+                india: occY.medianSalaryINR != null ? Math.round(occY.medianSalaryINR / EXCHANGE_RATE) : occY.medianSalaryUSD,
+                world: worldComp.occY.medianSalaryUSD,
+                fmt: v => v >= 1000 ? `$${(v/1000).toFixed(1)}K` : `$${v}`,
+                barColor: () => '#a78bfa',
+              },
+            ].filter(r => r.india != null && r.world != null).map(row => {
+              const maxVal = Math.max(Math.abs(row.india), Math.abs(row.world), 1)
+              const iPct = Math.min(Math.abs(row.india) / maxVal * 100, 100)
+              const wPct = Math.min(Math.abs(row.world) / maxVal * 100, 100)
+              return (
+                <div key={row.label}>
+                  <div className="flex justify-between text-[9px] text-slate-500 mb-0.5">
+                    <span>{row.label}</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <div className="flex justify-between text-[9px] mb-0.5">
+                        <span className="text-orange-400 font-bold">IN</span>
+                        <span className="text-slate-300 tabular-nums">{row.fmt(row.india)}</span>
+                      </div>
+                      <div className="h-1 rounded-full bg-slate-800">
+                        <div className="h-full rounded-full" style={{ width: `${iPct}%`, background: row.barColor(row.india) }} />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-[9px] mb-0.5">
+                        <span className="text-blue-400 font-bold">WLD</span>
+                        <span className="text-slate-300 tabular-nums">{row.fmt(row.world)}</span>
+                      </div>
+                      <div className="h-1 rounded-full bg-slate-800">
+                        <div className="h-full rounded-full" style={{ width: `${wPct}%`, background: row.barColor(row.world) }} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* 2035 AI Outlook */}
+      <div className="p-4 border-b border-slate-800">
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">2035 AI Outlook</p>
+          {!outlook && !outlookLoading && (
+            <button
+              onClick={fetchOutlook}
+              className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-violet-800/60 text-violet-300 hover:bg-violet-700/60 transition-colors border border-violet-700/40"
+            >
+              ✦ Generate
+            </button>
+          )}
+          {outlook && (
+            <button
+              onClick={fetchOutlook}
+              className="text-[9px] text-slate-600 hover:text-slate-400 transition-colors"
+            >
+              ↻ Refresh
+            </button>
+          )}
+        </div>
+
+        {outlookLoading && (
+          <div className="flex items-center gap-2 text-slate-500 text-[11px]">
+            <span className="inline-block w-3 h-3 border-2 border-violet-500 border-t-transparent rounded-full animate-spin" />
+            Asking Claude about {year}→2035…
+          </div>
+        )}
+
+        {outlookError && (
+          <p className="text-rose-400 text-[10px]">Error: {outlookError}</p>
+        )}
+
+        {outlook && !outlookLoading && (() => {
+          const verdictStyle = {
+            THRIVING:  { bg: 'bg-emerald-900/50', text: 'text-emerald-300', border: 'border-emerald-700/40' },
+            STABLE:    { bg: 'bg-sky-900/50',     text: 'text-sky-300',     border: 'border-sky-700/40'     },
+            AT_RISK:   { bg: 'bg-amber-900/50',   text: 'text-amber-300',   border: 'border-amber-700/40'   },
+            DISRUPTED: { bg: 'bg-rose-900/50',    text: 'text-rose-300',    border: 'border-rose-700/40'    },
+          }[outlook.verdict] ?? { bg: 'bg-slate-800', text: 'text-slate-300', border: 'border-slate-700' }
+
+          return (
+            <div className={`rounded-xl p-3 border ${verdictStyle.bg} ${verdictStyle.border}`}>
+              <div className="flex items-center gap-2 mb-2">
+                <span className={`text-[9px] font-black px-2 py-0.5 rounded-full border ${verdictStyle.text} ${verdictStyle.bg} ${verdictStyle.border}`}>
+                  {outlook.verdict}
+                </span>
+                <p className={`text-[11px] font-bold leading-tight ${verdictStyle.text}`}>{outlook.headline}</p>
+              </div>
+              <p className="text-slate-300 text-[11px] leading-relaxed mb-2">{outlook.detail}</p>
+              <div className="pt-2 border-t border-slate-700/50">
+                <p className="text-[9px] text-slate-500 uppercase tracking-widest font-bold mb-1">Action for workers today</p>
+                <p className="text-slate-400 text-[10px] leading-relaxed italic">"{outlook.workerAdvice}"</p>
+              </div>
+            </div>
+          )
+        })()}
+
+        {!outlook && !outlookLoading && !outlookError && (
+          <p className="text-slate-600 text-[10px]">Click Generate to get a Claude-powered forecast for this occupation's 2035 outlook.</p>
+        )}
       </div>
 
       {/* Sources */}
