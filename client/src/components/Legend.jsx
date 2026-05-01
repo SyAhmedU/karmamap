@@ -16,6 +16,11 @@ const CONFIGS = {
     gradient: 'linear-gradient(to right, #14532d, #f59e0b, #ef4444)',
     min: '0 — Safe', max: '100 — High risk',
   },
+  digital: {
+    title: 'Digital Intensity Index',
+    gradient: 'linear-gradient(to right, #44403c, #0e7490, #06b6d4)',
+    min: '0 — Fully physical', max: '100 — Fully digital',
+  },
   informality: {
     title: 'Informal Employment (%)',
     gradient: 'linear-gradient(to right, #0f4c75, #9b1c1c)',

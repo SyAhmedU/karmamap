@@ -5,6 +5,7 @@ const ICONS = {
   salary:      '💰',
   education:   '🎓',
   ai:          '🤖',
+  digital:     '💻',
   informality: '🏗️',
   gender:      '⚧',
 }
@@ -14,6 +15,7 @@ const COLORS = {
   salary:      'bg-sky-600 text-white',
   education:   'bg-violet-600 text-white',
   ai:          'bg-rose-600 text-white',
+  digital:     'bg-cyan-600 text-white',
   informality: 'bg-orange-700 text-white',
   gender:      'bg-fuchsia-700 text-white',
 }

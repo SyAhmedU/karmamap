@@ -37,6 +37,13 @@ function aiColor(v) {
   return lerp('#14532d', '#ef4444', t)
 }
 
+// Digital Intensity: low (stone) → high (cyan)
+function digitalColor(v) {
+  const t = Math.min(v / 100, 1)
+  if (t <= 0.5) return lerp('#44403c', '#0e7490', t * 2)
+  return lerp('#0e7490', '#06b6d4', (t - 0.5) * 2)
+}
+
 // Diverging: formal (0%) = #0f4c75, midpoint (50%) = #4a4a55, informal (100%) = #9b1c1c
 function informalityColor(v) {
   const t = Math.min(v / 100, 1)
@@ -61,6 +68,7 @@ export function getColor(occupation, layer) {
     case 'salary':      return salaryColor(salaryUSD(occupation))
     case 'education':   return educationColor(occupation.educationYears)
     case 'ai':          return aiColor(occupation.aiExposure)
+    case 'digital':     return digitalColor(occupation.digitalIntensity ?? 50)
     case 'informality': return informalityColor(occupation.informalityPct ?? 50)
     case 'gender':      return genderColor(occupation.femalePct ?? 30)
     default:            return '#334155'

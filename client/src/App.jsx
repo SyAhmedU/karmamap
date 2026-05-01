@@ -18,6 +18,7 @@ export const LAYERS = [
   { id: 'salary',       label: 'Median Salary',        unit: '₹/mo', desc: 'Monthly median earnings' },
   { id: 'education',    label: 'Education Required',   unit: 'years', desc: 'Formal education years' },
   { id: 'ai',           label: 'AI Exposure',          unit: '/100',  desc: 'Automation risk score' },
+  { id: 'digital',      label: 'Digital Intensity',    unit: '/100',  desc: 'Degree of workflow digitalisation' },
   { id: 'informality',  label: 'Informality',          unit: '%',     desc: '% workers in informal employment' },
   { id: 'gender',       label: 'Female Participation', unit: '% ♀',  desc: '% female workers' },
 ]
@@ -44,11 +45,13 @@ function parseHash() {
 
 // ── CSV export ─────────────────────────────────────────────────────────────────
 function exportCSV(data, year, region) {
-  const headers = ['Occupation','Sector','Workers','Growth %','Salary INR','Salary USD','AI Exposure','Education Yrs','Informality %','Female %','ISCO Code']
+  const headers = ['Occupation','Sector','Workers','Growth %','Salary INR','Salary USD','AI Exposure','Digital Intensity','AI Displacement Risk','Education Yrs','Informality %','Female %','ISCO Code']
   const rows = data.sectors.flatMap(s =>
     s.occupations.map(o => {
-      const oy = occAtYear(o, year, region)
-      return [`"${o.name}"`,`"${s.name}"`,oy.workers??'',oy.growthPct??'',oy.medianSalaryINR??'',oy.medianSalaryUSD??'',oy.aiExposure??'',oy.educationYears??'',o.informalityPct??'',o.femalePct??'',o.iscoCode??''].join(',')
+      const oy  = occAtYear(o, year, region)
+      const dii = o.digitalIntensity ?? ''
+      const dr  = (oy.aiExposure != null && o.digitalIntensity != null) ? Math.round(oy.aiExposure * o.digitalIntensity / 100) : ''
+      return [`"${o.name}"`,`"${s.name}"`,oy.workers??'',oy.growthPct??'',oy.medianSalaryINR??'',oy.medianSalaryUSD??'',oy.aiExposure??'',dii,dr,oy.educationYears??'',o.informalityPct??'',o.femalePct??'',o.iscoCode??''].join(',')
     })
   )
   const blob = new Blob([[headers.join(','), ...rows].join('\n')], { type: 'text/csv' })

@@ -47,7 +47,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "6111",
-          "shortLabel": "Crop Farming"
+          "shortLabel": "Crop Farming",
+          "digitalIntensity": 8
         },
         {
           "id": "animal_husbandry",
@@ -72,7 +73,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "6121",
-          "shortLabel": "Animal Husb."
+          "shortLabel": "Animal Husb.",
+          "digitalIntensity": 10
         },
         {
           "id": "fisheries",
@@ -97,7 +99,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "6141",
-          "shortLabel": "Fisheries"
+          "shortLabel": "Fisheries",
+          "digitalIntensity": 12
         },
         {
           "id": "agri_labour",
@@ -122,7 +125,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "9211",
-          "shortLabel": "Agri Labour"
+          "shortLabel": "Agri Labour",
+          "digitalIntensity": 5
         },
         {
           "id": "horticulture",
@@ -147,7 +151,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "6113",
-          "shortLabel": "Horticulture"
+          "shortLabel": "Horticulture",
+          "digitalIntensity": 15
         },
         {
           "id": "agri_engineers_ext",
@@ -172,7 +177,8 @@
             "ICAR Annual Report 2023-24",
             "MoA&FW Digital Agriculture Mission 2024 — 3Cr farmers enrolled on AGRI STACK"
           ],
-          "shortLabel": "Agri-Tech"
+          "shortLabel": "Agri-Tech",
+          "digitalIntensity": 62
         }
       ],
       "shortName": "Agriculture"
@@ -214,7 +220,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "7112",
-          "shortLabel": "Construction"
+          "shortLabel": "Construction",
+          "digitalIntensity": 10
         },
         {
           "id": "electricians_plumbers",
@@ -239,7 +246,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "7411",
-          "shortLabel": "Electricians"
+          "shortLabel": "Electricians",
+          "digitalIntensity": 22
         },
         {
           "id": "construction_supervisors",
@@ -264,7 +272,8 @@
           ],
           "wageDecile": 5,
           "iscoCode": "3123",
-          "shortLabel": "Site Supvrs"
+          "shortLabel": "Site Supvrs",
+          "digitalIntensity": 45
         },
         {
           "id": "civil_engineers",
@@ -289,7 +298,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "2142",
-          "shortLabel": "Civil Eng."
+          "shortLabel": "Civil Eng.",
+          "digitalIntensity": 78
         },
         {
           "id": "real_estate_agents",
@@ -314,7 +324,8 @@
           ],
           "wageDecile": 6,
           "iscoCode": "3334",
-          "shortLabel": "Real Estate"
+          "shortLabel": "Real Estate",
+          "digitalIntensity": 60
         },
         {
           "id": "equipment_operators",
@@ -339,7 +350,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "8342",
-          "shortLabel": "Equip. Ops."
+          "shortLabel": "Equip. Ops.",
+          "digitalIntensity": 20
         },
         {
           "id": "architects_india",
@@ -364,7 +376,8 @@
             "Council of Architecture Annual Report 2023-24 — 1.35L registered architects",
             "Smart Cities Mission Progress Report FY24, MoHUA"
           ],
-          "shortLabel": "Architects"
+          "shortLabel": "Architects",
+          "digitalIntensity": 82
         }
       ],
       "shortName": "Construction"
@@ -407,7 +420,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "5223",
-          "shortLabel": "Retail"
+          "shortLabel": "Retail",
+          "digitalIntensity": 35
         },
         {
           "id": "restaurant_hotel",
@@ -433,7 +447,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "5120",
-          "shortLabel": "Restaurants"
+          "shortLabel": "Restaurants",
+          "digitalIntensity": 22
         },
         {
           "id": "wholesale_trade",
@@ -458,7 +473,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "4311",
-          "shortLabel": "Wholesale"
+          "shortLabel": "Wholesale",
+          "digitalIntensity": 55
         },
         {
           "id": "ecommerce",
@@ -484,7 +500,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "4321",
-          "shortLabel": "E-commerce"
+          "shortLabel": "E-commerce",
+          "digitalIntensity": 72
         },
         {
           "id": "gig_delivery",
@@ -509,7 +526,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "9333",
-          "shortLabel": "Gig Delivery"
+          "shortLabel": "Gig Delivery",
+          "digitalIntensity": 40
         },
         {
           "id": "tourism_travel",
@@ -534,7 +552,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "4221",
-          "shortLabel": "Tourism"
+          "shortLabel": "Tourism",
+          "digitalIntensity": 58
         },
         {
           "id": "street_vendors",
@@ -559,7 +578,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "5244",
-          "shortLabel": "Street Vendors"
+          "shortLabel": "Street Vendors",
+          "digitalIntensity": 5
         }
       ],
       "shortName": "Trade"
@@ -602,7 +622,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "7531",
-          "shortLabel": "Garments"
+          "shortLabel": "Garments",
+          "digitalIntensity": 18
         },
         {
           "id": "food_processing",
@@ -627,7 +648,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "7512",
-          "shortLabel": "Food Proc."
+          "shortLabel": "Food Proc.",
+          "digitalIntensity": 22
         },
         {
           "id": "automobile",
@@ -652,7 +674,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "7231",
-          "shortLabel": "Automobile"
+          "shortLabel": "Automobile",
+          "digitalIntensity": 42
         },
         {
           "id": "electronics",
@@ -677,7 +700,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "7421",
-          "shortLabel": "Electronics"
+          "shortLabel": "Electronics",
+          "digitalIntensity": 40
         },
         {
           "id": "chemical_pharma",
@@ -702,7 +726,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "3131",
-          "shortLabel": "Chemicals"
+          "shortLabel": "Chemicals",
+          "digitalIntensity": 48
         },
         {
           "id": "msme_workers",
@@ -727,7 +752,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "7223",
-          "shortLabel": "MSME Workers"
+          "shortLabel": "MSME Workers",
+          "digitalIntensity": 20
         },
         {
           "id": "craft_artisans",
@@ -752,7 +778,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "7319",
-          "shortLabel": "Artisans"
+          "shortLabel": "Artisans",
+          "digitalIntensity": 10
         },
         {
           "id": "ev_battery_workers",
@@ -778,7 +805,8 @@
             "NITI Aayog India EV Policy Roadmap 2024",
             "PLI ACEMA Scheme Progress Report FY24, MHI"
           ],
-          "shortLabel": "EV/Battery"
+          "shortLabel": "EV/Battery",
+          "digitalIntensity": 48
         },
         {
           "id": "defence_manufacturing",
@@ -803,7 +831,8 @@
             "MoD Annual Report 2023-24",
             "SIDM (Society of Indian Defence Manufacturers) Defence Export Report 2024"
           ],
-          "shortLabel": "Defence Mfg"
+          "shortLabel": "Defence Mfg",
+          "digitalIntensity": 55
         }
       ],
       "shortName": "Manufacturing"
@@ -846,7 +875,8 @@
           ],
           "wageDecile": 9,
           "iscoCode": "2512",
-          "shortLabel": "Software Dev"
+          "shortLabel": "Software Dev",
+          "digitalIntensity": 97
         },
         {
           "id": "it_support_bpo",
@@ -871,7 +901,8 @@
           ],
           "wageDecile": 6,
           "iscoCode": "4222",
-          "shortLabel": "IT Support/BPO"
+          "shortLabel": "IT Support/BPO",
+          "digitalIntensity": 88
         },
         {
           "id": "data_scientists",
@@ -897,7 +928,8 @@
           ],
           "wageDecile": 9,
           "iscoCode": "2120",
-          "shortLabel": "Data Science"
+          "shortLabel": "Data Science",
+          "digitalIntensity": 95
         },
         {
           "id": "cybersecurity",
@@ -922,7 +954,8 @@
           ],
           "wageDecile": 9,
           "iscoCode": "2512",
-          "shortLabel": "Cybersecurity"
+          "shortLabel": "Cybersecurity",
+          "digitalIntensity": 95
         },
         {
           "id": "cloud_devops",
@@ -948,7 +981,8 @@
           ],
           "wageDecile": 9,
           "iscoCode": "2514",
-          "shortLabel": "Cloud/DevOps"
+          "shortLabel": "Cloud/DevOps",
+          "digitalIntensity": 97
         },
         {
           "id": "ai_ml_engineers",
@@ -974,7 +1008,8 @@
           ],
           "wageDecile": 10,
           "iscoCode": "2120",
-          "shortLabel": "AI/ML Eng."
+          "shortLabel": "AI/ML Eng.",
+          "digitalIntensity": 98
         },
         {
           "id": "product_managers",
@@ -999,7 +1034,8 @@
           ],
           "wageDecile": 9,
           "iscoCode": "1221",
-          "shortLabel": "Product Mgrs"
+          "shortLabel": "Product Mgrs",
+          "digitalIntensity": 92
         },
         {
           "id": "ui_ux_designers",
@@ -1024,7 +1060,8 @@
           ],
           "wageDecile": 8,
           "iscoCode": "2166",
-          "shortLabel": "UI/UX Design"
+          "shortLabel": "UI/UX Design",
+          "digitalIntensity": 92
         },
         {
           "id": "hardware_network_eng",
@@ -1049,7 +1086,8 @@
             "NASSCOM Strategic Review 2025 — hardware/networking segment",
             "DoT Telecom Sector Report 2024 — 2.6M telecom workforce"
           ],
-          "shortLabel": "HW/Network"
+          "shortLabel": "HW/Network",
+          "digitalIntensity": 80
         }
       ],
       "shortName": "IT & Tech"
@@ -1090,7 +1128,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "2330",
-          "shortLabel": "Teachers"
+          "shortLabel": "Teachers",
+          "digitalIntensity": 52
         },
         {
           "id": "college_faculty",
@@ -1115,7 +1154,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "2310",
-          "shortLabel": "Professors"
+          "shortLabel": "Professors",
+          "digitalIntensity": 62
         },
         {
           "id": "edtech_professionals",
@@ -1140,7 +1180,8 @@
           ],
           "wageDecile": 6,
           "iscoCode": "2359",
-          "shortLabel": "EdTech"
+          "shortLabel": "EdTech",
+          "digitalIntensity": 88
         },
         {
           "id": "private_tutors",
@@ -1165,7 +1206,8 @@
             "ASSOCHAM India Coaching Sector Report 2024 (₹7.1L cr market)",
             "NSSO 75th Round Education Survey (private tutoring prevalence)"
           ],
-          "shortLabel": "Tutors"
+          "shortLabel": "Tutors",
+          "digitalIntensity": 45
         }
       ],
       "shortName": "Education"
@@ -1208,7 +1250,8 @@
           ],
           "wageDecile": 9,
           "iscoCode": "2211",
-          "shortLabel": "Doctors"
+          "shortLabel": "Doctors",
+          "digitalIntensity": 62
         },
         {
           "id": "nurses",
@@ -1233,7 +1276,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "2221",
-          "shortLabel": "Nurses"
+          "shortLabel": "Nurses",
+          "digitalIntensity": 45
         },
         {
           "id": "pharmacists",
@@ -1258,7 +1302,8 @@
           ],
           "wageDecile": 6,
           "iscoCode": "2262",
-          "shortLabel": "Pharmacists"
+          "shortLabel": "Pharmacists",
+          "digitalIntensity": 58
         },
         {
           "id": "paramedics",
@@ -1283,7 +1328,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "3212",
-          "shortLabel": "Paramedics"
+          "shortLabel": "Paramedics",
+          "digitalIntensity": 50
         },
         {
           "id": "asha_workers",
@@ -1308,7 +1354,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "3253",
-          "shortLabel": "ASHA Workers"
+          "shortLabel": "ASHA Workers",
+          "digitalIntensity": 18
         },
         {
           "id": "hospital_admin",
@@ -1333,7 +1380,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "1342",
-          "shortLabel": "Hospital Admin"
+          "shortLabel": "Hospital Admin",
+          "digitalIntensity": 78
         },
         {
           "id": "ayush_practitioners",
@@ -1358,7 +1406,8 @@
             "AYUSH Ministry Annual Report 2023-24 — 9.42L registered practitioners",
             "PLFS 2023-24 healthcare other"
           ],
-          "shortLabel": "AYUSH Prctrs"
+          "shortLabel": "AYUSH Prctrs",
+          "digitalIntensity": 22
         },
         {
           "id": "mental_health_workers",
@@ -1383,7 +1432,8 @@
             "WHO Mental Health Atlas 2023 — India data",
             "NIMHANS Mental Health Report 2024"
           ],
-          "shortLabel": "Mental Health"
+          "shortLabel": "Mental Health",
+          "digitalIntensity": 55
         }
       ],
       "shortName": "Healthcare"
@@ -1425,7 +1475,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "8332",
-          "shortLabel": "Truck Drivers"
+          "shortLabel": "Truck Drivers",
+          "digitalIntensity": 25
         },
         {
           "id": "auto_taxi_drivers",
@@ -1451,7 +1502,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "8322",
-          "shortLabel": "Auto/Taxi"
+          "shortLabel": "Auto/Taxi",
+          "digitalIntensity": 35
         },
         {
           "id": "railway_staff",
@@ -1476,7 +1528,8 @@
           ],
           "wageDecile": 5,
           "iscoCode": "8311",
-          "shortLabel": "Railways"
+          "shortLabel": "Railways",
+          "digitalIntensity": 42
         },
         {
           "id": "logistics_warehouse",
@@ -1501,7 +1554,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "4321",
-          "shortLabel": "Logistics"
+          "shortLabel": "Logistics",
+          "digitalIntensity": 52
         },
         {
           "id": "aviation",
@@ -1526,7 +1580,8 @@
           ],
           "wageDecile": 8,
           "iscoCode": "3153",
-          "shortLabel": "Aviation"
+          "shortLabel": "Aviation",
+          "digitalIntensity": 72
         },
         {
           "id": "postal_courier",
@@ -1551,7 +1606,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "4412",
-          "shortLabel": "Post/Courier"
+          "shortLabel": "Post/Courier",
+          "digitalIntensity": 48
         },
         {
           "id": "metro_urban_transit",
@@ -1576,7 +1632,8 @@
             "Ministry of Housing & Urban Affairs Metro Rail Report 2024",
             "DMRC Annual Report 2023-24 — 14,500 employees"
           ],
-          "shortLabel": "Metro Transit"
+          "shortLabel": "Metro Transit",
+          "digitalIntensity": 45
         }
       ],
       "shortName": "Transport"
@@ -1619,7 +1676,8 @@
           ],
           "wageDecile": 6,
           "iscoCode": "3312",
-          "shortLabel": "Banking"
+          "shortLabel": "Banking",
+          "digitalIntensity": 82
         },
         {
           "id": "insurance",
@@ -1644,7 +1702,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "3321",
-          "shortLabel": "Insurance"
+          "shortLabel": "Insurance",
+          "digitalIntensity": 62
         },
         {
           "id": "fintech_professionals",
@@ -1670,7 +1729,8 @@
           ],
           "wageDecile": 8,
           "iscoCode": "2413",
-          "shortLabel": "FinTech"
+          "shortLabel": "FinTech",
+          "digitalIntensity": 95
         },
         {
           "id": "chartered_accountants",
@@ -1695,7 +1755,8 @@
           ],
           "wageDecile": 8,
           "iscoCode": "2411",
-          "shortLabel": "CAs/Auditors"
+          "shortLabel": "CAs/Auditors",
+          "digitalIntensity": 85
         },
         {
           "id": "stock_brokers",
@@ -1720,7 +1781,8 @@
           ],
           "wageDecile": 8,
           "iscoCode": "3311",
-          "shortLabel": "Stock Brokers"
+          "shortLabel": "Stock Brokers",
+          "digitalIntensity": 85
         },
         {
           "id": "microfinance",
@@ -1745,7 +1807,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "3312",
-          "shortLabel": "Microfinance"
+          "shortLabel": "Microfinance",
+          "digitalIntensity": 45
         },
         {
           "id": "mutual_fund_agents",
@@ -1770,7 +1833,8 @@
             "AMFI India Annual Report 2023-24 — 1.57L ARN holders",
             "SEBI Annual Report 2023-24 — AUM ₹63L cr"
           ],
-          "shortLabel": "MF Agents"
+          "shortLabel": "MF Agents",
+          "digitalIntensity": 62
         }
       ],
       "shortName": "Finance"
@@ -1812,7 +1876,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "1111",
-          "shortLabel": "Civil Servants"
+          "shortLabel": "Civil Servants",
+          "digitalIntensity": 58
         },
         {
           "id": "police_paramilitary",
@@ -1837,7 +1902,8 @@
           ],
           "wageDecile": 5,
           "iscoCode": "5411",
-          "shortLabel": "Police/Forces"
+          "shortLabel": "Police/Forces",
+          "digitalIntensity": 22
         },
         {
           "id": "municipal_workers",
@@ -1862,7 +1928,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "9121",
-          "shortLabel": "Municipal"
+          "shortLabel": "Municipal",
+          "digitalIntensity": 18
         },
         {
           "id": "psu_employees",
@@ -1887,7 +1954,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "2141",
-          "shortLabel": "PSU Workers"
+          "shortLabel": "PSU Workers",
+          "digitalIntensity": 55
         },
         {
           "id": "armed_forces",
@@ -1912,7 +1980,8 @@
             "Ministry of Defence Annual Report 2023-24",
             "IISS Military Balance 2024 — India active forces 1.45M"
           ],
-          "shortLabel": "Armed Forces"
+          "shortLabel": "Armed Forces",
+          "digitalIntensity": 20
         }
       ],
       "shortName": "Government"
@@ -1954,7 +2023,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "9111",
-          "shortLabel": "Domestic Work"
+          "shortLabel": "Domestic Work",
+          "digitalIntensity": 5
         },
         {
           "id": "security_guards",
@@ -1979,7 +2049,8 @@
           ],
           "wageDecile": 2,
           "iscoCode": "5414",
-          "shortLabel": "Security"
+          "shortLabel": "Security",
+          "digitalIntensity": 22
         },
         {
           "id": "beauty_wellness",
@@ -2004,7 +2075,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "5141",
-          "shortLabel": "Beauty/Well."
+          "shortLabel": "Beauty/Well.",
+          "digitalIntensity": 20
         },
         {
           "id": "sanitation_waste",
@@ -2029,7 +2101,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "9121",
-          "shortLabel": "Sanitation"
+          "shortLabel": "Sanitation",
+          "digitalIntensity": 8
         },
         {
           "id": "gig_home_services",
@@ -2054,7 +2127,8 @@
             "Urban Company DRHP 2024 — 50K+ partner professionals",
             "NITI Aayog Gig Economy Report 2022 (home services sub-segment)"
           ],
-          "shortLabel": "Home Services"
+          "shortLabel": "Home Services",
+          "digitalIntensity": 35
         }
       ],
       "shortName": "Personal Svcs"
@@ -2096,7 +2170,8 @@
           ],
           "wageDecile": 5,
           "iscoCode": "2654",
-          "shortLabel": "Film/OTT"
+          "shortLabel": "Film/OTT",
+          "digitalIntensity": 75
         },
         {
           "id": "digital_creators",
@@ -2122,7 +2197,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "2166",
-          "shortLabel": "Creators"
+          "shortLabel": "Creators",
+          "digitalIntensity": 88
         },
         {
           "id": "journalists",
@@ -2148,7 +2224,8 @@
           ],
           "wageDecile": 5,
           "iscoCode": "2641",
-          "shortLabel": "Journalism"
+          "shortLabel": "Journalism",
+          "digitalIntensity": 82
         },
         {
           "id": "advertising_marketing",
@@ -2173,7 +2250,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "2431",
-          "shortLabel": "Marketing"
+          "shortLabel": "Marketing",
+          "digitalIntensity": 85
         },
         {
           "id": "gaming_esports",
@@ -2198,7 +2276,8 @@
             "FICCI-EY M&E Report 2024 — ₹28K cr gaming",
             "MIB AVGC Promotion Task Force Report 2024 (₹21K cr AVGC industry)"
           ],
-          "shortLabel": "Gaming/Esports"
+          "shortLabel": "Gaming/Esports",
+          "digitalIntensity": 92
         }
       ],
       "shortName": "Creative"
@@ -2240,7 +2319,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "8111",
-          "shortLabel": "Coal Mining"
+          "shortLabel": "Coal Mining",
+          "digitalIntensity": 22
         },
         {
           "id": "stone_quarry",
@@ -2265,7 +2345,8 @@
           ],
           "wageDecile": 1,
           "iscoCode": "8111",
-          "shortLabel": "Quarrying"
+          "shortLabel": "Quarrying",
+          "digitalIntensity": 8
         },
         {
           "id": "mining_engineers",
@@ -2290,7 +2371,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "2151",
-          "shortLabel": "Mining Eng."
+          "shortLabel": "Mining Eng.",
+          "digitalIntensity": 70
         },
         {
           "id": "oil_gas_workers",
@@ -2315,7 +2397,8 @@
           ],
           "wageDecile": 7,
           "iscoCode": "8111",
-          "shortLabel": "Oil & Gas"
+          "shortLabel": "Oil & Gas",
+          "digitalIntensity": 58
         },
         {
           "id": "mineral_processing",
@@ -2340,7 +2423,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "8121",
-          "shortLabel": "Minerals"
+          "shortLabel": "Minerals",
+          "digitalIntensity": 25
         },
         {
           "id": "critical_minerals_workers",
@@ -2365,7 +2449,8 @@
             "Ministry of Mines Critical Minerals Strategy 2024",
             "KABIL (Khanij Bidesh India Ltd) Annual Report 2023-24"
           ],
-          "shortLabel": "Critical Min."
+          "shortLabel": "Critical Min.",
+          "digitalIntensity": 42
         }
       ],
       "shortName": "Mining"
@@ -2408,7 +2493,8 @@
           ],
           "wageDecile": 6,
           "iscoCode": "3131",
-          "shortLabel": "Power/Grid"
+          "shortLabel": "Power/Grid",
+          "digitalIntensity": 52
         },
         {
           "id": "renewable_energy",
@@ -2434,7 +2520,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "3131",
-          "shortLabel": "Renewables"
+          "shortLabel": "Renewables",
+          "digitalIntensity": 38
         },
         {
           "id": "water_sanitation_utility",
@@ -2459,7 +2546,8 @@
           ],
           "wageDecile": 3,
           "iscoCode": "3131",
-          "shortLabel": "Water Supply"
+          "shortLabel": "Water Supply",
+          "digitalIntensity": 28
         },
         {
           "id": "gas_distribution",
@@ -2484,7 +2572,8 @@
           ],
           "wageDecile": 4,
           "iscoCode": "3131",
-          "shortLabel": "Gas Distrib."
+          "shortLabel": "Gas Distrib.",
+          "digitalIntensity": 32
         },
         {
           "id": "nuclear_energy_workers",
@@ -2509,7 +2598,8 @@
             "NPCIL Annual Report 2023-24 — 22 reactors, 7,480 MW operational",
             "DAE Annual Report 2023-24"
           ],
-          "shortLabel": "Nuclear"
+          "shortLabel": "Nuclear",
+          "digitalIntensity": 55
         }
       ],
       "shortName": "Utilities"

@@ -4,12 +4,13 @@ import { getColor }  from './Treemap.jsx'
 import { EXCHANGE_RATE } from '../App.jsx'
 
 const METRICS = [
-  { id: 'ai',          label: 'AI Exposure',      unit: '/100', fmt: v => `${v}`,            get: o => o.aiExposure },
-  { id: 'salary',      label: 'Salary (USD/mo)',   unit: '$',    fmt: v => v >= 1000 ? `$${(v/1000).toFixed(0)}K` : `$${v}`, get: o => o.medianSalaryUSD ?? (o.medianSalaryINR != null ? o.medianSalaryINR / EXCHANGE_RATE : null) },
-  { id: 'growth',      label: 'Growth %/yr',       unit: '%',    fmt: v => `${v > 0 ? '+' : ''}${v}%`,  get: o => o.growthPct },
-  { id: 'education',   label: 'Education (yrs)',    unit: 'yrs',  fmt: v => `${v} yrs`,       get: o => o.educationYears },
-  { id: 'informality', label: 'Informality %',      unit: '%',    fmt: v => `${v}%`,          get: o => o.informalityPct },
-  { id: 'gender',      label: 'Female Workers %',   unit: '%',    fmt: v => `${v}%`,          get: o => o.femalePct },
+  { id: 'ai',          label: 'AI Exposure',        unit: '/100', fmt: v => `${v}`,            get: o => o.aiExposure },
+  { id: 'digital',     label: 'Digital Intensity',  unit: '/100', fmt: v => `${v}`,            get: o => o.digitalIntensity },
+  { id: 'salary',      label: 'Salary (USD/mo)',     unit: '$',    fmt: v => v >= 1000 ? `$${(v/1000).toFixed(0)}K` : `$${v}`, get: o => o.medianSalaryUSD ?? (o.medianSalaryINR != null ? o.medianSalaryINR / EXCHANGE_RATE : null) },
+  { id: 'growth',      label: 'Growth %/yr',         unit: '%',    fmt: v => `${v > 0 ? '+' : ''}${v}%`,  get: o => o.growthPct },
+  { id: 'education',   label: 'Education (yrs)',      unit: 'yrs',  fmt: v => `${v} yrs`,       get: o => o.educationYears },
+  { id: 'informality', label: 'Informality %',        unit: '%',    fmt: v => `${v}%`,          get: o => o.informalityPct },
+  { id: 'gender',      label: 'Female Workers %',     unit: '%',    fmt: v => `${v}%`,          get: o => o.femalePct },
 ]
 
 const PAD = { top: 24, right: 28, bottom: 56, left: 68 }

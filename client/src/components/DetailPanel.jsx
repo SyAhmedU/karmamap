@@ -99,9 +99,13 @@ function Sparkline({ values, color = '#38bdf8', nowIdx = 3, width = 230, height 
 export default function DetailPanel({ sector, occupation: occ, currency, region, year = 2025, onClose, data, onPivot }) {
   if (!occ) return null
 
-  const occY        = { ...occ, ...occAtYear(occ, year, region) }
-  const growthColor = occY.growthPct < 0 ? 'red' : occY.growthPct < 5 ? 'amber' : 'green'
-  const aiColor     = occY.aiExposure > 60 ? 'red' : occY.aiExposure > 35 ? 'amber' : 'green'
+  const occY             = { ...occ, ...occAtYear(occ, year, region) }
+  const growthColor      = occY.growthPct < 0 ? 'red' : occY.growthPct < 5 ? 'amber' : 'green'
+  const aiColor          = occY.aiExposure > 60 ? 'red' : occY.aiExposure > 35 ? 'amber' : 'green'
+  const dii              = occ.digitalIntensity ?? null
+  const digitalColor     = dii == null ? 'slate' : dii > 70 ? 'blue' : dii > 40 ? 'amber' : 'slate'
+  const displacementRisk = (occY.aiExposure != null && dii != null) ? Math.round(occY.aiExposure * dii / 100) : null
+  const drColor          = displacementRisk == null ? 'slate' : displacementRisk > 55 ? 'red' : displacementRisk > 28 ? 'amber' : 'green'
 
   // Sparkline data from timeline anchors
   const pivots = (data && onPivot) ? getPivots(occ, occY, data, year, region) : []
@@ -138,6 +142,7 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
         <Badge label="Growth/yr"  value={occY.growthPct > 0 ? `+${occY.growthPct}%` : `${occY.growthPct}%`} color={growthColor} />
         <Badge label={currency === 'usd' ? 'Salary $/mo' : 'Salary ₹/mo'} value={fmtSal(occY, currency)} color="violet" />
         <Badge label="AI Exposure" value={`${occY.aiExposure} / 100`} color={aiColor} />
+        {dii != null && <Badge label="Digital Intensity" value={`${dii} / 100`} color={digitalColor} />}
         <Badge label="Education"  value={`${occY.educationYears} years`} color="slate" />
         <Badge label="% Workforce" value={`${((occY.workers/(region === 'world' ? 3320000000 : 582000000))*100).toFixed(2)}%`} color="slate" />
         {occY.informalityPct != null && (
@@ -155,6 +160,43 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
           <Badge label="ISCO-08" value={occY.iscoCode} color="slate" />
         )}
       </div>
+
+      {/* AI Displacement Risk — compound score */}
+      {displacementRisk != null && (
+        <div className="px-4 pb-4 border-b border-slate-800">
+          <div className="rounded-xl p-3 bg-slate-900 border border-slate-700">
+            <div className="flex items-center justify-between mb-1.5">
+              <p className="text-[9px] uppercase tracking-widest text-slate-400 font-bold">AI Displacement Risk</p>
+              <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
+                drColor === 'red'   ? 'bg-rose-900/60 text-rose-300' :
+                drColor === 'amber' ? 'bg-amber-900/60 text-amber-300' :
+                                     'bg-emerald-900/60 text-emerald-300'
+              }`}>
+                {displacementRisk > 55 ? 'HIGH' : displacementRisk > 28 ? 'MODERATE' : 'LOW'}
+              </span>
+            </div>
+            <div className="flex items-end gap-3">
+              <p className="text-2xl font-black text-white leading-none">
+                {displacementRisk}<span className="text-slate-500 text-xs font-normal"> / 100</span>
+              </p>
+              <div className="flex-1 mb-1">
+                <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                  <div
+                    className={`h-full rounded-full transition-all ${
+                      drColor === 'red' ? 'bg-rose-500' : drColor === 'amber' ? 'bg-amber-500' : 'bg-emerald-500'
+                    }`}
+                    style={{ width: `${displacementRisk}%` }}
+                  />
+                </div>
+              </div>
+            </div>
+            <p className="text-[10px] text-slate-500 mt-1.5">
+              AI Exposure ({occY.aiExposure}) × Digital Intensity ({dii}) ÷ 100
+              <span className="ml-1 text-slate-600">— higher digital intensity means AI can act on this job today, not just theoretically</span>
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Sparklines — 2000 → 2050 trends */}
       {tlOcc && (workerVals.length >= 2 || salaryVals.length >= 2) && (
