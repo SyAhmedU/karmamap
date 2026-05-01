@@ -10,7 +10,8 @@ import LLMScorer    from './components/LLMScorer.jsx'
 import YearSlider   from './components/YearSlider.jsx'
 import TopFive      from './components/TopFive.jsx'
 import RankingView  from './components/RankingView.jsx'
-import BubbleChart  from './components/BubbleChart.jsx'
+import BubbleChart    from './components/BubbleChart.jsx'
+import ResearchPaper  from './components/ResearchPaper.jsx'
 import { totalWorkforceAtYear, occAtYear, TIMELINE_YEARS } from './utils/timeline.js'
 
 function computeAtRisk(data, year, region) {
@@ -80,7 +81,8 @@ export default function App() {
   const [layer,       setLayer]       = useState('growth')
   const [currency,    setCurrency]    = useState('inr')
   const [selected,    setSelected]    = useState(null)
-  const [showLLM,     setShowLLM]     = useState(false)
+  const [showLLM,      setShowLLM]      = useState(false)
+  const [showResearch, setShowResearch] = useState(false)
   const [search,      setSearch]      = useState('')
   const [year,        setYear]        = useState(2025)
   const [viewMode,    setViewMode]    = useState('treemap')   // 'treemap' | 'table' | 'bubble'
@@ -123,7 +125,7 @@ export default function App() {
   // ESC closes the detail panel
   useEffect(() => {
     function onKey(e) {
-      if (e.key === 'Escape') { setSelected(null); setShowLLM(false) }
+      if (e.key === 'Escape') { setSelected(null); setShowLLM(false); setShowResearch(false) }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -237,6 +239,14 @@ export default function App() {
             className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold transition-all flex items-center gap-1.5 ${showLLM ? 'bg-violet-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}>
             <span className="text-base leading-none">✦</span>
             <span className="mobile-hide">Score a Job</span>
+          </button>
+
+          {/* Research Paper */}
+          <button onClick={() => setShowResearch(true)}
+            title="View the full research paper and methodology"
+            className="px-3 py-1.5 rounded-lg text-[12px] font-semibold transition-all flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 mobile-hide">
+            <span className="text-[11px] leading-none">📄</span>
+            <span>Research</span>
           </button>
         </div>
       </header>
@@ -371,6 +381,11 @@ export default function App() {
           </div>
         )}
       </div>
+
+      {/* ── Research Paper overlay ── */}
+      {showResearch && (
+        <ResearchPaper onClose={() => setShowResearch(false)} />
+      )}
     </div>
   )
 }
