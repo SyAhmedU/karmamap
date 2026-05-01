@@ -11,7 +11,8 @@ import YearSlider   from './components/YearSlider.jsx'
 import TopFive      from './components/TopFive.jsx'
 import RankingView  from './components/RankingView.jsx'
 import BubbleChart    from './components/BubbleChart.jsx'
-import ResearchPaper  from './components/ResearchPaper.jsx'
+import ResearchPaper        from './components/ResearchPaper.jsx'
+import AnalyticsDashboard   from './components/AnalyticsDashboard.jsx'
 import { totalWorkforceAtYear, occAtYear, TIMELINE_YEARS } from './utils/timeline.js'
 
 function computeAtRisk(data, year, region) {
@@ -211,7 +212,7 @@ export default function App() {
             </div>
           )}
 
-          {/* View mode: treemap / table / bubble */}
+          {/* View mode: treemap / table / bubble / analytics */}
           <div className="flex items-center gap-1 bg-slate-800 rounded-lg p-1">
             <button onClick={() => setViewMode('treemap')} title="Treemap"
               className={`px-2.5 py-1 rounded text-[12px] font-bold transition-all ${viewMode === 'treemap' ? 'bg-slate-600 text-white' : 'text-slate-400 hover:text-white'}`}>
@@ -224,6 +225,10 @@ export default function App() {
             <button onClick={() => setViewMode('bubble')} title="Scatter / bubble chart"
               className={`px-2.5 py-1 rounded text-[12px] font-bold transition-all ${viewMode === 'bubble' ? 'bg-slate-600 text-white' : 'text-slate-400 hover:text-white'}`}>
               ◎
+            </button>
+            <button onClick={() => setViewMode('analytics')} title="Analytics dashboard"
+              className={`px-2.5 py-1 rounded text-[12px] font-bold transition-all ${viewMode === 'analytics' ? 'bg-violet-600 text-white' : 'text-slate-400 hover:text-white'}`}>
+              ◈
             </button>
           </div>
 
@@ -354,6 +359,14 @@ export default function App() {
               selected={selected}
               onSelect={setSelected}
               search={search}
+            />
+          )}
+          {viewMode === 'analytics' && (
+            <AnalyticsDashboard
+              data={activeData}
+              year={year}
+              region={region}
+              onSelect={setSelected}
             />
           )}
         </div>
