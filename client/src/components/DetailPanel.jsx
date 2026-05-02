@@ -95,6 +95,112 @@ const INDIA_TO_WORLD = {
   nuclear_energy_workers: 'nuclear_global',
 }
 
+// Most common university degree / credential for each India occupation
+const DEGREE_MAP = {
+  // Agriculture
+  crop_farming:           { ug: "BSc Agriculture / BSc (Hons) Agriculture", pg: "MSc Agricultural Sciences", cert: "Kisan Suvidha Certificate (KVK)", note: "Large farmers often complete diploma agri courses from State Agricultural Universities (SAUs)" },
+  animal_husbandry:       { ug: "BSc Veterinary Science (BVSc & AH)", pg: "MVSc", cert: "Animal Husbandry Certificate (ICAR-KVK)", note: "Field-level workers typically rely on vocational certificates from Krishi Vigyan Kendras" },
+  fisheries:              { ug: "BSc Fisheries Science / BFSc", pg: "MFSc", cert: "Certificate in Inland Fisheries (NFDB)", note: "" },
+  agri_labour:            { ug: "No formal degree required", pg: "", cert: "RPL Certificate — Agriculture (NSDC / PMKVY)", note: "Recognition of Prior Learning (RPL) is the primary formalisation path for farm labourers" },
+  horticulture:           { ug: "BSc Horticulture", pg: "MSc Horticulture", cert: "Certificate in Floriculture / Nursery Management (DHAN)", note: "" },
+  agri_engineers_ext:     { ug: "BE / BTech Agricultural Engineering", pg: "ME / MTech Agricultural Engineering", cert: "", note: "ICAR-IARI fellowship and Krishi Vigyan Kendra postings require M.Sc. or higher" },
+  // Construction
+  construction_workers:   { ug: "No formal degree required", pg: "", cert: "ITI in Masonry / Carpentry / Plumbing (NCVT)", note: "ITI trade certificates dominate; RPL via PMKVY is common for experienced workers" },
+  electricians_plumbers:  { ug: "ITI Electrician / Plumber (NCVT 2-year)", pg: "", cert: "Wireman License (CEA), CPRI certification", note: "Diploma in Electrical Engineering is also widely accepted" },
+  construction_supervisors: { ug: "Diploma / BE Civil Engineering", pg: "", cert: "CIDC Site Supervisor Certificate", note: "" },
+  civil_engineers:        { ug: "BE / BTech Civil Engineering", pg: "ME / MTech Structural or Geotechnical Engineering", cert: "", note: "Professional registration: Institution of Engineers India (IEI); Structural Engineers certification for high-rise projects" },
+  real_estate_agents:     { ug: "Any Bachelor's degree (common: B.Com / BBA / BA)", pg: "", cert: "RERA Registration Certificate (state-specific)", note: "RERA mandates agent registration; no formal academic degree is legally required" },
+  equipment_operators:    { ug: "ITI — Construction Equipment Operator", pg: "", cert: "PMKVY / CIDC Heavy Equipment certificate", note: "" },
+  architects_india:       { ug: "B.Arch (5-year professional degree)", pg: "M.Arch", cert: "Council of Architecture (CoA) registration (mandatory)", note: "CoA registration is legally required to use the title 'Architect' or sign drawings in India" },
+  // Trade & Services
+  retail_workers:         { ug: "No formal degree required", pg: "", cert: "NSDC / RASCI Retail Sales Associate certificate", note: "B.Com or BBA for supervisory roles; RPL under PMKVY for entry-level" },
+  restaurant_hotel:       { ug: "BSc Hotel Management (IHM / NCHMCT-affiliated)", pg: "", cert: "NCHMCT JEE diploma in Hospitality", note: "IHM graduates command highest salaries; 3-year diploma courses dominate headcount" },
+  wholesale_trade:        { ug: "B.Com / BBA", pg: "MBA — Marketing or Supply Chain", cert: "", note: "" },
+  ecommerce:              { ug: "BCA / BTech / B.Com", pg: "MBA — E-Commerce or Digital Marketing", cert: "Google Digital Marketing & E-commerce Certificate, Amazon Seller University", note: "" },
+  gig_delivery:           { ug: "No formal degree required", pg: "", cert: "Valid Driving Licence (LMV / commercial)", note: "Aggregator platforms (Swiggy, Zomato, ONDC) require smartphone literacy and bank account for digital payments" },
+  tourism_travel:         { ug: "BBA Tourism / BA Tourism Management", pg: "MBA — Tourism and Hospitality", cert: "IATA Foundation Certificate; NTTF Tourism Facilitation certificate", note: "" },
+  street_vendors:         { ug: "No formal degree required", pg: "", cert: "PM SVANidhi scheme registration + UPI-linked bank account", note: "No education requirement; Aadhaar-linked bank account is the primary credential" },
+  // Manufacturing
+  garment_textile:        { ug: "B.Tech Textile Technology / B.Des Fashion Design (NIFT)", pg: "M.Tech Textile Engineering", cert: "NSDC — Sewing Machine Operator certificate", note: "Most shopfloor workers hold NSDC / ITI stitching certificates; NIFT degree for designers" },
+  food_processing:        { ug: "BSc Food Technology / BTech Food Engineering", pg: "MSc Food Science", cert: "FoSTaC Certificate (FSSAI — mandatory for food handlers)", note: "FSSAI FoSTaC training is legally required for food business supervisors" },
+  automobile:             { ug: "BE / BTech Mechanical or Automobile Engineering", pg: "ME / MTech", cert: "ITI — Auto Mechanic or Automobile Technician (NCVT)", note: "NSDC-ASDC certification for shopfloor workers; ASDC-certified technicians preferred by OEMs" },
+  electronics:            { ug: "BTech Electronics & Communication or Electrical Engineering", pg: "MTech VLSI / Embedded Systems", cert: "ITI COPA / Electronic Mechanic (NCVT)", note: "" },
+  chemical_pharma:        { ug: "BSc Chemistry / B.Pharm / BE Chemical Engineering", pg: "MSc Chemistry / M.Pharm", cert: "GMP Certificate (WHO / ICH guidelines)", note: "Regulatory compliance drives demand for M.Pharm and QA certifications; PharmD growing" },
+  msme_workers:           { ug: "No formal degree required (varies by trade)", pg: "", cert: "ITI Trade Certificate or PMKVY sector-specific certificate", note: "Udyam Registration serves as the primary MSME business credential" },
+  ev_battery_workers:     { ug: "BTech Electrical / Mechanical / Chemical Engineering", pg: "MTech Battery Technology / Energy Storage", cert: "NSDC EV Technician Certificate", note: "Emerging field; IIT and NIT graduates increasingly targeted for battery cell and BMS engineering" },
+  defence_manufacturing:  { ug: "BE / BTech Mechanical, Aerospace or Electronics Engineering", pg: "MTech / MSc Defence Technologies", cert: "", note: "Most technical recruitment is through DRDO scientist exams or OFB direct recruitment; GATE score preferred" },
+  // IT & Digital
+  software_engineers:     { ug: "BTech / BE Computer Science or Information Technology", pg: "MTech / MCA / MS (CS)", cert: "AWS / GCP / Azure cloud certifications; GATE score for R&D roles", note: "BTech CS from IIT or NIT is the hiring benchmark; bootcamp graduates increasingly placed at product companies" },
+  it_support_bpo:         { ug: "BCA / BSc IT / B.Com (BPO roles)", pg: "", cert: "CompTIA A+, ITIL Foundation, Six Sigma Green Belt", note: "" },
+  data_scientists:        { ug: "BTech CS / BSc Statistics or Mathematics", pg: "MTech Data Science / MSc Statistics (ISI, CMI, IIT)", cert: "Google Data Analytics Professional Certificate, IBM Data Science Professional", note: "MSc Statistics from ISI Kolkata or CMI Chennai carries significant hiring weight at analytics firms" },
+  cybersecurity:          { ug: "BTech CS / IT", pg: "MTech Cybersecurity / MCA with Security specialisation", cert: "CEH (EC-Council), CISSP, CompTIA Security+, OSCP", note: "Industry certifications frequently outweigh formal degrees for hiring at MSSPs and product security teams" },
+  cloud_devops:           { ug: "BTech CS / IT", pg: "", cert: "AWS Solutions Architect Associate, CKA (Kubernetes), HashiCorp Terraform Associate", note: "" },
+  ai_ml_engineers:        { ug: "BTech CS / Mathematics / Statistics", pg: "MTech AI & ML / MSc Data Science (IIT/IISc)", cert: "TensorFlow Developer Certificate, DeepLearning.AI specialisation (Coursera)", note: "MTech graduates from IITs and IISc dominate senior ML engineering and research roles at top firms" },
+  product_managers:       { ug: "Any BTech / BSc / B.Com (varied backgrounds)", pg: "MBA from IIMs (Ahmedabad, Bangalore, Calcutta most valued)", cert: "AIPMM CPM; Pragmatic Institute Product Management", note: "IIM MBA is the most common pathway to senior PM roles at large Indian tech firms and MNCs" },
+  ui_ux_designers:        { ug: "B.Des — NID Ahmedabad / IIT-IDC / Srishti", pg: "M.Des", cert: "Google UX Design Certificate, Interaction Design Foundation (IDF)", note: "NID and IIT-IDC graduates are most sought-after; portfolio matters as much as degree" },
+  hardware_network_eng:   { ug: "BTech Electronics or Computer Engineering", pg: "", cert: "Cisco CCNA, CompTIA Network+, Red Hat RHCSA", note: "" },
+  // Education
+  school_teachers:        { ug: "B.Ed (2-year, after any Bachelor's degree)", pg: "M.Ed", cert: "CTET / State TET (legally required for government school teaching)", note: "B.Ed + CTET/State TET are both legally mandatory under RTE Act for government school employment" },
+  college_faculty:        { ug: "Master's degree in the relevant subject", pg: "PhD (required for UGC-NET exemption in most state universities)", cert: "UGC-NET / State SET", note: "NET/SET is required for Assistant Professor appointment; PhD is required for promotion above lecturer grade" },
+  edtech_professionals:   { ug: "Any BTech / BSc / BBA / B.Com", pg: "MBA / MTech Ed.Tech", cert: "Instructional Design (ATD), Google for Education Trainer, CELTA (for English content)", note: "" },
+  private_tutors:         { ug: "Bachelor's in the subject (most common: BSc / BA)", pg: "", cert: "No mandatory credential in India", note: "Kota coaching industry runs on academic track record (board % and JEE ranks) rather than formal credentials" },
+  // Healthcare
+  doctors:                { ug: "MBBS (5.5-year, including 1-year internship)", pg: "MD / MS (3-year residency); super-speciality: DM / MCh", cert: "NMC (National Medical Commission) registration", note: "DM or MCh super-speciality training is mandatory for most hospital consultant positions" },
+  nurses:                 { ug: "BSc Nursing (4-year)", pg: "MSc Nursing", cert: "Indian Nursing Council (INC) registration", note: "GNM (3.5-year diploma) remains dominant in rural and smaller hospitals; BSc Nursing preferred for ICU and specialty units" },
+  pharmacists:            { ug: "B.Pharm (4-year)", pg: "M.Pharm / PharmD (6-year globally-aligned degree)", cert: "Pharmacy Council of India (PCI) registration", note: "PharmD is the new globally aligned qualification replacing D.Pharm for clinical practice" },
+  paramedics:             { ug: "BSc Paramedic Science / BSc Medical Lab Technology", pg: "", cert: "BLS, ACLS, AEMT Certificates", note: "Diploma in Medical Lab Technology (DMLT) remains the most common entry path to diagnostic labs" },
+  asha_workers:           { ug: "Class 10 pass (minimum required)", pg: "", cert: "ASHA Training Module certificates (issued by NHM state units)", note: "No graduate degree required; ASHAs are community health workers paid via performance-based incentives under NHM" },
+  hospital_admin:         { ug: "BBA / BSc Hospital Administration", pg: "MBA Hospital Administration / MHA (TISS, AIIMS)", cert: "", note: "" },
+  ayush_practitioners:    { ug: "BAMS (Ayurveda) / BHMS (Homeopathy) / BUMS (Unani) / BNYS (Naturopathy) — 5.5-year", pg: "MD Ayurveda / MD Homeopathy", cert: "State AYUSH Council registration", note: "BAMS is the most practised degree; BNYS is the fastest-growing branch driven by wellness tourism" },
+  mental_health_workers:  { ug: "BA / BSc Psychology", pg: "MA / MSc Clinical Psychology; RCI-accredited MPhil Clinical Psychology (required to practise)", cert: "RCI (Rehabilitation Council of India) registration", note: "MPhil Clinical Psychology from an RCI-accredited institution is legally required to practise as a clinical psychologist" },
+  // Transport
+  truck_drivers:          { ug: "No formal degree required", pg: "", cert: "Heavy Motor Vehicle (HMV) Driving Licence + National Permit", note: "e-Way Bill and GPS familiarity increasingly important; literacy required for FASTAG and e-challan compliance" },
+  auto_taxi_drivers:      { ug: "No formal degree required", pg: "", cert: "LMV Driving Licence + Yellow-Board Badge (city transport authority)", note: "Aggregator onboarding (Ola, Uber, Rapido) requires smartphone literacy and Aadhaar-linked bank account" },
+  railway_staff:          { ug: "Class 10 / 12 (Group C / Group D posts)", pg: "BTech / Diploma (Junior Engineer / Assistant Engineer)", cert: "RRB NTPC / RRC Group D exam pass", note: "RRB NTPC is the primary path for Station Masters and commercial clerks; Group D for trackmen and helpers" },
+  logistics_warehouse:    { ug: "Any Bachelor's degree (for supervisory roles)", pg: "MBA — Supply Chain Management", cert: "APICS CSCP, NSDC Logistics & Warehousing certificate", note: "Shopfloor workers need ITI or NSDC certificate; managers need MBA or APICS/CSCMP certification" },
+  aviation:               { ug: "BBA Aviation / BSc Aviation / Cabin Crew diploma (for crew)", pg: "", cert: "DGCA ATPL (Airline Transport Pilot Licence) for captains; CPL (Commercial Pilot Licence) for first officers", note: "CPL + type rating on specific aircraft is the standard commercial pilot progression; DGCA issues licences" },
+  postal_courier:         { ug: "Class 10 / Class 12 (Gramin Dak Sevak — GDS)", pg: "", cert: "India Post GDS online exam pass", note: "" },
+  metro_urban_transit:    { ug: "ITI / Diploma in Electrical or Mechanical Engineering", pg: "", cert: "Metro Rail operator certification (Delhi Metro, BMRC, CMRL)", note: "" },
+  // Finance & Banking
+  bank_employees:         { ug: "Any Bachelor's degree (graduation is the minimum for IBPS/SBI)", pg: "", cert: "IBPS PO / Clerk exam; SBI PO exam", note: "IBPS and SBI competitive exams are the main recruitment pathways for public sector banks; private banks prefer B.Com, MBA or CA" },
+  insurance:              { ug: "Any Bachelor's degree", pg: "MBA Insurance (IRDA-affiliated institutes)", cert: "IC38 Licence (mandatory for insurance agents via IRDA)", note: "IC38 is mandatory for all insurance agents; LICENTIATE exam required for surveyors and loss assessors" },
+  fintech_professionals:  { ug: "BTech CS / B.Com / BBA", pg: "MBA / MTech (Finance Technology)", cert: "CFA, FRM Level I, NISM Series certifications", note: "" },
+  chartered_accountants:  { ug: "CA qualification — ICAI three-stage programme (Foundation → Intermediate → Final; ~5 years including articleship)", pg: "CPA / CIMA for international practice", cert: "ICAI membership (ACAI or FCAI)", note: "CA from ICAI is the single most valuable credential; CMA (from ICMAI) is the closely related cost accounting alternative" },
+  stock_brokers:          { ug: "B.Com / BBA / BTech (varied)", pg: "MBA Finance / CFA Charter", cert: "NISM Series VII (Securities Operations & Risk Management); NISM Series X-A (Investment Adviser)", note: "SEBI requires NISM certification for RIAs, research analysts and mutual fund distributors" },
+  microfinance:           { ug: "B.Com / BA / BSc", pg: "", cert: "IIBF Rural Banking Certificate; BC Agent certification", note: "" },
+  mutual_fund_agents:     { ug: "Any Bachelor's degree", pg: "", cert: "NISM Series V-A: Mutual Fund Distributors Certification (mandatory via AMFI)", note: "AMFI Registration Number (ARN) issued after passing NISM V-A — legally required to sell mutual funds" },
+  // Government & Security
+  civil_servants:         { ug: "Any Bachelor's degree (all streams accepted for UPSC CSE)", pg: "", cert: "UPSC Civil Services Exam (IAS / IPS / IFS / IRS)", note: "UPSC CSE is the most prestigious route; state-level PSC exams for state government positions" },
+  police_paramilitary:    { ug: "Any Bachelor's degree (for Sub-Inspector and above)", pg: "", cert: "SSC CPO exam / State Police SI exam + Physical Fitness Test", note: "Constable recruitment requires Class 10 or 12 + PFT via SSC or state police boards" },
+  municipal_workers:      { ug: "Class 8–10 (sanitation, sweeper roles); Diploma / BE (technical / engineering roles)", pg: "", cert: "Municipal Corporation competitive exam", note: "" },
+  psu_employees:          { ug: "BTech / BE or BSc / B.Com (discipline-specific)", pg: "", cert: "GATE score (technical PSUs: BHEL, NTPC, SAIL, ONGC, IOCL)", note: "GATE score used by major engineering PSUs for direct recruitment; IES for Central Engineering Services" },
+  armed_forces:           { ug: "Class 10 / 12 (Other Ranks cadre)", pg: "Any Bachelor's degree (Officer cadre — varies by service)", cert: "NDA exam (Class 12 entry) / CDS exam / AFCAT; SSB interview", note: "NDA entry leads to a degree awarded by Jawaharlal Nehru University; Short Service Commission via CDS for graduates" },
+  // Personal & Community Services
+  domestic_workers:       { ug: "No formal degree required", pg: "", cert: "NSDC Domestic Housekeeping certificate; RPL under PMKVY-III", note: "National Domestic Workers Policy (pending legislation as of 2025); overwhelmingly informal sector" },
+  security_guards:        { ug: "Class 8–10 minimum (varies by employer)", pg: "", cert: "Security Guard training certificate (PSARA-approved training institute)", note: "PSARA Act 2005 requires company licensing; no individual degree mandated but training certificate preferred" },
+  beauty_wellness:        { ug: "Diploma / Certificate in Beauty Culture (VLCC Institute, Lakme Academy, CIDESCO-affiliated)", pg: "", cert: "NSDC Beauty & Wellness Sector Skill Council certificate; CIDESCO International Diploma", note: "Lakme Academy and VLCC Institute are the industry-standard training providers; international CIDESCO diploma for premium salons" },
+  sanitation_waste:       { ug: "No formal degree required", pg: "", cert: "RPL Certificate — Waste Management (NSDC / Green Jobs sector)", note: "Municipal sanitation workers recruited via corporation boards; no education barrier in most states" },
+  gig_home_services:      { ug: "ITI / Vocational certificate in Plumbing, Electrical, Carpentry or AC Technician", pg: "", cert: "Urban Company Platform Certification (company-issued)", note: "" },
+  // Media & Creative
+  film_entertainment:     { ug: "BFA / BA Mass Communication / FTII PG Diploma", pg: "MA Film / MFA", cert: "FTII (Film & Television Institute of India) diploma; SRFTI certificate programs", note: "FTII PG Diploma in Film Direction or Editing is the most prestigious route in Indian cinema" },
+  digital_creators:       { ug: "BA Communication / BMM (Bachelor of Mass Media) / B.Des", pg: "", cert: "Google Digital Marketing Certificate; Meta Blueprint Certification", note: "No mandatory credential; subscriber count, portfolio and brand deals are the primary career signals" },
+  journalists:            { ug: "BA Journalism & Mass Communication / BMM", pg: "MA Journalism; PG Diploma in Journalism (IIMC, ACJ)", cert: "No mandatory credential (profession is unregulated in India)", note: "IIMC (Indian Institute of Mass Communication) and ACJ (Asian College of Journalism) are the most prestigious schools" },
+  advertising_marketing:  { ug: "BBA / BMM / B.Com", pg: "MBA Marketing (IIMs, MICA Ahmedabad)", cert: "Google Ads, Meta Blueprint, HubSpot Content Marketing", note: "MICA (Mudra Institute of Communications) is the premier specialist institute for advertising professionals" },
+  gaming_esports:         { ug: "BTech CS / B.Des Game Design", pg: "", cert: "Unity Certified Developer; Unreal Developer Network (UDN) certification", note: "Emerging field in India; self-taught routes via YouTube and online courses are very common" },
+  // Energy & Mining
+  coal_miners:            { ug: "ITI — Mining Mate or Overman certificate", pg: "", cert: "DGMS (Directorate General of Mines Safety) mandatory certification", note: "DGMS certification is legally required for mine officials and shotfirers; ITI/Diploma for equipment operators" },
+  stone_quarry:           { ug: "No degree required (shopfloor workers)", pg: "", cert: "NSDC — Mining and Construction certificate", note: "" },
+  mining_engineers:       { ug: "BE / BTech Mining Engineering", pg: "ME / MTech Mining or Geo-technical Engineering", cert: "DGMS First Class Manager Certificate of Competency (legally required to manage a mine)", note: "" },
+  oil_gas_workers:        { ug: "BTech Petroleum Engineering / Chemical Engineering", pg: "MTech Petroleum / MBA Energy Management", cert: "HUET (Helicopter Underwater Escape), BOSIET, OPITO offshore safety certifications", note: "ONGC, RIL and OIL hire BTech graduates; offshore safety certifications are mandatory for any offshore assignment" },
+  mineral_processing:     { ug: "BTech Mineral Engineering / Chemical Engineering / Metallurgy", pg: "", cert: "DGMS certifications for handling explosives or operating processing plant", note: "" },
+  critical_minerals_workers: { ug: "BTech Mining / Metallurgy / Chemical Engineering", pg: "", cert: "DGMS Certification", note: "Demand surging for lithium, cobalt and rare-earth processing roles under India's Critical Minerals Mission" },
+  power_utility:          { ug: "BTech Electrical Engineering / Power Systems", pg: "MTech Power Systems / Smart Grid", cert: "GATE score (for DISCOMS and central PSUs); Electrical Supervisor Licence (state Electricity Board)", note: "State DISCOMs hire through state-level PSC or GATE; Electrical Supervisor licence required for site supervision" },
+  renewable_energy:       { ug: "BTech Electrical / Mechanical / Solar Energy Engineering", pg: "MTech Renewable Energy (IITs, NIT Surathkal, TERI School)", cert: "MNRE Solar PV Installer Certificate (Solar Energy Corporation of India)", note: "MNRE installer certification fast-growing; IITs now offer dedicated MTech in Renewable Energy" },
+  water_sanitation_utility: { ug: "BE Civil Engineering / Environmental Engineering", pg: "ME Environmental Engineering / Water Resources", cert: "BIS Water Analyst certification", note: "" },
+  gas_distribution:       { ug: "BTech Mechanical / Petroleum Engineering", pg: "", cert: "CCOE (Chief Controller of Explosives) licensing; PESO certification for storage facilities", note: "" },
+  nuclear_energy_workers: { ug: "BTech Mechanical / Electrical / Chemical Engineering or MSc Physics", pg: "MSc Nuclear Physics / MTech Nuclear Engineering", cert: "AERB (Atomic Energy Regulatory Board) safety certification", note: "BARC Recruitment Test (OCES / DGFS streams) is the primary path into India's nuclear sector" },
+}
+
 function getPivots(occ, occY, data, year, region) {
   if ((occY.aiExposure ?? 0) < 52) return []
   const salUSD = occY.medianSalaryUSD ?? (occY.medianSalaryINR != null ? occY.medianSalaryINR / EXCHANGE_RATE : null)
@@ -194,6 +300,7 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
   const [outlook, setOutlook]           = useState(null)
   const [outlookLoading, setLoading]    = useState(false)
   const [outlookError, setOutlookError] = useState(null)
+  const [activeTab, setActiveTab]       = useState('overview')
 
   if (!occ) return null
 
@@ -309,6 +416,29 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
         </div>
         <p className="text-slate-300 text-[12px] leading-relaxed mt-2">{occY.description}</p>
       </div>
+
+      {/* Tab navigation */}
+      <div className="flex border-b border-slate-800 shrink-0 px-4 pt-2">
+        {[
+          { id: 'overview', label: 'Overview' },
+          { id: 'degree',   label: 'Degree' },
+        ].map(tab => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`px-3 py-1.5 text-[11px] font-bold border-b-2 mr-1 transition-colors ${
+              activeTab === tab.id
+                ? 'border-sky-400 text-sky-400'
+                : 'border-transparent text-slate-500 hover:text-slate-300'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* ── OVERVIEW tab ── */}
+      {activeTab === 'overview' && <>
 
       {/* AI Displacement Risk — shown first so it's never missed */}
       {displacementRisk != null && (
@@ -662,6 +792,55 @@ export default function DetailPanel({ sector, occupation: occ, currency, region,
           {sector.sources?.slice(0,1).join('')}
         </p>
       </div>
+
+      </>}
+      {/* ── DEGREE tab ── */}
+      {activeTab === 'degree' && (() => {
+        const deg = DEGREE_MAP[occ.id]
+        if (!deg) return (
+          <div className="p-4">
+            <p className="text-slate-500 text-[11px]">No degree data available for this occupation.</p>
+          </div>
+        )
+        return (
+          <div className="p-4 space-y-3">
+            <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold mb-1">Common Academic Path</p>
+
+            {deg.ug && (
+              <div className="rounded-xl p-3 bg-sky-900/30 border border-sky-800/40">
+                <p className="text-[9px] uppercase tracking-widest text-sky-400/70 font-bold mb-1">Undergraduate</p>
+                <p className="text-sky-100 text-[12px] font-semibold leading-snug">{deg.ug}</p>
+              </div>
+            )}
+
+            {deg.pg && (
+              <div className="rounded-xl p-3 bg-violet-900/30 border border-violet-800/40">
+                <p className="text-[9px] uppercase tracking-widest text-violet-400/70 font-bold mb-1">Postgraduate / Advanced</p>
+                <p className="text-violet-100 text-[12px] font-semibold leading-snug">{deg.pg}</p>
+              </div>
+            )}
+
+            {deg.cert && (
+              <div className="rounded-xl p-3 bg-amber-900/30 border border-amber-800/40">
+                <p className="text-[9px] uppercase tracking-widest text-amber-400/70 font-bold mb-1">Professional Certification / Licence</p>
+                <p className="text-amber-100 text-[12px] font-semibold leading-snug">{deg.cert}</p>
+              </div>
+            )}
+
+            {deg.note && (
+              <div className="rounded-xl p-3 bg-slate-800/60 border border-slate-700/40">
+                <p className="text-[9px] uppercase tracking-widest text-slate-500 font-bold mb-1">Note</p>
+                <p className="text-slate-300 text-[11px] leading-relaxed">{deg.note}</p>
+              </div>
+            )}
+
+            <p className="text-slate-600 text-[9px] pt-1">
+              Based on typical Indian hiring patterns and regulatory requirements as of 2025.
+            </p>
+          </div>
+        )
+      })()}
+
     </div>
   )
 }

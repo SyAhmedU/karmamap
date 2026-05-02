@@ -310,9 +310,15 @@ export default function Treemap({ data, layer, currency, selected, onSelect, sea
             onMouseEnter={(e) => setTooltip({ x: e.clientX, y: e.clientY, n })}
             onMouseMove={(e) => setTooltip(t => t ? { ...t, x: e.clientX, y: e.clientY } : null)}
             onMouseLeave={() => setTooltip(null)}
+            onTouchStart={() => setTooltip(null)}
           >
             {cellLabel && (
               <div className="absolute inset-0 p-1 flex flex-col justify-end pointer-events-none">
+                {h > 52 && w > 60 && (
+                  <p className="font-bold whitespace-nowrap tabular-nums leading-tight" style={{ fontSize: 9, color: txtColor, opacity: 0.65, textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
+                    {fmtWorkers(occ.workers)}
+                  </p>
+                )}
                 {/* Wide cell: allow 2-line wrap; narrow: single line */}
                 <p
                   className={`font-semibold leading-tight drop-shadow ${w >= 180 ? 'line-clamp-2 whitespace-normal' : 'whitespace-nowrap'}`}
@@ -374,8 +380,8 @@ function Tooltip({ x, y, n, layer, currency, dims }) {
   // Position: never overflow viewport
   let tx = x + PAD
   let ty = y + PAD
-  if (tx + W > dims.w) tx = x - W - PAD
-  if (ty + 220 > dims.h) ty = Math.max(4, dims.h - 224)
+  if (tx + W > window.innerWidth)  tx = x - W - PAD
+  if (ty + 220 > window.innerHeight) ty = Math.max(4, window.innerHeight - 224)
 
   // Other metrics (everything except the currently selected layer)
   const others = [
@@ -389,7 +395,7 @@ function Tooltip({ x, y, n, layer, currency, dims }) {
 
   return (
     <div
-      className="absolute z-50 pointer-events-none"
+      className="fixed z-[100] pointer-events-none"
       style={{ left: tx, top: ty, width: W }}
     >
       <div className="bg-slate-900/97 backdrop-blur border border-slate-700 rounded-xl p-3 shadow-2xl">

@@ -88,6 +88,9 @@ export default function App() {
   const [year,        setYear]        = useState(2025)
   const [viewMode,    setViewMode]    = useState('treemap')   // 'treemap' | 'table' | 'bubble'
   const [drillSector, setDrillSector] = useState(null)
+  const [lightMode,   setLightMode]   = useState(() => localStorage.getItem('lm') === '1')
+
+  useEffect(() => { localStorage.setItem('lm', lightMode ? '1' : '0') }, [lightMode])
 
   const data             = dataForRegion(region)
   const effectiveCurrency = region === 'world' ? 'usd' : currency
@@ -153,7 +156,7 @@ export default function App() {
   const drillName  = drillSector ? data.sectors.find(s => s.id === drillSector)?.name : null
 
   return (
-    <div className="flex flex-col h-screen bg-[#0f172a] select-none">
+    <div className={`flex flex-col h-screen select-none ${lightMode ? 'lm' : 'bg-[#0f172a]'}`}>
 
       {/* ── Header ── */}
       <header className="flex items-center justify-between px-4 py-2.5 border-b border-slate-800 shrink-0 gap-3 flex-wrap">
@@ -252,6 +255,15 @@ export default function App() {
             className="px-3 py-1.5 rounded-lg text-[12px] font-semibold transition-all flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 mobile-hide">
             <span className="text-[11px] leading-none">📄</span>
             <span>Research</span>
+          </button>
+
+          {/* Light / dark mode toggle */}
+          <button
+            onClick={() => setLightMode(v => !v)}
+            title={lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
+            className="px-2.5 py-1.5 rounded-lg text-[13px] bg-slate-800 hover:bg-slate-700 transition-all"
+          >
+            {lightMode ? '🌙' : '☀️'}
           </button>
         </div>
       </header>

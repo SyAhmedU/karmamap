@@ -100,3 +100,50 @@ html, body, #root {
 }
 .risk-fill { animation: fillRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
 
+/* ── Light mode (.lm on root div) ── */
+.lm {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Main bg overrides */
+.lm [class*="bg-[#0f172a]"]  { background-color: #ffffff !important; }
+.lm [class*="bg-slate-8"]    { background-color: #e2e8f0 !important; }
+.lm [class*="bg-slate-9"]    { background-color: #f1f5f9 !important; }
+
+/* Borders */
+.lm [class*="border-slate-8"] { border-color: #cbd5e1 !important; }
+.lm [class*="border-slate-7"] { border-color: #94a3b8 !important; }
+
+/* Text */
+.lm .text-white               { color: #0f172a !important; }
+.lm [class*="text-slate-2"]   { color: #1e293b !important; }
+.lm [class*="text-slate-3"]   { color: #334155 !important; }
+.lm [class*="text-slate-4"]   { color: #475569 !important; }
+.lm [class*="text-slate-5"]   { color: #64748b !important; }
+.lm [class*="text-slate-6"]   { color: #94a3b8 !important; }
+
+/* Sector header labels */
+.lm .sector-label             { color: #334155 !important; }
+
+/* Treemap cell labels: preserve legibility (cells keep their JS-computed color) */
+.lm .treemap-cell             { border-color: rgba(255,255,255,0.25) !important; }
+
+/* Detail panel / side panel */
+.lm .detail-panel-mobile      { background: #ffffff !important; border-color: #cbd5e1 !important; }
+
+/* Scrollbar */
+.lm ::-webkit-scrollbar-track  { background: #e2e8f0; }
+.lm ::-webkit-scrollbar-thumb  { background: #94a3b8; }
+
+/* Input fields */
+.lm input[type="text"] {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border-color: #94a3b8 !important;
+}
+.lm input[type="text"]::placeholder { color: #94a3b8 !important; }
+
+/* Research paper overlay (already light in its own styles) */
+.lm .research-overlay          { background: #f8fafc !important; }
+
