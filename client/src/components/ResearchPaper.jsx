@@ -65,119 +65,158 @@ const WORLD_SECTIONS = [
   { id: 'references', label: 'References' },
 ]
 
+const J = {
+  page:    '#f7f5f0',
+  bg:      '#ffffff',
+  sidebar: '#efece5',
+  body:    '#1a1918',
+  muted:   '#5c5752',
+  faint:   '#9a948c',
+  border:  '#ddd8ce',
+  active:  '#e3ddd4',
+}
+
 function SectionAnchor({ id }) {
   return <span id={id} className="block" style={{ marginTop: '-80px', paddingTop: '80px' }} />
 }
 function H2({ children }) {
   return (
-    <h2 className="text-xl font-bold text-white mt-12 mb-4 pb-2 border-b border-slate-700/60 tracking-tight">
+    <h2 style={{ color: J.body, borderBottomColor: J.border, fontFamily: 'Georgia, "Times New Roman", serif' }}
+      className="text-[19px] font-bold mt-10 mb-3 pb-2.5 border-b tracking-tight">
       {children}
     </h2>
   )
 }
 function H3({ children }) {
-  return <h3 className="text-base font-bold text-slate-200 mt-7 mb-2.5 tracking-tight">{children}</h3>
+  return (
+    <h3 style={{ color: J.body, fontFamily: 'Georgia, "Times New Roman", serif' }}
+      className="text-[15px] font-bold mt-7 mb-2 tracking-tight">
+      {children}
+    </h3>
+  )
 }
 function P({ children, className = '' }) {
   return (
-    <p className={`text-slate-300 text-[13.5px] leading-[1.8] mb-4 ${className}`}>{children}</p>
+    <p style={{ color: '#2c2926', fontFamily: 'Georgia, "Times New Roman", serif' }}
+      className={`text-[14px] leading-[1.85] mb-4 ${className}`}>
+      {children}
+    </p>
   )
 }
 function Callout({ color = 'blue', title, children }) {
   const cs = {
-    blue:    'bg-sky-950/60 border-sky-700/50 text-sky-200',
-    amber:   'bg-amber-950/60 border-amber-700/50 text-amber-200',
-    rose:    'bg-rose-950/60 border-rose-700/50 text-rose-200',
-    violet:  'bg-violet-950/60 border-violet-700/50 text-violet-200',
-    emerald: 'bg-emerald-950/60 border-emerald-700/50 text-emerald-200',
-    slate:   'bg-slate-800/60 border-slate-600/50 text-slate-200',
+    blue:    { bg: '#eff6ff', border: '#3b82f6', text: '#1e3a5f', label: '#3b82f6' },
+    amber:   { bg: '#fffbeb', border: '#f59e0b', text: '#451a03', label: '#b45309' },
+    rose:    { bg: '#fff1f2', border: '#f43f5e', text: '#4c0519', label: '#be123c' },
+    violet:  { bg: '#f5f3ff', border: '#7c3aed', text: '#2e1065', label: '#6d28d9' },
+    emerald: { bg: '#ecfdf5', border: '#10b981', text: '#022c22', label: '#059669' },
+    slate:   { bg: '#f8f7f5', border: '#94a3b8', text: '#1e293b', label: '#64748b' },
   }
+  const c = cs[color] || cs.slate
   return (
-    <div className={`rounded-xl border p-5 my-6 ${cs[color]}`}>
-      {title && <p className="text-[10px] uppercase tracking-widest font-black mb-2.5 opacity-70">{title}</p>}
-      <div className="text-[13px] leading-relaxed">{children}</div>
+    <div style={{ background: c.bg, borderLeftColor: c.border, borderLeftWidth: 4, borderLeftStyle: 'solid' }}
+      className="rounded-r-lg px-5 py-4 my-6">
+      {title && <p style={{ color: c.label, fontFamily: 'system-ui, sans-serif' }}
+        className="text-[9px] uppercase tracking-[0.12em] font-black mb-2">{title}</p>}
+      <div style={{ color: c.text, fontFamily: 'Georgia, "Times New Roman", serif' }}
+        className="text-[13.5px] leading-relaxed">{children}</div>
     </div>
   )
 }
 function DataTable({ headers, rows, caption }) {
   return (
     <div className="my-6 overflow-x-auto">
-      <table className="w-full text-[12px] border-collapse">
+      <table className="w-full text-[12.5px]" style={{ borderCollapse: 'collapse', border: `1px solid ${J.border}` }}>
         <thead>
-          <tr className="border-b border-slate-600">
+          <tr style={{ background: J.sidebar }}>
             {headers.map((h, i) => (
-              <th key={i} className={`py-2 px-3 text-slate-400 font-bold uppercase tracking-wider text-[10px] ${i === 0 ? 'text-left' : 'text-right'}`}>{h}</th>
+              <th key={i} style={{ color: J.body, borderBottom: `2px solid ${J.border}`, borderRight: `1px solid ${J.border}`, fontFamily: 'system-ui, sans-serif' }}
+                className={`py-2.5 px-3 font-bold text-[10px] uppercase tracking-wider ${i === 0 ? 'text-left' : 'text-right'}`}>{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, ri) => (
-            <tr key={ri} className={`border-b border-slate-800/60 ${ri % 2 === 0 ? 'bg-slate-800/20' : ''}`}>
+            <tr key={ri} style={{ background: ri % 2 === 0 ? '#ffffff' : '#faf9f6' }}>
               {row.map((cell, ci) => (
-                <td key={ci} className={`py-2 px-3 ${ci === 0 ? 'text-slate-300 font-medium' : 'text-slate-400 text-right tabular-nums'}`}>{cell}</td>
+                <td key={ci} style={{ color: ci === 0 ? J.body : J.muted, borderBottom: `1px solid ${J.border}`, borderRight: `1px solid ${J.border}`, fontFamily: ci === 0 ? 'Georgia, serif' : 'system-ui, sans-serif' }}
+                  className={`py-2 px-3 ${ci === 0 ? 'font-medium' : 'text-right tabular-nums'}`}>{cell}</td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
-      {caption && <p className="text-slate-600 text-[10px] mt-2 italic text-center">{caption}</p>}
+      {caption && <p style={{ color: J.faint, fontFamily: 'Georgia, serif' }}
+        className="text-[11px] mt-2 italic text-center">{caption}</p>}
     </div>
   )
 }
 function Formula({ label, formula, note }) {
   return (
-    <div className="my-5 mx-2 p-5 rounded-xl bg-slate-800/50 border border-slate-700/40">
-      {label && <p className="text-slate-500 text-[10px] uppercase tracking-widest mb-2 font-bold">{label}</p>}
-      <p className="text-white font-mono text-sm text-center tracking-wide">{formula}</p>
-      {note && <p className="text-slate-500 text-[11px] mt-2.5 text-center italic">{note}</p>}
+    <div style={{ background: J.sidebar, borderColor: J.border, borderWidth: 1, borderStyle: 'solid' }}
+      className="my-5 mx-0 p-5 rounded-lg">
+      {label && <p style={{ color: J.faint, fontFamily: 'system-ui, sans-serif' }}
+        className="text-[10px] uppercase tracking-widest mb-2 font-bold text-center">{label}</p>}
+      <p style={{ color: J.body }} className="font-mono text-[14px] text-center tracking-wide font-semibold">{formula}</p>
+      {note && <p style={{ color: J.muted, fontFamily: 'Georgia, serif' }}
+        className="text-[11px] mt-2 text-center italic">{note}</p>}
     </div>
   )
 }
 function Cite({ n }) {
-  return <sup className="text-sky-500 text-[9px] font-bold cursor-default select-none">[{n}]</sup>
+  return <sup style={{ color: '#2563eb' }} className="text-[9px] font-bold cursor-default select-none">[{n}]</sup>
 }
 function Proposition({ n, title, children }) {
   return (
-    <div className="my-4 pl-4 border-l-2 border-violet-600/60">
-      <p className="text-violet-300 text-[11px] font-black uppercase tracking-widest mb-1">Proposition {n} — {title}</p>
-      <p className="text-slate-300 text-[13px] leading-relaxed italic">{children}</p>
+    <div style={{ borderLeftColor: '#7c3aed', borderLeftWidth: 3, borderLeftStyle: 'solid', background: '#f5f3ff' }}
+      className="my-5 pl-4 pr-4 py-3 rounded-r-lg">
+      <p style={{ color: '#6d28d9', fontFamily: 'system-ui, sans-serif' }}
+        className="text-[10px] font-black uppercase tracking-widest mb-1.5">
+        Proposition {n} — {title}
+      </p>
+      <p style={{ color: '#2e1065', fontFamily: 'Georgia, "Times New Roman", serif' }}
+        className="text-[13.5px] leading-relaxed italic">{children}</p>
     </div>
   )
 }
 
 function WorldPaperBody() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-10 pb-28">
+    <div style={{ maxWidth: 720, margin: '0 auto', padding: '48px 40px 96px', background: J.bg, fontFamily: 'Georgia, "Times New Roman", serif' }}>
 
       {/* Title block */}
-      <div className="mb-10 pb-8 border-b border-slate-700/50">
-        <p className="text-sky-500 text-[10px] uppercase tracking-widest font-bold mb-3">
+      <div style={{ borderBottom: `2px solid ${J.border}`, marginBottom: 36, paddingBottom: 28 }}>
+        <p style={{ color: '#2563eb', fontFamily: 'system-ui, sans-serif', letterSpacing: '0.1em' }}
+          className="text-[10px] uppercase font-bold mb-3">
           KarmaMap Working Paper · Labour Economics · AI Automation · Global Development
         </p>
-        <h1 className="text-2xl font-black text-white leading-tight tracking-tight mb-5">
+        <h1 style={{ color: J.body, fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: 1.25 }}
+          className="text-[26px] font-bold tracking-tight mb-5">
           Global AI Displacement Risk: A Cross-Country Application of the Digital Intensity
           Hypothesis Across Advanced and Emerging Labour Markets, 1950–2050
         </h1>
-        <p className="text-slate-400 text-[13px] mb-2 leading-relaxed">
+        <p style={{ color: J.muted, fontFamily: 'Georgia, serif' }} className="text-[13px] mb-1.5 leading-relaxed">
           Syed Asrar Ahmed&nbsp;&nbsp;·&nbsp;&nbsp;Independent Research&nbsp;&nbsp;·&nbsp;&nbsp;
           <em>asrarsaa@gmail.com</em>
         </p>
-        <p className="text-slate-600 text-[12px] mb-6">
+        <p style={{ color: J.faint, fontFamily: 'system-ui, sans-serif' }} className="text-[11px] mb-5">
           JEL Codes: J21, J24, J31, J62, O14, O33, O57&nbsp;&nbsp;·&nbsp;&nbsp;
           Submitted May 2025&nbsp;&nbsp;·&nbsp;&nbsp;Not yet peer-reviewed
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {['AI Displacement Risk','Digital Intensity Index','Global Labour Markets',
             'Advanced Economies','Emerging Markets','Comparative Analysis','Longitudinal Analysis'].map(t => (
-            <span key={t} className="bg-slate-800 text-slate-400 text-[10px] px-2.5 py-1 rounded-full border border-slate-700">{t}</span>
+            <span key={t} style={{ background: J.sidebar, color: J.muted, border: `1px solid ${J.border}`, fontFamily: 'system-ui, sans-serif' }}
+              className="text-[10px] px-2.5 py-1 rounded-full">{t}</span>
           ))}
         </div>
       </div>
 
       {/* ABSTRACT */}
       <SectionAnchor id="abstract" />
-      <div className="mb-10 p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50">
-        <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-3">Abstract</p>
+      <div style={{ background: J.sidebar, border: `1px solid ${J.border}`, borderRadius: 8, padding: '20px 24px', marginBottom: 36 }}>
+        <p style={{ color: J.faint, fontFamily: 'system-ui, sans-serif', letterSpacing: '0.1em' }}
+          className="text-[9px] uppercase font-bold mb-3">Abstract</p>
         <P className="!mb-3">
           Existing frameworks for assessing occupational AI displacement risk apply primarily to
           labour markets in advanced economies, leaving a substantial gap in the analysis of the
@@ -1050,13 +1089,16 @@ function WorldPaperBody() {
           [35, 'Schwab, K. (2016). The Fourth Industrial Revolution. World Economic Forum / Crown Business, Geneva.'],
         ].map(([n, text]) => (
           <div key={n} className="flex gap-3">
-            <span className="text-slate-600 text-[11px] font-bold shrink-0 w-6 text-right pt-0.5">[{n}]</span>
-            <p className="text-slate-500 text-[12px] leading-relaxed">{text}</p>
+            <span style={{ color: J.faint, fontFamily: 'system-ui, sans-serif' }}
+              className="text-[11px] font-bold shrink-0 w-6 text-right pt-0.5">[{n}]</span>
+            <p style={{ color: J.muted, fontFamily: 'Georgia, serif' }}
+              className="text-[12px] leading-relaxed">{text}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-12 pt-6 border-t border-slate-800 text-slate-600 text-[10px] space-y-1.5 leading-relaxed">
+      <div style={{ borderTopColor: J.border, borderTopWidth: 1, borderTopStyle: 'solid', color: J.faint, fontFamily: 'system-ui, sans-serif' }}
+        className="mt-12 pt-6 text-[10px] space-y-1.5 leading-relaxed">
         <p>KarmaMap Working Paper · Global Edition · Version 1.0 · May 2025 · Submitted for peer review</p>
         <p>
           Occupational metrics (AES, DII, ADRI) are estimates derived from cross-referenced public datasets
@@ -1099,21 +1141,26 @@ export default function ResearchPaper({ onClose, region = 'india' }) {
   }
 
   return (
-    <div className="fixed inset-0 z-[60] bg-[#060c19]/97 backdrop-blur flex flex-col"
-      style={{ animation: 'viewEnter 0.3s cubic-bezier(0.16,1,0.3,1) both' }}>
+    <div className="fixed inset-0 z-[60] flex flex-col"
+      style={{ background: J.page, animation: 'viewEnter 0.3s cubic-bezier(0.16,1,0.3,1) both' }}>
 
       {/* Top bar */}
-      <div className="shrink-0 flex items-center justify-between px-6 py-3 border-b border-slate-800 bg-[#09142a]">
+      <div style={{ background: J.bg, borderBottomColor: J.border, borderBottomWidth: 1, borderBottomStyle: 'solid' }}
+        className="shrink-0 flex items-center justify-between px-6 py-3">
         <div className="flex items-center gap-3 flex-wrap">
-          <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
-          <span className="text-slate-400 text-[11px] uppercase tracking-widest font-bold">Research Paper</span>
-          <span className="text-slate-700 text-[11px]">·</span>
-          <span className="text-slate-500 text-[11px]">KarmaMap Working Paper · {region === 'world' ? 'Global Edition · v1.0' : 'India Edition · v2.0'} · May 2025</span>
+          <div className="w-2 h-2 rounded-full shrink-0" style={{ background: '#2563eb' }} />
+          <span style={{ color: J.body, fontFamily: 'system-ui, sans-serif', letterSpacing: '0.12em' }}
+            className="text-[10px] uppercase font-bold">Research Paper</span>
+          <span style={{ color: J.faint }} className="text-[11px]">·</span>
+          <span style={{ color: J.muted, fontFamily: 'system-ui, sans-serif' }} className="text-[11px]">
+            KarmaMap Working Paper · {region === 'world' ? 'Global Edition · v1.0' : 'India Edition · v2.0'} · May 2025
+          </span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-slate-600 text-[10px] hidden sm:block">Esc to close</span>
+          <span style={{ color: J.faint, fontFamily: 'system-ui, sans-serif' }} className="text-[10px] hidden sm:block">Esc to close</span>
           <button onClick={onClose}
-            className="text-slate-500 hover:text-white hover:bg-slate-800 w-7 h-7 rounded-lg flex items-center justify-center transition-colors text-lg leading-none">
+            style={{ color: J.muted }}
+            className="hover:bg-[#eceae3] w-7 h-7 rounded-lg flex items-center justify-center transition-colors text-[18px] leading-none">
             &times;
           </button>
         </div>
@@ -1122,20 +1169,25 @@ export default function ResearchPaper({ onClose, region = 'india' }) {
       <div className="flex flex-1 overflow-hidden">
 
         {/* TOC sidebar */}
-        <nav className="hidden lg:flex flex-col w-60 shrink-0 border-r border-slate-800 bg-[#09142a] overflow-y-auto py-6 px-3 gap-0.5">
-          <p className="text-slate-600 text-[9px] uppercase tracking-widest font-bold px-2 mb-3">Contents</p>
+        <nav style={{ background: J.sidebar, borderRightColor: J.border, borderRightWidth: 1, borderRightStyle: 'solid' }}
+          className="hidden lg:flex flex-col w-56 shrink-0 overflow-y-auto py-6 px-3 gap-0.5">
+          <p style={{ color: J.faint, fontFamily: 'system-ui, sans-serif', letterSpacing: '0.12em' }}
+            className="text-[9px] uppercase font-bold px-2 mb-3">Contents</p>
           {SECTIONS.map(s => (
             <button key={s.id} onClick={() => scrollTo(s.id)}
-              className={`text-left px-2 py-1 rounded-lg text-[10.5px] transition-colors leading-snug ${
-                activeSection === s.id
-                  ? 'bg-sky-900/50 text-sky-300 font-semibold'
-                  : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/50'
-              } ${s.indent ? 'pl-5' : 'font-medium'}`}>
+              style={{
+                fontFamily: 'system-ui, sans-serif',
+                color: activeSection === s.id ? J.body : J.muted,
+                background: activeSection === s.id ? J.active : 'transparent',
+                fontWeight: activeSection === s.id ? 600 : s.indent ? 400 : 500,
+              }}
+              className={`text-left px-2 py-1 rounded text-[10.5px] transition-colors leading-snug hover:bg-[#e3ddd4] ${s.indent ? 'pl-5' : ''}`}>
               {s.label}
             </button>
           ))}
           <div className="mt-auto pt-6 px-2">
-            <div className="bg-slate-800/40 rounded-lg p-3 text-[9px] text-slate-600 leading-relaxed">
+            <div style={{ background: J.active, border: `1px solid ${J.border}`, color: J.faint, fontFamily: 'system-ui, sans-serif' }}
+              className="rounded-lg p-3 text-[9px] leading-relaxed">
               KarmaMap Working Paper<br />
               {region === 'world' ? 'Global Edition · v1.0' : 'Version 2.0'} · May 2025<br />
               Submitted for peer review.<br />
@@ -1145,39 +1197,43 @@ export default function ResearchPaper({ onClose, region = 'india' }) {
         </nav>
 
         {/* Paper content */}
-        <div ref={contentRef} className="flex-1 overflow-y-auto detail-panel-scroll">
+        <div ref={contentRef} style={{ background: J.page }} className="flex-1 overflow-y-auto detail-panel-scroll">
           {region === 'world' ? <WorldPaperBody /> : (
-          <div className="max-w-3xl mx-auto px-6 py-10 pb-28">
+          <div style={{ maxWidth: 720, margin: '0 auto', padding: '48px 40px 96px', background: J.bg, fontFamily: 'Georgia, "Times New Roman", serif' }}>
 
             {/* Title block */}
-            <div className="mb-10 pb-8 border-b border-slate-700/50">
-              <p className="text-sky-500 text-[10px] uppercase tracking-widest font-bold mb-3">
+            <div style={{ borderBottom: `2px solid ${J.border}`, marginBottom: 36, paddingBottom: 28 }}>
+              <p style={{ color: '#2563eb', fontFamily: 'system-ui, sans-serif', letterSpacing: '0.1em' }}
+                className="text-[10px] uppercase font-bold mb-3">
                 KarmaMap Working Paper · Labour Economics · AI Automation · Development Studies
               </p>
-              <h1 className="text-2xl font-black text-white leading-tight tracking-tight mb-5">
+              <h1 style={{ color: J.body, fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: 1.25 }}
+                className="text-[26px] font-bold tracking-tight mb-5">
                 The Digital Intensity Hypothesis: A Two-Factor Framework for AI Displacement Risk
                 in Structurally Heterogeneous Labour Markets, with Application to India 1950–2050
               </h1>
-              <p className="text-slate-400 text-[13px] mb-2 leading-relaxed">
+              <p style={{ color: J.muted, fontFamily: 'Georgia, serif' }} className="text-[13px] mb-1.5 leading-relaxed">
                 Syed Asrar Ahmed&nbsp;&nbsp;·&nbsp;&nbsp;Independent Research&nbsp;&nbsp;·&nbsp;&nbsp;
                 <em>asrarsaa@gmail.com</em>
               </p>
-              <p className="text-slate-600 text-[12px] mb-6">
+              <p style={{ color: J.faint, fontFamily: 'system-ui, sans-serif' }} className="text-[11px] mb-5">
                 JEL Codes: J21, J24, J31, J62, O14, O33, O53&nbsp;&nbsp;·&nbsp;&nbsp;
                 Submitted May 2025&nbsp;&nbsp;·&nbsp;&nbsp;Not yet peer-reviewed
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {['AI Displacement Risk','Digital Intensity Index','Task-Based Labour Model',
                   'India Workforce','Developing Economies','Informality','Longitudinal Analysis'].map(t => (
-                  <span key={t} className="bg-slate-800 text-slate-400 text-[10px] px-2.5 py-1 rounded-full border border-slate-700">{t}</span>
+                  <span key={t} style={{ background: J.sidebar, color: J.muted, border: `1px solid ${J.border}`, fontFamily: 'system-ui, sans-serif' }}
+                    className="text-[10px] px-2.5 py-1 rounded-full">{t}</span>
                 ))}
               </div>
             </div>
 
             {/* ── ABSTRACT ── */}
             <SectionAnchor id="abstract" />
-            <div className="mb-10 p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50">
-              <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-3">Abstract</p>
+            <div style={{ background: J.sidebar, border: `1px solid ${J.border}`, borderRadius: 8, padding: '20px 24px', marginBottom: 36 }}>
+              <p style={{ color: J.faint, fontFamily: 'system-ui, sans-serif', letterSpacing: '0.1em' }}
+                className="text-[9px] uppercase font-bold mb-3">Abstract</p>
               <P className="!mb-3">
                 Existing frameworks for assessing occupational AI displacement risk — most prominently
                 the task-based models of Autor, Levy, and Murnane (2003) and the automation probability
@@ -2453,14 +2509,17 @@ export default function ResearchPaper({ onClose, region = 'india' }) {
                 ["35", "World Bank. (2023). World development indicators 2023. Washington DC: The World Bank Group."],
               ].map(([n, text]) => (
                 <div key={n} className="flex gap-3">
-                  <span className="text-slate-600 text-[11px] font-bold shrink-0 w-6 text-right pt-0.5">[{n}]</span>
-                  <p className="text-slate-500 text-[12px] leading-relaxed">{text}</p>
+                  <span style={{ color: J.faint, fontFamily: 'system-ui, sans-serif' }}
+                    className="text-[11px] font-bold shrink-0 w-6 text-right pt-0.5">[{n}]</span>
+                  <p style={{ color: J.muted, fontFamily: 'Georgia, serif' }}
+                    className="text-[12px] leading-relaxed">{text}</p>
                 </div>
               ))}
             </div>
 
             {/* Footer */}
-            <div className="mt-12 pt-6 border-t border-slate-800 text-slate-600 text-[10px] space-y-1.5 leading-relaxed">
+            <div style={{ borderTopColor: J.border, borderTopWidth: 1, borderTopStyle: 'solid', color: J.faint, fontFamily: 'system-ui, sans-serif' }}
+              className="mt-12 pt-6 text-[10px] space-y-1.5 leading-relaxed">
               <p>KarmaMap Working Paper · Version 2.0 · May 2025 · Submitted for peer review</p>
               <p>
                 Occupational metrics (AES, DII, ADRI) are estimates derived from the methodology described in
