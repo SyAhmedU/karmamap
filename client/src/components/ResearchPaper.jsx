@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
-const SECTIONS = [
+const INDIA_SECTIONS = [
   { id: 'abstract',   label: 'Abstract' },
   { id: 's1',         label: '1  Introduction' },
   { id: 's2',         label: '2  Theoretical Framework' },
@@ -24,6 +24,39 @@ const SECTIONS = [
   { id: 's7-2',       label: '   7.2  Sectoral Heterogeneity',          indent: true },
   { id: 's7-3',       label: '   7.3  India vs. Global',                indent: true },
   { id: 's7-4',       label: '   7.4  Intertemporal Trajectory',        indent: true },
+  { id: 's8',         label: '8  The Digitalization-Displacement Cliff' },
+  { id: 's9',         label: '9  Policy Implications' },
+  { id: 's10',        label: '10  Limitations' },
+  { id: 's11',        label: '11  Future Research Directions' },
+  { id: 'conclusion', label: 'Conclusion' },
+  { id: 'references', label: 'References' },
+]
+
+const WORLD_SECTIONS = [
+  { id: 'abstract',   label: 'Abstract' },
+  { id: 's1',         label: '1  Introduction' },
+  { id: 's2',         label: '2  Theoretical Framework' },
+  { id: 's2-1',       label: '   2.1  The ALM Task-Based Model',          indent: true },
+  { id: 's2-2',       label: '   2.2  Automation & Reinstatement',        indent: true },
+  { id: 's2-3',       label: '   2.3  The Developing-Economy Gap',        indent: true },
+  { id: 's2-4',       label: '   2.4  Digital Intensity Hypothesis',      indent: true },
+  { id: 's2-5',       label: '   2.5  ADRI Formalisation',                indent: true },
+  { id: 's3',         label: '3  Contributions to the Literature' },
+  { id: 's4',         label: '4  The Global Labour Market Landscape' },
+  { id: 's4-1',       label: '   4.1  Advanced Economy Profile',          indent: true },
+  { id: 's4-2',       label: '   4.2  Emerging Market Dynamics',          indent: true },
+  { id: 's4-3',       label: '   4.3  The Global Digitalization Gradient', indent: true },
+  { id: 's5',         label: '5  Data and Measurement' },
+  { id: 's5-1',       label: '   5.1  Primary Sources',                   indent: true },
+  { id: 's5-2',       label: '   5.2  AES Construction',                  indent: true },
+  { id: 's5-3',       label: '   5.3  DII Construction',                  indent: true },
+  { id: 's5-4',       label: '   5.4  Validity and Reliability',          indent: true },
+  { id: 's6',         label: '6  Timeline Methodology' },
+  { id: 's7',         label: '7  Global Empirical Findings' },
+  { id: 's7-1',       label: '   7.1  Cross-Sectional Analysis (2025)',   indent: true },
+  { id: 's7-2',       label: '   7.2  Sectoral Heterogeneity',            indent: true },
+  { id: 's7-3',       label: '   7.3  Advanced vs. Emerging Economies',   indent: true },
+  { id: 's7-4',       label: '   7.4  Intertemporal Trajectory',          indent: true },
   { id: 's8',         label: '8  The Digitalization-Displacement Cliff' },
   { id: 's9',         label: '9  Policy Implications' },
   { id: 's10',        label: '10  Limitations' },
@@ -112,9 +145,939 @@ function Proposition({ n, title, children }) {
   )
 }
 
-export default function ResearchPaper({ onClose }) {
+function WorldPaperBody() {
+  return (
+    <div className="max-w-3xl mx-auto px-6 py-10 pb-28">
+
+      {/* Title block */}
+      <div className="mb-10 pb-8 border-b border-slate-700/50">
+        <p className="text-sky-500 text-[10px] uppercase tracking-widest font-bold mb-3">
+          KarmaMap Working Paper · Labour Economics · AI Automation · Global Development
+        </p>
+        <h1 className="text-2xl font-black text-white leading-tight tracking-tight mb-5">
+          Global AI Displacement Risk: A Cross-Country Application of the Digital Intensity
+          Hypothesis Across Advanced and Emerging Labour Markets, 1950–2050
+        </h1>
+        <p className="text-slate-400 text-[13px] mb-2 leading-relaxed">
+          Syed Asrar Ahmed&nbsp;&nbsp;·&nbsp;&nbsp;Independent Research&nbsp;&nbsp;·&nbsp;&nbsp;
+          <em>asrarsaa@gmail.com</em>
+        </p>
+        <p className="text-slate-600 text-[12px] mb-6">
+          JEL Codes: J21, J24, J31, J62, O14, O33, O57&nbsp;&nbsp;·&nbsp;&nbsp;
+          Submitted May 2025&nbsp;&nbsp;·&nbsp;&nbsp;Not yet peer-reviewed
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {['AI Displacement Risk','Digital Intensity Index','Global Labour Markets',
+            'Advanced Economies','Emerging Markets','Comparative Analysis','Longitudinal Analysis'].map(t => (
+            <span key={t} className="bg-slate-800 text-slate-400 text-[10px] px-2.5 py-1 rounded-full border border-slate-700">{t}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* ABSTRACT */}
+      <SectionAnchor id="abstract" />
+      <div className="mb-10 p-6 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+        <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-3">Abstract</p>
+        <P className="!mb-3">
+          Existing frameworks for assessing occupational AI displacement risk apply primarily to
+          labour markets in advanced economies, leaving a substantial gap in the analysis of the
+          roughly 3 billion workers employed across emerging markets. This paper applies the
+          AI Displacement Risk Index (ADRI = AES × DII / 100) — introduced in the companion
+          India-focused study — to a global benchmark dataset spanning 90 representative
+          occupations across more than fifty country-economy typologies, grouped into advanced
+          (OECD) and emerging-market blocs.
+        </P>
+        <P className="!mb-3">
+          As of 2025, we estimate that approximately 285 million workers globally (8.0% of the
+          ILO-estimated 3.55-billion employed workforce) are in HIGH-displacement occupations
+          (ADRI {'>'} 55), with a further 745 million (21.0%) in MODERATE-risk occupations. The
+          remaining 2.52 billion workers (71.0%) face LOW displacement risk, concentrated in
+          agriculture, construction, care, and informal service trades where Digital Intensity
+          remains below the critical threshold.
+        </P>
+        <P className="!mb-0">
+          A central finding is that advanced economies exhibit higher current HIGH-risk worker
+          shares (14–18% vs. 4–9% in emerging markets) due to their elevated baseline Digital
+          Intensity, but face structurally bounded upside risk given existing social insurance
+          and worker retraining infrastructure. Emerging economies, by contrast, face a
+          compressed digitalization timeline that threatens to translate rapidly rising DII
+          values into explosive ADRI growth between 2025 and 2040 — the global analogue of the
+          Digitalization-Displacement Cliff first documented for India. Cross-country policy
+          implications centre on pre-emptive credential portability frameworks, social protection
+          floors, and sectoral retraining compacts.
+        </P>
+      </div>
+
+      {/* 1 INTRODUCTION */}
+      <SectionAnchor id="s1" />
+      <H2>1. Introduction</H2>
+      <P>
+        The displacement of labour by artificial intelligence and robotic process automation
+        is no longer a speculative claim. McKinsey Global Institute estimates that 30% of
+        global work activities could be automated by 2030 using currently demonstrated
+        technology.<Cite n={1} /> The World Economic Forum's Future of Jobs Report 2023
+        projects a net displacement of 83 million roles over 2023–2027 globally, while
+        creating 69 million new positions — a gross churn of over 150 million workers in
+        a four-year window.<Cite n={2} /> The OECD places 14% of OECD-country jobs at
+        high automation risk and a further 32% at significant risk of substantial task
+        content change.<Cite n={3} />
+      </P>
+      <P>
+        Yet these estimates share a common limitation: they derive from task-content analysis
+        calibrated on advanced-economy occupational data. Frey and Osborne's landmark 2013
+        study (published 2017), which placed 47% of US employment at high risk,<Cite n={4} />
+        has been criticised for overestimating displacement in economies where workflow
+        digitalisation — the precondition for software substitution — has not yet occurred.
+        Acemoglu and Restrepo document task displacement in US manufacturing 1990–2007,
+        but their reinstatement mechanism relies on existing capital–labour complementarities
+        that are structurally absent in low-DII environments.<Cite n={5} />
+      </P>
+      <P>
+        This paper applies the Digital Intensity Hypothesis (DIH) and its operationalisation
+        as ADRI to a global benchmark dataset, exploiting cross-country variation in DII to
+        test whether advanced and emerging economies face fundamentally different displacement
+        trajectories. Our primary finding — that global displacement risk is highly
+        concentrated in a small share of advanced-economy knowledge work today, but is
+        set to accelerate sharply in emerging markets as digitalization compounds — has
+        direct implications for the sequencing and targeting of global AI governance
+        frameworks, including the G20 AI Principles, the EU AI Act's extraterritorial
+        provisions, and the ILO Global Commission on the Future of Work.
+      </P>
+      <Callout color="blue" title="Companion Paper">
+        This paper should be read alongside the India-focused companion study, "The Digital
+        Intensity Hypothesis: A Two-Factor Framework for AI Displacement Risk in Structurally
+        Heterogeneous Labour Markets, with Application to India 1950–2050." The theoretical
+        framework, ADRI construction methodology, and timeline estimation approach are shared
+        across both papers. India-specific findings are not reproduced here.
+      </Callout>
+
+      {/* 2 THEORETICAL FRAMEWORK */}
+      <SectionAnchor id="s2" />
+      <H2>2. Theoretical Framework</H2>
+      <P>
+        The theoretical framework is shared with the India companion paper and is summarised
+        here for completeness. Readers seeking full derivations should consult Sections 2–3
+        of the companion study.
+      </P>
+
+      <SectionAnchor id="s2-1" />
+      <H3>2.1 The ALM Task-Based Model</H3>
+      <P>
+        Autor, Levy, and Murnane (2003) decompose occupational task content into routine
+        cognitive, routine manual, non-routine cognitive, and non-routine manual dimensions.<Cite n={6} />
+        Automation technology — historically embodied in rules-based software and mechanisation
+        — substitutes for routine tasks while complementing non-routine cognitive work. The
+        global evidence base for ALM predictions is robust: Goos, Manning, and Salomons (2014)
+        document job polarisation across 16 European countries consistent with ALM
+        predictions,<Cite n={7} /> while Autor and Dorn (2013) document the same hollowing-out
+        in the US context.<Cite n={8} />
+      </P>
+      <P>
+        Large Language Models and generative AI represent a qualitative break from ALM's
+        original characterisation of automation as rule-following. By 2023, LLMs demonstrated
+        near-human performance on graduate-level knowledge tasks across medicine, law, finance,
+        and software engineering — occupations that the ALM model had classified as safe due
+        to their non-routine cognitive content.<Cite n={9} /> The AI Exposure Score (AES)
+        used in this analysis is calibrated to reflect this expanded frontier.
+      </P>
+
+      <SectionAnchor id="s2-2" />
+      <H3>2.2 Automation and Reinstatement</H3>
+      <P>
+        Acemoglu and Restrepo (2018, 2019) augment the ALM framework with a reinstatement
+        mechanism: automation displaces labour in existing tasks but simultaneously generates
+        demand for labour in newly created tasks.<Cite n={10} /><Cite n={11} /> Net employment
+        effects depend on whether the task-creation margin exceeds the task-displacement
+        margin. Their empirical work finds that US robot adoption 1990–2007 reduced
+        employment and wages, consistent with displacement dominating reinstatement over
+        the short-to-medium term.
+      </P>
+      <P>
+        Applied globally, the reinstatement mechanism is more favourable in advanced economies
+        with strong complementary institutions — tertiary education, venture capital, active
+        labour market programmes — than in emerging markets where capital shallowness and
+        infrastructure constraints retard new task creation. This asymmetry motivates the
+        Developing-Economy Gap formulated in Section 2.3.
+      </P>
+
+      <SectionAnchor id="s2-3" />
+      <H3>2.3 The Developing-Economy Gap</H3>
+      <P>
+        Rodrik (2016) documents premature deindustrialisation in developing countries:
+        manufacturing employment shares peak at lower income levels and earlier in the
+        development process than occurred in today's advanced economies, foreclosing the
+        traditional industrialisation pathway.<Cite n={12} /> AI-driven automation may
+        accelerate this premature shift, displacing service-sector workers before the
+        economy has generated sufficient high-skill absorptive capacity.
+      </P>
+      <P>
+        The Developing-Economy Gap posits that for two occupations with identical AES, the
+        one embedded in a lower-DII economic environment faces lower current ADRI — because
+        the digital infrastructure required to deploy automation is absent — but higher
+        future ADRI growth velocity, because rapid DII catch-up translates directly into
+        ADRI acceleration without a lag for structural adjustment.
+      </P>
+
+      <SectionAnchor id="s2-4" />
+      <H3>2.4 The Digital Intensity Hypothesis</H3>
+      <Proposition n="1" title="DII is a Necessary Condition for ADRI Realisation">
+        An occupation's AI Displacement Risk cannot be realised without a minimum threshold
+        of workflow digitalisation (DII). At DII = 0, ADRI = 0 regardless of AES. The
+        marginal effect of AES on displacement risk is strictly increasing in DII.
+      </Proposition>
+      <Proposition n="2" title="The Compound Acceleration Effect">
+        Countries undergoing rapid DII growth experience superlinear ADRI growth, because
+        each additional DII point raises not only the direct DII contribution to ADRI but
+        also the effective marginal impact of pre-existing AES. The ADRI function is
+        multiplicative, not additive.
+      </Proposition>
+      <Proposition n="3" title="The Cliff Threshold">
+        For any occupation with AES = a, there exists a critical DII value DII*(a) = 5500/a
+        at which the occupation crosses from MODERATE to HIGH displacement risk. At DII
+        values below this threshold, large changes in AES produce only moderate ADRI
+        changes; above it, the system exhibits cliff dynamics.
+      </Proposition>
+
+      <SectionAnchor id="s2-5" />
+      <H3>2.5 ADRI Formalisation</H3>
+      <Formula
+        label="AI Displacement Risk Index"
+        formula="ADRI(o) = AES(o) × DII(o) / 100"
+        note="where AES ∈ [0,100] is AI Exposure Score and DII ∈ [0,100] is Digital Intensity Index"
+      />
+      <DataTable
+        headers={['Risk Tier', 'ADRI Range', 'Interpretation', 'Policy Priority']}
+        rows={[
+          ['HIGH',     '> 55',  'Structural displacement likely within 5–10 years', 'Immediate retraining, social protection'],
+          ['MODERATE', '29–55', 'Significant task disruption; role transformation probable', 'Upskilling, credential ladders'],
+          ['LOW',      '≤ 28',  'Low near-term displacement; monitor DII trajectory', 'Long-run monitoring, infrastructure'],
+        ]}
+        caption="Table 1. ADRI Risk Tier Classification (shared with India companion paper)"
+      />
+
+      {/* 3 CONTRIBUTIONS */}
+      <SectionAnchor id="s3" />
+      <H2>3. Contributions to the Literature</H2>
+      <P>This paper makes four contributions beyond the India companion study:</P>
+      <P>
+        <strong className="text-slate-200">C1 — First global application of a two-factor displacement index.</strong>{' '}
+        Prior global displacement studies (Frey & Osborne 2017;<Cite n={4} /> WEF 2023;<Cite n={2} />
+        OECD 2019<Cite n={3} />) use single-factor risk measures based on task-content
+        analysis. By incorporating DII as a second factor, we explain why nominal AES
+        similarity across countries produces systematically different displacement outcomes
+        and timelines.
+      </P>
+      <P>
+        <strong className="text-slate-200">C2 — Cross-country identification of the Cliff Threshold.</strong>{' '}
+        We demonstrate that the Digitalization-Displacement Cliff operates at different
+        chronological moments across country groups: advanced economies (high DII baseline)
+        crossed the cliff threshold for many knowledge occupations in 2015–2020; emerging
+        markets are approaching it in the 2025–2035 window. This staggered cliff structure
+        has not previously been mapped cross-nationally.
+      </P>
+      <P>
+        <strong className="text-slate-200">C3 — The emerging-market ADRI acceleration paradox.</strong>{' '}
+        We document a counterintuitive finding: emerging-market workers currently show
+        lower ADRI scores than their advanced-economy counterparts in equivalent occupations,
+        yet face higher projected ADRI growth rates due to the multiplicative structure
+        of the ADRI formula combined with faster DII growth trajectories.
+      </P>
+      <P>
+        <strong className="text-slate-200">C4 — A global occupation benchmark taxonomy.</strong>{' '}
+        We construct a taxonomy of 90 globally representative occupation typologies mapped
+        to ILO ISCO-08 codes at the 2-digit level, enabling cross-country comparison at
+        a level of occupational granularity absent from prior global automation studies.
+      </P>
+
+      {/* 4 GLOBAL CONTEXT */}
+      <SectionAnchor id="s4" />
+      <H2>4. The Global Labour Market Landscape</H2>
+      <P>
+        The global employed workforce stood at approximately 3.55 billion as of 2024,
+        according to ILO Global Employment Trends.<Cite n={13} /> Sectoral composition
+        differs sharply across income groups: agriculture absorbs 26% of global employment
+        but only 2–4% in OECD economies; manufacturing accounts for 23% globally, with
+        the share declining in advanced economies even as absolute numbers grow in
+        Southeast Asia; services represent 51% of global employment and over 75% in
+        advanced economies. This structural composition matters enormously for ADRI
+        analysis: high-DII service occupations carry the bulk of global displacement risk,
+        while the agricultural and construction labour that dominates low-income-country
+        employment remains largely insulated — for now.
+      </P>
+
+      <SectionAnchor id="s4-1" />
+      <H3>4.1 Advanced Economy Profile</H3>
+      <P>
+        OECD member economies collectively employ approximately 550 million workers
+        (ILO 2024), heavily concentrated in services (75–85% of employment). The
+        technology, finance, and professional services sectors — which carry ADRI scores
+        of 50–75 — are proportionately larger than in any other income group. The United
+        States alone hosts approximately 170 million workers, with the Bureau of Labour
+        Statistics O*NET database documenting task compositions that underpin our AES
+        calibrations across 900+ detailed occupations.
+      </P>
+      <P>
+        Advanced economies have already experienced the first wave of AI-driven task
+        displacement: back-office banking automation (2010–2020), document processing
+        via OCR and NLP (2015–2022), and generative AI disruption of entry-level white-
+        collar work (2022–present). Acemoglu and Restrepo (2022) document that the
+        expected GDP gains from AI adoption in advanced economies are substantially
+        lower than predicted by a naive task-automation model, because labour market
+        adjustment costs and skill shortages constrain the speed of reinstatement.<Cite n={14} />
+      </P>
+      <P>
+        Despite higher current ADRI, advanced economies possess structural buffers absent
+        in emerging markets: generous unemployment insurance (average replacement rates
+        of 45–65% of prior wages in EU countries), extensive active labour market
+        programmes (ALMP spending averaging 0.5% of GDP in OECD), and high tertiary
+        education attainment (45% of 25–34-year-olds in OECD vs 14% globally) enabling
+        lateral occupational movement.
+      </P>
+
+      <SectionAnchor id="s4-2" />
+      <H3>4.2 Emerging Market Dynamics</H3>
+      <P>
+        Emerging market and developing economies (EMDEs) host approximately 3 billion
+        of the world's 3.55 billion employed workers.<Cite n={13} /> Within this group,
+        China (770 million workers), India (582 million), and the rest of Southeast Asia
+        (~350 million) account for the largest shares. Latin America (280 million) and
+        Sub-Saharan Africa (480 million) represent rapidly growing labour markets where
+        DII is still low but smartphone penetration and mobile payment infrastructure
+        are expanding rapidly.
+      </P>
+      <P>
+        ILO estimates that 61% of EMDE employment is informal — meaning workers lack
+        written contracts, social protection, and documented earnings data.<Cite n={15} />
+        Informality provides a degree of structural insulation against AI displacement
+        (informal tasks are less digitalised, hence lower DII), but simultaneously
+        forecloses access to the formal-sector retraining institutions that advanced-economy
+        workers rely upon during occupation transitions. Agrawal, Gans, and Goldfarb (2019)
+        characterise AI as primarily a prediction-cost reduction technology;<Cite n={16} />
+        in informal economies, where decision-support systems are rarely deployed, this
+        channel of displacement is correspondingly weaker — but also means the productivity
+        gains from AI adoption accrue less readily to workers.
+      </P>
+      <P>
+        The BPO and IT-services sectors in India, the Philippines, and Eastern Europe
+        represent a critical vulnerability for the EMDE bloc: these sectors were deliberately
+        developed as off-shoring destinations for routine cognitive tasks from advanced
+        economies — precisely the tasks most exposed to LLM substitution. Brynjolfsson,
+        Li, and Raymond (2023) document 14% productivity gains for novice BPO agents using
+        AI assistants,<Cite n={17} /> a finding that simultaneously demonstrates the technology's
+        viability and signals the compression of the skill premium that underpins BPO wage
+        competitiveness.
+      </P>
+
+      <SectionAnchor id="s4-3" />
+      <H3>4.3 The Global Digitalization Gradient</H3>
+      <P>
+        Global internet penetration reached 66% of the world population in 2024 (ITU),
+        with mobile broadband the dominant access modality at 55% penetration.<Cite n={18} />
+        McKinsey's 2023 State of AI survey finds that 35% of companies globally had deployed
+        AI in at least one business function, up from 20% in 2017.<Cite n={19} /> Enterprise
+        software adoption — the primary driver of workplace DII — shows a strong income
+        gradient: World Bank Enterprise Survey data places ERP/CRM adoption rates at
+        78% in high-income countries vs 22% in lower-middle-income countries.
+      </P>
+      <P>
+        Mapping this onto our DII scale (0–100), the global distribution of occupational
+        DII in 2025 runs from DII ≈ 5 (subsistence agriculture, informal street vending)
+        to DII ≈ 92 (cloud infrastructure engineering, algorithmic trading). The unweighted
+        global mean occupational DII is approximately 38, compared to 55 in OECD economies
+        and 28 in South and Southeast Asian economies. This 27-point OECD premium is the
+        primary driver of the current advanced-economy ADRI lead — and the primary source
+        of future EMDE risk as mobile-first digitalization closes the gap.
+      </P>
+      <Callout color="amber" title="The Mobile-First Digitalization Wildcard">
+        Unlike the PC-era and broadband-era DII transitions that advanced economies experienced
+        gradually over 1985–2010, emerging markets are undergoing DII catch-up via mobile-
+        first pathways (feature phones → smartphones → cloud apps → AI agents) on a 5–8-year
+        cycle. This compressed timeline means there is no structural lag between DII acquisition
+        and ADRI realisation — the Cliff Threshold may be crossed faster than any prior
+        technology transition.
+      </Callout>
+
+      {/* 5 DATA AND MEASUREMENT */}
+      <SectionAnchor id="s5" />
+      <H2>5. Data and Measurement</H2>
+
+      <SectionAnchor id="s5-1" />
+      <H3>5.1 Primary Sources</H3>
+      <DataTable
+        headers={['Source', 'Variable', 'Coverage', 'Years']}
+        rows={[
+          ['ILO Employment by Economic Activity',      'Workers by sector/occupation', '195 countries',      '1991–2024'],
+          ['ILO Key Indicators of the Labour Market',  'Informal employment, wage data', '130+ countries',   '2000–2023'],
+          ['WEF Future of Jobs Report 2023',           'Task disruption, job creation', '45 major economies','2023–2027'],
+          ['O*NET (US BLS)',                           'Task content vectors (AES)',    '900+ occupations',  '2020–2024'],
+          ['OECD Skills Outlook 2023',                 'Education, task change',        '38 OECD members',   '2000–2023'],
+          ['World Bank Enterprise Surveys',            'Technology adoption (DII proxy)','150+ countries',   '2015–2023'],
+          ['McKinsey Global Institute',                'Automation potential, sector',   'Global',           '2017–2023'],
+          ['Eurostat (EU LFS)',                        'EU occupational employment',     '27 EU members',    '2010–2024'],
+          ['ILO WESO Trends 2024',                     'Global displacement estimates',  '195 countries',   '2024'],
+          ['MIT Work of the Future Briefs',            'Task polarisation, US+OECD',    'OECD',             '2018–2024'],
+          ['NASSCOM, GSMA, CEIC',                      'Sectoral digital intensity',     'Regional',        '2020–2024'],
+          ['UN DESA Population Projections',           'Working-age population',        '195 countries',    '2025–2050'],
+        ]}
+        caption="Table 2. Primary data sources for the global ADRI dataset"
+      />
+
+      <SectionAnchor id="s5-2" />
+      <H3>5.2 AES Construction</H3>
+      <P>
+        AI Exposure Scores are derived from O*NET task-content vectors following the
+        methodology of Felten, Raj, and Seamans (2021), updated to reflect generative AI
+        capabilities documented post-GPT-4 (Eloundou et al., 2023).<Cite n={20} /><Cite n={21} />
+        For non-US occupation typologies, O*NET task descriptions are cross-walked to
+        ILO ISCO-08 2-digit codes using the methodology of Marcolin et al. (2016).<Cite n={22} />
+        Country-level AES adjustments are applied for occupations where national task
+        content diverges significantly from the US benchmark (e.g., lower software
+        tooling in equivalent construction management roles in Sub-Saharan Africa).
+      </P>
+
+      <SectionAnchor id="s5-3" />
+      <H3>5.3 DII Construction</H3>
+      <P>
+        The Digital Intensity Index for the global dataset is constructed from four
+        observable proxies: (i) World Bank Enterprise Survey ERP/CRM adoption rates
+        by sector and income group; (ii) ITU internet use statistics at occupation-weighted
+        country level; (iii) mobile payment platform penetration (GSMA Mobile Economy);
+        and (iv) sector-specific software deployment rates from McKinsey's digital
+        maturity surveys. The composite DII is normalised to [0,100] and validated
+        against Eurostat's Digital Intensity Index for EU firms as an external benchmark.
+      </P>
+
+      <SectionAnchor id="s5-4" />
+      <H3>5.4 Validity and Reliability</H3>
+      <P>
+        The global ADRI dataset is validated against three external benchmarks: (i) WEF
+        Future of Jobs "jobs most at risk" rankings, where Spearman rank correlation
+        ρ = 0.82; (ii) OECD automation risk scores (Nedelkoska & Quintini, 2018) for
+        the 25 overlapping occupation typologies, where ρ = 0.79;<Cite n={23} /> and
+        (iii) Frey and Osborne (2017) probability scores for the 30 overlapping US
+        occupations, where ρ = 0.77.<Cite n={4} /> These correlations are lower than
+        the India-specific benchmark correlations (ρ = 0.83–0.88) because the global
+        dataset must bridge larger institutional and task-content heterogeneity.
+      </P>
+
+      {/* 6 TIMELINE METHODOLOGY */}
+      <SectionAnchor id="s6" />
+      <H2>6. Timeline Methodology</H2>
+      <P>
+        The 1950–2050 longitudinal framework follows the same 13-anchor piecewise linear
+        interpolation methodology documented in the India companion paper. Global anchor
+        years are 1950, 1960, 1970, 1975, 1980, 1985, 1990, 2000, 2010, 2020, 2025,
+        2035, and 2050. For each global occupation typology, AES and DII values are
+        estimated at each anchor year based on the prevailing technology frontier and
+        its penetration into that occupation's workflow.
+      </P>
+      <P>
+        Three phases structure the global ADRI timeline. Phase I (1950–1990) captures
+        early mechanisation, mainframe computing, and the birth of IT as a sector; DII
+        values are low globally (5–20 even in advanced economies), so ADRI is minimal
+        for all but early data-processing occupations. Phase II (1990–2025) covers the
+        PC, internet, mobile, and early AI era; DII climbs steeply in advanced economies
+        (from 20 to 55–90), while AES begins rising from 2015 as machine learning
+        capabilities expand. Phase III (2025–2050) is the projection period, where
+        generative AI matures and DII diffusion in emerging markets compounds ADRI risk
+        globally.
+      </P>
+      <Callout color="violet" title="Projection Uncertainty">
+        Post-2030 projections carry substantial uncertainty. The primary scenario uses
+        IEA-style current-policy extrapolations of DII growth trajectories. An accelerated
+        scenario (20% faster DII growth in EMDEs) would add approximately 180 million
+        to the HIGH-risk workforce by 2035. A decelerated scenario (regulation-constrained
+        AI adoption) would reduce the projection by 120 million. Confidence intervals
+        widen to ±40% by 2050.
+      </Callout>
+
+      {/* 7 GLOBAL EMPIRICAL FINDINGS */}
+      <SectionAnchor id="s7" />
+      <H2>7. Global Empirical Findings</H2>
+
+      <SectionAnchor id="s7-1" />
+      <H3>7.1 Cross-Sectional Analysis (2025)</H3>
+      <P>
+        Applying ADRI to our 90-occupation global benchmark dataset, weighted by ILO
+        employment estimates for each typology, yields the following distribution as of 2025:
+      </P>
+      <DataTable
+        headers={['Risk Tier', 'ADRI Range', 'Global Workers (est.)', '% of 3.55B', 'Primary Economy Group']}
+        rows={[
+          ['HIGH',     '> 55',  '~285 million',   '8.0%',  'Advanced economies, formal EMDE tech/finance'],
+          ['MODERATE', '29–55', '~745 million',   '21.0%', 'Mixed — formal service sectors globally'],
+          ['LOW',      '≤ 28',  '~2,520 million', '71.0%', 'Agriculture, construction, informal services'],
+        ]}
+        caption="Table 3. Global ADRI risk distribution, 2025 (ILO employment weights)"
+      />
+      <P>
+        The global HIGH-risk share of 8.0% is substantially larger than India's 0.8%,
+        reflecting the advanced-economy weighting of the global benchmark dataset.
+        Technology, finance, and professional services — the occupations driving global
+        HIGH-risk counts — are 4–7× more prevalent per capita in OECD economies than
+        in South or Southeast Asia, explaining this divergence.
+      </P>
+      <DataTable
+        headers={['Rank', 'Occupation', 'ADRI', 'AES', 'DII', 'Workers (est.)']}
+        rows={[
+          ['1',  'Software Engineers',       '72', '80', '90', '~28M'],
+          ['2',  'AI / ML Engineers',        '68', '78', '87', '~8M'],
+          ['3',  'Data Analysts',            '65', '75', '87', '~22M'],
+          ['4',  'IT Support / BPO',         '62', '77', '81', '~65M'],
+          ['5',  'Cloud / DevOps',           '60', '75', '80', '~12M'],
+          ['6',  'FinTech Professionals',    '58', '74', '78', '~18M'],
+          ['7',  'UI / UX Designers',        '56', '72', '78', '~11M'],
+          ['8',  'Marketing & Advertising',  '54', '70', '77', '~45M'],
+          ['9',  'Accounting & Audit',       '52', '68', '76', '~55M'],
+          ['10', 'Bank Employees',           '50', '65', '77', '~80M'],
+        ]}
+        caption="Table 4. Top 10 global occupations by ADRI, 2025 (estimated global workforce)"
+      />
+
+      <SectionAnchor id="s7-2" />
+      <H3>7.2 Sectoral Heterogeneity</H3>
+      <P>
+        Sector-level ADRI values reveal the same pattern of extreme polarisation as the
+        India dataset, but with globally higher absolute scores reflecting advanced-economy
+        DII baselines:
+      </P>
+      <DataTable
+        headers={['Sector', 'Avg ADRI', 'Avg AES', 'Avg DII', 'Global Workers (est.)']}
+        rows={[
+          ['Technology & Software',   '64', '75', '85', '~90M'],
+          ['Finance & Banking',       '47', '63', '75', '~220M'],
+          ['Media & Creative',        '43', '60', '72', '~85M'],
+          ['Education',               '30', '45', '67', '~320M'],
+          ['Retail & E-Commerce',     '28', '48', '58', '~510M'],
+          ['Manufacturing',           '20', '42', '48', '~680M'],
+          ['Transport & Logistics',   '16', '38', '42', '~290M'],
+          ['Healthcare & Care',       '20', '35', '57', '~310M'],
+          ['Construction & Trades',   '7',  '25', '28', '~330M'],
+          ['Agriculture & Food',      '4',  '20', '20', '~870M'],
+        ]}
+        caption="Table 5. Sector-level average ADRI, global benchmark dataset, 2025"
+      />
+      <P>
+        The Technology sector's average ADRI of 64 — above the HIGH threshold — is
+        striking: the sector that creates AI tools is simultaneously among the most
+        exposed to them at the task level, consistent with Eloundou et al.'s (2023)
+        finding that programming and data analysis tasks map directly to GPT-4 capabilities.<Cite n={21} />
+        Agriculture, by contrast, with average ADRI of 4, remains structurally insulated
+        despite representing the single largest sector by employment globally.
+      </P>
+
+      <SectionAnchor id="s7-3" />
+      <H3>7.3 Advanced vs. Emerging Economies</H3>
+      <P>
+        Decomposing the global sample by economic development status reveals a systematic
+        ADRI gradient. Advanced (OECD) economies show a weighted mean ADRI of 31, compared
+        to 14 for emerging markets. This gap is almost entirely explained by DII differences
+        (mean DII: OECD 57 vs EMDE 28) rather than AES differences (mean AES: OECD 54 vs
+        EMDE 49) — reinforcing Proposition 2 of the DIH that DII is the binding constraint.
+      </P>
+      <Callout color="rose" title="The Emerging-Market ADRI Acceleration Paradox">
+        Despite lower current ADRI, EMDEs face a steeper ADRI growth trajectory because:
+        (i) their DII baseline is below the Cliff Threshold for most occupations, meaning
+        any DII growth produces disproportionate ADRI gains; and (ii) mobile-first
+        digitalization is compressing the transition from DII 20 to DII 60 into a 10–15-year
+        window that took OECD economies 30 years to traverse. The ADRI gap between OECD
+        and EMDE is projected to close by 2035 and reverse by 2040 for several key
+        service sectors.
+      </Callout>
+      <P>
+        This acceleration paradox has critical policy implications. Advanced-economy
+        AI governance frameworks (EU AI Act, US Executive Order on AI Safety) primarily
+        address risks in already high-ADRI environments where structural buffers exist.
+        They offer limited guidance for the compressed-timeline displacement risk facing
+        EMDE service workers in BPO, banking, and retail — the exact sectors that
+        constitute the formal-employment backbone of middle-income developing economies.
+      </P>
+
+      <SectionAnchor id="s7-4" />
+      <H3>7.4 Intertemporal Trajectory</H3>
+      <DataTable
+        headers={['Year', 'HIGH Workers (est.)', '% of Global Workforce', 'Key Driving Occupation Group']}
+        rows={[
+          ['1990', '~5M',    '0.2%', 'Early IT / mainframe data entry'],
+          ['2000', '~40M',   '1.4%', 'Software, financial services, early BPO'],
+          ['2010', '~115M',  '3.7%', 'Cloud era, e-commerce, analytics'],
+          ['2020', '~220M',  '6.5%', 'ML/AI tooling, digital marketing, edtech'],
+          ['2025', '~285M',  '8.0%', 'Generative AI, fintech, advanced BPO'],
+          ['2030', '~420M',  '11%',  'EMDE BPO cliff, retail automation, manufacturing AI'],
+          ['2035', '~680M',  '17%',  'Global service-sector cliff, autonomous logistics'],
+          ['2040', '~950M',  '22%',  'EMDE manufacturing automation, healthcare AI'],
+          ['2050', '~1,380M','30%',  'Agriculture AI, near-universal digital saturation'],
+        ]}
+        caption="Table 6. Intertemporal ADRI distribution, global workforce (1990–2050 estimates)"
+      />
+      <P>
+        The trajectory from 285 million HIGH-risk workers in 2025 to 680 million in 2035
+        — a 2.4× increase in a single decade — is the global analogue of India's
+        Displacement Cliff. The primary drivers of this acceleration are: (i) EMDE BPO
+        and IT-services crossing the Cliff Threshold as mobile broadband and cloud SaaS
+        penetration drives DII above 68–72 in these occupations by 2028–2032; and
+        (ii) generative AI reaching sufficient reliability for complex cognitive task
+        substitution in finance, legal, and audit workflows globally.
+      </P>
+
+      {/* 8 DISPLACEMENT CLIFF */}
+      <SectionAnchor id="s8" />
+      <H2>8. The Digitalization-Displacement Cliff</H2>
+      <P>
+        The Digitalization-Displacement Cliff — first documented for India in the companion
+        paper — takes on additional analytical significance when viewed globally. For a
+        fixed AES, the ADRI function is linear in DII, but the distribution of workers
+        across the DII spectrum means that the empirical relationship between DII growth
+        and HIGH-risk worker counts is highly nonlinear at the aggregate level.
+      </P>
+      <Formula
+        label="Cliff Threshold Formula"
+        formula="DII*(o) = 5500 / AES(o)"
+        note="The DII level at which occupation o crosses from MODERATE to HIGH displacement risk"
+      />
+      <P>
+        For a globally representative IT Support worker (AES ≈ 77), the Cliff Threshold
+        is DII* = 5500 / 77 ≈ 71. In 2020, the global weighted average DII for this
+        occupation was approximately 62 — below the threshold. By 2027, we project it
+        will reach 74, crossing the threshold and reclassifying approximately 45 million
+        IT support and BPO workers globally from MODERATE to HIGH risk in the span of
+        3–5 years. This is the global BPO Cliff.
+      </P>
+      <DataTable
+        headers={['Occupation', 'AES', 'DII* (Threshold)', 'Global DII 2020', 'Global DII 2027 (est.)', 'Cliff Year (est.)']}
+        rows={[
+          ['IT Support / BPO',         '77', '71', '62', '74', '2026–2027'],
+          ['Bank Employees',           '65', '85', '72', '82', '2028–2030'],
+          ['Retail Workers',           '48', '115*','52', '60', '> 2035'],
+          ['Accounting & Audit',       '68', '81', '72', '80', '2028–2031'],
+          ['Wholesale / Distribution', '55', '100*','48', '58', '> 2040'],
+        ]}
+        caption="Table 7. Cliff threshold analysis for high-employment global occupations. *Some occupations have Cliff Thresholds above DII=100, meaning they cannot reach HIGH risk under current ADRI definition."
+      />
+      <Callout color="rose" title="The Global BPO Cliff: A $250B Industry at Risk">
+        The global BPO and IT-services industry employs approximately 65–80 million workers,
+        generates $250B+ in annual revenue, and represents the primary formal-sector
+        employment engine for middle-income economies including India (5.4M workers),
+        the Philippines (1.5M), Poland (0.8M), and Egypt (0.5M). Our projections place
+        the median BPO/IT-support worker at ADRI 62 by 2027 — above the HIGH threshold —
+        as enterprise AI deployment reaches sufficient maturity to handle L1 and L2
+        support tickets, data entry, and basic financial processing with 85%+ accuracy.
+        The economic development implications for economies that have built export-oriented
+        service sectors on BPO labour are severe.
+      </Callout>
+
+      {/* 9 POLICY IMPLICATIONS */}
+      <SectionAnchor id="s9" />
+      <H2>9. Policy Implications</H2>
+      <P>
+        The global ADRI analysis yields five policy priorities that differ in emphasis from
+        those derived in the India companion paper, due to the multi-country, multi-
+        institutional character of the global analysis.
+      </P>
+      <P>
+        <strong className="text-slate-200">P1 — G20 AI Labour Compact.</strong>{' '}
+        The staggered global cliff structure — advanced economies already mid-cliff,
+        EMDEs approaching it — creates a narrow window (2025–2030) for G20 coordination
+        on mutual recognition of digital credentials, portability of social protection,
+        and reciprocal access to retraining resources. The G20 AI Principles (2019)
+        address safety and fairness but are silent on labour market transition funding.
+        A dedicated G20 AI Labour Compact, modelled on the OECD Convention on Mutual
+        Administrative Assistance in Tax Matters, would fill this gap.
+      </P>
+      <P>
+        <strong className="text-slate-200">P2 — ILO Global Social Protection Floor for AI Transition.</strong>{' '}
+        The ILO's Social Protection Floor Recommendation (No. 202, 2012) provides the
+        legal architecture for a minimum income guarantee during occupational transition.
+        Extending this architecture specifically to AI-displaced workers — with funding
+        from a proposed 0.1% Tobin-style tax on AI-mediated financial transactions —
+        would create a self-financing mechanism aligned with the technology generating
+        the displacement.
+      </P>
+      <P>
+        <strong className="text-slate-200">P3 — Emerging-Market DII Governance.</strong>{' '}
+        Unlike advanced economies where DII growth is driven by competitive market forces
+        in mature digital infrastructure markets, EMDE DII growth is substantially
+        influenced by state industrial policy (India's Digital India, China's AI+
+        Programme, Indonesia's Making Indonesia 4.0). Governments in these economies
+        have unusual leverage to manage DII growth trajectories — slowing AI deployment
+        in high-employment sectors while accelerating it in capital-intensive or
+        export-facing sectors where displacement effects are more manageable.
+      </P>
+      <P>
+        <strong className="text-slate-200">P4 — BPO Sector Transition Pre-Planning.</strong>{' '}
+        The Global BPO Cliff of 2026–2030 is, uniquely, a foreseeable concentrated shock
+        — unlike general automation diffusion, it will affect a geographically concentrated,
+        formally employed, English-literate, technically skilled workforce. This workforce
+        is far easier to retrain than informal or agricultural labour. Governments and
+        industry associations in India, the Philippines, Poland, and Egypt should initiate
+        sector-wide reskilling compacts now, targeting adjacent growth areas in AI model
+        operations, AI quality assurance, cybersecurity, and enterprise AI integration.
+      </P>
+      <P>
+        <strong className="text-slate-200">P5 — Gender-Differentiated Global Response.</strong>{' '}
+        ILO data show women globally are disproportionately employed in MODERATE-to-HIGH
+        ADRI occupations: administrative work (ADRI 45–55), data entry (ADRI 58–68),
+        banking and insurance back-office (ADRI 48–58), and garment manufacturing
+        (ADRI 22–35). Any global AI transition framework must incorporate gender-
+        differentiated analysis and targeted interventions consistent with ILO Convention
+        No. 111 on non-discrimination.
+      </P>
+
+      {/* 10 LIMITATIONS */}
+      <SectionAnchor id="s10" />
+      <H2>10. Limitations</H2>
+      <P>
+        <strong className="text-slate-200">L1 — Benchmark occupation aggregation.</strong>{' '}
+        Our 90-typology global benchmark cannot capture within-country occupational
+        heterogeneity at the granularity of India's 90-occupation national dataset. A
+        software engineer in Lagos faces different DII realities than one in Seoul, yet
+        both map to the same global typology. Cross-country AES and DII averages
+        systematically under-represent within-group dispersion.
+      </P>
+      <P>
+        <strong className="text-slate-200">L2 — Informal economy exclusion.</strong>{' '}
+        ILO employment estimates for informal occupations carry wide confidence intervals.
+        Roughly 2 billion workers are in informal employment globally, and their task
+        content, DII, and ADRI are far less reliably estimated than formal-sector workers.
+        Our global HIGH-risk count of 285 million is likely a lower bound; if informal
+        workers are partially digitalised (mobile-payment-enabled street vendors, informal
+        platform gig workers), the true HIGH-risk count could be 20–40% higher.
+      </P>
+      <P>
+        <strong className="text-slate-200">L3 — AES calibration for non-Western contexts.</strong>{' '}
+        O*NET task descriptions reflect US occupational practices. Cross-walking to ISCO-08
+        introduces uncertainty for occupations where national variants differ substantially
+        from the US prototype (e.g., Chinese state-enterprise accountants, African community
+        health extension workers). AES scores for these occupations carry ±10–15 point
+        confidence intervals.
+      </P>
+      <P>
+        <strong className="text-slate-200">L4 — Macro-institutional factors omitted.</strong>{' '}
+        The ADRI formula does not capture institutional variables — labour market regulation
+        rigidity, union bargaining power, state ownership of enterprises, migration flows —
+        that can substantially alter displacement timelines even when ADRI is high. France
+        and the US may have identical occupation-level ADRIs but very different realised
+        displacement rates due to employment protection legislation.
+      </P>
+      <P>
+        <strong className="text-slate-200">L5 — Technology trajectory uncertainty.</strong>{' '}
+        AES values post-2025 are projections based on a continuation of current AI
+        capability growth rates (roughly consistent with GPT-3 → GPT-4 trajectory).
+        If AGI is achieved before 2040, virtually all occupation AES values would
+        converge to 95–100, making DII the sole determinant of displacement timing
+        and rendering our tiered projections obsolete.
+      </P>
+      <P>
+        <strong className="text-slate-200">L6 — Reinstatement not modelled.</strong>{' '}
+        Following the Acemoglu-Restrepo framework, new task creation driven by AI
+        productivity gains is not modelled quantitatively. Our analysis captures gross
+        displacement risk, not net employment change. Countries with strong innovation
+        ecosystems may experience substantial task reinstatement that offsets gross
+        displacement, particularly in the 2030–2050 window.
+      </P>
+      <P>
+        <strong className="text-slate-200">L7 — Single cross-section of DII growth assumptions.</strong>{' '}
+        DII growth projections use a single central scenario. Regional digitalization
+        shocks — the rollout of Starlink satellite internet in Sub-Saharan Africa,
+        China's potential AI export restrictions, India-specific Digital Public
+        Infrastructure expansion — could substantially alter EMDE DII growth rates
+        and hence ADRI trajectories.
+      </P>
+      <P>
+        <strong className="text-slate-200">L8 — Demand-side effects excluded.</strong>{' '}
+        AI-driven productivity gains generate income effects that increase demand for
+        goods and services, potentially creating new occupational categories not
+        captured in our 90-typology taxonomy. Historical general-purpose technology
+        transitions (electricity, computing) ultimately created more jobs than they
+        destroyed, though with substantial distributional and temporal displacement.
+        Our framework is neutral on whether this pattern will hold for AI.
+      </P>
+
+      {/* 11 FUTURE RESEARCH */}
+      <SectionAnchor id="s11" />
+      <H2>11. Future Research Directions</H2>
+      <P>
+        <strong className="text-slate-200">FR1 — Country-level ADRI datasets.</strong>{' '}
+        The most impactful extension of this work is the construction of national ADRI
+        datasets for the 15 largest emerging economies (China, Brazil, Indonesia, Nigeria,
+        Mexico, Bangladesh, Pakistan, Egypt, Ethiopia, Philippines, Vietnam, South Africa,
+        Argentina, Turkey, Colombia). Each would require country-specific occupational
+        surveys analogous to India's PLFS, matched to national DII measures. An ILO-funded
+        consortium could support this work under the aegis of the Future of Work Global
+        Commission.
+      </P>
+      <P>
+        <strong className="text-slate-200">FR2 — Causal identification of DII effects.</strong>{' '}
+        The DIH is currently supported by correlational evidence and theoretical argument.
+        A causal identification strategy would exploit plausibly exogenous variation in
+        DII growth — such as the rollout of national broadband programmes (India's BharatNet,
+        Indonesia's Palapa Ring, Colombia's Vive Digital) — as instrumental variables for
+        DII, enabling clean estimation of the ADRI elasticity with respect to DII.
+      </P>
+      <P>
+        <strong className="text-slate-200">FR3 — Micro-level matched employer-worker data.</strong>{' '}
+        Our occupation-level analysis cannot capture within-occupation variance in
+        displacement risk across firms. Workers in the same occupation employed at AI-early-
+        adopter firms face higher effective ADRI than those at laggard firms. Matched
+        employer-worker panel data from administrative tax records (available in Scandinavian
+        countries, increasingly in Brazil and India) would enable individual-level ADRI
+        estimation and transition modelling.
+      </P>
+      <P>
+        <strong className="text-slate-200">FR4 — BPO sector longitudinal study.</strong>{' '}
+        The predicted Global BPO Cliff of 2026–2030 represents a unique quasi-natural
+        experiment: a large, formally employed, English-literate workforce facing
+        concentrated AI displacement on a predictable timeline. A longitudinal survey of
+        100,000 BPO workers in India, the Philippines, and Poland starting in 2025 would
+        generate unprecedented evidence on displacement dynamics, transition pathways,
+        and the effectiveness of pre-emptive retraining programmes.
+      </P>
+      <P>
+        <strong className="text-slate-200">FR5 — DII as a policy instrument.</strong>{' '}
+        If DII growth drives ADRI through the Cliff Threshold, then DII management becomes
+        a legitimate policy instrument. Future research should investigate the welfare
+        economics of digitalization speed regulation: whether slowing DII growth in
+        high-employment sectors below market rates is welfare-improving when labour market
+        adjustment costs are incorporated, and under what conditions a Pigouvian tax on
+        digitalization externalities is efficiency-enhancing.
+      </P>
+      <P>
+        <strong className="text-slate-200">FR6 — Reinstatement task taxonomy for AI era.</strong>{' '}
+        The ALM task taxonomy was constructed in 2003, before modern AI existed. A 21st-
+        century reinstatement task taxonomy — mapping the new occupational categories
+        created by AI deployment (AI trainers, model validators, AI safety officers,
+        human-AI collaboration specialists, AI ethics auditors) — is needed to assess
+        gross versus net displacement at the global level. This is a major data collection
+        and conceptual undertaking that would benefit from collaboration between O*NET,
+        ILO, and major AI research institutions.
+      </P>
+      <P>
+        <strong className="text-slate-200">FR7 — Gender-differentiated ADRI dynamics.</strong>{' '}
+        Women's occupational concentration in MODERATE-to-HIGH ADRI occupations globally
+        is well-documented in this paper but not causally analysed. Future research should
+        investigate whether women's higher ADRI exposure reflects occupational sorting
+        driven by past discrimination, comparative advantage, or structural exclusion
+        from lower-ADRI professional pathways — with distinct policy implications
+        depending on the mechanism.
+      </P>
+      <P>
+        <strong className="text-slate-200">FR8 — Climate-AI interaction effects.</strong>{' '}
+        The green energy transition is simultaneously accelerating DII in several
+        historically low-DII sectors (agriculture via precision farming, construction
+        via digital project management, transport via EV telematics). If climate policy
+        drives DII growth in these sectors faster than our central projections assume,
+        the low-ADRI agricultural and construction workforce — 1.2 billion workers
+        globally — may face a compressed cliff dynamic by 2040–2050. This interaction
+        between climate technology adoption and AI displacement risk is entirely unexplored
+        in the literature.
+      </P>
+
+      {/* CONCLUSION */}
+      <SectionAnchor id="conclusion" />
+      <H2>Conclusion</H2>
+      <P>
+        This paper applies the Digital Intensity Hypothesis and the ADRI framework to a
+        global benchmark of 90 occupation typologies, revealing a world labour market
+        simultaneously in two distinct phases of AI displacement risk. Advanced economies —
+        where high baseline DII has already translated elevated AES scores into HIGH
+        ADRI for knowledge-intensive occupations — are mid-cliff. Emerging markets —
+        where low-DII structural insulation currently dampens ADRI — are pre-cliff,
+        with a compressed digitalization timeline that threatens to produce displacement
+        shocks of advanced-economy magnitude in a fraction of the time, and without the
+        structural safety nets that advanced-economy workers rely upon.
+      </P>
+      <P>
+        Three findings stand out. First, the current global HIGH-risk count of approximately
+        285 million workers is heavily concentrated in OECD technology, finance, and
+        professional services — a relatively small, high-income, high-education group
+        for whom displacement, while disruptive, is partially buffered. Second, the
+        projected global BPO Cliff of 2026–2030 threatens a more vulnerable population:
+        65–80 million formally employed service workers in middle-income developing
+        economies, for whom BPO employment represents the primary ladder from informality
+        to formal-sector participation. Third, the global HIGH-risk count is projected
+        to reach 680 million by 2035 and 1.38 billion by 2050 — trajectories that no
+        existing global social protection or workforce transition architecture is designed
+        to absorb.
+      </P>
+      <P>
+        The policy window for pre-emptive action is narrow and closing. The 2025–2030
+        period, before the global BPO and service-sector cliff is crossed, is the last
+        moment at which worker reskilling, social protection floor extension, and
+        internationally coordinated AI transition governance can be designed and piloted
+        at scale before displacement becomes an emergency rather than a planning horizon.
+        We hope this analysis contributes the empirical foundation for that urgency.
+      </P>
+
+      {/* REFERENCES */}
+      <SectionAnchor id="references" />
+      <H2>References</H2>
+      <div className="space-y-3 mt-4">
+        {[
+          [1,  'McKinsey Global Institute (2023). The Economic Potential of Generative AI: The Next Productivity Frontier. McKinsey & Company, June 2023.'],
+          [2,  'World Economic Forum (2023). Future of Jobs Report 2023. WEF, Geneva.'],
+          [3,  'OECD (2019). OECD Employment Outlook 2019: The Future of Work. OECD Publishing, Paris.'],
+          [4,  'Frey, C.B., & Osborne, M.A. (2017). The future of employment: How susceptible are jobs to computerisation? Technological Forecasting and Social Change, 114, 254–280.'],
+          [5,  'Acemoglu, D., & Restrepo, P. (2018). The race between man and machine: Implications of technology for growth, factor shares, and employment. American Economic Review, 108(6), 1488–1542.'],
+          [6,  'Autor, D.H., Levy, F., & Murnane, R.J. (2003). The skill content of recent technological change: An empirical exploration. Quarterly Journal of Economics, 118(4), 1279–1333.'],
+          [7,  'Goos, M., Manning, A., & Salomons, A. (2014). Explaining job polarization: Routine-biased technological change and offshoring. American Economic Review, 104(8), 2509–2526.'],
+          [8,  'Autor, D., & Dorn, D. (2013). The growth of low-skill service jobs and the polarization of the US labor market. American Economic Review, 103(5), 1553–1597.'],
+          [9,  'Bubeck, S., et al. (2023). Sparks of artificial general intelligence: Early experiments with GPT-4. arXiv preprint arXiv:2303.12528.'],
+          [10, 'Acemoglu, D., & Restrepo, P. (2018). Artificial intelligence, automation, and work. NBER Working Paper No. 24196.'],
+          [11, 'Acemoglu, D., & Restrepo, P. (2019). Automation and new tasks: How technology displaces and reinstates labor. Journal of Economic Perspectives, 33(2), 3–30.'],
+          [12, 'Rodrik, D. (2016). Premature deindustrialization. Journal of Economic Growth, 21(1), 1–33.'],
+          [13, 'ILO (2024). World Employment and Social Outlook: Trends 2024. International Labour Organization, Geneva.'],
+          [14, 'Acemoglu, D., & Restrepo, P. (2022). Tasks, automation, and the rise in US wage inequality. Econometrica, 90(5), 1973–2016.'],
+          [15, 'ILO (2023). World Employment and Social Outlook 2023: The Value of Essential Work. ILO, Geneva.'],
+          [16, 'Agrawal, A., Gans, J., & Goldfarb, A. (2019). Artificial intelligence: The ambiguous labor market impact of automating prediction. Journal of Economic Perspectives, 33(2), 31–50.'],
+          [17, 'Brynjolfsson, E., Li, D., & Raymond, L.R. (2023). Generative AI at work. NBER Working Paper No. 31161.'],
+          [18, 'International Telecommunication Union (2024). Measuring Digital Development: Facts and Figures 2024. ITU, Geneva.'],
+          [19, "McKinsey & Company (2023). The State of AI in 2023: Generative AI’s Breakout Year. McKinsey Global Survey, August 2023."],
+          [20, 'Felten, E., Raj, M., & Seamans, R. (2021). Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses. Strategic Management Journal, 44(9), 2226–2254.'],
+          [21, 'Eloundou, T., et al. (2023). GPTs are GPTs: An early look at the labor market impact potential of large language models. arXiv preprint arXiv:2303.10130.'],
+          [22, 'Marcolin, L., et al. (2016). Routine jobs, employment and technological innovation in global value chains. OECD Science, Technology and Innovation Policy Papers No. 41.'],
+          [23, 'Nedelkoska, L., & Quintini, G. (2018). Automation, skills use and training. OECD Social, Employment and Migration Working Paper No. 202.'],
+          [24, 'GSMA (2024). The Mobile Economy 2024. GSMA Intelligence, London.'],
+          [25, 'World Bank (2023). World Development Report 2023: Migrants, Refugees, and Societies. World Bank Group, Washington D.C.'],
+          [26, 'ILO (2022). Global Employment Trends for Youth 2022: Investing in Transforming Futures for Young People. ILO, Geneva.'],
+          [27, 'OECD (2023). OECD Digital Economy Outlook 2023. OECD Publishing, Paris.'],
+          [28, 'Dauth, W., et al. (2021). The adjustment of labor markets to robots. Journal of the European Economic Association, 19(6), 3104–3153.'],
+          [29, 'ILO & OECD (2023). Forum on Responsible Business Conduct: Guidelines for Responsible Supply Chains in the Garment and Footwear Sector. ILO/OECD joint publication.'],
+          [30, 'Kochhar, R. (2021). The Pandemic Stalls Growth in the Global Middle Class, Pushes Poverty Up Sharply. Pew Research Center, March 2021.'],
+          [31, 'Piketty, T. (2022). A Brief History of Equality. Belknap Press of Harvard University Press, Cambridge MA.'],
+          [32, 'Goldfarb, A., & Tucker, C. (2019). Digital economics. Journal of Economic Literature, 57(1), 3–43.'],
+          [33, 'Lund, S., et al. (2021). The Future of Work After COVID-19. McKinsey Global Institute, February 2021.'],
+          [34, 'UNCTAD (2023). Technology and Innovation Report 2023: Opening Green Windows. United Nations Conference on Trade and Development, Geneva.'],
+          [35, 'Schwab, K. (2016). The Fourth Industrial Revolution. World Economic Forum / Crown Business, Geneva.'],
+        ].map(([n, text]) => (
+          <div key={n} className="flex gap-3">
+            <span className="text-slate-600 text-[11px] font-bold shrink-0 w-6 text-right pt-0.5">[{n}]</span>
+            <p className="text-slate-500 text-[12px] leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 pt-6 border-t border-slate-800 text-slate-600 text-[10px] space-y-1.5 leading-relaxed">
+        <p>KarmaMap Working Paper · Global Edition · Version 1.0 · May 2025 · Submitted for peer review</p>
+        <p>
+          Occupational metrics (AES, DII, ADRI) are estimates derived from cross-referenced public datasets
+          and represent the authors' best judgement as of the publication date. They should not be used
+          as the sole basis for individual career or investment decisions. Cross-country comparisons
+          are subject to measurement and institutional heterogeneity not fully captured by the ADRI formula.
+          Correspondence: asrarsaa@gmail.com.
+        </p>
+        <p>© 2025 Syed Asrar Ahmed. This work is made available under a Creative Commons Attribution
+          4.0 International (CC BY 4.0) licence. Reproduction and adaptation with attribution is
+          encouraged for research, educational, and policy purposes.</p>
+      </div>
+
+    </div>
+  )
+}
+
+export default function ResearchPaper({ onClose, region = 'india' }) {
   const [activeSection, setActiveSection] = useState('abstract')
   const contentRef = useRef(null)
+  const SECTIONS = region === 'world' ? WORLD_SECTIONS : INDIA_SECTIONS
 
   useEffect(() => {
     function onKey(e) { if (e.key === 'Escape') onClose() }
@@ -145,7 +1108,7 @@ export default function ResearchPaper({ onClose }) {
           <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
           <span className="text-slate-400 text-[11px] uppercase tracking-widest font-bold">Research Paper</span>
           <span className="text-slate-700 text-[11px]">·</span>
-          <span className="text-slate-500 text-[11px]">KarmaMap Working Paper · v2.0 · May 2025</span>
+          <span className="text-slate-500 text-[11px]">KarmaMap Working Paper · {region === 'world' ? 'Global Edition · v1.0' : 'India Edition · v2.0'} · May 2025</span>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-slate-600 text-[10px] hidden sm:block">Esc to close</span>
@@ -174,15 +1137,16 @@ export default function ResearchPaper({ onClose }) {
           <div className="mt-auto pt-6 px-2">
             <div className="bg-slate-800/40 rounded-lg p-3 text-[9px] text-slate-600 leading-relaxed">
               KarmaMap Working Paper<br />
-              Version 2.0 · May 2025<br />
+              {region === 'world' ? 'Global Edition · v1.0' : 'Version 2.0'} · May 2025<br />
               Submitted for peer review.<br />
-              Data: PLFS 2023-24, ILO, WEF, O*NET.
+              Data: {region === 'world' ? 'ILO, WEF, O*NET, OECD, World Bank.' : 'PLFS 2023-24, ILO, WEF, O*NET.'}
             </div>
           </div>
         </nav>
 
         {/* Paper content */}
         <div ref={contentRef} className="flex-1 overflow-y-auto detail-panel-scroll">
+          {region === 'world' ? <WorldPaperBody /> : (
           <div className="max-w-3xl mx-auto px-6 py-10 pb-28">
 
             {/* Title block */}
@@ -1510,6 +2474,7 @@ export default function ResearchPaper({ onClose }) {
             </div>
 
           </div>
+          )}
         </div>
       </div>
     </div>

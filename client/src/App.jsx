@@ -409,7 +409,7 @@ export default function App() {
 
       {/* ── Research Paper overlay ── */}
       {showResearch && (
-        <ResearchPaper onClose={() => setShowResearch(false)} />
+        <ResearchPaper onClose={() => setShowResearch(false)} region={region} />
       )}
     </div>
   )
